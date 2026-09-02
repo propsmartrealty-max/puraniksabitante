@@ -1,0 +1,305 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  keywords?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "Puraniks Abitante Fiore Bavdhan Pune | 1, 2 & 3 BHK Italian Living | Official Site",
+  description = "Official Portal for Puraniks Abitante Fiore, Bavdhan Budruk, Pune. 45-acre hillside Italian township featuring 1, 2 & 3 BHK Oxygen-Rich homes with Balcony Gardens, Club Azzurro & Venetian Lagoon. MahaRERA: P52100020202. Starting ₹51.99 Lakhs*.",
+  canonical = "https://puraniksabitante.in/",
+  keywords = "Puraniks Abitante Bavdhan, Puraniks Abitante Fiore, Puraniks Abitante Pune, Puranik Builders Bavdhan, Puraniks Abitante floor plan, Puraniks Abitante price, Puraniks Abitante brochure, Puraniks Abitante contact number, Puraniks Abitante MahaRERA, 1 BHK flat in Bavdhan Pune, 2 BHK flat in Bavdhan Pune, 3 BHK luxury apartment Bavdhan, Flats near Chandani Chowk, Flats near Hinjewadi IT Park, Oxygen rich homes Bavdhan Pune, Italian themed township Pune",
+  ogImage = "https://puraniksabitante.in/images/slider/pweb.webp"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- Primary Google Search SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    
+    <!-- Canonical & Alternate Hreflang Tags (Global & Local Indexing) -->
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en-IN" href="https://puraniksabitante.in/" />
+    <link rel="alternate" hreflang="en-US" href="https://puraniksabitante.in/" />
+    <link rel="alternate" hreflang="en-GB" href="https://puraniksabitante.in/" />
+    <link rel="alternate" hreflang="en-AE" href="https://puraniksabitante.in/" />
+    <link rel="alternate" hreflang="en-SG" href="https://puraniksabitante.in/" />
+    <link rel="alternate" hreflang="mr-IN" href="https://puraniksabitante.in/" />
+    <link rel="alternate" hreflang="hi-IN" href="https://puraniksabitante.in/" />
+    <link rel="alternate" hreflang="x-default" href="https://puraniksabitante.in/" />
+    
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Theme & App Metadata -->
+    <meta name="theme-color" content="#0B1329" />
+    <meta name="application-name" content="Puraniks Abitante Fiore" />
+    <meta name="apple-mobile-web-app-title" content="Puraniks Abitante" />
+    <meta name="author" content="Puranik Builders Ltd." />
+    <meta name="publisher" content="Puranik Builders Ltd." />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <!-- Google Local SEO & Geo Coordinates (Bavdhan Budruk, Pune) -->
+    <meta name="geo.region" content="IN-MH" />
+    <meta name="geo.placename" content="Bavdhan, Pune, Maharashtra" />
+    <meta name="geo.position" content="18.5158;73.7707" />
+    <meta name="ICBM" content="18.5158, 73.7707" />
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Puraniks Abitante Fiore Official" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Puraniks Abitante Fiore 45-Acre Hillside Italian Township Bavdhan Pune" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Cards Preview -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Puraniks Abitante Fiore Township View" />
+
+    <!-- Google High-Speed DNS Prefetch & Font CDN Preconnects -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    <link rel="dns-prefetch" href="//www.youtube.com" />
+    <link rel="dns-prefetch" href="//img.youtube.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Comprehensive Google Structured Data (@graph Multi-Entity Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://puraniksabitante.in/#website",
+          "url": "https://puraniksabitante.in/",
+          "name": "Puraniks Abitante Fiore Official Portal",
+          "alternateName": ["Puraniks Abitante Bavdhan", "Puraniks Abitante", "Abitante Fiore"],
+          "description": "Official residential showcase for Puraniks Abitante Fiore, 1, 2 & 3 BHK oxygen-rich hillside township in Bavdhan, Pune.",
+          "inLanguage": "en-IN",
+          "publisher": {
+            "@id": "https://puraniksabitante.in/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://puraniksabitante.in/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": ["ApartmentComplex", "RealEstateListing", "Place", "LocalBusiness"],
+          "@id": "https://puraniksabitante.in/#project",
+          "name": "Puraniks Abitante Fiore",
+          "alternateName": ["Puraniks Abitante Bavdhan", "Puraniks Abitante", "Abitante Fiore"],
+          "description": "Oxygen-rich 45-acre Italian Riviera-inspired residential township in Bavdhan Budruk, Pune, developed by Puranik Builders Ltd. Offering 1 BHK, 2 BHK Smart, 2 BHK Luxury, and 3 BHK Imperial residences with Juliet Balcony Gardens, Venetian lagoon pools, Club Azzurro, and mist gardens.",
+          "url": "https://puraniksabitante.in/",
+          "telephone": "+91-80689-76983",
+          "email": "sales@puranikbuilders.com",
+          "priceRange": "₹51.99 Lakhs - ₹97.50 Lakhs",
+          "hasMap": "https://maps.google.com/?q=18.5158,73.7707",
+          "image": "https://puraniksabitante.in/images/slider/pweb.webp",
+          "currenciesAccepted": "INR, USD, AED, GBP, SGD",
+          "paymentAccepted": "Bank Transfer, Cheque, Home Loan, Credit Card",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "09:30",
+              "closes": "19:00"
+            }
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Near Crystal Honda Service Station, Off Mumbai-Bangalore Highway, Bavdhan Budruk",
+            "addressLocality": "Bavdhan, Pune",
+            "addressRegion": "Maharashtra",
+            "postalCode": "411021",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 18.5158,
+            "longitude": 73.7707
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "284",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "Balcony Gardens with Oxygen Plants", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Venetian Swimming Pool & Cabanas", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Club Azzurro 30,000 sq.ft Clubhouse", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Mist Garden & Aromatherapy Trail", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Roman Amphitheater", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Seismic Zone III RCC Earthquake Resistant Structure", "value": true }
+          ],
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "INR",
+            "lowPrice": "5199000",
+            "highPrice": "9750000",
+            "offerCount": "1800",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "1 BHK Oxygen-Rich Flat",
+                "price": "5199000",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "description": "489 sq.ft carpet 1 BHK oxygen flat with private Balcony Garden."
+              },
+              {
+                "@type": "Offer",
+                "name": "2 BHK Smart Residence",
+                "price": "6399000",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "description": "596 sq.ft carpet 2 BHK Smart residence with dual balconies."
+              },
+              {
+                "@type": "Offer",
+                "name": "3 BHK Imperial Residence",
+                "price": "9750000",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "description": "867 sq.ft carpet 3 BHK Imperial residence with 270-degree hillside valley views."
+              }
+            ]
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://puraniksabitante.in/#organization",
+          "name": "Puranik Builders Limited",
+          "url": "https://puraniksabitante.in/",
+          "logo": "https://puraniksabitante.in/images/logo.webp",
+          "foundingDate": "1990",
+          "telephone": "+91-80689-76983",
+          "email": "sales@puranikbuilders.com"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://puraniksabitante.in/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://puraniksabitante.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Pune Real Estate",
+              "item": "https://puraniksabitante.in/#location"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Bavdhan Properties",
+              "item": "https://puraniksabitante.in/#residences"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Puraniks Abitante Fiore",
+              "item": "https://puraniksabitante.in/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://puraniksabitante.in/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What are the configuration options and prices at Puraniks Abitante Fiore Bavdhan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Puraniks Abitante Fiore offers 1 BHK Oxygen Flats (489 sq.ft from ₹51.99 Lakhs*), 2 BHK Smart Homes (596 sq.ft from ₹63.99 Lakhs*), 2 BHK Large Luxury (735 sq.ft from ₹78.50 Lakhs*), and 3 BHK Imperial Residences (867 sq.ft from ₹97.50 Lakhs*)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Puraniks Abitante Fiore registered under MahaRERA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, Puraniks Abitante Fiore is fully registered with Maharashtra Real Estate Regulatory Authority under registration numbers Phase 2A (P52100020202), Phase 2B (P52100020238), Phase 2C (P52100048353), and Phase 2C1 (P52100049352)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where is Puraniks Abitante Fiore located in Pune?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The project is located at Bavdhan Budruk, Pune (PIN 411021), near the Crystal Honda Service Station, right off the Mumbai-Bangalore Highway, just 5 minutes from Chandani Chowk and 20 minutes from Hinjewadi IT Park."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makes Puraniks Abitante Fiore an oxygen-rich township?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Abitante Fiore features 45 acres of hillside terrain with dedicated Balcony Gardens with oxygen-generating flora, natural mist garden micro-climate cooling, 1000+ medicinal and fruit trees, and Italian water cascades."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "https://puraniksabitante.in/#walkthrough-video",
+          "name": "Puraniks Abitante Fiore Official 45-Acre Township Walkthrough Video",
+          "description": "Architectural video walkthrough of Puraniks Abitante Fiore in Bavdhan Budruk, Pune. Explore 1, 2 & 3 BHK Italian residences, Balcony Gardens, and Club Azzurro.",
+          "thumbnailUrl": [
+            "https://img.youtube.com/vi/WOPqlTKXMd8/maxresdefault.jpg",
+            "https://puraniksabitante.in/images/slider/pweb.webp"
+          ],
+          "uploadDate": "2024-01-15T09:00:00+05:30",
+          "contentUrl": "https://www.youtube.com/watch?v=WOPqlTKXMd8",
+          "embedUrl": "https://www.youtube.com/embed/WOPqlTKXMd8",
+          "duration": "PT2M45S",
+          "publisher": {
+            "@id": "https://puraniksabitante.in/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-[#FAF9F6] text-[#0F172A] font-sans antialiased selection:bg-[#92400E] selection:text-white">
+    <slot />
+  </body>
+</html>

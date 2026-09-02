@@ -17,7 +17,8 @@ import {
   Calendar,
   Layers3,
   Target,
-  ArrowRight
+  ArrowRight,
+  ChevronRight
 } from 'lucide-react';
 import { SEO_SILOS } from '../data/seoContentMatrix';
 import { MASTER_KEYWORD_DATABASE, THREE_LAYER_AUTHORITY } from '../data/keywordDatabase';
