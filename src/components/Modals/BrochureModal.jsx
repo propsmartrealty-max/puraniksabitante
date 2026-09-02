@@ -44,14 +44,20 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-      <div className="relative max-w-md w-full bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-2xl">
+    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 max-sm:p-0 max-sm:items-end animate-fadeIn">
+      <div className="relative max-w-md w-full bg-white rounded-3xl max-sm:rounded-b-none max-sm:rounded-t-[2rem] overflow-hidden border border-slate-200 shadow-2xl animate-slideUp max-h-[90vh] overflow-y-auto">
         
+        {/* Mobile Drag Indicator Pill */}
+        <div className="sm:hidden pt-2.5 pb-1 flex justify-center bg-[#0B1329]">
+          <div className="w-12 h-1.5 bg-slate-500/60 rounded-full" />
+        </div>
+
         {/* Header */}
-        <div className="bg-[#0B1329] text-white p-6 relative border-b border-slate-800">
+        <div className="bg-[#0B1329] text-white p-6 pt-4 sm:pt-6 relative border-b border-slate-800">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xs transition uppercase"
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xs transition uppercase cursor-pointer"
+            aria-label="Close"
           >
             <X className="w-4 h-4" />
           </button>
@@ -59,7 +65,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400">OFFICIAL PROJECT DOCUMENTATION</span>
           </div>
-          <h3 className="text-2xl font-extrabold text-white uppercase tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
             DOWNLOAD PROJECT BROCHURE
           </h3>
           <p className="text-xs text-slate-300 font-normal mt-1">
@@ -68,7 +74,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
         </div>
 
         {/* Content */}
-        <div className="p-6">
+        <div className="p-5 sm:p-6 pb-safe">
           {isSuccess ? (
             <div className="text-center py-6 space-y-4">
               <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
@@ -91,7 +97,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
                   href={`https://wa.me/${PROJECT_INFO.whatsappNumber}?text=Hi%2C%20I%20requested%20the%20Puraniks%20Abitante%20Fiore%20brochure%20for%20${encodeURIComponent(formData.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="luxury-btn-gold py-3 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
+                  className="luxury-btn-gold py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
                 >
                   <Send className="w-4 h-4" /> OPEN IN WHATSAPP
                 </a>
@@ -115,7 +121,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
                   placeholder="e.g. Anand Kulkarni"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:border-[#92400E] font-medium"
+                  className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-medium"
                 />
               </div>
 
@@ -124,7 +130,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
                   WHATSAPP CONTACT NUMBER *
                 </label>
                 <div className="flex">
-                  <span className="inline-flex items-center px-3 bg-slate-100 border border-r-0 border-slate-200 rounded-l-xl text-xs text-slate-700 font-bold">
+                  <span className="inline-flex items-center px-3.5 bg-slate-100 border border-r-0 border-slate-200 rounded-l-xl text-xs text-slate-700 font-bold">
                     +91
                   </span>
                   <input
@@ -134,7 +140,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
                     placeholder="9876543210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-slate-200 rounded-r-xl text-slate-900 text-xs focus:outline-none focus:border-[#92400E] font-medium"
+                    className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-r-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-medium"
                   />
                 </div>
               </div>
@@ -146,7 +152,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
                 <select
                   value={formData.config}
                   onChange={(e) => setFormData({ ...formData, config: e.target.value })}
-                  className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:border-[#92400E] font-bold"
+                  className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-bold"
                 >
                   <option value="1 BHK">1 BHK OXYGEN FLAT (489 SQ.FT)</option>
                   <option value="2 BHK Smart">2 BHK SMART (596 SQ.FT)</option>
@@ -171,7 +177,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full luxury-btn-gold py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2"
+                className="w-full luxury-btn-gold py-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2"
               >
                 {isSubmitting ? (
                   <span>GENERATING SECURE LINK...</span>

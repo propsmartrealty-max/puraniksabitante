@@ -46,14 +46,20 @@ export default function SiteVisitModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-      <div className="relative max-w-lg w-full bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-2xl">
+    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 max-sm:p-0 max-sm:items-end animate-fadeIn">
+      <div className="relative max-w-lg w-full bg-white rounded-3xl max-sm:rounded-b-none max-sm:rounded-t-[2rem] overflow-hidden border border-slate-200 shadow-2xl animate-slideUp max-h-[92vh] overflow-y-auto">
         
+        {/* Mobile Drag Indicator Pill */}
+        <div className="sm:hidden pt-2.5 pb-1 flex justify-center bg-[#0B1329]">
+          <div className="w-12 h-1.5 bg-slate-500/60 rounded-full" />
+        </div>
+
         {/* Header */}
-        <div className="bg-[#0B1329] text-white p-6 relative border-b border-slate-800">
+        <div className="bg-[#0B1329] text-white p-6 pt-4 sm:pt-6 relative border-b border-slate-800">
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xs transition uppercase"
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xs transition uppercase cursor-pointer"
+            aria-label="Close"
           >
             <X className="w-4 h-4" />
           </button>
@@ -61,7 +67,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400">VIP EXPERIENCE CENTER TOUR</span>
           </div>
-          <h3 className="text-2xl font-extrabold text-white uppercase tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
             SCHEDULE SITE VISIT & MODEL FLAT TOUR
           </h3>
           <p className="text-xs text-slate-300 font-normal mt-1">
@@ -70,7 +76,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
         </div>
 
         {/* Content */}
-        <div className="p-6">
+        <div className="p-5 sm:p-6 pb-safe">
           {isSuccess ? (
             <div className="text-center py-6 space-y-4">
               <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
@@ -93,7 +99,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
               <div className="pt-2">
                 <button
                   onClick={onClose}
-                  className="w-full luxury-btn-gold py-3 rounded-xl font-bold text-xs uppercase tracking-wider"
+                  className="w-full luxury-btn-gold py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider"
                 >
                   DONE
                 </button>
@@ -112,7 +118,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
                     placeholder="e.g. Sumeet Patil"
                     value={visitData.name}
                     onChange={(e) => setVisitData({ ...visitData, name: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:border-[#92400E] font-medium"
+                    className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-medium"
                   />
                 </div>
 
@@ -127,7 +133,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
                     placeholder="10-digit mobile"
                     value={visitData.phone}
                     onChange={(e) => setVisitData({ ...visitData, phone: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:border-[#92400E] font-medium"
+                    className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-medium"
                   />
                 </div>
               </div>
@@ -142,7 +148,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
                     required
                     value={visitData.date}
                     onChange={(e) => setVisitData({ ...visitData, date: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:border-[#92400E] font-medium"
+                    className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-medium"
                   />
                 </div>
 
@@ -153,7 +159,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
                   <select
                     value={visitData.timeSlot}
                     onChange={(e) => setVisitData({ ...visitData, timeSlot: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-xs focus:outline-none focus:border-[#92400E] font-bold"
+                    className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-bold"
                   >
                     <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM (MORNING)</option>
                     <option value="12:00 PM - 02:00 PM">12:00 PM - 02:00 PM (AFTERNOON)</option>
@@ -172,7 +178,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
                     type="checkbox"
                     checked={visitData.cabPickup}
                     onChange={(e) => setVisitData({ ...visitData, cabPickup: e.target.checked })}
-                    className="w-4 h-4 accent-[#92400E] rounded"
+                    className="w-4 h-4 accent-[#92400E] rounded cursor-pointer"
                   />
                 </div>
 
@@ -183,7 +189,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
                       placeholder="Enter Pickup Location in Pune (e.g. Aundh, Kothrud, Baner)"
                       value={visitData.pickupLocation}
                       onChange={(e) => setVisitData({ ...visitData, pickupLocation: e.target.value })}
-                      className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-slate-900 text-xs"
+                      className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-slate-900 text-xs"
                     />
                   </div>
                 )}
@@ -192,7 +198,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full luxury-btn-gold py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2"
+                className="w-full luxury-btn-gold py-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2"
               >
                 {isSubmitting ? (
                   <span>CONFIRMING APPOINTMENT...</span>

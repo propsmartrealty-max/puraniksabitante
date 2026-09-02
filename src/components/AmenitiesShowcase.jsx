@@ -58,13 +58,13 @@ export default function AmenitiesShowcase({ onOpenBrochure, onOpenSiteVisit }) {
           </p>
         </div>
 
-        {/* Category Pills */}
-        <div className="flex flex-wrap justify-center gap-2.5 mb-12">
+        {/* Category Pills (Horizontal scroll on mobile, wrapped on desktop) */}
+        <div className="flex sm:flex-wrap overflow-x-auto sm:justify-center gap-2 mb-8 sm:mb-12 pb-2 sm:pb-0 px-1 sm:px-0 snap-x scrollbar-none">
           {AMENITY_CATEGORIES.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition cursor-pointer border ${
+              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition cursor-pointer shrink-0 snap-center border ${
                 activeCategory === cat.id
                   ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-xs'
                   : 'bg-white text-slate-700 border-slate-200 hover:border-slate-400'

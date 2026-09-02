@@ -34,13 +34,13 @@ export default function FloorPlanExplorer({ onOpenBrochure, onOpenSiteVisit, onS
           </p>
         </div>
 
-        {/* Configuration Selector Pills */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {/* Configuration Selector Pills (Horizontal swipe on mobile, wrapped on desktop) */}
+        <div className="flex sm:flex-wrap overflow-x-auto sm:justify-center gap-2.5 sm:gap-3 mb-8 sm:mb-10 pb-2 sm:pb-0 px-1 sm:px-0 snap-x scrollbar-none">
           {CONFIGURATIONS.map((config) => (
             <button
               key={config.id}
               onClick={() => setSelectedConfig(config)}
-              className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer flex items-center gap-2 border ${
+              className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer flex items-center gap-2 shrink-0 snap-center border ${
                 selectedConfig.id === config.id
                   ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-md scale-102'
                   : 'bg-white text-slate-700 border-slate-200 hover:border-slate-400'

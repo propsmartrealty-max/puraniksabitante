@@ -137,57 +137,118 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Advanced Luxury Mobile Slide-In Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden bg-white flex flex-col justify-between p-6 animate-fadeIn">
-          <div>
-            <div className="flex items-center justify-between pb-4 border-b border-slate-200">
-              <img
-                src={PROJECT_INFO.officialLogoUrl}
-                alt="Logo"
-                className="h-9 w-auto object-contain"
-                onError={(e) => { e.target.style.display = 'none'; }}
-              />
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-2 rounded-full text-slate-700 hover:bg-slate-100"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 lg:hidden animate-fadeIn">
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity"
+            onClick={() => setMobileMenuOpen(false)}
+          />
 
-            <div className="flex flex-col space-y-1.5 mt-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
+          {/* Drawer Panel */}
+          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl flex flex-col justify-between p-6 z-10 animate-slideUp overflow-y-auto">
+            <div>
+              {/* Drawer Top Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-xl bg-[#0F172A] flex items-center justify-center text-white font-extrabold text-sm shadow-xs">
+                    P
+                  </div>
+                  <div>
+                    <div className="font-extrabold text-xs text-[#0F172A] tracking-wider uppercase">PURANIKS</div>
+                    <div className="text-[9px] text-[#92400E] font-bold tracking-widest uppercase">ABITANTE FIORE</div>
+                  </div>
+                </div>
+                <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-bold tracking-wider text-slate-800 hover:text-[#92400E] py-3 px-3 rounded-xl hover:bg-slate-50 transition"
+                  className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition cursor-pointer"
+                  aria-label="Close navigation"
                 >
-                  {link.name}
-                </a>
-              ))}
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Quick Config Badges on Mobile */}
+              <div className="mt-4 p-3 bg-slate-50 rounded-2xl border border-slate-200/80">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500 block mb-2">
+                  EXPLORE RESIDENCES:
+                </span>
+                <div className="grid grid-cols-3 gap-1.5 text-center">
+                  <a
+                    href="#residences"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-1.5 px-2 rounded-xl bg-white border border-slate-200 text-[11px] font-extrabold text-slate-800 shadow-2xs hover:border-[#92400E]"
+                  >
+                    1 BHK
+                  </a>
+                  <a
+                    href="#residences"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-1.5 px-2 rounded-xl bg-white border border-slate-200 text-[11px] font-extrabold text-[#92400E] shadow-2xs hover:border-[#92400E]"
+                  >
+                    2 BHK
+                  </a>
+                  <a
+                    href="#residences"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-1.5 px-2 rounded-xl bg-white border border-slate-200 text-[11px] font-extrabold text-slate-800 shadow-2xs hover:border-[#92400E]"
+                  >
+                    3 BHK
+                  </a>
+                </div>
+              </div>
+
+              {/* Navigation Links */}
+              <nav className="flex flex-col space-y-1 mt-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs font-bold tracking-wider text-slate-800 hover:text-[#92400E] py-3 px-3 rounded-xl hover:bg-slate-50 transition uppercase flex items-center justify-between"
+                  >
+                    <span>{link.name}</span>
+                    <span className="text-slate-300 text-xs">→</span>
+                  </a>
+                ))}
+              </nav>
             </div>
-          </div>
 
-          <div className="space-y-3 pt-6 border-t border-slate-200">
-            <a
-              href={`tel:${PROJECT_INFO.contactPhone}`}
-              className="w-full py-3.5 rounded-xl border border-slate-200 text-slate-800 flex items-center justify-center gap-2 font-bold text-xs tracking-wider uppercase"
-            >
-              <Phone className="w-4 h-4 text-[#92400E]" />
-              CALL {PROJECT_INFO.contactPhone}
-            </a>
+            {/* Bottom Actions inside Drawer */}
+            <div className="space-y-2.5 pt-4 border-t border-slate-200">
+              <a
+                href={`tel:${PROJECT_INFO.contactPhone}`}
+                className="w-full py-3 rounded-xl border border-slate-200 text-slate-800 flex items-center justify-center gap-2 font-extrabold text-xs tracking-wider uppercase shadow-2xs"
+              >
+                <Phone className="w-4 h-4 text-[#92400E]" />
+                CALL {PROJECT_INFO.contactPhone}
+              </a>
 
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenSiteVisit();
-              }}
-              className="w-full luxury-btn-gold py-3.5 rounded-xl font-bold text-xs tracking-wider uppercase text-center"
-            >
-              BOOK SITE VISIT
-            </button>
+              <a
+                href={`https://wa.me/${PROJECT_INFO.whatsappNumber}?text=Hi%2C%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center justify-center gap-2 font-extrabold text-xs tracking-wider uppercase shadow-2xs"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                CHAT ON WHATSAPP
+              </a>
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenSiteVisit();
+                }}
+                className="w-full luxury-btn-gold py-3.5 rounded-xl font-extrabold text-xs tracking-wider uppercase text-center shadow-md cursor-pointer"
+              >
+                BOOK FREE SITE TOUR
+              </button>
+
+              <div className="text-[10px] text-slate-400 text-center uppercase tracking-wider pt-1">
+                MAHARERA: {PROJECT_INFO.reraNumber.split(' ')[0]}
+              </div>
+            </div>
           </div>
         </div>
       )}

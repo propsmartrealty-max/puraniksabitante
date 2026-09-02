@@ -80,8 +80,28 @@ export default function MasterPlanViewer({ onOpenBrochure, onOpenSiteVisit }) {
                 })}
               </div>
 
+              {/* Mobile Quick Zone Selector Pills */}
+              <div className="mt-4 pt-3 border-t border-slate-100 flex overflow-x-auto gap-2 pb-1 scrollbar-none snap-x">
+                {MASTER_PLAN_HOTSPOTS.map((spot) => (
+                  <button
+                    key={spot.id}
+                    onClick={() => setActiveHotspot(spot)}
+                    className={`px-3 py-1.5 rounded-xl text-[11px] font-bold uppercase tracking-wider transition shrink-0 snap-center flex items-center gap-1.5 border cursor-pointer ${
+                      activeHotspot.id === spot.id
+                        ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-xs'
+                        : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-slate-400'
+                    }`}
+                  >
+                    <span className="w-4 h-4 rounded-full bg-amber-400/20 text-[#92400E] flex items-center justify-center text-[9px] font-bold font-mono">
+                      {spot.id}
+                    </span>
+                    <span>{spot.title}</span>
+                  </button>
+                ))}
+              </div>
+
               {/* Map Footer */}
-              <div className="mt-4 px-2 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600">
+              <div className="mt-3 px-2 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600">
                 <div className="flex items-center gap-4 font-bold uppercase tracking-wider text-[11px]">
                   <span className="flex items-center gap-1.5 text-[#0F172A]">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#0F172A]" /> SELECTED ZONE
