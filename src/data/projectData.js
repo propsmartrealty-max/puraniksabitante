@@ -57,9 +57,16 @@ export const PROJECT_INFO = {
   landParcel: "45 Acres Integrated Hilltop Township",
   towers: "High-Rise Residential Wings with 1, 2 & 3 BHK Balcony Gardens",
   totalUnits: "1,800+ Residences",
-  possession: "Ready & Ongoing Phases",
-  reraNumber: "P52100020202 | P52100020238",
+  possession: "Ready & Ongoing Phased Delivery",
+  reraNumber: "P52100020202 | P52100020238 | P52100048353 | P52100049352",
+  reraPhases: [
+    { phase: "Phase 2A", rera: "P52100020202", status: "Delivered / Ready" },
+    { phase: "Phase 2B", rera: "P52100020238", status: "Finishing Stages" },
+    { phase: "Phase 2C", rera: "P52100048353", status: "Under Construction" },
+    { phase: "Phase 2C1", rera: "P52100049352", status: "New Wing Launch" }
+  ],
   reraUrl: "https://maharera.mahaonline.gov.in",
+  environmentalClearance: "MoEF & CC Environmental Clearance Certified",
   startingPrice: "₹51.99 Lakhs*",
   startingPriceFormatted: "₹51.99 Lakhs Onwards",
   contactPhone: "+91 80689 76983",
@@ -738,7 +745,7 @@ export const FAQS = [
   },
   {
     q: "Is the project MahaRERA registered and approved by banks?",
-    a: "Yes, Puraniks Abitante & Abitante Fiore is fully approved under MahaRERA registration numbers P52100020202 and P52100020238. It is pre-approved for home loans by SBI, HDFC Bank, ICICI Bank, Axis Bank, and Bank of Maharashtra with special zero-processing-fee offers."
+    a: "Yes, Puraniks Abitante Fiore is fully approved under MahaRERA registration numbers: Phase 2A (P52100020202), Phase 2B (P52100020238), Phase 2C (P52100048353), and Phase 2C1 (P52100049352). It holds MoEF & CC Environmental Clearance and is pre-approved for home loans by SBI, HDFC Bank, ICICI Bank, Axis Bank, and Bank of Maharashtra with special zero-processing-fee offers."
   },
   {
     q: "Are there schools, business hubs, and grocery stores nearby?",

@@ -158,7 +158,7 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
         {/* Disclaimer */}
         <div className="border-t border-slate-800 pt-8 space-y-3 text-[11px] text-slate-400 font-light leading-relaxed">
           <p>
-            <strong>DISCLAIMER:</strong> Artistic renderings and architectural layouts shown are artist impressions for illustrative purposes. Project is developed by Puranik Builders Ltd. under MahaRERA registration numbers P52100020202 and P52100020238.
+            <strong>DISCLAIMER:</strong> Artistic renderings and architectural layouts shown are artist impressions for illustrative purposes. Project is developed by Puranik Builders Ltd. under MahaRERA registration numbers: <strong>Phase 2A (P52100020202)</strong>, <strong>Phase 2B (P52100020238)</strong>, <strong>Phase 2C (P52100048353)</strong>, and <strong>Phase 2C1 (P52100049352)</strong>. MoEF & CC Environmental Clearance certified (formerly Puraniks Abitante Phase II).
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-500 pt-2 border-t border-slate-800/60 uppercase tracking-wider text-[10px] font-medium">
             <div>
