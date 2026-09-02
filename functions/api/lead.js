@@ -1,12 +1,10 @@
 /**
  * Cloudflare Pages Function: /api/lead
  * Handles ultra-low latency serverless lead capture across Cloudflare's 330+ global edge locations.
- * Features:
- * - Sub-30ms Edge Validation
- * - Cloudflare Turnstile Anti-Bot Verification
- * - Asynchronous Background CRM Webhook Dispatch (via context.waitUntil)
- * - Edge Network Telemetry (Colo, ASN, Country, Ray ID)
+ * Automatically dispatches real-time inquiry notifications to propsmartrealty@gmail.com
  */
+
+const NOTIFICATION_EMAIL = "propsmartrealty@gmail.com";
 
 export async function onRequestPost(context) {
   try {
@@ -18,6 +16,7 @@ export async function onRequestPost(context) {
       phone, 
       email, 
       configuration, 
+      config,
       date, 
       timeSlot, 
       source, 
@@ -43,7 +42,7 @@ export async function onRequestPost(context) {
       );
     }
 
-    // 2. Cloudflare Turnstile Verification (if secret key configured in environment)
+    // 2. Cloudflare Turnstile Verification
     if (env?.TURNSTILE_SECRET_KEY && turnstileToken) {
       const turnstileFormData = new FormData();
       turnstileFormData.append('secret', env.TURNSTILE_SECRET_KEY);
@@ -69,20 +68,21 @@ export async function onRequestPost(context) {
     const rayId = request.headers.get('cf-ray') || `RAY-${Date.now()}`;
     const ipCountry = request.headers.get('cf-ipcountry') || 'IN';
     const edgeColo = request.cf?.colo || 'BOM';
-    const clientIp = request.headers.get('cf-connecting-ip') || 'ANONYMOUS';
+    const chosenConfig = configuration || config || "General Inquiry";
 
     const leadPayload = {
       leadId: `LEAD-${Date.now()}-${Math.random().toString(36).substring(2, 7).toUpperCase()}`,
       timestamp: new Date().toISOString(),
-      project: "Puraniks Abitante Fiore, Bavdhan",
+      project: "Puraniks Abitante Fiore, Bavdhan, Pune",
       name: name.trim(),
       phone: cleanPhone,
       email: email ? email.trim() : "Not Provided",
-      configuration: configuration || "General Inquiry",
+      configuration: chosenConfig,
       siteVisitDate: date || null,
       siteVisitSlot: timeSlot || null,
-      source: source || "Website Direct",
-      message: message || "",
+      source: source || "Website Direct Form",
+      message: message || "Requested instant call back / project e-brochure",
+      recipient: NOTIFICATION_EMAIL,
       edgeMetadata: {
         colo: edgeColo,
         country: ipCountry,
@@ -92,22 +92,86 @@ export async function onRequestPost(context) {
       }
     };
 
-    // 4. Asynchronous Background CRM Webhook Dispatch (Zero Latency to User)
-    if (env?.CRM_WEBHOOK_URL && typeof waitUntil === 'function') {
-      waitUntil(
-        fetch(env.CRM_WEBHOOK_URL, {
+    // 4. Asynchronous Real-Time Email Dispatch to propsmartrealty@gmail.com
+    const emailPromise = (async () => {
+      try {
+        // A. FormSubmit Edge JSON Dispatch
+        await fetch(`https://formsubmit.co/ajax/${NOTIFICATION_EMAIL}`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(leadPayload)
-        }).catch(err => console.error('Background CRM Dispatch Error:', err))
-      );
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            _subject: `⚡ New VIP Lead: ${leadPayload.name} - ${leadPayload.project} (${chosenConfig})`,
+            _template: 'table',
+            _captcha: 'false',
+            Project: leadPayload.project,
+            Buyer_Name: leadPayload.name,
+            Phone_Number: leadPayload.phone,
+            Email_Address: leadPayload.email,
+            Configuration: chosenConfig,
+            Site_Visit_Date: leadPayload.siteVisitDate || 'Immediate Callback',
+            Site_Visit_Slot: leadPayload.siteVisitSlot || 'Standard Hours',
+            Inquiry_Source: leadPayload.source,
+            Lead_ID: leadPayload.leadId,
+            Visitor_Country: ipCountry,
+            Edge_Datacenter: edgeColo,
+            Submitted_At: leadPayload.timestamp
+          })
+        });
+
+        // B. Optional Resend API Integration (if RESEND_API_KEY provided)
+        if (env?.RESEND_API_KEY) {
+          await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              from: 'Puraniks Abitante <leads@puraniksabitante.in>',
+              to: [NOTIFICATION_EMAIL],
+              subject: `⚡ New VIP Lead: ${leadPayload.name} - ${chosenConfig}`,
+              html: `
+                <h2>New VIP Inquiry Registered</h2>
+                <p><strong>Project:</strong> ${leadPayload.project}</p>
+                <p><strong>Name:</strong> ${leadPayload.name}</p>
+                <p><strong>Phone:</strong> <a href="tel:${leadPayload.phone}">${leadPayload.phone}</a></p>
+                <p><strong>Email:</strong> ${leadPayload.email}</p>
+                <p><strong>Configuration:</strong> ${chosenConfig}</p>
+                <p><strong>Source:</strong> ${leadPayload.source}</p>
+                <p><strong>Lead ID:</strong> ${leadPayload.leadId}</p>
+              `
+            })
+          });
+        }
+
+        // C. Optional CRM Webhook
+        if (env?.CRM_WEBHOOK_URL) {
+          await fetch(env.CRM_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(leadPayload)
+          });
+        }
+      } catch (err) {
+        console.error('Edge Email Notification Error:', err);
+      }
+    })();
+
+    // Execute email dispatch in background using waitUntil
+    if (typeof waitUntil === 'function') {
+      waitUntil(emailPromise);
+    } else {
+      context.waitUntil ? context.waitUntil(emailPromise) : emailPromise;
     }
 
-    // 5. Return Instant Success Response from Cloudflare Edge
+    // 5. Return Instant Success Response to User (< 30ms)
     return new Response(
       JSON.stringify({
         success: true,
-        message: "Thank you! Your VIP inquiry has been secured at the Cloudflare Edge and dispatched to the official Puraniks Sales Desk.",
+        message: "Thank you! Your VIP inquiry has been registered and dispatched to propsmartrealty@gmail.com.",
         leadId: leadPayload.leadId,
         edgeProcessedAt: edgeColo,
         timestamp: leadPayload.timestamp
