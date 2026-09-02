@@ -82,11 +82,38 @@ export default function ProjectOverview({ onOpenBrochure, onOpenSiteVisit }) {
           })}
         </div>
 
-        {/* Experience Banner */}
-        <div className="bg-[#0B1329] rounded-3xl p-8 sm:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-8 border border-slate-800 shadow-xl">
-          <div className="space-y-2 text-center lg:text-left">
-            <span className="text-xs uppercase font-bold tracking-widest text-amber-400">
-              70% OPEN FLORA & LANDSCAPED GREENERY
+        {/* Township Evolution: Puraniks Abitante (Phase 1) & Abitante Fiore (Phase 2) */}
+        <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+          <div className="space-y-2">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#92400E]">
+              45-ACRE TOWNSHIP CONTINUITY
+            </span>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F172A]">
+              Puraniks Abitante (Phase 1) & Abitante Fiore (Phase 2)
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+              Puraniks Abitante began as Western Pune's flagship 45-acre Italian hillside township. With Phase 1 successfully delivered and home to over 280+ thriving resident families, <strong>Abitante Fiore (Phase 2)</strong> introduces next-generation oxygen-rich architecture with private Balcony Gardens, enhanced smart home specifications, and new residential wings.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-1">
+              <span className="text-[10px] font-bold text-slate-500 uppercase">PHASE 1 (DELIVERED)</span>
+              <div className="text-lg font-extrabold text-[#0F172A]">280+ Families</div>
+              <p className="text-[11px] text-slate-500">Towers Roma, Firenze & Venezia with OC received</p>
+            </div>
+            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-1">
+              <span className="text-[10px] font-bold text-[#92400E] uppercase">PHASE 2 (FIORE)</span>
+              <div className="text-lg font-extrabold text-[#92400E]">Oxygen Living</div>
+              <p className="text-[11px] text-slate-500">1, 2 & 3 BHK with Balcony Gardens & Smart Locks</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Highlight Strip */}
+        <div className="p-8 sm:p-10 rounded-3xl bg-[#0B1329] border border-slate-800 shadow-xl flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="space-y-2">
+            <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-amber-400">
+              EXPERIENCE THE ITALIAN RIVIERA IN PUNE
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
               Live La Dolce Vita in Bavdhan's Scenic Valley
