@@ -38,7 +38,7 @@ export default function LocationRadar({ onOpenSiteVisit }) {
             Express Transit & <span className="gold-gradient-text">Hillside Serenity</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
-            Located in Bavdhan's scenic valley, 5 minutes from Chandani Chowk and 15 minutes from Hinjewadi IT Park.
+            Located in Bavdhan Budruk, Pune, Puraniks Abitante Fiore offers seamless connectivity — 5 minutes from Chandani Chowk Flyover, 10 minutes from Kothrud, and 15 minutes from Hinjewadi IT Park.
           </p>
         </div>
 

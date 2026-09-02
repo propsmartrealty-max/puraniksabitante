@@ -69,15 +69,15 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
               </span>
             </div>
 
-            {/* Clean, Bold Headline */}
+            {/* Clean, Bold Headline with Exact Keyword Authority */}
             <div className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] leading-[1.12] tracking-tight">
-                Oxygen-Rich Living <br />
-                <span className="gold-gradient-text">Inspired by Italian Riviera</span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] leading-[1.12] tracking-tight">
+                Puraniks Abitante Fiore <br />
+                <span className="gold-gradient-text">Oxygen-Rich Italian Living in Bavdhan</span>
               </h1>
               
               <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
-                Experience high-altitude hillside serenity in Bavdhan Budruk. Premium 1, 2 & 3 BHK residences featuring private Balcony Gardens, Venetian lagoon pools, and 30+ curated lifestyle amenities.
+                Experience high-altitude hillside serenity in Bavdhan Budruk, Pune. Premium 1, 2 & 3 BHK residences featuring private Balcony Gardens, Venetian lagoon pools, and 30+ curated lifestyle amenities.
               </p>
             </div>
 
