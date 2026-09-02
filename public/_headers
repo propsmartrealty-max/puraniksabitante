@@ -4,15 +4,16 @@
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(self), interest-cohort=()
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self), interest-cohort=(), payment=(), usb=()
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Cross-Origin-Resource-Policy: cross-origin
   
   # Content Security Policy
   Content-Security-Policy: default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data: blob: https://images.unsplash.com https://abitantefiore.puranikbuilders.com https://maharera.mahaonline.gov.in https://img.youtube.com https://puraniksabitante.in; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: https://challenges.cloudflare.com https://static.cloudflareinsights.com; frame-src 'self' https: https://www.youtube.com https://youtube.com https://www.google.com https://maps.google.com https://challenges.cloudflare.com; connect-src 'self' https:;
   
-  # Cloudflare Client Hints
-  Accept-CH: Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Platform, Sec-CH-Width, DPR
+  # Cloudflare Client Hints (Image Optimization & Device Adaptability)
+  Accept-CH: Sec-CH-UA, Sec-CH-UA-Mobile, Sec-CH-UA-Platform, Sec-CH-Width, DPR, Viewport-Width
   
   # CORS & Edge Telemetry
   Access-Control-Allow-Origin: *
@@ -21,7 +22,13 @@
   # Early Hints (HTTP 103)
   Link: <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect
 
-# Static Compiled Assets (Vite CSS/JS) - 1 Year Immutable Edge & Browser Caching
+# Astro Static Compiled Bundles - 1 Year Immutable Edge & Browser Caching
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable, stale-while-revalidate=86400
+  CDN-Cache-Control: max-age=31536000
+  Access-Control-Allow-Origin: *
+
+# Legacy Assets Directory
 /assets/*
   Cache-Control: public, max-age=31536000, immutable, stale-while-revalidate=86400
   CDN-Cache-Control: max-age=31536000
@@ -33,7 +40,11 @@
   CDN-Cache-Control: max-age=2592000
   Access-Control-Allow-Origin: *
 
-# Sitemaps, Robots & LLM AI files
+/favicon.svg
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  CDN-Cache-Control: max-age=2592000
+
+# Sitemaps, Robots & LLM AI Knowledge Files
 /sitemap.xml
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
   CDN-Cache-Control: max-age=86400
