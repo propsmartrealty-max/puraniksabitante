@@ -21,7 +21,7 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
     { name: 'MASTER PLAN', href: '#masterplan' },
     { name: 'AMENITIES', href: '#amenities' },
     { name: 'LOCATION', href: '#location' },
-    { name: 'VIRTUAL TOUR', href: '#virtual-tour' },
+    { name: 'KNOWLEDGE HUB', href: '#seo-knowledge-hub' },
   ];
 
   return (

@@ -13,6 +13,7 @@ import Specifications from './components/Specifications';
 import ConstructionUpdates from './components/ConstructionUpdates';
 import DeveloperHeritage from './components/DeveloperHeritage';
 import FaqSection from './components/FaqSection';
+import SeoContentHub from './components/SeoContentHub';
 import Footer from './components/Footer';
 import StickyBottomBar from './components/StickyBottomBar';
 import BrochureModal from './components/Modals/BrochureModal';
@@ -109,6 +110,12 @@ export default function App() {
 
         {/* Developer Legacy (34+ Years) & Resident Testimonials */}
         <DeveloperHeritage />
+
+        {/* Master SEO Knowledge Hub & 10 Content Silos */}
+        <SeoContentHub
+          onOpenBrochure={() => handleOpenBrochure()}
+          onOpenSiteVisit={handleOpenSiteVisit}
+        />
 
         {/* Frequently Asked Questions */}
         <FaqSection
