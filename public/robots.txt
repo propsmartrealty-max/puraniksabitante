@@ -47,6 +47,6 @@ Disallow: /api/
 Disallow: /*?*preview=true
 
 # Sitemaps
-Sitemap: https://abitantefiore.puranikbuilders.com/sitemap.xml
+Sitemap: https://puraniksabitante.in/sitemap.xml
 Sitemap: https://puraniks-abitante.com/sitemap.xml
 

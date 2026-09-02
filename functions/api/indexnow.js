@@ -4,35 +4,35 @@
  */
 
 const INDEXNOW_KEY = 'c7489abf281e4832b3f1207604f5e712';
-const HOST = 'abitantefiore.puranikbuilders.com';
+const HOST = 'puraniksabitante.in';
 
 const URL_LIST = [
-  'https://abitantefiore.puranikbuilders.com/',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-price',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-1-bhk',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-2-bhk',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-2-5-bhk',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-3-bhk',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-floor-plans',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-floor-plan',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-master-plan',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-rera',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-possession',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-construction-status',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-location',
-  'https://abitantefiore.puranikbuilders.com/bavdhan-connectivity',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-amenities',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-brochure',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-gallery',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-reviews',
-  'https://abitantefiore.puranikbuilders.com/puraniks-abitante-fiore-investment',
-  'https://abitantefiore.puranikbuilders.com/bavdhan-real-estate',
-  'https://abitantefiore.puranikbuilders.com/bavdhan-property-prices',
-  'https://abitantefiore.puranikbuilders.com/bavdhan-1-bhk',
-  'https://abitantefiore.puranikbuilders.com/bavdhan-2-bhk',
-  'https://abitantefiore.puranikbuilders.com/bavdhan-3-bhk',
-  'https://abitantefiore.puranikbuilders.com/puranik-builders'
+  'https://puraniksabitante.in/',
+  'https://puraniksabitante.in/puraniks-abitante-fiore',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-price',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-1-bhk',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-2-bhk',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-2-5-bhk',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-3-bhk',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-floor-plans',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-floor-plan',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-master-plan',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-rera',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-possession',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-construction-status',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-location',
+  'https://puraniksabitante.in/bavdhan-connectivity',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-amenities',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-brochure',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-gallery',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-reviews',
+  'https://puraniksabitante.in/puraniks-abitante-fiore-investment',
+  'https://puraniksabitante.in/bavdhan-real-estate',
+  'https://puraniksabitante.in/bavdhan-property-prices',
+  'https://puraniksabitante.in/bavdhan-1-bhk',
+  'https://puraniksabitante.in/bavdhan-2-bhk',
+  'https://puraniksabitante.in/bavdhan-3-bhk',
+  'https://puraniksabitante.in/puranik-builders'
 ];
 
 export async function onRequestPost(context) {

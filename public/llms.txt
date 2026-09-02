@@ -27,7 +27,7 @@
 - Sanskriti School, Ryan International, Sri Chaitanya: 1.2 to 2.8 km (3 to 6 minutes)
 
 ## Official Documentation & Deep Links
-- Full Knowledge Base: https://abitantefiore.puranikbuilders.com/llms-full.txt
-- Master Floor Plans: https://abitantefiore.puranikbuilders.com/#residences
-- Master Layout Plan: https://abitantefiore.puranikbuilders.com/#masterplan
+- Full Knowledge Base: https://puraniksabitante.in/llms-full.txt
+- Master Floor Plans: https://puraniksabitante.in/#residences
+- Master Layout Plan: https://puraniksabitante.in/#masterplan
 - MahaRERA Verification: https://maharera.mahaonline.gov.in
