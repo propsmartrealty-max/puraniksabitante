@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://abitantefiore.puranikbuilders.com/images/slider/pweb.webp</image:loc>
+      <image:title>Puraniks Abitante Fiore Bavdhan Pune Panoramic Township View</image:title>
+      <image:caption>Authentic hill-facing residential towers of Puraniks Abitante Fiore in Bavdhan Budruk, Pune.</image:caption>
+      <image:geo_location>Bavdhan, Pune, Maharashtra, India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://abitantefiore.puranikbuilders.com/images/slider/3.webp</image:loc>
+      <image:title>Puraniks Abitante Fiore Master Layout Plan</image:title>
+      <image:caption>Master layout plan across 45 acres at Puraniks Abitante Fiore, Bavdhan.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://abitantefiore.puranikbuilders.com/images/unitplan/1.webp</image:loc>
+      <image:title>Puraniks Abitante 1 BHK Floor Plan</image:title>
+      <image:caption>489 sq.ft 1 BHK Oxygen flat with Juliet balcony garden.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://abitantefiore.puranikbuilders.com/images/unitplan/2.webp</image:loc>
+      <image:title>Puraniks Abitante 2 BHK Smart Floor Plan</image:title>
+      <image:caption>596 sq.ft 2 BHK smart family flat in Bavdhan, Pune.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://abitantefiore.puranikbuilders.com/images/unitplan/3.webp</image:loc>
+      <image:title>Puraniks Abitante 2 BHK Large Luxury Floor Plan</image:title>
+      <image:caption>735 sq.ft 2 BHK luxury floor plan with extended living room and dual balcony sit-outs.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://abitantefiore.puranikbuilders.com/images/unitplan/4.webp</image:loc>
+      <image:title>Puraniks Abitante 3 BHK Imperial Floor Plan</image:title>
+      <image:caption>867 sq.ft 3 BHK imperial residence with 3 balconies overlooking Bavdhan hills.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/#overview</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/#residences</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/#masterplan</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/#walkthrough</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/#virtual-tour</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/#amenities</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/#location</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/#construction</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://abitantefiore.puranikbuilders.com/#calculator</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+</urlset>
