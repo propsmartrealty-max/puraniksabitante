@@ -63,7 +63,12 @@
     <meta name="twitter:image" content="https://abitantefiore.puranikbuilders.com/images/slider/pweb.webp" />
     <meta name="twitter:image:alt" content="Puraniks Abitante Fiore Township View" />
 
-    <!-- Performance & Font CDN Preconnects -->
+    <!-- Google High-Speed DNS Prefetch & Font CDN Preconnects -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    <link rel="dns-prefetch" href="//www.youtube.com" />
+    <link rel="dns-prefetch" href="//img.youtube.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
@@ -83,10 +88,15 @@
           "inLanguage": "en-IN",
           "publisher": {
             "@id": "https://abitantefiore.puranikbuilders.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://abitantefiore.puranikbuilders.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
           }
         },
         {
-          "@type": ["ApartmentComplex", "RealEstateListing", "Place"],
+          "@type": ["ApartmentComplex", "RealEstateListing", "Place", "LocalBusiness"],
           "@id": "https://abitantefiore.puranikbuilders.com/#project",
           "name": "Puraniks Abitante Fiore",
           "alternateName": ["Puraniks Abitante Bavdhan", "Puraniks Abitante", "Abitante Fiore"],
@@ -94,6 +104,19 @@
           "url": "https://abitantefiore.puranikbuilders.com/",
           "telephone": "+91-80689-76983",
           "email": "sales@puranikbuilders.com",
+          "priceRange": "₹51.99 Lakhs - ₹97.50 Lakhs",
+          "hasMap": "https://maps.google.com/?q=18.5158,73.7707",
+          "image": "https://abitantefiore.puranikbuilders.com/images/slider/pweb.webp",
+          "currenciesAccepted": "INR, USD, AED, GBP, SGD",
+          "paymentAccepted": "Bank Transfer, Cheque, Home Loan, Credit Card",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "09:30",
+              "closes": "19:00"
+            }
+          ],
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Near Crystal Honda Service Station, Off Mumbai-Bangalore Highway, Bavdhan Budruk",
@@ -272,6 +295,23 @@
               }
             }
           ]
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "https://abitantefiore.puranikbuilders.com/#walkthrough-video",
+          "name": "Puraniks Abitante Fiore Official 45-Acre Township Walkthrough Video",
+          "description": "Architectural video walkthrough of Puraniks Abitante Fiore in Bavdhan Budruk, Pune. Explore 1, 2 & 3 BHK Italian residences, Balcony Gardens, and Club Azzurro.",
+          "thumbnailUrl": [
+            "https://img.youtube.com/vi/WOPqlTKXMd8/maxresdefault.jpg",
+            "https://abitantefiore.puranikbuilders.com/images/slider/pweb.webp"
+          ],
+          "uploadDate": "2024-01-15T09:00:00+05:30",
+          "contentUrl": "https://www.youtube.com/watch?v=WOPqlTKXMd8",
+          "embedUrl": "https://www.youtube.com/embed/WOPqlTKXMd8",
+          "duration": "PT2M45S",
+          "publisher": {
+            "@id": "https://abitantefiore.puranikbuilders.com/#organization"
+          }
         }
       ]
     }
