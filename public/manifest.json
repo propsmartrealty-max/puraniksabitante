@@ -1,0 +1,19 @@
+{
+  "name": "Puraniks Abitante Fiore Bavdhan",
+  "short_name": "Abitante Fiore",
+  "description": "Official Portal for Puraniks Abitante Fiore, 45-acre hillside Italian residential township in Bavdhan Budruk, Pune.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1329",
+  "theme_color": "#0B1329",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["real estate", "lifestyle", "business"],
+  "lang": "en-IN"
+}
