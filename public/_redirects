@@ -1,2 +1,7 @@
-# Cloudflare Pages SPA Client-Side Routing
+# Canonical Domain & WWW Redirects
+https://www.puraniksabitante.in/*   https://puraniksabitante.in/:splat   301!
+http://www.puraniksabitante.in/*    https://puraniksabitante.in/:splat   301!
+http://puraniksabitante.in/*        https://puraniksabitante.in/:splat   301!
+
+# Cloudflare Pages SPA Client-Side Routing Fallback
 /*    /index.html   200
