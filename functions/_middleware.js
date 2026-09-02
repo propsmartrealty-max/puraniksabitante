@@ -4,12 +4,11 @@
  */
 
 export async function onRequest(context) {
-  const { request, next, env } = context;
+  const { request, next } = context;
   const url = new URL(request.url);
   const userAgent = request.headers.get('user-agent') || '';
   const country = request.headers.get('cf-ipcountry') || 'IN';
   const colo = request.cf?.colo || 'BOM';
-  const isHttps = url.protocol === 'https:';
 
   // 1. Detect Search Engine & AI Crawlers
   const isSearchEngine = /googlebot|bingbot|yandex|baiduspider|applebot|duckduckbot/i.test(userAgent);
@@ -32,8 +31,14 @@ export async function onRequest(context) {
     currencySymbol = 'S$';
   }
 
-  // 3. Process Request at Edge
+  // 3. Process Request
   const response = await next();
+
+  // If 304 Not Modified or 204 No Content, return directly to prevent Fetch API TypeError
+  if (response.status === 204 || response.status === 304) {
+    return response;
+  }
+
   const newHeaders = new Headers(response.headers);
 
   // 4. Inject Edge SEO & Telemetry Headers
@@ -44,15 +49,12 @@ export async function onRequest(context) {
   newHeaders.set('X-Crawler-Type', isAiSearchEngine ? 'AI-Search' : isSearchEngine ? 'Search-Engine' : 'Client');
   newHeaders.set('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
   
-  // 5. Early Hints for Global Googlebot & Users (HTTP 103 Link headers)
-  if (response.headers.get('content-type')?.includes('text/html')) {
-    newHeaders.append('Link', '<https://fonts.googleapis.com>; rel=preconnect; crossorigin');
-    newHeaders.append('Link', '<https://fonts.gstatic.com>; rel=preconnect; crossorigin');
-    newHeaders.append('Link', '<https://images.unsplash.com>; rel=preconnect; crossorigin');
-    newHeaders.append('Link', '<https://abitantefiore.puranikbuilders.com/sitemap.xml>; rel=sitemap');
+  // 5. Early Hints Link Header for HTML responses
+  const contentType = response.headers.get('content-type') || '';
+  if (contentType.includes('text/html')) {
+    newHeaders.set('Link', '<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect');
   }
 
-  // 6. Return response with enhanced edge headers
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
