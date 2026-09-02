@@ -155,6 +155,45 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
 
         </div>
 
+        {/* Master SEO Authority Directory & Internal Linking Silos */}
+        <div className="border-t border-slate-800 pt-8 pb-4 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-400">
+              PURANIKS ABITANTE FIORE • MASTER SEO SILO DIRECTORY
+            </span>
+            <span className="text-[10px] text-slate-500 font-mono">
+              24 CRAWLABLE AUTHORITY NODES
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-2.5 gap-x-4 text-[11px] text-slate-400">
+            <a href="/puraniks-abitante-fiore" className="hover:text-amber-300 transition">Puraniks Abitante Fiore Overview</a>
+            <a href="/puraniks-abitante-fiore-price" className="hover:text-amber-300 transition">Puraniks Abitante Fiore Price List</a>
+            <a href="/puraniks-abitante-fiore-1-bhk" className="hover:text-amber-300 transition">1 BHK Oxygen Flats (489 Sq.Ft)</a>
+            <a href="/puraniks-abitante-fiore-2-bhk" className="hover:text-amber-300 transition">2 BHK Smart Residences (596 Sq.Ft)</a>
+            <a href="/puraniks-abitante-fiore-2-5-bhk" className="hover:text-amber-300 transition">2.5 BHK Study Luxury Homes</a>
+            <a href="/puraniks-abitante-fiore-3-bhk" className="hover:text-amber-300 transition">3 BHK Imperial Hilltop Homes</a>
+            <a href="/puraniks-abitante-fiore-floor-plans" className="hover:text-amber-300 transition">2D AutoCAD & 3D Floor Plans</a>
+            <a href="/puraniks-abitante-fiore-master-plan" className="hover:text-amber-300 transition">45-Acre Master Township Plan</a>
+            <a href="/puraniks-abitante-fiore-rera" className="hover:text-amber-300 transition">MahaRERA Phase 2A 2B 2C 2C1</a>
+            <a href="/puraniks-abitante-fiore-possession" className="hover:text-amber-300 transition">Phase-Wise Possession Schedule</a>
+            <a href="/puraniks-abitante-fiore-construction-status" className="hover:text-amber-300 transition">Live Construction Milestones</a>
+            <a href="/puraniks-abitante-fiore-location" className="hover:text-amber-300 transition">Bavdhan Budruk Site Address</a>
+            <a href="/bavdhan-connectivity" className="hover:text-amber-300 transition">Chandani Chowk & IT Corridor Radar</a>
+            <a href="/puraniks-abitante-fiore-amenities" className="hover:text-amber-300 transition">Club Azzurro & Lagoon Pool</a>
+            <a href="/puraniks-abitante-fiore-brochure" className="hover:text-amber-300 transition">Download Official Brochure PDF</a>
+            <a href="/puraniks-abitante-fiore-reviews" className="hover:text-amber-300 transition">Resident Testimonials & Ratings</a>
+            <a href="/puraniks-abitante-fiore-investment" className="hover:text-amber-300 transition">Investment ROI & Rental Yields</a>
+            <a href="/bavdhan-real-estate" className="hover:text-amber-300 transition">Bavdhan Real Estate Market Guide</a>
+            <a href="/bavdhan-property-prices" className="hover:text-amber-300 transition">Bavdhan Property Prices 2026</a>
+            <a href="/bavdhan-1-bhk" className="hover:text-amber-300 transition">1 BHK Flats in Bavdhan Pune</a>
+            <a href="/bavdhan-2-bhk" className="hover:text-amber-300 transition">2 BHK Flats in Bavdhan Pune</a>
+            <a href="/bavdhan-3-bhk" className="hover:text-amber-300 transition">3 BHK Luxury Flats in Bavdhan</a>
+            <a href="/puranik-builders" className="hover:text-amber-300 transition">Puranik Builders 34+ Years Legacy</a>
+            <a href="#seo-knowledge-hub" className="hover:text-amber-300 transition text-amber-400 font-bold">Explore Full 5,000+ Keyword Hub →</a>
+          </div>
+        </div>
+
         {/* Disclaimer */}
         <div className="border-t border-slate-800 pt-8 space-y-3 text-[11px] text-slate-400 font-light leading-relaxed">
           <p>
