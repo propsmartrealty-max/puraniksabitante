@@ -155,3 +155,19 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94A3B8;
 }
+
+/* ==========================================================================
+   CORE WEB VITALS: ULTRA-PERFORMANCE GPU ACCELERATION & LAZY DOM
+   ========================================================================== */
+
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+

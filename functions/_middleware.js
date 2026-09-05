@@ -46,7 +46,7 @@ export async function onRequest(context) {
   const duration = Date.now() - startTime;
   const newHeaders = new Headers(response.headers);
 
-  // 4. Inject Ultra-Advanced Edge Telemetry, Server-Timing & SEO Headers
+  // 4. Inject Ultra-Advanced Edge Telemetry, Server-Timing & Security Headers
   newHeaders.set('X-Edge-Datacenter', colo);
   newHeaders.set('X-Edge-Geo-Country', country);
   newHeaders.set('X-Edge-Currency', currencyCode);
@@ -58,13 +58,54 @@ export async function onRequest(context) {
   newHeaders.set('X-Content-Type-Options', 'nosniff');
   newHeaders.set('X-Frame-Options', 'SAMEORIGIN');
 
-  // 5. HTTP 103 Early Hints for HTML Pages
+  // 5. Cloudflare HTMLRewriter: Real-time Streaming Mutation at Edge
   const contentType = response.headers.get('content-type') || '';
   if (contentType.includes('text/html')) {
     newHeaders.set('Link', '<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap');
+    
+    // Check if HTMLRewriter is available in the Cloudflare Worker runtime
+    if (typeof HTMLRewriter !== 'undefined') {
+      const rewriter = new HTMLRewriter()
+        .on('head', {
+          element(el) {
+            el.append(
+              `<meta name="cf-edge-colo" content="${colo}" />\n` +
+              `<meta name="cf-edge-country" content="${country}" />\n` +
+              `<meta name="cf-edge-currency" content="${currencyCode}" />\n`,
+              { html: true }
+            );
+          }
+        })
+        .on('html', {
+          element(el) {
+            el.setAttribute('data-cf-edge', `${colo}-${country}`);
+            el.setAttribute('data-currency', currencyCode);
+          }
+        })
+        .on('img', {
+          element(el) {
+            const src = el.getAttribute('src') || '';
+            if (src.includes('slider') || src.includes('hero') || src.includes('pweb.webp')) {
+              el.setAttribute('fetchpriority', 'high');
+              el.setAttribute('loading', 'eager');
+            } else if (!el.hasAttribute('loading')) {
+              el.setAttribute('loading', 'lazy');
+              el.setAttribute('decoding', 'async');
+            }
+          }
+        });
+
+      return rewriter.transform(
+        new Response(response.body, {
+          status: response.status,
+          statusText: response.statusText,
+          headers: newHeaders
+        })
+      );
+    }
   }
 
-  // 6. Return response with edge optimizations
+  // 6. Return standard response if not HTML or outside worker runtime
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
