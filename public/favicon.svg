@@ -1,5 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="16" fill="#0B1329"/>
-  <path d="M16 48V16h16a12 12 0 0 1 12 12c0 6.627-5.373 12-12 12H24v8h-8zm8-16h8a4 4 0 0 0 4-4 4 4 0 0 0-4-4h-8v8z" fill="#D97706"/>
-  <circle cx="46" cy="46" r="4" fill="#10B981"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1329"/>
+      <stop offset="50%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="40%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Base Icon Canvas with Rounded Square -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  <rect x="12" y="12" width="488" height="488" rx="100" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-opacity="0.3"/>
+
+  <!-- Puraniks Monolith P and Italian Fiore Leaf Emblem -->
+  <g filter="url(#shadow)" transform="translate(4, 0)">
+    <!-- Architectural P Stem and Arch -->
+    <path d="M148 112 H268 C334 112 376 150 376 216 C376 282 334 320 268 320 H204 V400 H148 V112 Z M204 164 V268 H264 C300 268 322 248 322 216 C322 184 300 164 264 164 H204 Z" fill="url(#goldGrad)"/>
+    
+    <!-- Signature Fiore Italian Leaf Emerging from Center -->
+    <path d="M264 168 C308 168 336 200 340 240 C344 280 312 316 268 316 C224 316 204 280 204 280 C204 280 236 280 256 264 C276 248 284 224 276 200 C270 182 250 172 264 168 Z" fill="url(#leafGrad)"/>
+    
+    <!-- Organic Leaf Vein Highlight -->
+    <path d="M228 276 Q268 252 296 208" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-opacity="0.85"/>
+  </g>
+  
+  <!-- Hilltop Oxygen Glow Dot -->
+  <circle cx="396" cy="116" r="22" fill="#10B981"/>
+  <circle cx="396" cy="116" r="14" fill="#6EE7B7"/>
 </svg>
