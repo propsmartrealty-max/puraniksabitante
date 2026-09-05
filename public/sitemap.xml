@@ -1,183 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   
-  <!-- 1. Master Portal (Primary Canonical) -->
+  <!-- Primary Home Portal -->
   <url>
     <loc>https://puraniksabitante.in/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-05T00:00:00+05:30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://puraniksabitante.in/images/slider/pweb.webp</image:loc>
-      <image:title>Puraniks Abitante Fiore Bavdhan Pune Panoramic Township View</image:title>
-      <image:caption>Authentic hill-facing residential towers of Puraniks Abitante Fiore in Bavdhan Budruk, Pune.</image:caption>
-      <image:geo_location>Bavdhan, Pune, Maharashtra, India</image:geo_location>
-    </image:image>
-    <image:image>
-      <image:loc>https://puraniksabitante.in/images/slider/3.webp</image:loc>
-      <image:title>Puraniks Abitante Fiore Master Layout Plan</image:title>
-      <image:caption>Master layout plan across 45 acres at Puraniks Abitante Fiore, Bavdhan.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://puraniksabitante.in/images/unitplan/1.webp</image:loc>
-      <image:title>Puraniks Abitante 1 BHK Floor Plan</image:title>
-      <image:caption>489 sq.ft 1 BHK Oxygen flat with Juliet balcony garden.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://puraniksabitante.in/images/unitplan/2.webp</image:loc>
-      <image:title>Puraniks Abitante 2 BHK Smart Floor Plan</image:title>
-      <image:caption>596 sq.ft 2 BHK smart family flat in Bavdhan, Pune.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://puraniksabitante.in/images/unitplan/3.webp</image:loc>
-      <image:title>Puraniks Abitante 2 BHK Large Luxury Floor Plan</image:title>
-      <image:caption>735 sq.ft 2 BHK luxury floor plan with extended living room and dual balcony sit-outs.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://puraniksabitante.in/images/unitplan/4.webp</image:loc>
-      <image:title>Puraniks Abitante 3 BHK Imperial Floor Plan</image:title>
-      <image:caption>867 sq.ft 3 BHK imperial residence with 3 balconies overlooking Bavdhan hills.</image:caption>
+      <image:title>Puraniks Abitante Fiore Bavdhan Pune</image:title>
+      <image:caption>45-Acre Hillside Italian Township in Bavdhan Budruk Pune</image:caption>
     </image:image>
   </url>
 
-  <!-- 2. Core 21 Money Pages & High-Intent Routes -->
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-price</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-1-bhk</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-2-bhk</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-2-5-bhk</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-3-bhk</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-floor-plan</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-master-plan</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-rera</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-possession</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-construction-status</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-location</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/bavdhan-connectivity</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-amenities</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-brochure</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-gallery</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-reviews</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-investment</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-payment-plan</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-specifications</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-site-visit</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-faq</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/bavdhan-real-estate</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://puraniksabitante.in/puranik-builders</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+  <!-- Core Brand & Project Permutations -->
+  <url><loc>https://puraniksabitante.in/puraniks-abitante</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-bavdhan</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-pune</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-bavdhan</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-phase-1</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-phase-2</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-official</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+
+  <!-- Pricing & Commercial Intents -->
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-price</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-price</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-cost-sheet</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-rate-per-sq-ft</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-payment-plan</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-all-inclusive-price</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- Configurations & Unit Sizes -->
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-1-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-2-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-2-5-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-3-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-1-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-2-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-2-5-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-3-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+
+  <!-- Plans & Layouts -->
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-floor-plan</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-floor-plans</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-floor-plans</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-master-plan</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-master-plan</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-carpet-area</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- MahaRERA & Legality -->
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-rera</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-rera</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-maharera-number</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-possession</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-possession</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-construction-status</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-construction-status</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+
+  <!-- Location & Connectivity -->
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-location</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-location</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/bavdhan-connectivity</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- Amenities & Reviews -->
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-amenities</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-amenities</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-brochure</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-brochure</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-reviews</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-reviews</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-investment</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-investment</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-contact-number</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puraniks-abitante-sales-office</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- Broad Market & Locality -->
+  <url><loc>https://puraniksabitante.in/bavdhan-real-estate</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/bavdhan-property-prices</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/bavdhan-1-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/bavdhan-2-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/bavdhan-3-bhk</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puranik-builders</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://puraniksabitante.in/puranik-builders-pune</loc><lastmod>2026-09-05T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
 </urlset>
