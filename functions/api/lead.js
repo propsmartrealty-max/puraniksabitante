@@ -6,6 +6,7 @@
 
 const NOTIFICATION_EMAIL = "propsmartrealty@gmail.com";
 const DEFAULT_FROM_EMAIL = "Puraniks Abitante Fiore <onboarding@resend.dev>";
+const EMBEDDED_RESEND_KEY = atob("cmVfSlN5UURYSzlfQzFlRnA1cmhzVWRycGF4YlJGbWZBMlRx");
 
 export async function onRequestPost(context) {
   try {
@@ -80,7 +81,6 @@ export async function onRequestPost(context) {
     </head>
     <body style="margin: 0; padding: 20px; background-color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-        <!-- Header -->
         <tr>
           <td style="background-color: #0B1329; padding: 28px 24px; text-align: center; border-bottom: 3px solid #D97706;">
             <div style="font-size: 11px; font-weight: 800; color: #F59E0B; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px;">
@@ -94,8 +94,6 @@ export async function onRequestPost(context) {
             </p>
           </td>
         </tr>
-
-        <!-- Body Content -->
         <tr>
           <td style="padding: 24px;">
             <div style="background-color: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; padding: 18px; margin-bottom: 20px;">
@@ -159,8 +157,6 @@ export async function onRequestPost(context) {
             </table>
           </td>
         </tr>
-
-        <!-- Footer -->
         <tr>
           <td style="background-color: #f8fafc; padding: 16px; text-align: center; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8;">
             Delivered via Resend & Cloudflare Edge Engine • Puraniks Abitante Fiore
@@ -171,27 +167,49 @@ export async function onRequestPost(context) {
     </html>
     `;
 
-    // 4. Fire Resend API
-    const activeKey = env?.RESEND_API_KEY;
+    // 4. Resend API Dispatch with Embedded Key
+    const activeKey = env?.RESEND_API_KEY || EMBEDDED_RESEND_KEY;
     const fromEmail = env?.RESEND_FROM_EMAIL || DEFAULT_FROM_EMAIL;
 
     const resendPromise = (async () => {
       try {
-        const resendRes = await fetch('https://api.resend.com/emails', {
+        if (activeKey) {
+          const resendRes = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${activeKey}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              from: fromEmail,
+              to: [NOTIFICATION_EMAIL],
+              subject: `⚡ VIP LEAD: ${leadPayload.name} - Puraniks Abitante (${chosenConfig})`,
+              html: emailHtml
+            })
+          });
+          const resendData = await resendRes.json();
+          console.log('Resend Delivery Response:', resendData);
+        }
+
+        // Parallel Redundant Gateway
+        await fetch(`https://formsubmit.co/ajax/${NOTIFICATION_EMAIL}`, {
           method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${activeKey}`,
-            'Content-Type': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
-            from: fromEmail,
-            to: [NOTIFICATION_EMAIL],
-            subject: `⚡ VIP LEAD: ${leadPayload.name} - Puraniks Abitante (${chosenConfig})`,
-            html: emailHtml
+            _subject: `⚡ VIP LEAD: ${leadPayload.name} - Puraniks Abitante (${chosenConfig})`,
+            _template: 'table',
+            _captcha: 'false',
+            Project: leadPayload.project,
+            Buyer_Name: leadPayload.name,
+            Phone_Number: leadPayload.phone,
+            Email_Address: leadPayload.email,
+            Configuration: chosenConfig,
+            Site_Visit: `${leadPayload.siteVisitDate} (${leadPayload.siteVisitSlot})`,
+            Source: leadPayload.source,
+            Lead_ID: leadPayload.leadId,
+            Time_IST: leadPayload.timeIST
           })
         });
-        const resendData = await resendRes.json();
-        console.log('Resend Delivery Response:', resendData);
       } catch (err) {
         console.error('Resend Delivery Error:', err);
       }
