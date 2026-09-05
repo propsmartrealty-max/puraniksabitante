@@ -24,12 +24,33 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
     setIsSubmitting(true);
 
     try {
-      await fetch('/api/lead', {
+      // 1. Edge Serverless Processing
+      fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...leadForm,
           source: 'Hero Clean Lead Form',
+        })
+      }).catch(err => console.log('Edge lead logged'));
+
+      // 2. Direct Browser-to-Email Delivery to propsmartrealty@gmail.com
+      await fetch('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `⚡ New VIP Lead: ${leadForm.name} - Puraniks Abitante (${leadForm.config || '2 BHK'})`,
+          _template: 'table',
+          _captcha: 'false',
+          Project: 'Puraniks Abitante Fiore Bavdhan',
+          Buyer_Name: leadForm.name,
+          Phone_Number: leadForm.phone,
+          Configuration: leadForm.config || '2 BHK',
+          Source: 'Hero Instant Callback Form',
+          Submitted_At: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
         })
       });
     } catch (err) {

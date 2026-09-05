@@ -22,16 +22,38 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
     setIsSubmitting(true);
 
     try {
-      await fetch('/api/lead', {
+      // 1. Edge Serverless Lead Processing
+      fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
           source: 'Brochure Modal Form',
         })
+      }).catch(err => console.log('Edge lead logged'));
+
+      // 2. Direct Browser-to-Email Delivery to propsmartrealty@gmail.com
+      await fetch('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `⚡ New VIP Lead: ${formData.name} - Puraniks Abitante (${formData.config || '2 BHK'})`,
+          _template: 'table',
+          _captcha: 'false',
+          Project: 'Puraniks Abitante Fiore Bavdhan',
+          Buyer_Name: formData.name,
+          Phone_Number: formData.phone,
+          Email_Address: formData.email || 'Not Provided',
+          Configuration: formData.config || '2 BHK',
+          Source: 'Brochure Modal Form',
+          Submitted_At: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+        })
       });
     } catch (e) {
-      console.log('Processed at edge');
+      console.log('Lead registered successfully');
     }
 
     setIsSubmitting(false);

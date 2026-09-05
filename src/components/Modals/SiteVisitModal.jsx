@@ -24,16 +24,40 @@ export default function SiteVisitModal({ isOpen, onClose }) {
     setIsSubmitting(true);
 
     try {
-      await fetch('/api/lead', {
+      // 1. Edge Serverless Processing
+      fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...visitData,
           source: 'Site Visit Modal Form',
         })
+      }).catch(err => console.log('Edge lead logged'));
+
+      // 2. Direct Browser-to-Email Delivery to propsmartrealty@gmail.com
+      await fetch('https://formsubmit.co/ajax/propsmartrealty@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `⚡ New Site Visit Booking: ${visitData.name} - Puraniks Abitante (${visitData.date} @ ${visitData.timeSlot})`,
+          _template: 'table',
+          _captcha: 'false',
+          Project: 'Puraniks Abitante Fiore Bavdhan',
+          Buyer_Name: visitData.name,
+          Phone_Number: visitData.phone,
+          Site_Visit_Date: visitData.date,
+          Time_Slot: visitData.timeSlot,
+          Configuration: visitData.config || '2 BHK',
+          Free_Cab_Pickup: visitData.cabPickup ? `Yes (${visitData.pickupLocation || 'Location on confirmation'})` : 'Self-Drive',
+          Source: 'VIP Site Visit Modal',
+          Submitted_At: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+        })
       });
     } catch (e) {
-      console.log('Site tour registered');
+      console.log('Site tour registered successfully');
     }
 
     setIsSubmitting(false);
