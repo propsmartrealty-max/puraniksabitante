@@ -17,7 +17,7 @@ export async function onRequestPost(context) {
       phone, 
       email, 
       configuration, 
-      config,
+      config, 
       date, 
       timeSlot, 
       source, 
@@ -64,12 +64,12 @@ export async function onRequestPost(context) {
       siteVisitDate: date || "Immediate Callback Requested",
       siteVisitSlot: timeSlot || "Standard Business Hours",
       cabPickup: cabPickup ? `Yes (${pickupLocation || 'Location on confirmation'})` : 'Self-Drive',
-      source: source || "Website Lead Form",
+      source: source || "Website Direct Lead Form",
       timeIST,
       datacenter: `${edgeColo} (${ipCountry})`
     };
 
-    // 3. Build Luxury HTML Email Template for Resend
+    // 3. Build Luxury HTML Email Template
     const emailHtml = `
     <!DOCTYPE html>
     <html>
@@ -123,6 +123,10 @@ export async function onRequestPost(context) {
                   <td style="font-size: 13px; color: #334155;">${leadPayload.siteVisitDate} (${leadPayload.siteVisitSlot})</td>
                 </tr>
                 <tr>
+                  <td style="font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase;">Cab Pickup</td>
+                  <td style="font-size: 13px; color: #334155;">${leadPayload.cabPickup}</td>
+                </tr>
+                <tr>
                   <td style="font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase;">Inquiry Source</td>
                   <td style="font-size: 12px; color: #64748b;">${leadPayload.source}</td>
                 </tr>
@@ -167,51 +171,29 @@ export async function onRequestPost(context) {
     </html>
     `;
 
-    // 4. Primary Resend API Dispatch
-    const resendApiKey = env?.RESEND_API_KEY || "re_123456789"; // Replace with live key or environment variable
+    // 4. Fire Resend API
+    const activeKey = env?.RESEND_API_KEY;
     const fromEmail = env?.RESEND_FROM_EMAIL || DEFAULT_FROM_EMAIL;
 
     const resendPromise = (async () => {
       try {
-        if (env?.RESEND_API_KEY) {
-          const resendResponse = await fetch('https://api.resend.com/emails', {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${env.RESEND_API_KEY}`,
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              from: fromEmail,
-              to: [NOTIFICATION_EMAIL],
-              subject: `⚡ VIP LEAD: ${leadPayload.name} - Puraniks Abitante (${chosenConfig})`,
-              html: emailHtml
-            })
-          });
-          const resendResult = await resendResponse.json();
-          console.log('Resend Delivery Status:', resendResult);
-        }
-
-        // Secondary Redundant Gateway: FormSubmit
-        await fetch(`https://formsubmit.co/ajax/${NOTIFICATION_EMAIL}`, {
+        const resendRes = await fetch('https://api.resend.com/emails', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          headers: {
+            'Authorization': `Bearer ${activeKey}`,
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify({
-            _subject: `⚡ VIP LEAD: ${leadPayload.name} - Puraniks Abitante (${chosenConfig})`,
-            _template: 'table',
-            _captcha: 'false',
-            Project: leadPayload.project,
-            Buyer_Name: leadPayload.name,
-            Phone_Number: leadPayload.phone,
-            Email_Address: leadPayload.email,
-            Configuration: chosenConfig,
-            Site_Visit: `${leadPayload.siteVisitDate} (${leadPayload.siteVisitSlot})`,
-            Source: leadPayload.source,
-            Lead_ID: leadPayload.leadId,
-            Time_IST: leadPayload.timeIST
+            from: fromEmail,
+            to: [NOTIFICATION_EMAIL],
+            subject: `⚡ VIP LEAD: ${leadPayload.name} - Puraniks Abitante (${chosenConfig})`,
+            html: emailHtml
           })
         });
+        const resendData = await resendRes.json();
+        console.log('Resend Delivery Response:', resendData);
       } catch (err) {
-        console.error('Lead Dispatch Error:', err);
+        console.error('Resend Delivery Error:', err);
       }
     })();
 
@@ -221,11 +203,11 @@ export async function onRequestPost(context) {
       context.waitUntil(resendPromise);
     }
 
-    // 5. Instant Edge Success Response (< 20ms)
+    // 5. Success Response
     return new Response(
       JSON.stringify({
         success: true,
-        message: "Your inquiry has been dispatched to propsmartrealty@gmail.com via Resend.",
+        message: "Thank you! Your inquiry has been sent to propsmartrealty@gmail.com via Resend.",
         leadId: leadPayload.leadId,
         edgeLocation: edgeColo,
         timestamp: leadPayload.timeIST
