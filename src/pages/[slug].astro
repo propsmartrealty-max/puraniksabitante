@@ -5,7 +5,7 @@ import App from '../App.jsx';
 export function getStaticPaths() {
   const routes = [
     // ----------------------------------------------------
-    // BRAND & PROJECT CORE PERMUTATIONS
+    // 1. BRAND & PROJECT CORE PERMUTATIONS (Roadmap Point 1)
     // ----------------------------------------------------
     {
       slug: 'puraniks-abitante',
@@ -43,13 +43,28 @@ export function getStaticPaths() {
       description: 'Puraniks Abitante Phase 2 (Fiore): Brand new launch of 1, 2 & 3 BHK luxury residences with modern Italian architecture and Juliet Balcony Gardens.'
     },
     {
+      slug: 'puraniks-abitante-phase-ii',
+      title: 'Puraniks Abitante Phase II Bavdhan | Official Project Information',
+      description: 'Puraniks Abitante Phase II (Fiore): 45-acre Italian themed township in Bavdhan Budruk, Pune with 4 MahaRERA registered phases and Club Azzurro.'
+    },
+    {
+      slug: 'puraniks-fiore',
+      title: 'Puraniks Fiore Bavdhan | Oxygen-Rich Italian Hillside Homes Pune',
+      description: 'Puraniks Fiore in Bavdhan Pune. Italian Riviera themed apartments with private Balcony Gardens, infinity swimming pool, and direct highway access.'
+    },
+    {
+      slug: 'abitante-fiore-pune',
+      title: 'Abitante Fiore Pune | Puranik Builders Luxury Hilltop Residences',
+      description: 'Abitante Fiore in Bavdhan Budruk, Pune. Premium 1, 2 & 3 BHK apartments starting from ₹51.99 Lakhs* with Zero Stamp Duty privilege.'
+    },
+    {
       slug: 'puraniks-abitante-official',
       title: 'Puraniks Abitante Official Website | Puranik Builders Bavdhan Sales',
       description: 'Official direct developer portal for Puraniks Abitante & Fiore Bavdhan. Book VIP site visits, get direct developer pricing, and download certified e-brochures.'
     },
 
     // ----------------------------------------------------
-    // PRICING & COMMERCIAL INTENTS
+    // 2. PRICING, COST SHEETS & OFFERS (Roadmap Point 2)
     // ----------------------------------------------------
     {
       slug: 'puraniks-abitante-price',
@@ -59,7 +74,7 @@ export function getStaticPaths() {
     {
       slug: 'puraniks-abitante-fiore-price',
       title: 'Puraniks Abitante Fiore Price List 2026 | Cost Sheet Bavdhan',
-      description: 'Official cost sheet and all-inclusive pricing for Puraniks Abitante Fiore Bavdhan. 1, 2 & 3 BHK homes with transparent milestone payment schedules.'
+      description: 'Official cost sheet and all-inclusive pricing for Puraniks Abitante Fiore Bavdhan. 1, 2, 2.5 & 3 BHK homes with transparent milestone payment schedules.'
     },
     {
       slug: 'puraniks-abitante-cost-sheet',
@@ -81,9 +96,19 @@ export function getStaticPaths() {
       title: 'Puraniks Abitante All Inclusive Price | 1, 2 & 3 BHK Total Package',
       description: 'All-inclusive pricing structure for Puraniks Abitante Fiore Bavdhan including agreement value, stamp duty, registration, GST, and maintenance.'
     },
+    {
+      slug: 'abitante-fiore-booking',
+      title: 'Book Puraniks Abitante Fiore Online | Priority Allocation & Token Desk',
+      description: 'Direct developer online booking desk for Puraniks Abitante Fiore Bavdhan. Secure exclusive launch price advantages and unit selection.'
+    },
+    {
+      slug: 'abitante-fiore-offers',
+      title: 'Puraniks Abitante Fiore Offers 2026 | Zero Stamp Duty & Flexible Terms',
+      description: 'Exclusive festival offers on Puraniks Abitante Fiore: 0% Stamp Duty, zero registration charges, and modular kitchen vouchers.'
+    },
 
     // ----------------------------------------------------
-    // CONFIGURATION & APARTMENT SIZES
+    // 3. CONFIGURATIONS & RESIDENCE SIZES (Roadmap Points 3, 4, 5, 6)
     // ----------------------------------------------------
     {
       slug: 'puraniks-abitante-1-bhk',
@@ -98,11 +123,11 @@ export function getStaticPaths() {
     {
       slug: 'puraniks-abitante-2-5-bhk',
       title: '2.5 BHK Apartments in Puraniks Abitante Bavdhan | Work From Home Homes',
-      description: 'Spacious 2.5 BHK residences at Puraniks Abitante Bavdhan with dedicated work/study lounge, panoramic hillside views, and luxury amenities.'
+      description: 'Spacious 2.5 BHK residences at Puraniks Abitante Bavdhan (867-908 sq.ft) with dedicated work/study lounge, panoramic hillside views, and luxury amenities.'
     },
     {
       slug: 'puraniks-abitante-3-bhk',
-      title: '3 BHK Luxury Apartments in Puraniks Abitante Bavdhan | 867 - 908 Sq.Ft',
+      title: '3 BHK Luxury Apartments in Puraniks Abitante Bavdhan | 867 - 1,113 Sq.Ft',
       description: 'Grand 3 BHK Imperial residences in Puraniks Abitante Bavdhan. Triple balconies, 270° hillside views, master bedroom suites, starting ₹97.50 Lakhs*.'
     },
     {
@@ -113,21 +138,70 @@ export function getStaticPaths() {
     {
       slug: 'puraniks-abitante-fiore-2-bhk',
       title: '2 BHK in Puraniks Abitante Fiore Bavdhan | Smart & Venetian Luxury',
-      description: 'Official 2 BHK layouts at Puraniks Abitante Fiore Bavdhan. 596 sq.ft carpet area with private balconies, starting ₹63.99 Lakhs*.'
+      description: 'Official 2 BHK layouts at Puraniks Abitante Fiore Bavdhan. 596 to 770 sq.ft carpet area with private balconies, starting ₹63.99 Lakhs*.'
     },
     {
       slug: 'puraniks-abitante-fiore-2-5-bhk',
       title: '2.5 BHK in Puraniks Abitante Fiore Bavdhan | Executive Living',
-      description: 'Exclusive 2.5 BHK apartments in Puraniks Abitante Fiore with additional study suite, perfect for Hinjewadi IT professionals.'
+      description: 'Exclusive 2.5 BHK apartments in Puraniks Abitante Fiore (867-908 sq.ft) with additional study suite, perfect for Hinjewadi IT professionals.'
     },
     {
       slug: 'puraniks-abitante-fiore-3-bhk',
       title: '3 BHK in Puraniks Abitante Fiore Bavdhan | Imperial Hillside Homes',
-      description: 'Palatial 3 BHK residences at Puraniks Abitante Fiore Bavdhan. 867 sq.ft carpet area, luxury Italian finishes, starting ₹97.50 Lakhs*.'
+      description: 'Palatial 3 BHK residences at Puraniks Abitante Fiore Bavdhan. 867 to 1,113 sq.ft carpet area, luxury Italian finishes, starting ₹97.50 Lakhs*.'
+    },
+    {
+      slug: '1-bhk-flats-bavdhan',
+      title: '1 BHK Flats for Sale in Bavdhan Pune | Verified Listings & Rates',
+      description: 'Find premium and affordable 1 BHK flats in Bavdhan Budruk, Pune. Starting from ₹51.99 Lakhs* at Puraniks Abitante Fiore near Chandani Chowk.'
+    },
+    {
+      slug: '2-bhk-flats-bavdhan',
+      title: '2 BHK Flats for Sale in Bavdhan Pune | Verified Pricing & Floor Plans',
+      description: 'Best 2 BHK apartments in Bavdhan Pune near Chandani Chowk and Hinjewadi IT Park. Explore Puraniks Abitante 2 BHK Smart residences.'
+    },
+    {
+      slug: '3-bhk-flats-bavdhan',
+      title: '3 BHK Luxury Flats for Sale in Bavdhan Pune | Hillside View Homes',
+      description: 'Explore 3 BHK luxury hilltop apartments in Bavdhan, West Pune with panoramic valley views and resort amenities at Puraniks Abitante.'
     },
 
     // ----------------------------------------------------
-    // FLOOR PLANS & MASTER BLUEPRINTS
+    // 4. CARPET AREA MATRIX & JODI FLATS (Roadmap Points 7 & 19)
+    // ----------------------------------------------------
+    {
+      slug: 'puraniks-abitante-692-sq-ft-2-bhk',
+      title: '2 BHK 692 Sq.Ft in Puraniks Abitante Fiore | Layout & Cost Bavdhan',
+      description: 'Detailed analysis and floor plan of 2 BHK 692 sq.ft configuration at Puraniks Abitante Fiore Bavdhan with private balcony garden.'
+    },
+    {
+      slug: 'puraniks-abitante-733-sq-ft-2-bhk',
+      title: '2 BHK 733 Sq.Ft in Puraniks Abitante Fiore | Venetian Luxury Flat',
+      description: 'Explore the 733 sq.ft 2 BHK Venetian luxury residence at Puraniks Abitante Fiore Bavdhan featuring expansive living lounge.'
+    },
+    {
+      slug: 'puraniks-abitante-867-sq-ft-2-5-bhk',
+      title: '2.5 BHK 867 Sq.Ft in Puraniks Abitante Fiore | Executive Layout',
+      description: '867 sq.ft carpet 2.5 BHK configuration at Puraniks Abitante Fiore Bavdhan with dedicated work from home study.'
+    },
+    {
+      slug: 'puraniks-abitante-908-sq-ft-2-5-bhk',
+      title: '2.5 BHK 908 Sq.Ft in Puraniks Abitante Fiore | Premium Family Suite',
+      description: 'Spacious 908 sq.ft 2.5 BHK luxury apartment at Puraniks Abitante Fiore Bavdhan. Dual balconies with scenic hill vistas.'
+    },
+    {
+      slug: 'puraniks-abitante-1113-sq-ft-3-bhk',
+      title: '3 BHK 1,113 Sq.Ft in Puraniks Abitante Fiore | Grand Palace Flat',
+      description: 'Palatial 1,113 sq.ft 3 BHK luxury residence at Puraniks Abitante Fiore with triple balconies and master suite.'
+    },
+    {
+      slug: 'puraniks-abitante-jodi-flats',
+      title: 'Puraniks Abitante Jodi Flats | Combined 4 & 5 BHK Custom Penthouse',
+      description: 'Exclusive Jodi flat combinations at Puraniks Abitante Fiore Bavdhan. Create custom 4 & 5 BHK luxury penthouse residences.'
+    },
+
+    // ----------------------------------------------------
+    // 5. FLOOR PLANS & MASTER BLUEPRINTS (Roadmap Point 7)
     // ----------------------------------------------------
     {
       slug: 'puraniks-abitante-floor-plan',
@@ -157,11 +231,11 @@ export function getStaticPaths() {
     {
       slug: 'puraniks-abitante-carpet-area',
       title: 'Puraniks Abitante Carpet Area Breakdown | RERA Certified Measurements',
-      description: 'Certified MahaRERA carpet areas for Puraniks Abitante: 1 BHK (489 sq.ft), 2 BHK Smart (596 sq.ft), 3 BHK (867 sq.ft).'
+      description: 'Certified MahaRERA carpet areas for Puraniks Abitante: 1 BHK (489 sq.ft), 2 BHK Smart (596 sq.ft), 2.5 BHK (867 sq.ft), 3 BHK (867-1,113 sq.ft).'
     },
 
     // ----------------------------------------------------
-    // MAHARERA, LEGALITY & POSSESSION
+    // 6. MAHARERA, 4-PHASE REGISTRY & LEGALITY (Roadmap Points 8 & 9)
     // ----------------------------------------------------
     {
       slug: 'puraniks-abitante-rera',
@@ -177,6 +251,46 @@ export function getStaticPaths() {
       slug: 'puraniks-abitante-maharera-number',
       title: 'Puraniks Abitante MahaRERA Registration Numbers & Approvals',
       description: 'Complete listing of all MahaRERA registration numbers for Puraniks Abitante & Fiore Bavdhan with direct government validation links.'
+    },
+    {
+      slug: 'puraniks-abitante-rera-phase-2a',
+      title: 'Puraniks Abitante Phase 2A RERA P52100020202 | Ready Possession',
+      description: 'MahaRERA P52100020202 details for Puraniks Abitante Phase 2A. Ready possession homes, Occupancy Certificate, and active resident society.'
+    },
+    {
+      slug: 'puraniks-abitante-rera-phase-2b',
+      title: 'Puraniks Abitante Phase 2B RERA P52100020238 | Finishing Stage',
+      description: 'MahaRERA P52100020238 details for Puraniks Abitante Phase 2B. Advanced construction progress, flooring, and upcoming possession.'
+    },
+    {
+      slug: 'puraniks-abitante-rera-phase-2c',
+      title: 'Puraniks Abitante Phase 2C RERA P52100048353 | Superstructure Status',
+      description: 'MahaRERA P52100048353 details for Puraniks Abitante Phase 2C. RCC tower construction updates, approved building sanctions.'
+    },
+    {
+      slug: 'puraniks-abitante-rera-phase-2c1',
+      title: 'Puraniks Abitante Phase 2C1 RERA P52100049352 | New Launch Wing',
+      description: 'MahaRERA P52100049352 details for Puraniks Abitante Phase 2C1. New launch oxygen-rich residential tower in Bavdhan Budruk, Pune.'
+    },
+    {
+      slug: 'p52100020202',
+      title: 'MahaRERA P52100020202 | Puraniks Abitante Phase 2A Official Record',
+      description: 'Direct MahaRERA verification page for registration number P52100020202 (Puraniks Abitante Phase 2A, Bavdhan Budruk, Pune).'
+    },
+    {
+      slug: 'p52100020238',
+      title: 'MahaRERA P52100020238 | Puraniks Abitante Phase 2B Official Record',
+      description: 'Direct MahaRERA verification page for registration number P52100020238 (Puraniks Abitante Phase 2B, Bavdhan Budruk, Pune).'
+    },
+    {
+      slug: 'p52100048353',
+      title: 'MahaRERA P52100048353 | Puraniks Abitante Phase 2C Official Record',
+      description: 'Direct MahaRERA verification page for registration number P52100048353 (Puraniks Abitante Phase 2C, Bavdhan Budruk, Pune).'
+    },
+    {
+      slug: 'p52100049352',
+      title: 'MahaRERA P52100049352 | Puraniks Abitante Phase 2C1 Official Record',
+      description: 'Direct MahaRERA verification page for registration number P52100049352 (Puraniks Abitante Phase 2C1, Bavdhan Budruk, Pune).'
     },
     {
       slug: 'puraniks-abitante-possession',
@@ -200,7 +314,7 @@ export function getStaticPaths() {
     },
 
     // ----------------------------------------------------
-    // LOCATION, CONNECTIVITY & TRANSIT
+    // 7. LOCATION, MICRO-LOCATION & TRANSIT (Roadmap Points 10, 11, 12)
     // ----------------------------------------------------
     {
       slug: 'puraniks-abitante-location',
@@ -217,10 +331,221 @@ export function getStaticPaths() {
       title: 'Bavdhan Transit & Connectivity Radar | Distance to Hinjewadi & Kothrud',
       description: 'Verified driving distances from Bavdhan: 5 min to Chandani Chowk Flyover, 15 min to Hinjewadi IT Park, 10 min to Kothrud, 12 min to Baner.'
     },
+    {
+      slug: 'flats-near-chandani-chowk',
+      title: 'Flats Near Chandani Chowk Pune | 1, 2 & 3 BHK Italian Homes Bavdhan',
+      description: 'Buy residential flats near Chandani Chowk Multi-Level Flyover Pune. 5-minute commute, hilltop views at Puraniks Abitante Fiore.'
+    },
+    {
+      slug: 'flats-near-hinjewadi-it-park',
+      title: 'Flats Near Hinjewadi IT Park | 15-Min Commute Homes in Bavdhan',
+      description: 'Premium residences for IT professionals near Hinjewadi Tech Park. Direct expressway access from Puraniks Abitante Fiore Bavdhan.'
+    },
+    {
+      slug: 'flats-near-kothrud',
+      title: 'Flats Near Kothrud Pune | 10 Mins from Paud Road in Bavdhan',
+      description: 'Looking for property near Kothrud? Explore Puraniks Abitante Fiore in neighboring Bavdhan Budruk at 40% lower price per sq.ft.'
+    },
+    {
+      slug: 'flats-near-pashan',
+      title: 'Flats Near Pashan Pune | Nature Living in Bavdhan Valley',
+      description: 'Discover hillside residential apartments near Pashan and University Circle at Puraniks Abitante Fiore Bavdhan.'
+    },
+    {
+      slug: 'flats-near-baner',
+      title: 'Flats Near Baner Pune | 12 Mins to Balewadi High Street',
+      description: 'Luxury homes near Baner without the congestion. 12 minutes drive to Baner via Mumbai-Pune bypass at Puraniks Abitante Fiore.'
+    },
+    {
+      slug: 'flats-near-mumbai-bangalore-highway',
+      title: 'Flats Near Mumbai Bangalore Highway Pune (NH 48) | Bavdhan Homes',
+      description: 'Prime connectivity apartments directly off Mumbai-Bangalore Highway (NH 48) in Bavdhan Budruk, Pune at Puraniks Abitante.'
+    },
 
     // ----------------------------------------------------
-    // AMENITIES, BROCHURE & DEVELOPER HERITAGE
+    // 8. GREEN LIVING & DIFFERENTIATION (Roadmap Point 14)
     // ----------------------------------------------------
+    {
+      slug: 'nature-inspired-homes-bavdhan',
+      title: 'Nature Inspired Homes in Bavdhan | Balcony Gardens & Mist Living',
+      description: 'Puraniks Abitante Fiore: Nature-inspired residences with Juliet Balcony Gardens, micro-climate mist cooling, and 70% open hilltop green terrain.'
+    },
+    {
+      slug: 'green-apartments-pune',
+      title: 'Green Apartments in Pune | Eco-Friendly Hillside Living Bavdhan',
+      description: 'Pre-certified eco-friendly hillside apartments in Pune with native botanical plantations and environmental clearance at Puraniks Abitante.'
+    },
+    {
+      slug: 'balcony-garden-flats-pune',
+      title: 'Apartments with Balcony Gardens in Pune | Italian Juliet Balconies',
+      description: 'Experience homes with built-in private Balcony Gardens and herb planters at Puraniks Abitante Fiore in Bavdhan Budruk, Pune.'
+    },
+    {
+      slug: 'oxygen-rich-homes-bavdhan',
+      title: 'Oxygen-Rich Homes in Bavdhan Pune | Fresh Hillside Breeze',
+      description: 'Architecturally designed oxygen-rich apartments surrounded by NDA forest hills and mist reflexology trails in Bavdhan Budruk, Pune.'
+    },
+
+    // ----------------------------------------------------
+    // 9. CIVIC INFRASTRUCTURE & GOLF (Roadmap Points 15, 16, 17, 18)
+    // ----------------------------------------------------
+    {
+      slug: 'bavdhan-schools',
+      title: 'Top Schools in Bavdhan Pune | Education Hub near Abitante Fiore',
+      description: 'Guide to premier schools near Bavdhan: Sanskriti School, Ryan International, Sri Chaitanya, Vidya Valley and New India School.'
+    },
+    {
+      slug: 'schools-near-puraniks-abitante',
+      title: 'Schools Near Puraniks Abitante Bavdhan | 3 to 8 Min Distance',
+      description: 'Leading CBSE & ICSE schools within 3-8 minutes driving distance from Puraniks Abitante Fiore in Bavdhan Budruk, Pune.'
+    },
+    {
+      slug: 'bavdhan-hospitals',
+      title: 'Hospitals & Healthcare Facilities in Bavdhan Pune',
+      description: '24x7 emergency medical centers near Bavdhan: Chellaram Multi-Speciality Hospital, Sahyadri Super Speciality, and Deenanath Mangeshkar.'
+    },
+    {
+      slug: 'oxford-golf-resort-bavdhan',
+      title: 'Oxford Golf Resort Bavdhan | Luxury Living near Championship Course',
+      description: 'Live 8 minutes from Pune’s 18-hole PGA Oxford Golf Resort & Country Club at Puraniks Abitante Fiore in Bavdhan Budruk.'
+    },
+    {
+      slug: 'shopping-near-bavdhan',
+      title: 'Shopping Malls & Entertainment Near Bavdhan Pune',
+      description: 'Retail avenues near Bavdhan: Aditya Shagun Mall, DMart Baner, Westend Mall Aundh, and City Pride Kothrud.'
+    },
+
+    // ----------------------------------------------------
+    // 10. RESALE & RENTAL ECOSYSTEMS (Roadmap Points 20 & 21)
+    // ----------------------------------------------------
+    {
+      slug: 'puraniks-abitante-resale',
+      title: 'Puraniks Abitante Resale Flats | Verified 1, 2 & 3 BHK Owner Units',
+      description: 'Buy verified owner resale apartments in Puraniks Abitante Bavdhan. Ready possession flats in Phase 1 & Phase 2A with clear titles.'
+    },
+    {
+      slug: 'puraniks-abitante-fiore-resale',
+      title: 'Puraniks Abitante Fiore Resale | Secondary Market Listings Bavdhan',
+      description: 'Authoritative resale marketplace for Puraniks Abitante Fiore. Compare resale prices against direct developer inventory.'
+    },
+    {
+      slug: 'resale-flats-bavdhan',
+      title: 'Resale Flats in Bavdhan Pune | Verified Ready to Move Apartments',
+      description: 'Explore verified ready-to-move resale apartments in Bavdhan Budruk near Chandani Chowk and Mumbai-Bangalore Highway.'
+    },
+    {
+      slug: 'puraniks-abitante-rent',
+      title: 'Flats for Rent in Puraniks Abitante Bavdhan | 1, 2 & 3 BHK Homes',
+      description: 'Find furnished and semi-furnished apartments for rent in Puraniks Abitante Bavdhan. Ideal for Hinjewadi IT professionals.'
+    },
+    {
+      slug: 'puraniks-abitante-fiore-rent',
+      title: 'Puraniks Abitante Fiore Flats for Rent | Bavdhan Rental Hub',
+      description: 'Rent luxury Italian themed apartments in Puraniks Abitante Fiore Bavdhan with Club Azzurro access and scenic hill views.'
+    },
+    {
+      slug: 'flats-for-rent-bavdhan',
+      title: 'Flats for Rent in Bavdhan Pune | 2 & 3 BHK Rental Apartments',
+      description: 'Comprehensive rental directory for flats in Bavdhan Budruk, Pune with average monthly rentals from ₹18,000 to ₹40,000/mo.'
+    },
+
+    // ----------------------------------------------------
+    // 11. COMPETITOR & SUBMARKET COMPARISONS (Roadmap Point 24)
+    // ----------------------------------------------------
+    {
+      slug: 'puraniks-abitante-vs-kothrud',
+      title: 'Puraniks Abitante vs Kothrud Flats | Price & Livability Comparison',
+      description: 'Compare buying in Bavdhan vs Kothrud: 40% higher space efficiency, cleaner AQI, and hillside tranquility at Puraniks Abitante Fiore.'
+    },
+    {
+      slug: 'puraniks-abitante-vs-baner',
+      title: 'Puraniks Abitante vs Baner Apartments | Real Estate Comparison',
+      description: 'Bavdhan vs Baner: Compare township density, pricing per sq.ft, and commute times to Hinjewadi IT Park.'
+    },
+    {
+      slug: 'puraniks-abitante-vs-pashan',
+      title: 'Puraniks Abitante vs Pashan Real Estate | West Pune Property Guide',
+      description: 'Detailed comparison between Bavdhan and Pashan for residential living, capital appreciation, and infrastructure.'
+    },
+    {
+      slug: 'puraniks-abitante-vs-goel-ganga-legend',
+      title: 'Puraniks Abitante vs Goel Ganga Legend County Bavdhan',
+      description: 'Objective comparative analysis between Puraniks Abitante Fiore and Goel Ganga Legend County in Bavdhan Budruk, Pune.'
+    },
+    {
+      slug: 'puraniks-abitante-vs-rohan-madhuban',
+      title: 'Puraniks Abitante vs Rohan Madhuban Bavdhan | Project Comparison',
+      description: 'Compare amenities, floor layouts, RERA compliance, and pricing between Puraniks Abitante Fiore and Rohan Madhuban.'
+    },
+    {
+      slug: 'puraniks-abitante-vs-kolte-patil',
+      title: 'Puraniks Abitante vs Kolte Patil Projects Pune | Comparative Matrix',
+      description: 'Feature-by-feature evaluation of Puraniks Abitante Fiore against Kolte Patil residential developments in West Pune.'
+    },
+    {
+      slug: 'best-projects-in-bavdhan',
+      title: 'Best Residential Projects in Bavdhan Pune 2026 | Top Township Guide',
+      description: 'Authoritative ranking of top residential township projects in Bavdhan Budruk, West Pune based on RERA trust, amenities, and ROI.'
+    },
+
+    // ----------------------------------------------------
+    // 12. INVESTMENT, DEVELOPER HERITAGE & FAQS (Roadmap Points 22, 23, 26, 27)
+    // ----------------------------------------------------
+    {
+      slug: 'puraniks-abitante-investment',
+      title: 'Puraniks Abitante Investment Review | Capital ROI & Rental Yields',
+      description: 'Investment analysis for Puraniks Abitante Bavdhan. 14-18% projected appreciation, high rental yields from Hinjewadi IT Park workforce.'
+    },
+    {
+      slug: 'puraniks-abitante-fiore-investment',
+      title: 'Puraniks Abitante Fiore Investment Analysis | ROI & Appreciation',
+      description: 'Comprehensive property investment review of Puraniks Abitante Fiore in Bavdhan Budruk, Pune with rental yield projections.'
+    },
+    {
+      slug: 'bavdhan-real-estate-investment',
+      title: 'Bavdhan Real Estate Investment Guide 2026 | High ROI Property Pune',
+      description: 'Why Bavdhan is Western Pune’s top real estate investment corridor: Chandani Chowk catalyst, Metro Line 3, and IT demand.'
+    },
+    {
+      slug: 'nri-property-investment-pune',
+      title: 'NRI Property Investment in Pune | Puraniks Abitante Escrow Safe',
+      description: 'Dedicated NRI real estate desk for Puraniks Abitante Fiore. Hassle-free remote transactions, RERA escrow safety, and currency conversion.'
+    },
+    {
+      slug: 'bavdhan-real-estate',
+      title: 'Bavdhan Real Estate Market Guide 2026 | Property Prices & Trends',
+      description: 'Comprehensive guide to buying residential property in Bavdhan, Pune. Price trends, Bavdhan vs Kothrud vs Baner comparison.'
+    },
+    {
+      slug: 'bavdhan-property-prices',
+      title: 'Bavdhan Property Prices 2026 | Per Sq.Ft Rates & Trends in West Pune',
+      description: 'Current real estate prices and per square foot rates in Bavdhan Budruk, Pune. Historical appreciation data and price forecasts.'
+    },
+    {
+      slug: 'bavdhan-1-bhk',
+      title: '1 BHK in Bavdhan Pune | Affordable & Luxury Flats for Sale',
+      description: 'Find verified 1 BHK flats in Bavdhan Budruk, Pune starting from ₹51.99 Lakhs* with Balcony Gardens at Puraniks Abitante Fiore.'
+    },
+    {
+      slug: 'bavdhan-2-bhk',
+      title: '2 BHK in Bavdhan Pune | Smart Residences near Chandani Chowk',
+      description: 'Buy premium 2 BHK flats in Bavdhan Budruk, Pune. 5 minutes from Chandani Chowk at Puraniks Abitante Fiore starting ₹63.99 L*.'
+    },
+    {
+      slug: 'bavdhan-3-bhk',
+      title: '3 BHK in Bavdhan Pune | Hillside Luxury Apartments',
+      description: 'Palatial 3 BHK residences in Bavdhan Budruk, Pune with 270° mountain views and resort amenities at Puraniks Abitante Fiore.'
+    },
+    {
+      slug: 'puranik-builders',
+      title: 'Puranik Builders Limited | 34+ Years Developer Legacy & Pune Projects',
+      description: 'Official background and track record of Puranik Builders Ltd. Founded in 1990, 46+ delivered landmarks, 10,000+ happy families.'
+    },
+    {
+      slug: 'puranik-builders-pune',
+      title: 'Puranik Builders Projects in Pune | Residential Landmarks & Towns',
+      description: 'Discover all residential township projects developed by Puranik Builders across Pune including Bavdhan, NIBM, and Baner.'
+    },
     {
       slug: 'puraniks-abitante-amenities',
       title: 'Puraniks Abitante Amenities | Club Azzurro & Venetian Lagoon Pool',
@@ -230,6 +555,11 @@ export function getStaticPaths() {
       slug: 'puraniks-abitante-fiore-amenities',
       title: 'Puraniks Abitante Fiore Amenities | Italian Riviera Lifestyle',
       description: 'Discover Italian themed lifestyle amenities at Puraniks Abitante Fiore: Roman amphitheater, Juliet balconies, aromatherapy trails.'
+    },
+    {
+      slug: 'club-azzurro-bavdhan',
+      title: 'Club Azzurro Bavdhan | 25,000 Sq.Ft Italian Clubhouse at Abitante',
+      description: 'Explore Club Azzurro at Puraniks Abitante Fiore: Venetian infinity swimming pool, hydrotherapy spa, indoor gymnasium, and sports courts.'
     },
     {
       slug: 'puraniks-abitante-brochure',
@@ -252,16 +582,6 @@ export function getStaticPaths() {
       description: 'Read genuine buyer ratings, construction quality feedback, and lifestyle reviews for Puraniks Abitante Fiore in Bavdhan.'
     },
     {
-      slug: 'puraniks-abitante-investment',
-      title: 'Puraniks Abitante Investment Review | Capital ROI & Rental Yields',
-      description: 'Investment analysis for Puraniks Abitante Bavdhan. 14-18% projected appreciation, high rental yields from Hinjewadi IT Park workforce.'
-    },
-    {
-      slug: 'puraniks-abitante-fiore-investment',
-      title: 'Puraniks Abitante Fiore Investment Analysis | ROI & Appreciation',
-      description: 'Comprehensive property investment review of Puraniks Abitante Fiore in Bavdhan Budruk, Pune with rental yield projections.'
-    },
-    {
       slug: 'puraniks-abitante-contact-number',
       title: 'Puraniks Abitante Contact Number | Official Developer Sales Desk',
       description: 'Call the official sales desk for Puraniks Abitante Bavdhan at +91-80689-76983. Book VIP site visits and private consultation.'
@@ -271,44 +591,10 @@ export function getStaticPaths() {
       title: 'Puraniks Abitante Sales Office & Site Visit Experience Center',
       description: 'Visit the official on-site experience center and sample flats of Puraniks Abitante in Bavdhan Budruk, Pune.'
     },
-
-    // ----------------------------------------------------
-    // LOCALITY & BROAD REAL ESTATE SILOS
-    // ----------------------------------------------------
     {
-      slug: 'bavdhan-real-estate',
-      title: 'Bavdhan Real Estate Market Guide 2026 | Property Prices & Trends',
-      description: 'Comprehensive guide to buying residential property in Bavdhan, Pune. Price trends, Bavdhan vs Kothrud vs Baner comparison.'
-    },
-    {
-      slug: 'bavdhan-property-prices',
-      title: 'Bavdhan Property Prices 2026 | Per Sq.Ft Rates & Trends in West Pune',
-      description: 'Current real estate prices and per square foot rates in Bavdhan Budruk, Pune. Historical appreciation data and price forecasts.'
-    },
-    {
-      slug: 'bavdhan-1-bhk',
-      title: '1 BHK Flats for Sale in Bavdhan Pune | Verified Listings & Projects',
-      description: 'Find premium and affordable 1 BHK flats in Bavdhan Budruk, Pune. Starting from ₹51.99 Lakhs* at Puraniks Abitante Fiore.'
-    },
-    {
-      slug: 'bavdhan-2-bhk',
-      title: '2 BHK Flats for Sale in Bavdhan Pune | Verified Pricing & Plans',
-      description: 'Best 2 BHK apartments in Bavdhan Pune near Chandani Chowk and Hinjewadi IT Park. Explore Puraniks Abitante 2 BHK Smart residences.'
-    },
-    {
-      slug: 'bavdhan-3-bhk',
-      title: '3 BHK Luxury Flats for Sale in Bavdhan Pune | Hillside View Homes',
-      description: 'Explore 3 BHK luxury hilltop apartments in Bavdhan, West Pune with panoramic valley views and resort amenities at Puraniks Abitante.'
-    },
-    {
-      slug: 'puranik-builders',
-      title: 'Puranik Builders Limited | 34+ Years Developer Legacy & Pune Projects',
-      description: 'Official background and track record of Puranik Builders Ltd. Founded in 1990, 46+ delivered landmarks, 10,000+ happy families.'
-    },
-    {
-      slug: 'puranik-builders-pune',
-      title: 'Puranik Builders Projects in Pune | Residential Landmarks & Towns',
-      description: 'Discover all residential township projects developed by Puranik Builders across Pune including Bavdhan, NIBM, and Baner.'
+      slug: 'faq-puraniks-abitante',
+      title: 'Puraniks Abitante Fiore FAQs | Top 25 Questions Answered',
+      description: 'Comprehensive answers to all top homebuyer questions regarding Puraniks Abitante Fiore: pricing, RERA numbers, possession, location and schools.'
     }
   ];
 
@@ -328,3 +614,4 @@ const { title, description, canonical } = Astro.props;
 <Layout title={title} description={description} canonical={canonical}>
   <App client:load />
 </Layout>
+

@@ -18,10 +18,14 @@ import {
   Layers3,
   Target,
   ArrowRight,
-  ChevronRight
+  ChevronRight,
+  GraduationCap,
+  Hospital,
+  Car,
+  Trees
 } from 'lucide-react';
 import { SEO_SILOS } from '../data/seoContentMatrix';
-import { MASTER_KEYWORD_DATABASE, THREE_LAYER_AUTHORITY } from '../data/keywordDatabase';
+import { MASTER_KEYWORD_DATABASE, THREE_LAYER_AUTHORITY, KEYWORD_TIERS } from '../data/keywordDatabase';
 import { PROJECT_INFO } from '../data/projectData';
 
 export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
@@ -37,7 +41,7 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
     const matchesSearch = item.keyword.toLowerCase().includes(keywordSearch.toLowerCase()) ||
                           item.assignedUrl.toLowerCase().includes(keywordSearch.toLowerCase()) ||
                           item.silo.toLowerCase().includes(keywordSearch.toLowerCase());
-    const matchesLayer = selectedLayer === 'all' || item.layer.includes(selectedLayer);
+    const matchesLayer = selectedLayer === 'all' || item.layer.toLowerCase().includes(selectedLayer.toLowerCase());
     const matchesPriority = selectedPriority === 'all' || item.priority.toLowerCase().includes(selectedPriority.toLowerCase());
     return matchesSearch && matchesLayer && matchesPriority;
   });
@@ -50,13 +54,13 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-[11px] font-bold uppercase tracking-widest text-[#92400E] shadow-2xs">
             <BookOpen className="w-3.5 h-3.5 text-[#92400E]" />
-            PHASE 1: MASTER GOOGLE SEO FOUNDATION
+            31-TIER MASTER SEO & AI-CITATION ECOSYSTEM
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight">
             Puraniks Abitante Fiore <span className="gold-gradient-text">Master SEO & Knowledge Hub</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
-            The single verified source of truth built upon a three-layer authority model, 10 content silos, and 5,000+ mapped search intents.
+            The single verified source of truth built upon a three-layer authority model, 15 content silos, and 5,000+ mapped search intents across 31 strategic tiers.
           </p>
         </div>
 
@@ -84,29 +88,29 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
           ))}
         </div>
 
-        {/* 2. THE 10 MASTER SEO SILOS */}
+        {/* 2. THE 15 MASTER SEO SILOS */}
         <div className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#92400E]">
-                10 STRATEGIC CONTENT SILOS
+                15 STRATEGIC CONTENT SILOS
               </span>
               <h3 className="text-2xl font-extrabold text-[#0F172A]">Phase-Verified Knowledge Repository</h3>
             </div>
             <div className="text-xs text-slate-500 font-mono">
-              Last Verified: <strong className="text-slate-900">02 September 2026</strong>
+              Last Verified: <strong className="text-slate-900">September 2026</strong>
             </div>
           </div>
 
-          {/* 10 Silo Selector Tabs */}
-          <div className="flex overflow-x-auto gap-2.5 pb-2 scrollbar-none snap-x sm:grid sm:grid-cols-2 lg:grid-cols-5">
+          {/* 15 Silo Selector Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
             {SEO_SILOS.map((silo) => {
               const isActive = silo.id === activeSiloId;
               return (
                 <button
                   key={silo.id}
                   onClick={() => setActiveSiloId(silo.id)}
-                  className={`p-3.5 sm:p-4 rounded-2xl text-left transition-all duration-200 shrink-0 min-w-[220px] sm:min-w-0 snap-center border cursor-pointer flex flex-col justify-between ${
+                  className={`p-3 sm:p-3.5 rounded-2xl text-left transition-all duration-200 border cursor-pointer flex flex-col justify-between ${
                     isActive
                       ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-md scale-[1.02]'
                       : 'bg-white text-slate-800 border-slate-200/90 hover:border-slate-400'
@@ -115,17 +119,17 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
                   <div>
                     <div className="flex items-center justify-between text-[10px] font-mono font-bold tracking-wider mb-1">
                       <span className={isActive ? 'text-amber-400' : 'text-[#92400E]'}>SILO {silo.number}</span>
-                      <span className={`px-2 py-0.5 rounded-full text-[9px] uppercase font-bold ${
+                      <span className={`px-1.5 py-0.5 rounded-full text-[8px] uppercase font-bold truncate max-w-[90px] ${
                         isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
                       }`}>
                         {silo.badge}
                       </span>
                     </div>
-                    <div className="text-xs sm:text-sm font-bold tracking-tight line-clamp-1">
+                    <div className="text-xs font-bold tracking-tight line-clamp-1">
                       {silo.title}
                     </div>
                   </div>
-                  <div className={`text-[11px] mt-2 line-clamp-2 leading-relaxed ${
+                  <div className={`text-[10px] mt-2 line-clamp-2 leading-tight ${
                     isActive ? 'text-slate-300 font-light' : 'text-slate-500'
                   }`}>
                     {silo.summary}
@@ -148,20 +152,27 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
                   {activeSilo.content.headline}
                 </h3>
               </div>
-              <div className="flex items-center gap-3 shrink-0">
+              <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+                <a
+                  href={`/${activeSilo.slug}`}
+                  className="px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-300 transition"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-600" />
+                  VISIT DEDICATED PAGE
+                </a>
                 <button
                   onClick={onOpenBrochure}
                   className="luxury-btn-outline px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer shadow-2xs"
                 >
                   <Download className="w-3.5 h-3.5 text-slate-700" />
-                  DOWNLOAD PDF
+                  BROCHURE
                 </button>
                 <button
                   onClick={onOpenSiteVisit}
                   className="luxury-btn-gold px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer shadow-sm"
                 >
                   <Calendar className="w-3.5 h-3.5" />
-                  BOOK SITE TOUR
+                  BOOK TOUR
                 </button>
               </div>
             </div>
@@ -170,11 +181,11 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
               {activeSilo.content.description}
             </div>
 
-            {/* Dynamic Views */}
+            {/* Dynamic Views: Highlights */}
             {activeSilo.content.highlights && (
               <div className="p-5 sm:p-6 bg-slate-50 rounded-2xl border border-slate-200/90 space-y-3">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#92400E]" /> KEY TOWNSHIP HIGHLIGHTS:
+                  <Sparkles className="w-4 h-4 text-[#92400E]" /> KEY HIGHLIGHTS:
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
                   {activeSilo.content.highlights.map((item, idx) => (
@@ -187,6 +198,7 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
               </div>
             )}
 
+            {/* Dynamic Views: Pricing Table */}
             {activeSilo.content.pricingTable && (
               <div className="space-y-4">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800">
@@ -223,6 +235,24 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
               </div>
             )}
 
+            {/* Dynamic Views: Payment Schemes */}
+            {activeSilo.content.paymentSchemes && (
+              <div className="p-5 sm:p-6 bg-amber-50/50 rounded-2xl border border-amber-200/80 space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#92400E] flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-[#92400E]" /> AVAILABLE DEVELOPER PAYMENT SCHEMES:
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                  {activeSilo.content.paymentSchemes.map((scheme, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-800">
+                      <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+                      <span>{scheme}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Dynamic Views: RERA Registry */}
             {activeSilo.content.reraRegistry && (
               <div className="space-y-4">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800">
@@ -253,6 +283,7 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
               </div>
             )}
 
+            {/* Dynamic Views: Submarket Comparison Table */}
             {activeSilo.content.comparisonTable && (
               <div className="space-y-4">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800">
@@ -285,6 +316,164 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
               </div>
             )}
 
+            {/* Dynamic Views: Direct Project Competitor Comparison Table */}
+            {activeSilo.content.projectComparison && (
+              <div className="space-y-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800">
+                  HEAD-TO-HEAD PROJECT COMPARISON:
+                </h4>
+                <div className="overflow-x-auto rounded-2xl border border-slate-200">
+                  <table className="w-full text-left text-xs">
+                    <thead className="bg-[#0F172A] text-white uppercase text-[10px] tracking-wider">
+                      <tr>
+                        <th className="p-3.5 sm:p-4">Project</th>
+                        <th className="p-3.5 sm:p-4">Land Parcel</th>
+                        <th className="p-3.5 sm:p-4">Key Theme / USP</th>
+                        <th className="p-3.5 sm:p-4">Starting Price</th>
+                        <th className="p-3.5 sm:p-4">RERA Status</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-200 bg-white font-medium">
+                      {activeSilo.content.projectComparison.map((row, idx) => (
+                        <tr key={idx} className={idx === 0 ? 'bg-amber-50/40 font-bold' : 'hover:bg-slate-50'}>
+                          <td className="p-3.5 sm:p-4 text-slate-900">{row.name}</td>
+                          <td className="p-3.5 sm:p-4 text-slate-700">{row.landArea}</td>
+                          <td className="p-3.5 sm:p-4 text-slate-700">{row.theme}</td>
+                          <td className="p-3.5 sm:p-4 text-[#92400E] font-mono">{row.priceRange}</td>
+                          <td className="p-3.5 sm:p-4 text-emerald-700">{row.reraStatus}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* Dynamic Views: Transit Radar */}
+            {activeSilo.content.transitRadar && (
+              <div className="space-y-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
+                  <Car className="w-4 h-4 text-[#92400E]" /> TRANSIT & TRAVEL TIME MATRIX:
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                  {activeSilo.content.transitRadar.map((item, idx) => (
+                    <div key={idx} className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                      <div className="text-xs font-bold text-slate-900">{item.hub}</div>
+                      <div className="flex items-center justify-between text-[11px] text-slate-600">
+                        <span>{item.distance}</span>
+                        <span className="font-bold text-[#92400E] font-mono">{item.time}</span>
+                      </div>
+                      <div className="text-[10px] text-slate-500 font-light truncate">{item.route}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Dynamic Views: Civic Hubs (Schools & Hospitals) */}
+            {activeSilo.content.schools && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
+                    <GraduationCap className="w-4 h-4 text-[#92400E]" /> PREMIER SCHOOLS NEARBY:
+                  </h4>
+                  <div className="space-y-2">
+                    {activeSilo.content.schools.map((sch, idx) => (
+                      <div key={idx} className="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs">
+                        <div>
+                          <div className="font-bold text-slate-900">{sch.name}</div>
+                          <div className="text-[10px] text-slate-500">{sch.board}</div>
+                        </div>
+                        <div className="text-right">
+                          <div className="font-mono font-bold text-[#92400E]">{sch.distance}</div>
+                          <div className="text-[10px] text-slate-500">{sch.time}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {activeSilo.content.hospitals && (
+                  <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
+                      <Hospital className="w-4 h-4 text-emerald-700" /> MULTI-SPECIALITY HOSPITALS:
+                    </h4>
+                    <div className="space-y-2">
+                      {activeSilo.content.hospitals.map((hosp, idx) => (
+                        <div key={idx} className="p-3 bg-white rounded-xl border border-slate-200 flex items-center justify-between text-xs">
+                          <div>
+                            <div className="font-bold text-slate-900">{hosp.name}</div>
+                            <div className="text-[10px] text-slate-500">{hosp.speciality}</div>
+                          </div>
+                          <div className="text-right">
+                            <div className="font-mono font-bold text-emerald-700">{hosp.distance}</div>
+                            <div className="text-[10px] text-slate-500">{hosp.time}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Dynamic Views: Natural Oxygen Features */}
+            {activeSilo.content.greenFeatures && (
+              <div className="p-5 sm:p-6 bg-emerald-50/50 rounded-2xl border border-emerald-200/80 space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-2">
+                  <Trees className="w-4 h-4 text-emerald-700" /> OXYGEN-RICH ARCHITECTURAL DESIGN:
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                  {activeSilo.content.greenFeatures.map((feat, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-800">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                      <span>{feat}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Dynamic Views: Resale / Rental Ecosystem */}
+            {activeSilo.content.rentalTable && (
+              <div className="space-y-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-800">
+                  ESTIMATED RENTAL MATRIX & YIELD ANALYSIS:
+                </h4>
+                <div className="overflow-x-auto rounded-2xl border border-slate-200">
+                  <table className="w-full text-left text-xs">
+                    <thead className="bg-[#0F172A] text-white uppercase text-[10px] tracking-wider">
+                      <tr>
+                        <th className="p-3.5 sm:p-4">Configuration</th>
+                        <th className="p-3.5 sm:p-4">Monthly Rent (Unfurnished)</th>
+                        <th className="p-3.5 sm:p-4">Monthly Rent (Furnished)</th>
+                        <th className="p-3.5 sm:p-4">Annual Rental Yield</th>
+                        <th className="p-3.5 sm:p-4">Tenant Demographic</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-200 bg-white font-medium">
+                      {activeSilo.content.rentalTable.map((row, idx) => (
+                        <tr key={idx} className="hover:bg-slate-50 transition">
+                          <td className="p-3.5 sm:p-4 font-bold text-slate-900">{row.config}</td>
+                          <td className="p-3.5 sm:p-4 font-mono text-slate-700">{row.rentUnfurnished}</td>
+                          <td className="p-3.5 sm:p-4 font-mono font-bold text-[#92400E]">{row.rentFurnished}</td>
+                          <td className="p-3.5 sm:p-4 font-bold text-emerald-700">{row.yield}</td>
+                          <td className="p-3.5 sm:p-4 text-slate-600">{row.tenantType}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* E-E-A-T Stamp */}
+            {activeSilo.content.verificationStamp && (
+              <div className="text-[11px] font-mono text-slate-500 bg-slate-100 p-3 rounded-xl border border-slate-200">
+                🛡️ {activeSilo.content.verificationStamp}
+              </div>
+            )}
+
             {/* Keyword Entity Badges */}
             <div className="pt-4 border-t border-slate-200 flex flex-wrap items-center gap-2">
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
@@ -309,7 +498,7 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
             <div>
               <div className="flex items-center gap-2 text-[10px] font-mono font-bold tracking-widest text-[#92400E] uppercase">
                 <Target className="w-4 h-4 text-[#92400E]" />
-                INTENT-TO-URL SEARCH ENGINE DATABASE
+                INTENT-TO-URL SEARCH ENGINE DATABASE (31 TIERS)
               </div>
               <h3 className="text-2xl font-extrabold text-[#0F172A] mt-1">
                 5,000+ Keyword Mapping Engine
@@ -339,9 +528,9 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
               className="px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 font-bold focus:outline-none focus:border-[#92400E]"
             >
               <option value="all">ALL AUTHORITY LAYERS</option>
-              <option value="Layer 1">LAYER 1: PROJECT AUTHORITY</option>
-              <option value="Layer 2">LAYER 2: LOCALITY (BAVDHAN)</option>
-              <option value="Layer 3">LAYER 3: REGIONAL (WEST PUNE)</option>
+              <option value="Layer 1">LAYER 1: BRAND & PROJECT</option>
+              <option value="Layer 2">LAYER 2: LOCALITY & TRANSIT</option>
+              <option value="Layer 3">LAYER 3: INVESTMENT & AI/GEO</option>
             </select>
 
             <select
@@ -349,10 +538,11 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
               onChange={(e) => setSelectedPriority(e.target.value)}
               className="px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 font-bold focus:outline-none focus:border-[#92400E]"
             >
-              <option value="all">ALL PRIORITY TIERS</option>
-              <option value="P1">P1 MONEY QUERIES</option>
-              <option value="P2">P2 AUTHORITY CLUSTERS</option>
-              <option value="P3">P3 LONG-TAIL INTENTS</option>
+              <option value="all">ALL 4 PRIORITY TIERS</option>
+              <option value="Tier 1">TIER 1: DIRECT MONEY QUERIES</option>
+              <option value="Tier 2">TIER 2: RESEARCH & RERA</option>
+              <option value="Tier 3">TIER 3: LOCALITY AUTHORITY</option>
+              <option value="Tier 4">TIER 4: AI & GEO PROMPTS</option>
             </select>
           </div>
 
@@ -365,21 +555,28 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
                   <th className="p-3.5 sm:p-4">Search Intent</th>
                   <th className="p-3.5 sm:p-4">Assigned Master URL</th>
                   <th className="p-3.5 sm:p-4">Authority Layer</th>
-                  <th className="p-3.5 sm:p-4">Priority</th>
+                  <th className="p-3.5 sm:p-4">Priority Tier</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 bg-white font-medium">
-                {filteredKeywords.slice(0, 12).map((item, idx) => (
+                {filteredKeywords.slice(0, 15).map((item, idx) => (
                   <tr key={idx} className="hover:bg-slate-50 transition">
                     <td className="p-3.5 sm:p-4 font-bold text-slate-900 font-mono">{item.keyword}</td>
                     <td className="p-3.5 sm:p-4 text-slate-600">{item.intent}</td>
-                    <td className="p-3.5 sm:p-4 font-mono text-[#92400E] font-bold text-[11px]">{item.assignedUrl}</td>
+                    <td className="p-3.5 sm:p-4 font-mono font-bold text-[11px]">
+                      <a href={item.assignedUrl} className="text-[#92400E] hover:underline flex items-center gap-1">
+                        {item.assignedUrl} <ExternalLink className="w-3 h-3 shrink-0" />
+                      </a>
+                    </td>
                     <td className="p-3.5 sm:p-4 text-slate-700 text-[11px]">{item.layer.split(':')[0]}</td>
                     <td className="p-3.5 sm:p-4">
-                      <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase ${
-                        item.priority.includes('P1') ? 'bg-amber-100 text-[#92400E]' : 'bg-slate-100 text-slate-700'
+                      <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase whitespace-nowrap ${
+                        item.priority.includes('Tier 1') ? 'bg-amber-100 text-[#92400E]' :
+                        item.priority.includes('Tier 2') ? 'bg-blue-100 text-blue-800' :
+                        item.priority.includes('Tier 3') ? 'bg-emerald-100 text-emerald-800' :
+                        'bg-purple-100 text-purple-800'
                       }`}>
-                        {item.priority}
+                        {item.priority.split(':')[0]}
                       </span>
                     </td>
                   </tr>
@@ -387,6 +584,12 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
               </tbody>
             </table>
           </div>
+
+          {filteredKeywords.length > 15 && (
+            <div className="text-center text-xs text-slate-500 font-mono">
+              + {filteredKeywords.length - 15} additional target search intent mappings loaded into static routing matrix.
+            </div>
+          )}
 
         </div>
 

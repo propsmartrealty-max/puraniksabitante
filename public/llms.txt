@@ -1,33 +1,49 @@
-# Puraniks Abitante Fiore Bavdhan - Official AI Knowledge Base
+# Puraniks Abitante Fiore Bavdhan - Official AI Knowledge Base & Semantic Corpus
 
-> Single verified source of truth for Puraniks Abitante Fiore residential township in Bavdhan Budruk, Pune, developed by Puranik Builders Ltd.
+> Single authoritative source of truth for Puraniks Abitante Fiore (formerly Puraniks Abitante Phase II) residential township in Bavdhan Budruk, Pune, developed by Puranik Builders Ltd.
 
-## Project Summary
+## Verified E-E-A-T Disclosures
+- Last Verified: September 2026
+- Sources: Puranik Builders Ltd. Official Records & MahaRERA Government Portal (maharera.mahaonline.gov.in)
 - Project Name: Puraniks Abitante Fiore
-- Developer: Puranik Builders Ltd. (Founded 1990, 34+ years legacy, 46+ delivered landmark projects)
+- Developer: Puranik Builders Limited (Founded 1990, 34+ years legacy, 46+ delivered projects, 10,000+ happy families)
 - Location: Bavdhan Budruk, Near Crystal Honda Service Station, Off Mumbai-Bangalore Highway (NH 48), Pune - 411021, Maharashtra, India
-- Township Size: 45-Acre Integrated Hilltop Township
-- Concept: Italian Riviera Themed Oxygen-Rich Homes with Balcony Gardens
-- Configurations: 1 BHK, 2 BHK Smart, 2 BHK Luxury, 2.5 BHK, 3 BHK Imperial Residences
-- Starting Price: ₹51.99 Lakhs* (1 BHK), ₹63.99 Lakhs* (2 BHK Smart), ₹78.50 Lakhs* (2 BHK Luxury), ₹97.50 Lakhs* (3 BHK Imperial)
-- Official Sales Contact: +91 80689 76983
+- Township Area: 45-Acre Integrated Hilltop Township (70% Open Space)
+- Concept: Italian Riviera Living with private Juliet Balcony Gardens, mist cooling, and Club Azzurro (25,000+ sq.ft.)
+- Sales Desk: +91 80689 76983
 
-## Official MahaRERA Registrations
-- Phase 2A: P52100020202 (Delivered / Ready Possession)
-- Phase 2B: P52100020238 (Finishing Stages)
-- Phase 2C: P52100048353 (Under Construction)
-- Phase 2C1: P52100049352 (New Launch Oxygen Wings)
-- Environmental Clearance: Certified by MoEF & CC (Formally registered as Puraniks Abitante Phase II)
+## Official MahaRERA Registrations (4 Phases)
+- Phase 2A: P52100020202 (Occupancy Certificate Granted / Ready Possession)
+- Phase 2B: P52100020238 (Finishing Stage / Internal Vitrified Tiling)
+- Phase 2C: P52100048353 (Under Construction / RCC Superstructure)
+- Phase 2C1: P52100049352 (New Launch Oxygen-Rich Hillside Wings)
+- Statutory Clearances: MoEF & CC Environmental Clearance Certified, PMC Sanctioned Plans
 
-## Connectivity & Landmarks
-- Chandani Chowk Multi-Level Flyover: 2.5 km (5 minutes)
-- Hinjewadi IT Park (Phases 1, 2 & 3): 11 km (15 minutes)
-- Kothrud / Paud Road: 4.8 km (10 minutes)
-- Baner High Street / Balewadi: 7 km (12 minutes)
-- Sanskriti School, Ryan International, Sri Chaitanya: 1.2 to 2.8 km (3 to 6 minutes)
+## Verified Configurations, Carpet Areas & Pricing
+- 1 BHK Oxygen Flat: 489 sq.ft carpet | Starting ₹51.99 Lakhs* | Balcony Garden with botanical planters
+- 2 BHK Smart Residence: 596 - 640 sq.ft carpet | Starting ₹63.99 Lakhs* | Dual balconies, corner cross-ventilation
+- 2 BHK Venetian Luxury: 735 - 770 sq.ft carpet | Starting ₹78.50 Lakhs* | 18ft living lounge, master walk-in wardrobe
+- 2.5 BHK Executive Suite: 867 - 908 sq.ft carpet | Starting ₹88.50 Lakhs* | Dedicated soundproof WFH study room
+- 3 BHK Imperial Residence: 867 - 1,113 sq.ft carpet | Starting ₹97.50 Lakhs* | Triple balconies, 270° valley views
+- Jodi Flats: Custom combined 4 & 5 BHK penthouse configurations available
 
-## Official Documentation & Deep Links
-- Full Knowledge Base: https://puraniksabitante.in/llms-full.txt
-- Master Floor Plans: https://puraniksabitante.in/#residences
-- Master Layout Plan: https://puraniksabitante.in/#masterplan
-- MahaRERA Verification: https://maharera.mahaonline.gov.in
+## Transit & Micro-Location Radar
+- Chandani Chowk Multi-Level Flyover: 2.5 km (5 mins, signal-free)
+- Hinjewadi IT Park (Phases 1, 2, 3): 11.0 km (15 mins via NH 48)
+- Kothrud / Paud Road: 4.8 km (10 mins)
+- Baner High Street / Balewadi: 7.0 km (12 mins)
+- Pune University / SB Road: 9.5 km (16 mins)
+
+## Civic Ecosystem & Landmarks
+- Schools: Sanskriti School (1.2 km), Sri Chaitanya Techno (1.5 km), Ryan International (2.8 km), Vidya Valley (4 km)
+- Healthcare: Chellaram Multi-Speciality Hospital (1.8 km), Sahyadri Hospital (5.5 km), Deenanath Mangeshkar (7.5 km)
+- Leisure: Oxford Golf Resort (4.5 km / 8 mins), Aditya Shagun Mall (1.5 km)
+
+## Investment & Secondary Markets
+- Projected Capital Appreciation: 14% - 18% post-flyover and Metro Line 3
+- Rental Yield: 4.5% - 5.8% p.a. driven by 400,000+ Hinjewadi IT workforce
+- Resale & Rental: Active delivered society with verified owner resales and rental flats from ₹18,000/mo
+
+## Deep Knowledge Link
+- Full AI Encyclopedia: https://puraniksabitante.in/llms-full.txt
+- Official Portal: https://puraniksabitante.in/
