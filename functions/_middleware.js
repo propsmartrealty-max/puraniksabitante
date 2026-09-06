@@ -23,6 +23,24 @@ export async function onRequest(context) {
   const startTime = Date.now();
 
   // --------------------------------------------------------------------------
+  // 0. URL CANONICALIZATION & APEX DOMAIN ENFORCEMENT (301 Permanent Redirect)
+  // --------------------------------------------------------------------------
+  if (url.hostname === 'www.puraniksabitante.in') {
+    url.hostname = 'puraniksabitante.in';
+    return Response.redirect(url.toString(), 301);
+  }
+
+  if (url.protocol === 'http:') {
+    url.protocol = 'https:';
+    return Response.redirect(url.toString(), 301);
+  }
+
+  if (pathname.length > 1 && pathname.endsWith('/')) {
+    url.pathname = pathname.replace(/\/+$/, '');
+    return Response.redirect(url.toString(), 301);
+  }
+
+  // --------------------------------------------------------------------------
   // 1. ADVANCED BOT & CRAWLER CLASSIFICATION MATRIX
   // --------------------------------------------------------------------------
   const isGooglebot = /googlebot|googlebot-image|googlebot-news|google-inspectiontool|adsbot-google/i.test(userAgent);

@@ -3,6 +3,14 @@ main = "seo-worker.js"
 compatibility_date = "2026-09-01"
 compatibility_flags = ["nodejs_compat"]
 
+# Custom Domain Route Bindings for puraniksabitante.in
+routes = [
+  { pattern = "puraniksabitante.in/*", zone_name = "puraniksabitante.in", custom_domain = true },
+  { pattern = "www.puraniksabitante.in/*", zone_name = "puraniksabitante.in" }
+]
+
 [vars]
 ENVIRONMENT = "production"
 CANONICAL_DOMAIN = "puraniksabitante.in"
+ORIGIN_HOST = "puraniksabitante.pages.dev"
+INDEXNOW_KEY = "c7489abf281e4832b3f1207604f5e712"
