@@ -7,6 +7,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://puraniksabitante.in',
   output: 'static',
+  build: {
+    format: 'file'
+  },
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()]
