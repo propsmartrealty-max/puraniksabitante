@@ -23,21 +23,16 @@ export async function onRequest(context) {
   const startTime = Date.now();
 
   // --------------------------------------------------------------------------
-  // 0. URL CANONICALIZATION & APEX DOMAIN ENFORCEMENT (301 Permanent Redirect)
+  // 0. ATOMIC 1-HOP CANONICALIZATION & APEX ENFORCEMENT (301 Permanent)
   // --------------------------------------------------------------------------
-  if (url.hostname === 'www.puraniksabitante.in') {
-    url.hostname = 'puraniksabitante.in';
-    return Response.redirect(url.toString(), 301);
-  }
+  const isWww = url.hostname === 'www.puraniksabitante.in';
+  const isHttp = url.protocol === 'http:';
+  const hasTrailingSlash = pathname.length > 1 && pathname.endsWith('/');
 
-  if (url.protocol === 'http:') {
-    url.protocol = 'https:';
-    return Response.redirect(url.toString(), 301);
-  }
-
-  if (pathname.length > 1 && pathname.endsWith('/')) {
-    url.pathname = pathname.replace(/\/+$/, '');
-    return Response.redirect(url.toString(), 301);
+  if (isWww || isHttp || hasTrailingSlash) {
+    const cleanPath = hasTrailingSlash ? pathname.replace(/\/+$/, '') : pathname;
+    const targetUrl = `https://puraniksabitante.in${cleanPath}${url.search}`;
+    return Response.redirect(targetUrl, 301);
   }
 
   // --------------------------------------------------------------------------

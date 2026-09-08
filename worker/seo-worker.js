@@ -253,21 +253,16 @@ export default {
     const startTime = Date.now();
 
     // ------------------------------------------------------------------------
-    // 1. URL CANONICALIZATION & REDIRECT RULES (Apex + HTTPS + Non-WWW)
+    // 1. ATOMIC 1-HOP CANONICALIZATION & APEX ENFORCEMENT (301 Permanent)
     // ------------------------------------------------------------------------
-    if (url.hostname === `www.${CANONICAL_HOST}`) {
-      url.hostname = CANONICAL_HOST;
-      return Response.redirect(url.toString(), 301);
-    }
+    const isWww = url.hostname === `www.${CANONICAL_HOST}`;
+    const isHttp = url.protocol === "http:";
+    const hasTrailingSlash = url.pathname.length > 1 && url.pathname.endsWith("/");
 
-    if (url.protocol === "http:") {
-      url.protocol = "https:";
-      return Response.redirect(url.toString(), 301);
-    }
-
-    if (url.pathname.length > 1 && url.pathname.endsWith("/")) {
-      url.pathname = url.pathname.replace(/\/+$/, "");
-      return Response.redirect(url.toString(), 301);
+    if (isWww || isHttp || hasTrailingSlash) {
+      const cleanPath = hasTrailingSlash ? url.pathname.replace(/\/+$/, "") : url.pathname;
+      const targetUrl = `https://${CANONICAL_HOST}${cleanPath}${url.search}`;
+      return Response.redirect(targetUrl, 301);
     }
 
     // ------------------------------------------------------------------------
