@@ -1,0 +1,18 @@
+# Cloudflare Pages Edge Redirects Matrix
+# Enforce canonical clean URLs and legacy alias mappings
+
+/index.html   /   301
+/home         /   301
+/index        /   301
+
+# Trailing slash sanitization on primary silos
+/puraniks-abitante/                 /puraniks-abitante                  301
+/puraniks-abitante-fiore/           /puraniks-abitante-fiore            301
+/puraniks-abitante-fiore-price/     /puraniks-abitante-fiore-price      301
+/puraniks-abitante-floor-plans/     /puraniks-abitante-floor-plans      301
+/puraniks-abitante-fiore-rera/      /puraniks-abitante-fiore-rera       301
+/bavdhan-connectivity/              /bavdhan-connectivity               301
+/puraniks-abitante-amenities/       /puraniks-abitante-amenities        301
+/puraniks-abitante-brochure/        /puraniks-abitante-brochure         301
+/puraniks-abitante-reviews/         /puraniks-abitante-reviews          301
+/sitemap/                           /sitemap                            301

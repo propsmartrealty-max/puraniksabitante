@@ -225,8 +225,13 @@ export async function onRequest(context) {
         geoIcon = "✈️";
       }
 
+      // Dynamic UTM / Campaign Intent Detection
+      const utmSource = url.searchParams.get('utm_source') || '';
+      const isGoogleAds = Boolean(url.searchParams.get('gclid')) || utmSource.toLowerCase().includes('google');
+      const isWhatsAppCampaign = utmSource.toLowerCase().includes('whatsapp');
+
       const rewriter = new HTMLRewriter()
-        // A. HEAD TAG STREAM ENRICHMENT
+        // A. HEAD TAG STREAM ENRICHMENT & DYNAMIC SILO SCHEMAS
         .on('head', {
           element(el) {
             // Edge Telemetry & Geo Metadata
@@ -246,6 +251,47 @@ export async function onRequest(context) {
 
             // High Priority Hero Image Preload for 100/100 LCP Core Web Vitals
             el.append(`    <link rel="preload" as="image" href="https://puraniksabitante.in/images/slider/pweb.webp" type="image/webp" fetchpriority="high" />\n`, { html: true });
+
+            // Dynamic Edge Schema Injection for Pricing Silos
+            if (pathname.includes('price') || pathname.includes('cost')) {
+              el.append(`\n    <script type="application/ld+json">
+              {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": "Puraniks Abitante Fiore Residences",
+                "image": "https://puraniksabitante.in/images/slider/pweb.webp",
+                "description": "1, 2, 2.5 & 3 BHK luxury residences in Bavdhan Budruk, Pune with verified price sheets starting ₹51.99 Lakhs*.",
+                "brand": { "@type": "Brand", "name": "Puranik Builders Limited" },
+                "offers": {
+                  "@type": "AggregateOffer",
+                  "priceCurrency": "${currencyCode}",
+                  "lowPrice": "${Math.round(5199000 * currencyRate)}",
+                  "highPrice": "${Math.round(11500000 * currencyRate)}",
+                  "priceValidUntil": "2026-12-31",
+                  "offerCount": "5",
+                  "availability": "https://schema.org/InStock"
+                }
+              }
+              </script>\n`, { html: true });
+            }
+
+            // Dynamic Edge Schema Injection for MahaRERA Legal Silos
+            if (pathname.includes('rera') || pathname.startsWith('/p521000')) {
+              el.append(`\n    <script type="application/ld+json">
+              {
+                "@context": "https://schema.org",
+                "@type": "GovernmentPermit",
+                "name": "MahaRERA Project Registrations - Puraniks Abitante Fiore",
+                "issuedBy": {
+                  "@type": "GovernmentOrganization",
+                  "name": "Maharashtra Real Estate Regulatory Authority",
+                  "url": "https://maharera.mahaonline.gov.in"
+                },
+                "permitAudience": "Real Estate Homebuyers & Investors",
+                "validIn": { "@type": "AdministrativeArea", "name": "Bavdhan, Pune, Maharashtra" }
+              }
+              </script>\n`, { html: true });
+            }
           }
         })
         
@@ -258,6 +304,8 @@ export async function onRequest(context) {
             el.setAttribute('data-currency-code', currencyCode);
             el.setAttribute('data-currency-symbol', currencySymbol);
             el.setAttribute('data-freshness', 'March 2026 Active Inventory');
+            if (isGoogleAds) el.setAttribute('data-traffic-source', 'google-ads');
+            if (isWhatsAppCampaign) el.setAttribute('data-traffic-source', 'whatsapp');
           }
         })
 
@@ -273,7 +321,20 @@ export async function onRequest(context) {
           }
         })
 
-        // D. CORE WEB VITALS: IMAGE PRIORITIZATION & ASYNC DECODING
+        // D. SEMANTIC MICRODATA DECORATION ON MAIN & HEADINGS
+        .on('main', {
+          element(el) {
+            el.setAttribute('itemscope', '');
+            el.setAttribute('itemtype', 'https://schema.org/RealEstateListing');
+          }
+        })
+        .on('h1', {
+          element(el) {
+            el.setAttribute('itemprop', 'name');
+          }
+        })
+
+        // E. CORE WEB VITALS: IMAGE PRIORITIZATION & ASYNC DECODING
         .on('img', {
           element(el) {
             const src = el.getAttribute('src') || '';
@@ -292,12 +353,14 @@ export async function onRequest(context) {
           }
         })
 
-        // E. SEMANTIC MICRODATA DECORATION ON KEY SECTIONS
+        // F. SEMANTIC MICRODATA DECORATION ON KEY SECTIONS
         .on('section', {
           element(el) {
             const id = el.getAttribute('id') || '';
             if (id) {
               el.setAttribute('data-seo-section', id);
+              if (id === 'overview') el.setAttribute('itemprop', 'description');
+              if (id === 'amenities') el.setAttribute('itemprop', 'amenityFeature');
             }
           }
         });
