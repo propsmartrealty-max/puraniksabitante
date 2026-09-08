@@ -127,10 +127,12 @@ const SEO_ROUTES = [
   "puraniks-fiore",
   "resale-flats-bavdhan",
   "schools-near-puraniks-abitante",
-  "shopping-near-bavdhan"
+  "shopping-near-bavdhan",
+  "sitemap"
 ];
 const ALL_URLS = [
   "https://puraniksabitante.in/",
+  "https://puraniksabitante.in/sitemap",
   "https://puraniksabitante.in/1-bhk-flats-bavdhan",
   "https://puraniksabitante.in/2-bhk-flats-bavdhan",
   "https://puraniksabitante.in/3-bhk-flats-bavdhan",
@@ -387,6 +389,32 @@ Sitemap: https://${CANONICAL_HOST}/sitemap.xml
         status: 200,
         headers: { "Content-Type": "application/json" }
       });
+    }
+
+    // ------------------------------------------------------------------------
+    // 4.5 FIRST-PARTY EDGE ASSET & IMAGE REVERSE PROXY
+    // ------------------------------------------------------------------------
+    if (url.pathname.startsWith("/images/") || url.pathname.match(/^\/barcode\d+\.webp$/i)) {
+      const upstreamImageUrl = `https://abitantefiore.puranikbuilders.com${url.pathname}`;
+      try {
+        const imgRes = await fetch(upstreamImageUrl, {
+          headers: {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Referer": "https://abitantefiore.puranikbuilders.com/"
+          },
+          cf: { cacheEverything: true, cacheTtl: 2592000 }
+        });
+        if (imgRes.ok) {
+          const imgHeaders = new Headers(imgRes.headers);
+          imgHeaders.set("Cache-Control", "public, max-age=2592000, immutable, stale-while-revalidate=86400");
+          imgHeaders.set("CDN-Cache-Control", "max-age=31536000");
+          imgHeaders.set("Access-Control-Allow-Origin", "*");
+          imgHeaders.set("X-Edge-Proxied", "true");
+          return new Response(imgRes.body, { status: 200, headers: imgHeaders });
+        }
+      } catch (e) {
+        // Fallback to origin
+      }
     }
 
     // ------------------------------------------------------------------------
