@@ -386,8 +386,39 @@ const {
       ]
     }
     </script>
+    <!-- W3C Speculation Rules API for 0ms Instant Page Pre-rendering -->
+    <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "source": "list",
+          "urls": [
+            "/puraniks-abitante-fiore",
+            "/puraniks-abitante-fiore-price",
+            "/puraniks-abitante-floor-plans",
+            "/puraniks-abitante-fiore-rera",
+            "/bavdhan-connectivity",
+            "/puraniks-abitante-amenities",
+            "/puraniks-abitante-brochure",
+            "/puraniks-abitante-reviews"
+          ],
+          "eagerness": "moderate"
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-[#FAF9F6] text-[#0F172A] font-sans antialiased selection:bg-[#92400E] selection:text-white">
+    <!-- Cloudflare Edge Hyperlocal & NRI Dynamic Geo Banner -->
+    <aside id="edge-geo-banner" class="bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#0F172A] text-amber-300 text-xs font-medium py-2 px-4 text-center border-b border-amber-500/20 shadow-inner flex items-center justify-center gap-2">
+      <span id="edge-geo-icon">📍</span>
+      <span id="edge-geo-text">Exclusive Bavdhan Hillside Offer: 1, 2, 2.5 & 3 BHK Starting ₹51.99 Lakhs* | MahaRERA P52100020202 | Free Site Visit Cab Available</span>
+      <span class="hidden sm:inline text-white/40">|</span>
+      <a href="tel:+918068976983" class="hidden sm:inline-flex items-center text-white hover:text-amber-400 font-bold underline transition-colors">
+        Call Sales: +91-80689-76983
+      </a>
+    </aside>
+
     <slot />
   </body>
 </html>

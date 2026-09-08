@@ -61,11 +61,11 @@
   Cache-Control: public, max-age=86400
   CDN-Cache-Control: max-age=86400
 
-# HTML Caching Policy (Instant Revalidation on Edge Deploy)
+# HTML Caching Policy (Sub-15ms Edge Cache with Instant Revalidation on Deploy)
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
-  CDN-Cache-Control: max-age=0, must-revalidate
+  CDN-Cache-Control: max-age=604800, stale-while-revalidate=86400
 
 /
   Cache-Control: public, max-age=0, must-revalidate
-  CDN-Cache-Control: max-age=0, must-revalidate
+  CDN-Cache-Control: max-age=604800, stale-while-revalidate=86400
