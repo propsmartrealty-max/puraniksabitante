@@ -84,7 +84,8 @@ export async function onRequest(context) {
 
   const duration = Date.now() - startTime;
   const newHeaders = new Headers(response.headers);
-  const canonicalUrl = `https://puraniksabitante.in${pathname === '/' ? '/' : pathname.replace(/\/$/, '')}`;
+  const canonicalUrl = `https://puraniksabitante.in${pathname === '/' ? '/' : pathname.replace(/\/+$/, '')}`;
+  const status = (pathname === '/404' || response.status === 404) ? 404 : response.status;
 
   // --------------------------------------------------------------------------
   // 4. INJECT ENTERPRISE EDGE TELEMETRY & SECURITY HEADERS
@@ -95,7 +96,13 @@ export async function onRequest(context) {
   newHeaders.set('X-Edge-Currency', currencyCode);
   newHeaders.set('X-Edge-Currency-Symbol', currencySymbol);
   newHeaders.set('X-Crawler-Type', isAiSearchEngine ? 'AI-Search' : isGooglebot ? 'Googlebot' : isSearchEngine ? 'Search-Engine' : 'Human-Visitor');
-  newHeaders.set('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+  
+  if (status === 404) {
+    newHeaders.set('X-Robots-Tag', 'noindex, nofollow');
+  } else {
+    newHeaders.set('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+  }
+
   newHeaders.set('Server-Timing', `edge;desc="Cloudflare Anycast ${colo}", proc;dur=${duration}, cdn;desc="HIT"`);
   newHeaders.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
   newHeaders.set('X-Content-Type-Options', 'nosniff');
@@ -179,8 +186,8 @@ export async function onRequest(context) {
 
       return rewriter.transform(
         new Response(response.body, {
-          status: response.status,
-          statusText: response.statusText,
+          status: status,
+          statusText: status === 404 ? 'Not Found' : response.statusText,
           headers: newHeaders
         })
       );
@@ -191,8 +198,8 @@ export async function onRequest(context) {
   // 6. RETURN STATIC ASSETS & NON-HTML RESPONSES DIRECTLY
   // --------------------------------------------------------------------------
   return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
+    status: status,
+    statusText: status === 404 ? 'Not Found' : response.statusText,
     headers: newHeaders
   });
 }
