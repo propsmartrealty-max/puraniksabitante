@@ -35,14 +35,14 @@ const {
     
     <!-- Canonical & Alternate Hreflang Tags (Global & Local Indexing) -->
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en-IN" href="https://puraniksabitante.in/" />
-    <link rel="alternate" hreflang="en-US" href="https://puraniksabitante.in/" />
-    <link rel="alternate" hreflang="en-GB" href="https://puraniksabitante.in/" />
-    <link rel="alternate" hreflang="en-AE" href="https://puraniksabitante.in/" />
-    <link rel="alternate" hreflang="en-SG" href="https://puraniksabitante.in/" />
-    <link rel="alternate" hreflang="mr-IN" href="https://puraniksabitante.in/" />
-    <link rel="alternate" hreflang="hi-IN" href="https://puraniksabitante.in/" />
-    <link rel="alternate" hreflang="x-default" href="https://puraniksabitante.in/" />
+    <link rel="alternate" hreflang="en-IN" href={canonical} />
+    <link rel="alternate" hreflang="en-US" href={canonical} />
+    <link rel="alternate" hreflang="en-GB" href={canonical} />
+    <link rel="alternate" hreflang="en-AE" href={canonical} />
+    <link rel="alternate" hreflang="en-SG" href={canonical} />
+    <link rel="alternate" hreflang="mr-IN" href={canonical} />
+    <link rel="alternate" hreflang="hi-IN" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
     
     <link rel="manifest" href="/manifest.json" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -232,8 +232,15 @@ const {
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://puraniksabitante.in/#breadcrumb",
-          "itemListElement": [
+          "@id": `${canonical}#breadcrumb`,
+          "itemListElement": canonical === "https://puraniksabitante.in/" ? [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://puraniksabitante.in/"
+            }
+          ] : [
             {
               "@type": "ListItem",
               "position": 1,
@@ -243,20 +250,14 @@ const {
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "Pune Real Estate",
-              "item": "https://puraniksabitante.in/bavdhan-real-estate"
+              "name": "Puraniks Abitante Fiore Bavdhan",
+              "item": "https://puraniksabitante.in/puraniks-abitante-fiore"
             },
             {
               "@type": "ListItem",
               "position": 3,
-              "name": "Bavdhan Properties",
-              "item": "https://puraniksabitante.in/puraniks-abitante-bavdhan"
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "name": "Puraniks Abitante Fiore",
-              "item": "https://puraniksabitante.in/puraniks-abitante-fiore"
+              "name": title.split('|')[0].trim(),
+              "item": canonical
             }
           ]
         },
@@ -341,9 +342,10 @@ const {
         },
         {
           "@type": "WebPage",
-          "@id": "https://puraniksabitante.in/#webpage",
-          "url": "https://puraniksabitante.in/",
-          "name": "Puraniks Abitante Fiore Bavdhan Pune | Official Portal",
+          "@id": `${canonical}#webpage`,
+          "url": canonical,
+          "name": title,
+          "description": description,
           "speakable": {
             "@type": "SpeakableSpecification",
             "cssSelector": ["h1", "h2", ".speakable-summary", "#overview p"]

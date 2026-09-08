@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import App from '../App.jsx';
+import DedicatedLandingPage from '../components/DedicatedLandingPage.jsx';
 
 export function getStaticPaths() {
   const routes = [
@@ -601,17 +601,25 @@ export function getStaticPaths() {
   return routes.map((r) => ({
     params: { slug: r.slug },
     props: { 
+      slug: r.slug,
       title: r.title, 
       description: r.description, 
+      h1: r.title.split('|')[0].trim(),
       canonical: `https://puraniksabitante.in/${r.slug}` 
     }
   }));
 }
 
-const { title, description, canonical } = Astro.props;
+const { slug, title, description, h1, canonical } = Astro.props;
 ---
 
 <Layout title={title} description={description} canonical={canonical}>
-  <App client:load />
+  <DedicatedLandingPage 
+    client:load 
+    slug={slug}
+    title={title}
+    description={description}
+    h1={h1}
+  />
 </Layout>
 
