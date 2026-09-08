@@ -101,6 +101,39 @@ export async function onRequest(context) {
   }
 
   // --------------------------------------------------------------------------
+  // 2.5 FIRST-PARTY EDGE ASSET & IMAGE REVERSE PROXY
+  // --------------------------------------------------------------------------
+  if (pathname.startsWith('/images/') || pathname.match(/^\/barcode\d+\.webp$/i)) {
+    const upstreamUrl = `https://abitantefiore.puranikbuilders.com${pathname}`;
+    try {
+      const upstreamResponse = await fetch(upstreamUrl, {
+        headers: {
+          'User-Agent': request.headers.get('user-agent') || 'Mozilla/5.0 (compatible; CloudflareEdgeProxy/1.0)',
+          'Accept': request.headers.get('accept') || 'image/webp,image/*,*/*'
+        },
+        cf: {
+          cacheEverything: true,
+          cacheTtl: 2592000
+        }
+      });
+
+      if (upstreamResponse.ok) {
+        const imageHeaders = new Headers(upstreamResponse.headers);
+        imageHeaders.set('Cache-Control', 'public, max-age=2592000, immutable, stale-while-revalidate=86400');
+        imageHeaders.set('CDN-Cache-Control', 'max-age=31536000');
+        imageHeaders.set('Access-Control-Allow-Origin', '*');
+        imageHeaders.set('X-Edge-Proxied', 'true');
+        return new Response(upstreamResponse.body, {
+          status: 200,
+          headers: imageHeaders
+        });
+      }
+    } catch (e) {
+      // Continue to next handler if upstream fetch fails
+    }
+  }
+
+  // --------------------------------------------------------------------------
   // 3. NRI & GLOBAL CURRENCY LOCALIZATION ENGINE
   // --------------------------------------------------------------------------
   let currencyCode = 'INR';

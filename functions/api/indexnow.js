@@ -117,7 +117,8 @@ const URL_LIST = [
   "https://puraniksabitante.in/puraniks-fiore",
   "https://puraniksabitante.in/resale-flats-bavdhan",
   "https://puraniksabitante.in/schools-near-puraniks-abitante",
-  "https://puraniksabitante.in/shopping-near-bavdhan"
+  "https://puraniksabitante.in/shopping-near-bavdhan",
+  "https://puraniksabitante.in/sitemap"
 ];
 
 export async function onRequestPost(context) {

@@ -79,6 +79,7 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
               <li><a href="#amenities" className="hover:text-amber-300 transition">AMENITIES</a></li>
               <li><a href="#location" className="hover:text-amber-300 transition">LOCATION</a></li>
               <li><a href="#calculator" className="hover:text-amber-300 transition">EMI CALCULATOR</a></li>
+              <li><a href="/sitemap" className="text-amber-400 hover:text-amber-300 font-bold transition">HTML SITEMAP ({`110 NODES`})</a></li>
             </ul>
           </div>
 
