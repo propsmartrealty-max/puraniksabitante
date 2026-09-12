@@ -43,9 +43,12 @@ Allow: /
 
 User-agent: *
 Allow: /
-Disallow: /api/
+Allow: /api/knowledge-graph
+Allow: /api/indexnow
+Disallow: /api/lead
 Disallow: /*?*preview=true
 
-# Sitemaps
+# Sitemaps & Knowledge Graph Endpoints
 Sitemap: https://puraniksabitante.in/sitemap.xml
+
 

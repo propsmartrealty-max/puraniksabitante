@@ -46,4 +46,6 @@
 
 ## Deep Knowledge Link
 - Full AI Encyclopedia: https://puraniksabitante.in/llms-full.txt
+- Machine-Readable Knowledge Graph API: https://puraniksabitante.in/api/knowledge-graph
+- HTML Topic Sitemap Directory (110 Nodes): https://puraniksabitante.in/sitemap
 - Official Portal: https://puraniksabitante.in/
