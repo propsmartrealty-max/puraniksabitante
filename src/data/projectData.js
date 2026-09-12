@@ -758,6 +758,26 @@ export const FAQS = [
   {
     q: "Are there schools, business hubs, and grocery stores nearby?",
     a: "Yes! Sanskriti School, Sri Chaitanya Techno School, and Ryan International are within 3-6 minutes. Hinjewadi IT Park and Cummins India are 7-15 minutes away. More Supermarket and Aditya Shagun Mall are just 3 minutes away."
+  },
+  {
+    q: "What is the water supply infrastructure and source at Puraniks Abitante Fiore?",
+    a: "Puraniks Abitante Fiore features an engineered dual-piped water system with dedicated underground & overhead reservoirs, rainwater harvesting recharge pits, and an on-site Sewage Treatment Plant (STP) providing recycled treated water for flushing and landscape irrigation. It connects to the Pune Municipal Corporation (PMC) water supply network, ensuring reliable 24x7 water security."
+  },
+  {
+    q: "What is the difference between Puraniks Abitante Phase 1 and Phase 2 Fiore?",
+    a: "Puraniks Abitante Phase 1 is a fully delivered society where 580+ families currently reside. Phase 2 Fiore is the brand-new, premium hillside expansion featuring upgraded Italian Riviera architecture, Juliet Balcony Gardens, an expanded 25,000 sq.ft Club Azzurro, and 4 separate MahaRERA registered phases (Phase 2A OC ready to Phase 2C1 new launch) with exclusive direct-developer 0% stamp duty privileges."
+  },
+  {
+    q: "What are the estimated maintenance charges and what amenities are covered?",
+    a: "Maintenance charges are estimated at an economical ₹2.75 to ₹3.50 per sq.ft per month. This covers full maintenance of the 25,000 sq.ft Club Azzurro clubhouse, Venetian swimming lagoon, landscaped mist gardens, high-speed automated passenger & stretcher elevators, 24x7 multi-tier CCTV security, and solar-powered common lighting."
+  },
+  {
+    q: "Is dedicated car parking allotted with each residence, and are there EV charging points?",
+    a: "Yes. Every apartment at Puraniks Abitante Fiore includes a designated covered stilt or podium car parking bay. The parking layout is engineered for wide driveways, low turning radiuses, and dedicated infrastructure provisions for electric vehicle (EV) charging stations."
+  },
+  {
+    q: "What is the expected rental yield and resale demand for Puraniks Abitante in Bavdhan?",
+    a: "Due to its strategic 15-minute signal-free highway commute to Hinjewadi IT Park (400,000+ tech workforce) and 5 minutes to Kothrud, Puraniks Abitante commands strong rental yields of 4.5% to 5.8% annually. 1 BHK units rent between ₹18,000–₹22,000/mo, 2 BHK units from ₹26,000–₹34,000/mo, and 3 BHK units up to ₹45,000/mo."
   }
 ];
 
