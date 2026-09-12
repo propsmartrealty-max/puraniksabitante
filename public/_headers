@@ -85,6 +85,12 @@
   CDN-Cache-Control: max-age=0
   Service-Worker-Allowed: /
 
+/.well-known/traffic-advice
+  Content-Type: application/trafficadvice+json; charset=utf-8
+  Cache-Control: public, max-age=86400
+  CDN-Cache-Control: max-age=86400
+  Access-Control-Allow-Origin: *
+
 
 # HTML Caching Policy (Sub-15ms Edge Cache with Instant Revalidation on Deploy)
 /*.html
