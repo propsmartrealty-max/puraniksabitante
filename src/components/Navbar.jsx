@@ -16,12 +16,13 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
   }, []);
 
   const navLinks = [
-    { name: 'OVERVIEW', href: '#overview' },
-    { name: 'RESIDENCES', href: '#residences' },
-    { name: 'MASTER PLAN', href: '#masterplan' },
-    { name: 'AMENITIES', href: '#amenities' },
-    { name: 'LOCATION', href: '#location' },
-    { name: 'KNOWLEDGE HUB', href: '#seo-knowledge-hub' },
+    { name: 'OVERVIEW', href: '/#overview' },
+    { name: 'PRICING', href: '/puraniks-abitante-fiore-price' },
+    { name: 'FLOOR PLANS', href: '/puraniks-abitante-floor-plans' },
+    { name: 'AMENITIES', href: '/#amenities' },
+    { name: 'LOCATION', href: '/#location' },
+    { name: 'ARTICLES', href: '/articles' },
+    { name: 'MAHARERA', href: '/puraniks-abitante-rera' },
   ];
 
   return (

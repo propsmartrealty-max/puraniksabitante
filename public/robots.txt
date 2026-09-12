@@ -28,17 +28,26 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# AI Crawlers for Search Overviews (SearchGPT, Claude, Perplexity)
+# AI Crawlers for Search Overviews & Direct Citations
 User-agent: ChatGPT-User
 Allow: /
 
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 User-agent: *
@@ -50,9 +59,10 @@ Disallow: /*?*preview=true
 
 # Sitemaps & Knowledge Graph Endpoints
 Sitemap: https://puraniksabitante.in/sitemap.xml
+Sitemap: https://puraniksabitante.in/image-sitemap.xml
 Feed: https://puraniksabitante.in/rss.xml
 Feed: https://puraniksabitante.in/feed.xml
 
-# LLM & AI Search Optimization
+# LLM & Google Merchant Feeds
 # LLM-Text: https://puraniksabitante.in/llms.txt
 # Google Merchant Product Feed: https://puraniksabitante.in/merchant-feed.xml

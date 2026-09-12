@@ -281,7 +281,7 @@ export async function onRequest(context) {
 
   if (contentType.includes('text/html')) {
     // HTTP 103 Early Hints for HTML Pages
-    newHeaders.set('Link', '<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap');
+    newHeaders.set('Link', '<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/image-sitemap.xml>; rel=sitemap');
 
     if (typeof HTMLRewriter !== 'undefined') {
       // Dynamic Geo Message Computation

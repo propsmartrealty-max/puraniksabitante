@@ -146,6 +146,17 @@ export default function DedicatedLandingPage({
             </div>
           </a>
 
+          {/* Desktop Central Links */}
+          <nav className="hidden xl:flex items-center space-x-6 text-xs font-bold tracking-wider text-slate-700">
+            <a href="/#overview" className="hover:text-[#92400E] transition-colors">OVERVIEW</a>
+            <a href="/puraniks-abitante-fiore-price" className="hover:text-[#92400E] transition-colors">PRICING</a>
+            <a href="/puraniks-abitante-floor-plans" className="hover:text-[#92400E] transition-colors">FLOOR PLANS</a>
+            <a href="/puraniks-abitante-amenities" className="hover:text-[#92400E] transition-colors">AMENITIES</a>
+            <a href="/bavdhan-connectivity" className="hover:text-[#92400E] transition-colors">LOCATION</a>
+            <a href="/articles" className="hover:text-[#92400E] transition-colors">ARTICLES</a>
+            <a href="/puraniks-abitante-rera" className="hover:text-[#92400E] transition-colors">MAHARERA</a>
+          </nav>
+
           {/* Nav Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
             <a 
