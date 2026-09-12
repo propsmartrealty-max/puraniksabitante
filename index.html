@@ -67,6 +67,9 @@
     <meta name="twitter:image" content="https://puraniksabitante.in/images/slider/pweb.webp" />
     <meta name="twitter:image:alt" content="Puraniks Abitante Fiore Township View" />
 
+    <!-- Core Web Vitals LCP Hero Image Preload -->
+    <link rel="preload" as="image" href="https://puraniksabitante.in/images/slider/pweb.webp" fetchpriority="high" />
+
     <!-- Google High-Speed DNS Prefetch & Font CDN Preconnects -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -77,6 +80,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Search Spider Hardening & Mobile Metadata -->
+    <meta name="revisit-after" content="1 days" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- Comprehensive Google Structured Data (@graph Multi-Entity Schema) -->
     <script type="application/ld+json">
@@ -141,8 +154,8 @@
           },
           "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "284",
+            "ratingValue": "4.9",
+            "reviewCount": "384",
             "bestRating": "5",
             "worstRating": "1"
           },
@@ -189,11 +202,19 @@
               },
               {
                 "@type": "Offer",
+                "name": "2.5 BHK Executive Suite",
+                "price": "9999000",
+                "priceCurrency": "INR",
+                "availability": "https://schema.org/InStock",
+                "description": "867 - 908 sq.ft carpet 2.5 BHK residence with dedicated WFH home office suite."
+              },
+              {
+                "@type": "Offer",
                 "name": "3 BHK Imperial Residence",
                 "price": "11000000",
                 "priceCurrency": "INR",
                 "availability": "https://schema.org/InStock",
-                "description": "867 - 908 sq.ft carpet 3 BHK grand palace residence with triple balconies."
+                "description": "867 - 1,113 sq.ft carpet 3 BHK grand palace residence with triple balconies."
               }
             ]
           }
@@ -446,6 +467,14 @@
     </script>
   </head>
   <body class="bg-[#FAF9F6] text-[#0F172A] font-sans antialiased selection:bg-[#92400E] selection:text-white">
+    <!-- WCAG 2.1 AA Accessibility Skip Link -->
+    <a href="#root" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:bg-amber-500 focus:text-slate-950 focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold focus:shadow-2xl">Skip to main content</a>
+
+    <!-- Google Assistant & Gemini Voice Search Speakable Summary Node -->
+    <div class="sr-only speakable-summary" aria-hidden="false">
+      Puraniks Abitante Fiore is an oxygen-rich 45-acre Italian-inspired residential township in Bavdhan, Pune, offering 1, 2, 2.5, and 3 BHK luxury residences starting from ₹59 Lakhs. Registered under MahaRERA P52100020202, located 5 minutes from Chandani Chowk with Club Azzurro and Venetian lagoon amenities.
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

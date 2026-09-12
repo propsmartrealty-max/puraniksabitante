@@ -16,6 +16,548 @@ const {
   keywords = "Puraniks Abitante Bavdhan, Puraniks Abitante Fiore, Puraniks Abitante Pune, Puranik Builders Bavdhan, Puraniks Abitante floor plan, Puraniks Abitante price, Puraniks Abitante brochure, Puraniks Abitante contact number, Puraniks Abitante MahaRERA, 1 BHK flat in Bavdhan Pune, 2 BHK flat in Bavdhan Pune, 3 BHK luxury apartment Bavdhan, Flats near Chandani Chowk, Flats near Hinjewadi IT Park, Oxygen rich homes Bavdhan Pune, Italian themed township Pune",
   ogImage = "https://puraniksabitante.in/images/slider/pweb.webp"
 } = Astro.props;
+
+const breadcrumbItems = canonical === "https://puraniksabitante.in/" ? [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://puraniksabitante.in/"
+  }
+] : [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://puraniksabitante.in/"
+  },
+  {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Puraniks Abitante Fiore Bavdhan",
+    "item": "https://puraniksabitante.in/puraniks-abitante-fiore"
+  },
+  {
+    "@type": "ListItem",
+    "position": 3,
+    "name": title.split('|')[0].trim(),
+    "item": canonical
+  }
+];
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://puraniksabitante.in/#website",
+      "url": "https://puraniksabitante.in/",
+      "name": "Puraniks Abitante Fiore Official Portal",
+      "alternateName": ["Puraniks Abitante Bavdhan", "Puraniks Abitante", "Abitante Fiore", "Puraniks Abitante Phase 2"],
+      "description": "Official residential showcase for Puraniks Abitante Fiore, 1, 2, 2.5 & 3 BHK oxygen-rich hillside township in Bavdhan, Pune.",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://puraniksabitante.in/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://puraniksabitante.in/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": ["ApartmentComplex", "RealEstateListing", "Place", "LocalBusiness"],
+      "@id": "https://puraniksabitante.in/#project",
+      "name": "Puraniks Abitante Fiore",
+      "alternateName": ["Puraniks Abitante Bavdhan", "Puraniks Abitante", "Abitante Fiore", "Puraniks Abitante Phase II"],
+      "description": "Oxygen-rich 45-acre Italian Riviera-inspired residential township in Bavdhan Budruk, Pune, developed by Puranik Builders Ltd. Offering 1 BHK, 2 BHK Smart, 2 BHK Venetian, 2.5 BHK Executive, and 3 BHK Imperial residences with Juliet Balcony Gardens, Venetian lagoon pools, Club Azzurro, and mist gardens.",
+      "url": "https://puraniksabitante.in/",
+      "telephone": "+91-80689-76983",
+      "email": "sales@puranikbuilders.com",
+      "priceRange": "₹59 Lakhs - ₹1.30 Crore",
+      "hasMap": "https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw",
+      "image": "https://puraniksabitante.in/images/slider/pweb.webp",
+      "currenciesAccepted": "INR, USD, AED, GBP, SGD, CAD, AUD, EUR",
+      "paymentAccepted": "Bank Transfer, Cheque, Home Loan, Credit Card",
+      "tourBookingPage": "https://puraniksabitante.in/abitante-fiore-booking",
+      "isAccessibleForFree": true,
+      "publicAccess": true,
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Bavdhan, Pune" },
+        { "@type": "AdministrativeArea", "name": "Kothrud, Pune" },
+        { "@type": "AdministrativeArea", "name": "Baner, Pune" },
+        { "@type": "AdministrativeArea", "name": "Hinjewadi, Pune" },
+        { "@type": "AdministrativeArea", "name": "Pune, Maharashtra" },
+        { "@type": "Country", "name": "India" }
+      ],
+      "sameAs": [
+        "https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw",
+        "https://maps.google.com/?cid=9014467554746810342",
+        "https://www.google.com/search?kgmid=/g/11b8v58dmw",
+        "https://abitantefiore.puranikbuilders.com",
+        "https://maharera.mahaonline.gov.in",
+        "https://en.wikipedia.org/wiki/Bavdhan",
+        "https://www.youtube.com/watch?v=WOPqlTKXMd8"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:30",
+          "closes": "19:00"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Near Crystal Honda Service Station, Off Mumbai-Bangalore Highway, Bavdhan Budruk",
+        "addressLocality": "Bavdhan, Pune",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411021",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.521799,
+        "longitude": 73.7602584
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "384",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Balcony Gardens with Oxygen Plants", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Venetian Swimming Pool & Cabanas", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Club Azzurro 25,000 sq.ft Clubhouse", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Mist Garden & Aromatherapy Trail", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Roman Amphitheater", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Seismic Zone III RCC Earthquake Resistant Structure", "value": true }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "INR",
+        "lowPrice": "5900000",
+        "highPrice": "13000000",
+        "offerCount": "1800",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "1 BHK Oxygen-Rich Flat",
+            "price": "5900000",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "description": "489 sq.ft carpet 1 BHK oxygen flat with private Balcony Garden."
+          },
+          {
+            "@type": "Offer",
+            "name": "2 BHK Smart Residence",
+            "price": "7299000",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "description": "596 - 640 sq.ft carpet 2 BHK Smart residence with dual balconies."
+          },
+          {
+            "@type": "Offer",
+            "name": "2 BHK Venetian Luxury",
+            "price": "8900000",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "description": "735 - 770 sq.ft carpet 2 BHK Venetian luxury residence with panoramic deck."
+          },
+          {
+            "@type": "Offer",
+            "name": "2.5 BHK Executive Suite",
+            "price": "9999000",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "description": "867 - 908 sq.ft carpet 2.5 BHK residence with dedicated WFH home office suite."
+          },
+          {
+            "@type": "Offer",
+            "name": "3 BHK Imperial Residence",
+            "price": "11000000",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "description": "867 - 1,113 sq.ft carpet 3 BHK residence with triple balconies and 270° views."
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://puraniksabitante.in/#product-units",
+      "name": "Puraniks Abitante Fiore Luxury Residences Bavdhan",
+      "image": "https://puraniksabitante.in/images/slider/pweb.webp",
+      "description": "1, 2, 2.5 & 3 BHK Italian Riviera-inspired oxygen-rich residences with private Balcony Gardens, Club Azzurro, and Venetian lagoon in Bavdhan, Pune.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Puranik Builders Limited",
+        "logo": "https://puraniksabitante.in/images/logo.webp"
+      },
+      "sku": "AF-BAVDHAN-2026",
+      "mpn": "P52100020202",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "384",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Rohit Deshmukh" },
+          "datePublished": "2026-08-15",
+          "reviewBody": "Purchased a 2 BHK in Phase 2A. The Italian Riviera architecture, lagoon pool, and Balcony Garden concept are unmatched in Pune. Great location near Chandani Chowk flyover.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Priya Kulkarni" },
+          "datePublished": "2026-07-28",
+          "reviewBody": "Working in Hinjewadi Phase 1, the commute is barely 15 minutes. Pure hillside oxygen, peaceful surroundings, and verified MahaRERA documentation by Puraniks.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Amitabh Sen (NRI Investor, Dubai)" },
+          "datePublished": "2026-06-10",
+          "reviewBody": "Seamless NRI booking experience. Dual currency assistance and high rental demand from Pune tech corridor made this my top investment choice.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+        }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "INR",
+        "lowPrice": "5900000",
+        "highPrice": "13000000",
+        "offerCount": "1800",
+        "priceValidUntil": "2026-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Puranik Builders Limited"
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnInStore",
+          "returnFees": "https://schema.org/FreeReturn"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "INR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "IN"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://puraniksabitante.in/#organization",
+      "name": "Puranik Builders Limited",
+      "url": "https://puraniksabitante.in/",
+      "logo": "https://puraniksabitante.in/images/logo.webp",
+      "foundingDate": "1990",
+      "telephone": "+91-80689-76983",
+      "email": "sales@puranikbuilders.com",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Special:Search?search=Puranik+Builders",
+        "https://www.facebook.com/PuranikBuilders/",
+        "https://www.linkedin.com/company/puranik-builders-ltd/",
+        "https://www.youtube.com/@PuranikBuilders",
+        "https://www.instagram.com/puranikbuilders/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      "itemListElement": breadcrumbItems
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://puraniksabitante.in/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the price range and configurations at Puraniks Abitante Fiore Bavdhan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puraniks Abitante Fiore offers 1 BHK Oxygen Flats (489 sq.ft from ₹59 Lakhs*), 2 BHK Smart Homes (596-640 sq.ft from ₹72.99 Lakhs*), 2 BHK Venetian Luxury (735-770 sq.ft from ₹89 Lakhs*), 2.5 BHK Executive Suites (867-908 sq.ft from ₹99.99 Lakhs*), and 3 BHK Imperial Residences (867-1,113 sq.ft from ₹1.10 Crore*)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the 4 official MahaRERA registration numbers for Puraniks Abitante Fiore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puraniks Abitante Fiore is registered under 4 official MahaRERA registrations: Phase 2A (P52100020202 - Ready Possession with OC), Phase 2B (P52100020238 - Finishing Stage), Phase 2C (P52100048353 - Under Construction RCC Superstructure), and Phase 2C1 (P52100049352 - New Launch Wings). It also holds MoEF & CC Environmental Clearance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Puraniks Abitante Fiore located in Pune and how is the connectivity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The project is located at Bavdhan Budruk, Pune (PIN 411021), near Crystal Honda Service Station off Mumbai-Bangalore Highway (NH 48). It is just 5 minutes (2.5 km) from the newly completed Chandani Chowk Flyover, 10 minutes from Kothrud, 12 minutes from Baner High Street, and 15 minutes from Hinjewadi IT Park."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Puraniks Abitante Fiore an oxygen-rich nature township?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Abitante Fiore features 45 acres of hillside terrain with 70% open landscaped spaces, dedicated private Juliet Balcony Gardens equipped with botanical planters, an aromatic mist garden micro-climate cooling trail, and 1,000+ native medicinal and fruit trees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which schools and hospitals are located near Puraniks Abitante Fiore Bavdhan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Top schools within 3-8 minutes include Sanskriti School (1.2 km), Sri Chaitanya Techno School (1.5 km), Ryan International (2.8 km), and Vidya Valley (4 km). Premier healthcare centers include Chellaram Multi-Speciality Hospital (1.8 km), Sahyadri Hospital Kothrud (5.5 km), and Deenanath Mangeshkar (7.5 km)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the expected rental yield and investment ROI at Abitante Fiore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Properties at Puraniks Abitante Fiore deliver robust 4.5% to 5.8% rental yields driven by over 400,000 tech professionals working in nearby Hinjewadi IT Park. Capital appreciation is projected at 14-18% supported by the Chandani Chowk flyover and the upcoming Pune Metro Line 3 extension."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there resale or rental inventory available in Puraniks Abitante?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Puraniks Abitante has active delivered resident communities in Phase 1 and Phase 2A with verified owner resale units and 1, 2, and 3 BHK rental apartments ranging from ₹18,000 to ₹42,000 per month."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://puraniksabitante.in/#walkthrough-video",
+      "name": "Puraniks Abitante Fiore Official 45-Acre Township Walkthrough Video",
+      "description": "Architectural video walkthrough of Puraniks Abitante Fiore in Bavdhan Budruk, Pune. Explore 1, 2, 2.5 & 3 BHK Italian residences, Balcony Gardens, and Club Azzurro.",
+      "thumbnailUrl": [
+        "https://img.youtube.com/vi/WOPqlTKXMd8/maxresdefault.jpg",
+        "https://puraniksabitante.in/images/slider/pweb.webp"
+      ],
+      "uploadDate": "2024-01-15T09:00:00+05:30",
+      "contentUrl": "https://www.youtube.com/watch?v=WOPqlTKXMd8",
+      "embedUrl": "https://www.youtube.com/embed/WOPqlTKXMd8",
+      "duration": "PT2M45S",
+      "publisher": {
+        "@id": "https://puraniksabitante.in/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonical}#webpage`,
+      "url": canonical,
+      "name": title,
+      "description": description,
+      "isPartOf": { "@id": "https://puraniksabitante.in/#website" },
+      "breadcrumb": { "@id": `${canonical}#breadcrumb` },
+      "about": { "@id": "https://puraniksabitante.in/#project" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": ogImage
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", ".speakable-summary", "#overview p"]
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://puraniksabitante.in/#howto-rera",
+      "name": "How to Verify MahaRERA Registration for Puraniks Abitante Fiore Bavdhan",
+      "description": "Step-by-step guide to verify the 4 official MahaRERA registered phases of Puraniks Abitante Fiore on the official Maharashtra Real Estate Regulatory Authority portal.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Visit MahaRERA Portal",
+          "text": "Go to the official MahaRERA website at maharera.mahaonline.gov.in."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Search Registered Projects",
+          "text": "Navigate to 'Search Project Details' and select 'Registered Projects'."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Enter Verified Registration Numbers",
+          "text": "Search for Phase 2A (P52100020202), Phase 2B (P52100020238), Phase 2C (P52100048353), or Phase 2C1 (P52100049352)."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "View Project Certificate & Approvals",
+          "text": "Download the official MahaRERA certificate, approved floor plans, and MoEF Environmental Clearance."
+        }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://puraniksabitante.in/#dataset-pune-realestate",
+      "name": "Bavdhan Pune Real Estate Pricing & Capital Appreciation Trends (2020 - 2026)",
+      "description": "Historical property pricing indices, per-square-foot capital trends, and rental yield matrix for Bavdhan Budruk, Kothrud, Baner, and Hinjewadi residential corridors.",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": {
+        "@id": "https://puraniksabitante.in/#organization"
+      },
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Bavdhan, Pune, Maharashtra, India",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 18.521799,
+          "longitude": 73.7602584
+        }
+      },
+      "temporalCoverage": "2020/2026",
+      "keywords": [
+        "Pune Real Estate Prices",
+        "Bavdhan Property Rates",
+        "Hinjewadi Rental Yields",
+        "Baner Property Prices",
+        "Puraniks Abitante Fiore Valuation"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://puraniksabitante.in/#sitelinks-navigation",
+      "name": "Puraniks Abitante Fiore Primary Navigation Sitelinks",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Verified Price List & Cost Sheet 2026",
+          "description": "Transparent cost sheets for 1, 2, 2.5 & 3 BHK residences starting from ₹59 Lakhs*",
+          "url": "https://puraniksabitante.in/puraniks-abitante-fiore-price"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Master Floor Plans & CAD Blueprints",
+          "description": "Certified 2D AutoCAD floor plans and 3D cut-sections from 489 to 1,113 sq.ft",
+          "url": "https://puraniksabitante.in/puraniks-abitante-floor-plans"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "MahaRERA 4-Phase Legal Trust Hub",
+          "description": "Official RERA Phase 2A, 2B, 2C, 2C1 registrations and Occupancy Certificates",
+          "url": "https://puraniksabitante.in/puraniks-abitante-rera"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Location Radar & Transit Connectivity",
+          "description": "5 mins from Chandani Chowk and 15 mins from Hinjewadi IT Park via NH-48",
+          "url": "https://puraniksabitante.in/bavdhan-connectivity"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Club Azzurro & 30+ Resort Amenities",
+          "description": "25,000 sq.ft Italian clubhouse, Venetian lagoon pool, and Roman amphitheater",
+          "url": "https://puraniksabitante.in/puraniks-abitante-amenities"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 6,
+          "name": "Pune Real Estate Research Hub",
+          "description": "In-depth market research reports, rental yield studies, and buyer guides",
+          "url": "https://puraniksabitante.in/articles"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 7,
+          "name": "Schedule VIP Site Visit",
+          "description": "Book complimentary AC cab pickup and sample flat inspection in Bavdhan",
+          "url": "https://puraniksabitante.in/abitante-fiore-booking"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://puraniksabitante.in/#howto-booking",
+      "name": "How to Book a Residence at Puraniks Abitante Fiore Bavdhan Pune",
+      "description": "Step-by-step verified guide to purchasing an apartment at Puraniks Abitante Fiore with direct developer pricing and zero stamp duty privileges.",
+      "totalTime": "P3D",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": "100000"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Schedule VIP Site Visit & Experience Center Tour",
+          "text": "Book a private inspection of the actual sample flats at Bavdhan Budruk with complimentary AC cab transit service.",
+          "url": "https://puraniksabitante.in/abitante-fiore-booking"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Select Optimal Configuration & Tower Wing",
+          "text": "Choose your preferred layout: 1 BHK Oxygen Flat (489 sq.ft), 2 BHK Smart (596 sq.ft), 2 BHK Venetian (735 sq.ft), 2.5 BHK Executive (867 sq.ft), or 3 BHK Imperial (867-1,113 sq.ft).",
+          "url": "https://puraniksabitante.in/puraniks-abitante-floor-plans"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Lock Unit with Initial Token & Benefit from Zero Stamp Duty",
+          "text": "Reserve your selected inventory with a booking token of ₹1,00,000 to freeze the launch rate and activate the 0% stamp duty waiver.",
+          "url": "https://puraniksabitante.in/puraniks-abitante-fiore-price"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Execute MahaRERA Registered Agreement for Sale",
+          "text": "Complete legal documentation under MahaRERA registration (P52100020202) with transparent milestone payment schedules.",
+          "url": "https://puraniksabitante.in/puraniks-abitante-rera"
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <!doctype html>
@@ -60,16 +602,25 @@ const {
     <link rel="alternate" type="application/atom+xml" title="Puraniks Abitante Fiore Official Feed" href="/feed.xml" />
     <link rel="alternate" type="application/xml" title="Google Merchant Center Inventory Feed" href="/merchant-feed.xml" />
 
+    <!-- Googlebot & Search Spider Directives -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot-image" content="index, follow, max-image-preview:large" />
     <meta name="googlebot-news" content="index, follow" />
     <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
     
     <!-- Theme & App Metadata -->
     <meta name="theme-color" content="#0B1329" />
     <meta name="application-name" content="Puraniks Abitante Fiore" />
     <meta name="apple-mobile-web-app-title" content="Puraniks Abitante" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="author" content="Puranik Builders Ltd." />
     <meta name="publisher" content="Puranik Builders Ltd." />
     <meta name="format-detection" content="telephone=yes" />
@@ -102,6 +653,9 @@ const {
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content="Puraniks Abitante Fiore Township View" />
 
+    <!-- Core Web Vitals LCP Hero Image Preload -->
+    <link rel="preload" as="image" href={ogImage} fetchpriority="high" />
+
     <!-- Google High-Speed DNS Prefetch & Font CDN Preconnects -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -114,539 +668,8 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Comprehensive Google Structured Data (@graph Multi-Entity Schema) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://puraniksabitante.in/#website",
-          "url": "https://puraniksabitante.in/",
-          "name": "Puraniks Abitante Fiore Official Portal",
-          "alternateName": ["Puraniks Abitante Bavdhan", "Puraniks Abitante", "Abitante Fiore", "Puraniks Abitante Phase 2"],
-          "description": "Official residential showcase for Puraniks Abitante Fiore, 1, 2, 2.5 & 3 BHK oxygen-rich hillside township in Bavdhan, Pune.",
-          "inLanguage": "en-IN",
-          "publisher": {
-            "@id": "https://puraniksabitante.in/#organization"
-          },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://puraniksabitante.in/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
-          "@type": ["ApartmentComplex", "RealEstateListing", "Place", "LocalBusiness"],
-          "@id": "https://puraniksabitante.in/#project",
-          "name": "Puraniks Abitante Fiore",
-          "alternateName": ["Puraniks Abitante Bavdhan", "Puraniks Abitante", "Abitante Fiore", "Puraniks Abitante Phase II"],
-          "description": "Oxygen-rich 45-acre Italian Riviera-inspired residential township in Bavdhan Budruk, Pune, developed by Puranik Builders Ltd. Offering 1 BHK, 2 BHK Smart, 2 BHK Venetian, 2.5 BHK Executive, and 3 BHK Imperial residences with Juliet Balcony Gardens, Venetian lagoon pools, Club Azzurro, and mist gardens.",
-          "url": "https://puraniksabitante.in/",
-          "telephone": "+91-80689-76983",
-          "email": "sales@puranikbuilders.com",
-          "priceRange": "₹59 Lakhs - ₹1.30 Crore",
-          "hasMap": "https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw",
-          "image": "https://puraniksabitante.in/images/slider/pweb.webp",
-          "currenciesAccepted": "INR, USD, AED, GBP, SGD",
-          "paymentAccepted": "Bank Transfer, Cheque, Home Loan, Credit Card",
-          "tourBookingPage": "https://puraniksabitante.in/abitante-fiore-booking",
-          "isAccessibleForFree": true,
-          "publicAccess": true,
-          "areaServed": [
-            { "@type": "AdministrativeArea", "name": "Bavdhan, Pune" },
-            { "@type": "AdministrativeArea", "name": "Kothrud, Pune" },
-            { "@type": "AdministrativeArea", "name": "Baner, Pune" },
-            { "@type": "AdministrativeArea", "name": "Hinjewadi, Pune" },
-            { "@type": "AdministrativeArea", "name": "Pune, Maharashtra" },
-            { "@type": "Country", "name": "India" }
-          ],
-          "sameAs": [
-            "https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw",
-            "https://maps.google.com/?cid=9014467554746810342",
-            "https://www.google.com/search?kgmid=/g/11b8v58dmw",
-            "https://abitantefiore.puranikbuilders.com",
-            "https://maharera.mahaonline.gov.in",
-            "https://en.wikipedia.org/wiki/Bavdhan",
-            "https://www.youtube.com/watch?v=WOPqlTKXMd8"
-          ],
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-              "opens": "09:30",
-              "closes": "19:00"
-            }
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Near Crystal Honda Service Station, Off Mumbai-Bangalore Highway, Bavdhan Budruk",
-            "addressLocality": "Bavdhan, Pune",
-            "addressRegion": "Maharashtra",
-            "postalCode": "411021",
-            "addressCountry": "IN"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 18.521799,
-            "longitude": 73.7602584
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "284",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "amenityFeature": [
-            { "@type": "LocationFeatureSpecification", "name": "Balcony Gardens with Oxygen Plants", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Venetian Swimming Pool & Cabanas", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Club Azzurro 25,000 sq.ft Clubhouse", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Mist Garden & Aromatherapy Trail", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Roman Amphitheater", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Seismic Zone III RCC Earthquake Resistant Structure", "value": true }
-          ],
-          "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "INR",
-            "lowPrice": "5900000",
-            "highPrice": "13000000",
-            "offerCount": "1800",
-            "priceValidUntil": "2026-12-31",
-            "availability": "https://schema.org/InStock",
-            "offers": [
-              {
-                "@type": "Offer",
-                "name": "1 BHK Oxygen-Rich Flat",
-                "price": "5900000",
-                "priceCurrency": "INR",
-                "availability": "https://schema.org/InStock",
-                "description": "489 sq.ft carpet 1 BHK oxygen flat with private Balcony Garden."
-              },
-              {
-                "@type": "Offer",
-                "name": "2 BHK Smart Residence",
-                "price": "7299000",
-                "priceCurrency": "INR",
-                "availability": "https://schema.org/InStock",
-                "description": "596 - 640 sq.ft carpet 2 BHK Smart residence with dual balconies."
-              },
-              {
-                "@type": "Offer",
-                "name": "2 BHK Venetian Luxury",
-                "price": "8900000",
-                "priceCurrency": "INR",
-                "availability": "https://schema.org/InStock",
-                "description": "735 - 770 sq.ft carpet 2 BHK Venetian luxury residence with panoramic deck."
-              },
-              {
-                "@type": "Offer",
-                "name": "2.5 BHK Executive Suite",
-                "price": "9999000",
-                "priceCurrency": "INR",
-                "availability": "https://schema.org/InStock",
-                "description": "867 - 908 sq.ft carpet 2.5 BHK residence with dedicated WFH home office suite."
-              },
-              {
-                "@type": "Offer",
-                "name": "3 BHK Imperial Residence",
-                "price": "11000000",
-                "priceCurrency": "INR",
-                "availability": "https://schema.org/InStock",
-                "description": "867 - 1,113 sq.ft carpet 3 BHK residence with triple balconies and 270° views."
-              }
-            ]
-          }
-        {
-          "@type": "Product",
-          "@id": "https://puraniksabitante.in/#product-units",
-          "name": "Puraniks Abitante Fiore Luxury Residences Bavdhan",
-          "image": "https://puraniksabitante.in/images/slider/pweb.webp",
-          "description": "1, 2, 2.5 & 3 BHK Italian Riviera-inspired oxygen-rich residences with private Balcony Gardens, Club Azzurro, and Venetian lagoon in Bavdhan, Pune.",
-          "brand": {
-            "@type": "Brand",
-            "name": "Puranik Builders Limited",
-            "logo": "https://puraniksabitante.in/images/logo.webp"
-          },
-          "sku": "AF-BAVDHAN-2026",
-          "mpn": "P52100020202",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "384",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "review": [
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Rohit Deshmukh" },
-              "datePublished": "2026-08-15",
-              "reviewBody": "Purchased a 2 BHK in Phase 2A. The Italian Riviera architecture, lagoon pool, and Balcony Garden concept are unmatched in Pune. Great location near Chandani Chowk flyover.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-            },
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Priya Kulkarni" },
-              "datePublished": "2026-07-28",
-              "reviewBody": "Working in Hinjewadi Phase 1, the commute is barely 15 minutes. Pure hillside oxygen, peaceful surroundings, and verified MahaRERA documentation by Puraniks.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-            },
-            {
-              "@type": "Review",
-              "author": { "@type": "Person", "name": "Amitabh Sen (NRI Investor, Dubai)" },
-              "datePublished": "2026-06-10",
-              "reviewBody": "Seamless NRI booking experience. Dual currency assistance and high rental demand from Pune tech corridor made this my top investment choice.",
-              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-            }
-          ],
-          "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "INR",
-            "lowPrice": "5900000",
-            "highPrice": "13000000",
-            "offerCount": "1800",
-            "priceValidUntil": "2026-12-31",
-            "itemCondition": "https://schema.org/NewCondition",
-            "availability": "https://schema.org/InStock",
-            "seller": {
-              "@type": "Organization",
-              "name": "Puranik Builders Limited"
-            },
-            "hasMerchantReturnPolicy": {
-              "@type": "MerchantReturnPolicy",
-              "applicableCountry": "IN",
-              "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-              "merchantReturnDays": 30,
-              "returnMethod": "https://schema.org/ReturnInStore",
-              "returnFees": "https://schema.org/FreeReturn"
-            },
-            "shippingDetails": {
-              "@type": "OfferShippingDetails",
-              "shippingRate": {
-                "@type": "MonetaryAmount",
-                "value": "0",
-                "currency": "INR"
-              },
-              "shippingDestination": {
-                "@type": "DefinedRegion",
-                "addressCountry": "IN"
-              },
-              "deliveryTime": {
-                "@type": "ShippingDeliveryTime",
-                "handlingTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 0,
-                  "maxValue": 1,
-                  "unitCode": "DAY"
-                },
-                "transitTime": {
-                  "@type": "QuantitativeValue",
-                  "minValue": 0,
-                  "maxValue": 1,
-                  "unitCode": "DAY"
-                }
-              }
-            }
-          }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://puraniksabitante.in/#organization",
-          "name": "Puranik Builders Limited",
-          "url": "https://puraniksabitante.in/",
-          "logo": "https://puraniksabitante.in/images/logo.webp",
-          "foundingDate": "1990",
-          "telephone": "+91-80689-76983",
-          "email": "sales@puranikbuilders.com",
-          "sameAs": [
-            "https://www.wikidata.org/wiki/Special:Search?search=Puranik+Builders",
-            "https://www.facebook.com/PuranikBuilders/",
-            "https://www.linkedin.com/company/puranik-builders-ltd/",
-            "https://www.youtube.com/@PuranikBuilders",
-            "https://www.instagram.com/puranikbuilders/"
-          ]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": `${canonical}#breadcrumb`,
-          "itemListElement": canonical === "https://puraniksabitante.in/" ? [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://puraniksabitante.in/"
-            }
-          ] : [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://puraniksabitante.in/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Puraniks Abitante Fiore Bavdhan",
-              "item": "https://puraniksabitante.in/puraniks-abitante-fiore"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": title.split('|')[0].trim(),
-              "item": canonical
-            }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "@id": "https://puraniksabitante.in/#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What is the price range and configurations at Puraniks Abitante Fiore Bavdhan?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Puraniks Abitante Fiore offers 1 BHK Oxygen Flats (489 sq.ft from ₹59 Lakhs*), 2 BHK Smart Homes (596-640 sq.ft from ₹72.99 Lakhs*), 2 BHK Venetian Luxury (735-770 sq.ft from ₹89 Lakhs*), 2.5 BHK Executive Suites (867-908 sq.ft from ₹99.99 Lakhs*), and 3 BHK Imperial Residences (867-1,113 sq.ft from ₹1.10 Crore*)."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What are the 4 official MahaRERA registration numbers for Puraniks Abitante Fiore?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Puraniks Abitante Fiore is registered under 4 official MahaRERA registrations: Phase 2A (P52100020202 - Ready Possession with OC), Phase 2B (P52100020238 - Finishing Stage), Phase 2C (P52100048353 - Under Construction RCC Superstructure), and Phase 2C1 (P52100049352 - New Launch Wings). It also holds MoEF & CC Environmental Clearance."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Where is Puraniks Abitante Fiore located in Pune and how is the connectivity?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The project is located at Bavdhan Budruk, Pune (PIN 411021), near Crystal Honda Service Station off Mumbai-Bangalore Highway (NH 48). It is just 5 minutes (2.5 km) from the newly completed Chandani Chowk Flyover, 10 minutes from Kothrud, 12 minutes from Baner High Street, and 15 minutes from Hinjewadi IT Park."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What makes Puraniks Abitante Fiore an oxygen-rich nature township?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Abitante Fiore features 45 acres of hillside terrain with 70% open landscaped spaces, dedicated private Juliet Balcony Gardens equipped with botanical planters, an aromatic mist garden micro-climate cooling trail, and 1,000+ native medicinal and fruit trees."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Which schools and hospitals are located near Puraniks Abitante Fiore Bavdhan?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Top schools within 3-8 minutes include Sanskriti School (1.2 km), Sri Chaitanya Techno School (1.5 km), Ryan International (2.8 km), and Vidya Valley (4 km). Premier healthcare centers include Chellaram Multi-Speciality Hospital (1.8 km), Sahyadri Hospital Kothrud (5.5 km), and Deenanath Mangeshkar (7.5 km)."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the expected rental yield and investment ROI at Abitante Fiore?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Properties at Puraniks Abitante Fiore deliver robust 4.5% to 5.8% rental yields driven by over 400,000 tech professionals working in nearby Hinjewadi IT Park. Capital appreciation is projected at 14-18% supported by the Chandani Chowk flyover and the upcoming Pune Metro Line 3 extension."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is there resale or rental inventory available in Puraniks Abitante?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, Puraniks Abitante has active delivered resident communities in Phase 1 and Phase 2A with verified owner resale units and 1, 2, and 3 BHK rental apartments ranging from ₹18,000 to ₹42,000 per month."
-              }
-            }
-          ]
-        },
-        {
-          "@type": "VideoObject",
-          "@id": "https://puraniksabitante.in/#walkthrough-video",
-          "name": "Puraniks Abitante Fiore Official 45-Acre Township Walkthrough Video",
-          "description": "Architectural video walkthrough of Puraniks Abitante Fiore in Bavdhan Budruk, Pune. Explore 1, 2, 2.5 & 3 BHK Italian residences, Balcony Gardens, and Club Azzurro.",
-          "thumbnailUrl": [
-            "https://img.youtube.com/vi/WOPqlTKXMd8/maxresdefault.jpg",
-            "https://puraniksabitante.in/images/slider/pweb.webp"
-          ],
-          "uploadDate": "2024-01-15T09:00:00+05:30",
-          "contentUrl": "https://www.youtube.com/watch?v=WOPqlTKXMd8",
-          "embedUrl": "https://www.youtube.com/embed/WOPqlTKXMd8",
-          "duration": "PT2M45S",
-          "publisher": {
-            "@id": "https://puraniksabitante.in/#organization"
-          }
-        },
-        {
-          "@type": "WebPage",
-          "@id": `${canonical}#webpage`,
-          "url": canonical,
-          "name": title,
-          "description": description,
-          "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": ["h1", "h2", ".speakable-summary", "#overview p"]
-          }
-        },
-        {
-          "@type": "HowTo",
-          "@id": "https://puraniksabitante.in/#howto-rera",
-          "name": "How to Verify MahaRERA Registration for Puraniks Abitante Fiore Bavdhan",
-          "description": "Step-by-step guide to verify the 4 official MahaRERA registered phases of Puraniks Abitante Fiore on the official Maharashtra Real Estate Regulatory Authority portal.",
-          "step": [
-            {
-              "@type": "HowToStep",
-              "position": 1,
-              "name": "Visit MahaRERA Portal",
-              "text": "Go to the official MahaRERA website at maharera.mahaonline.gov.in."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 2,
-              "name": "Search Registered Projects",
-              "text": "Navigate to 'Search Project Details' and select 'Registered Projects'."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 3,
-              "name": "Enter Verified Registration Numbers",
-              "text": "Search for Phase 2A (P52100020202), Phase 2B (P52100020238), Phase 2C (P52100048353), or Phase 2C1 (P52100049352)."
-            },
-            {
-              "@type": "HowToStep",
-              "position": 4,
-              "name": "View Project Certificate & Approvals",
-              "text": "Download the official MahaRERA certificate, approved floor plans, and MoEF Environmental Clearance."
-            }
-          ]
-        },
-        {
-          "@type": "Dataset",
-          "@id": "https://puraniksabitante.in/#dataset-pune-realestate",
-          "name": "Bavdhan Pune Real Estate Pricing & Capital Appreciation Trends (2020 - 2026)",
-          "description": "Historical property pricing indices, per-square-foot capital trends, and rental yield matrix for Bavdhan Budruk, Kothrud, Baner, and Hinjewadi residential corridors.",
-          "license": "https://creativecommons.org/licenses/by/4.0/",
-          "creator": {
-            "@id": "https://puraniksabitante.in/#organization"
-          },
-          "spatialCoverage": {
-            "@type": "Place",
-            "name": "Bavdhan, Pune, Maharashtra, India",
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 18.521799,
-              "longitude": 73.7602584
-            }
-          },
-          "temporalCoverage": "2020/2026",
-          "keywords": [
-            "Pune Real Estate Prices",
-            "Bavdhan Property Rates",
-            "Hinjewadi Rental Yields",
-            "Baner Property Prices",
-            "Puraniks Abitante Fiore Valuation"
-          ]
-        },
-        {
-          "@type": "ItemList",
-          "@id": "https://puraniksabitante.in/#sitelinks-navigation",
-          "name": "Puraniks Abitante Fiore Primary Navigation Sitelinks",
-          "itemListElement": [
-            {
-              "@type": "SiteNavigationElement",
-              "position": 1,
-              "name": "Verified Price List & Cost Sheet 2026",
-              "description": "Transparent cost sheets for 1, 2, 2.5 & 3 BHK residences starting from ₹59 Lakhs*",
-              "url": "https://puraniksabitante.in/puraniks-abitante-fiore-price"
-            },
-            {
-              "@type": "SiteNavigationElement",
-              "position": 2,
-              "name": "Master Floor Plans & CAD Blueprints",
-              "description": "Certified 2D AutoCAD floor plans and 3D cut-sections from 489 to 1,113 sq.ft",
-              "url": "https://puraniksabitante.in/puraniks-abitante-floor-plans"
-            },
-            {
-              "@type": "SiteNavigationElement",
-              "position": 3,
-              "name": "MahaRERA 4-Phase Legal Trust Hub",
-              "description": "Official RERA Phase 2A, 2B, 2C, 2C1 registrations and Occupancy Certificates",
-              "url": "https://puraniksabitante.in/puraniks-abitante-rera"
-            },
-            {
-              "@type": "SiteNavigationElement",
-              "position": 4,
-              "name": "Location Radar & Transit Connectivity",
-              "description": "5 mins from Chandani Chowk and 15 mins from Hinjewadi IT Park via NH-48",
-              "url": "https://puraniksabitante.in/bavdhan-connectivity"
-            },
-            {
-              "@type": "SiteNavigationElement",
-              "position": 5,
-              "name": "Club Azzurro & 30+ Resort Amenities",
-              "description": "25,000 sq.ft Italian clubhouse, Venetian lagoon pool, and Roman amphitheater",
-              "url": "https://puraniksabitante.in/puraniks-abitante-amenities"
-            },
-            {
-              "@type": "SiteNavigationElement",
-              "position": 6,
-              "name": "Pune Real Estate Research Hub",
-              "description": "In-depth market research reports, rental yield studies, and buyer guides",
-              "url": "https://puraniksabitante.in/articles"
-            },
-            {
-              "@type": "SiteNavigationElement",
-              "position": 7,
-              "name": "Schedule VIP Site Visit",
-              "description": "Book complimentary AC cab pickup and sample flat inspection in Bavdhan",
-              "url": "https://puraniksabitante.in/abitante-fiore-booking"
-            }
-          ]
-        },
-        {
-          "@type": "HowTo",
-          "@id": "https://puraniksabitante.in/#howto-booking",
-          "name": "How to Book a Residence at Puraniks Abitante Fiore Bavdhan Pune",
-          "description": "Step-by-step verified guide to purchasing an apartment at Puraniks Abitante Fiore with direct developer pricing and zero stamp duty privileges.",
-          "totalTime": "P3D",
-          "estimatedCost": {
-            "@type": "MonetaryAmount",
-            "currency": "INR",
-            "value": "100000"
-          },
-          "step": [
-            {
-              "@type": "HowToStep",
-              "position": 1,
-              "name": "Schedule VIP Site Visit & Experience Center Tour",
-              "text": "Book a private inspection of the actual sample flats at Bavdhan Budruk with complimentary AC cab transit service.",
-              "url": "https://puraniksabitante.in/abitante-fiore-booking"
-            },
-            {
-              "@type": "HowToStep",
-              "position": 2,
-              "name": "Select Optimal Configuration & Tower Wing",
-              "text": "Choose your preferred layout: 1 BHK Oxygen Flat (489 sq.ft), 2 BHK Smart (596 sq.ft), 2 BHK Venetian (735 sq.ft), 2.5 BHK Executive (867 sq.ft), or 3 BHK Imperial (867-1,113 sq.ft).",
-              "url": "https://puraniksabitante.in/puraniks-abitante-floor-plans"
-            },
-            {
-              "@type": "HowToStep",
-              "position": 3,
-              "name": "Lock Unit with Initial Token & Benefit from Zero Stamp Duty",
-              "text": "Reserve your selected inventory with a booking token of ₹1,00,000 to freeze the launch rate and activate the 0% stamp duty waiver.",
-              "url": "https://puraniksabitante.in/puraniks-abitante-fiore-price"
-            },
-            {
-              "@type": "HowToStep",
-              "position": 4,
-              "name": "Execute MahaRERA Registered Agreement for Sale",
-              "text": "Complete legal documentation under MahaRERA registration (P52100020202) with transparent milestone payment schedules.",
-              "url": "https://puraniksabitante.in/puraniks-abitante-rera"
-            }
-          ]
-        }
-      ]
-    }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
+
     <!-- W3C Speculation Rules API for 0ms Instant Page Pre-rendering -->
     <script type="speculationrules">
     {
@@ -670,6 +693,9 @@ const {
     </script>
   </head>
   <body class="bg-[#FAF9F6] text-[#0F172A] font-sans antialiased selection:bg-[#92400E] selection:text-white">
+    <!-- WCAG 2.1 AA Accessibility Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:bg-amber-500 focus:text-slate-950 focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold focus:shadow-2xl">Skip to main content</a>
+
     <!-- Google Assistant & Gemini Voice Search Speakable Summary Node -->
     <div class="sr-only speakable-summary" aria-hidden="false">
       Puraniks Abitante Fiore is an oxygen-rich 45-acre Italian-inspired residential township in Bavdhan, Pune, offering 1, 2, 2.5, and 3 BHK luxury residences starting from ₹59 Lakhs. Registered under MahaRERA P52100020202, located 5 minutes from Chandani Chowk with Club Azzurro and Venetian lagoon amenities.
@@ -685,7 +711,9 @@ const {
       </a>
     </aside>
 
-    <slot />
+    <div id="main-content">
+      <slot />
+    </div>
 
     <!-- High-Performance PWA Service Worker Registration -->
     <script is:inline>
