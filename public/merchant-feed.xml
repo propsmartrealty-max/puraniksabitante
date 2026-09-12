@@ -124,5 +124,53 @@
         <g:price>0 INR</g:price>
       </g:shipping>
     </item>
+
+    <!-- Item 6: 4 BHK Sky Duplex -->
+    <item>
+      <g:id>AF-4BHK-SKY-DUPLEX</g:id>
+      <g:title>4 BHK Sky Duplex Flat - Puraniks Abitante Fiore Bavdhan Pune</g:title>
+      <g:description>1,650 to 1,850 sq.ft double-height luxury sky duplex featuring internal private staircase, dual expansive sundecks, and unobstructed valley views in Bavdhan Budruk, Pune. MahaRERA: P52100049352.</g:description>
+      <g:link>https://puraniksabitante.in/puraniks-abitante-4-bhk</g:link>
+      <g:image_link>https://puraniksabitante.in/images/slider/pweb.webp</g:image_link>
+      <g:price>14500000 INR</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:brand>Puranik Builders Limited</g:brand>
+      <g:mpn>P52100049352-4BHK-DUPLEX</g:mpn>
+      <g:product_type>Real Estate &gt; Residential Buildings &gt; Apartments</g:product_type>
+      <g:google_product_category>Real Estate</g:google_product_category>
+      <g:custom_label_0>MahaRERA P52100049352</g:custom_label_0>
+      <g:custom_label_1>Bavdhan Pune</g:custom_label_1>
+      <g:custom_label_2>Sky Duplex Collection</g:custom_label_2>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>VIP Site Visit Concierge</g:service>
+        <g:price>0 INR</g:price>
+      </g:shipping>
+    </item>
+
+    <!-- Item 7: Ultra-Luxury Penthouse -->
+    <item>
+      <g:id>AF-PENTHOUSE-VENEZIA</g:id>
+      <g:title>Luxury Hilltop Penthouse - Puraniks Abitante Fiore Bavdhan Pune</g:title>
+      <g:description>2,100+ sq.ft top-floor luxury penthouse with private rooftop terrace garden, 360-degree hilltop panoramas, and VIP concierge privileges in Bavdhan Budruk, Pune. MahaRERA: P52100049352.</g:description>
+      <g:link>https://puraniksabitante.in/puraniks-abitante-penthouse</g:link>
+      <g:image_link>https://puraniksabitante.in/images/slider/pweb.webp</g:image_link>
+      <g:price>18500000 INR</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:condition>new</g:condition>
+      <g:brand>Puranik Builders Limited</g:brand>
+      <g:mpn>P52100049352-PENTHOUSE</g:mpn>
+      <g:product_type>Real Estate &gt; Residential Buildings &gt; Apartments</g:product_type>
+      <g:google_product_category>Real Estate</g:google_product_category>
+      <g:custom_label_0>MahaRERA P52100049352</g:custom_label_0>
+      <g:custom_label_1>Bavdhan Pune</g:custom_label_1>
+      <g:custom_label_2>Presidential Penthouse</g:custom_label_2>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>VIP Site Visit Concierge</g:service>
+        <g:price>0 INR</g:price>
+      </g:shipping>
+    </item>
   </channel>
 </rss>

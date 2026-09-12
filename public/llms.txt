@@ -8,6 +8,11 @@
 - Project Name: Puraniks Abitante Fiore
 - Developer: Puranik Builders Limited (Founded 1990, 34+ years legacy, 46+ delivered projects, 10,000+ happy families)
 - Location: Bavdhan Budruk, Near Crystal Honda Service Station, Off Mumbai-Bangalore Highway (NH 48), Pune - 411021, Maharashtra, India
+- Exact GPS Coordinates: 18.521799° N, 73.7602584° E
+- Official Google Maps Listing: https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw
+- Google CID: 9014467554746810342 (https://maps.google.com/?cid=9014467554746810342)
+- Google Knowledge Graph MID: /g/11b8v58dmw
+- Customer Reviews: 4.9★ / 5.0 (384 Verified Reviews)
 - Township Area: 45-Acre Integrated Hilltop Township (70% Open Space)
 - Concept: Italian Riviera Living with private Juliet Balcony Gardens, mist cooling, and Club Azzurro (25,000+ sq.ft.)
 - Sales Desk: +91 80689 76983
@@ -25,14 +30,26 @@
 - 2 BHK Venetian Luxury: 735 - 770 sq.ft carpet | Starting ₹78.50 Lakhs* | 18ft living lounge, master walk-in wardrobe
 - 2.5 BHK Executive Suite: 867 - 908 sq.ft carpet | Starting ₹88.50 Lakhs* | Dedicated soundproof WFH study room
 - 3 BHK Imperial Residence: 867 - 1,113 sq.ft carpet | Starting ₹97.50 Lakhs* | Triple balconies, 270° valley views
-- Jodi Flats: Custom combined 4 & 5 BHK penthouse configurations available
+- 4 BHK Sky Duplex: 1,650 - 1,850 sq.ft carpet | Starting ₹1.45 Crore* | Double-height luxury, internal stairs
+- Luxury Penthouses: 2,100+ sq.ft carpet | Starting ₹1.85 Crore* | Private rooftop sundeck & valley panoramas
+- 5 BHK Presidential Jodi Suites: 2,200+ sq.ft carpet | Custom configured multi-generational layouts
 
-## Transit & Micro-Location Radar
+## West Pune IT Corridors & Micro-Market Connectivity
 - Chandani Chowk Multi-Level Flyover: 2.5 km (5 mins, signal-free)
-- Hinjewadi IT Park (Phases 1, 2, 3): 11.0 km (15 mins via NH 48)
-- Kothrud / Paud Road: 4.8 km (10 mins)
+- Hinjewadi IT Park (Phases 1, 2, 3): 11.0 km (15 mins via NH 48 highway)
 - Baner High Street / Balewadi: 7.0 km (12 mins)
+- Mahalunge Hi-Tech City: 8.5 km (14 mins)
+- Wakad / Ginger Chowk: 9.0 km (14 mins)
+- Kothrud / Paud Road: 4.8 km (10 mins)
 - Pune University / SB Road: 9.5 km (16 mins)
+
+## Editorial & Market Research Papers
+- Pune Real Estate Investment Guide 2026: https://puraniksabitante.in/articles/pune-real-estate-investment-guide-2026
+- Bavdhan vs Hinjewadi vs Baner Homebuyers Guide: https://puraniksabitante.in/articles/bavdhan-vs-hinjewadi-vs-baner-homebuyers-guide
+- MahaRERA 4 Phases Legal Verification: https://puraniksabitante.in/articles/puraniks-abitante-fiore-maharera-legal-verification
+- Chandani Chowk & Metro Line 3 Infrastructure Impact: https://puraniksabitante.in/articles/chandani-chowk-metro-line-3-impact-bavdhan-real-estate
+- Top Luxury Townships in West Pune Ranking: https://puraniksabitante.in/articles/top-luxury-townships-in-west-pune-ranking
+- NRI Property Buying & Taxation Guide: https://puraniksabitante.in/articles/nri-property-buying-guide-pune-taxation-roi
 
 ## Civic Ecosystem & Landmarks
 - Schools: Sanskriti School (1.2 km), Sri Chaitanya Techno (1.5 km), Ryan International (2.8 km), Vidya Valley (4 km)
@@ -47,5 +64,7 @@
 ## Deep Knowledge Link
 - Full AI Encyclopedia: https://puraniksabitante.in/llms-full.txt
 - Machine-Readable Knowledge Graph API: https://puraniksabitante.in/api/knowledge-graph
-- HTML Topic Sitemap Directory (110 Nodes): https://puraniksabitante.in/sitemap
+- Google Merchant Center Product Feed: https://puraniksabitante.in/merchant-feed.xml
+- Google News RSS 2.0 Feed: https://puraniksabitante.in/rss.xml
+- HTML Topic Sitemap Directory (140 Pages): https://puraniksabitante.in/sitemap
 - Official Portal: https://puraniksabitante.in/

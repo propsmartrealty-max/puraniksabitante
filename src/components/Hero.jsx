@@ -8,7 +8,8 @@ import {
   Send,
   Sparkles,
   MapPin,
-  Clock
+  Clock,
+  Star
 } from 'lucide-react';
 import { PROJECT_INFO, QUICK_STATS, ORIGINAL_IMAGES } from '../data/projectData';
 import confetti from 'canvas-confetti';
@@ -96,6 +97,29 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
                 Puraniks Abitante Fiore <br />
                 <span className="gold-gradient-text">Oxygen-Rich Italian Living in Bavdhan</span>
               </h1>
+
+              {/* Google 4.9★ Review Badge with Direct Link to Google Reviews */}
+              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-700 bg-amber-50/90 border border-amber-200/80 px-3.5 py-1.5 rounded-xl w-fit shadow-2xs">
+                <div className="flex text-amber-500">
+                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                </div>
+                <span className="font-extrabold text-slate-900">4.9 / 5.0</span>
+                <span className="text-slate-400">•</span>
+                <a
+                  href="https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!4m8!3m7!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!9m1!1b1!16s%2Fg%2F11b8v58dmw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#92400E] hover:underline font-bold"
+                >
+                  384 Google Reviews ↗
+                </a>
+                <span className="text-slate-400">•</span>
+                <span className="text-emerald-700 font-bold">MahaRERA Certified</span>
+              </div>
               
               <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
                 Experience high-altitude hillside serenity in Bavdhan Budruk, Pune. Premium 1, 2 & 3 BHK residences featuring private Balcony Gardens, Venetian lagoon pools, and 30+ curated lifestyle amenities.

@@ -220,7 +220,14 @@ export default function DedicatedLandingPage({
                   </div>
                   <span className="font-extrabold text-slate-900">4.9 / 5.0</span>
                   <span className="text-slate-400">•</span>
-                  <span>384 Verified Reviews</span>
+                  <a
+                    href="https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!4m8!3m7!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!9m1!1b1!16s%2Fg%2F11b8v58dmw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#92400E] hover:underline font-bold"
+                  >
+                    384 Google Reviews ↗
+                  </a>
                   <span className="text-slate-400">•</span>
                   <span className="text-emerald-700 font-bold">MahaRERA Certified</span>
                 </div>
