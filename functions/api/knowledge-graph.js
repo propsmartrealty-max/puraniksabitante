@@ -46,9 +46,19 @@ export async function onRequestGet(context) {
           "latitude": 18.521799,
           "longitude": 73.7602584
         },
+        "sameAs": [
+          "https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw",
+          "https://maps.google.com/?cid=9014467554746810342",
+          "https://www.google.com/search?kgmid=/g/11b8v58dmw",
+          "https://en.wikipedia.org/wiki/Bavdhan",
+          "https://www.wikidata.org/wiki/Q4873727",
+          "https://www.wikidata.org/wiki/Q1538",
+          "https://maharera.mahaonline.gov.in"
+        ],
         "googleMaps": {
           "placeUrl": "https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw",
           "cidUrl": "https://maps.google.com/?cid=9014467554746810342",
+          "placeId": "ChIJ3flmFYi-wjsR5j7kKokaGn0",
           "kgmid": "/g/11b8v58dmw"
         },
         "mahareraRegistrations": [
@@ -71,6 +81,15 @@ export async function onRequestGet(context) {
           { "destination": "Hinjewadi IT Park Phase 1", "distance": "11.0 km", "travelTime": "15 mins" },
           { "destination": "Pune Railway Station", "distance": "14.5 km", "travelTime": "25 mins" },
           { "destination": "Pune International Airport (PNQ)", "distance": "22.0 km", "travelTime": "40 mins" }
+        ],
+        "sitelinksNavigation": [
+          { "name": "Verified Price List 2026", "url": "https://puraniksabitante.in/puraniks-abitante-fiore-price" },
+          { "name": "Master Floor Plans & CAD Blueprints", "url": "https://puraniksabitante.in/puraniks-abitante-floor-plans" },
+          { "name": "MahaRERA 4-Phase Legal Trust Hub", "url": "https://puraniksabitante.in/puraniks-abitante-rera" },
+          { "name": "Location Radar & Transit Connectivity", "url": "https://puraniksabitante.in/bavdhan-connectivity" },
+          { "name": "Club Azzurro & 30+ Resort Amenities", "url": "https://puraniksabitante.in/puraniks-abitante-amenities" },
+          { "name": "Pune Real Estate Research Hub", "url": "https://puraniksabitante.in/articles" },
+          { "name": "Schedule VIP Site Visit", "url": "https://puraniksabitante.in/abitante-fiore-booking" }
         ]
       }
     ]

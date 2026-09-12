@@ -214,10 +214,14 @@ export async function onRequest(context) {
   let currencySymbol = '₹';
   let currencyRate = 1.0;
 
-  if (['US', 'CA'].includes(country)) {
+  if (['US'].includes(country)) {
     currencyCode = 'USD';
     currencySymbol = '$';
     currencyRate = 0.012;
+  } else if (['CA'].includes(country)) {
+    currencyCode = 'CAD';
+    currencySymbol = 'CA$ ';
+    currencyRate = 0.016;
   } else if (['AE', 'SA', 'QA', 'KW', 'OM'].includes(country)) {
     currencyCode = 'AED';
     currencySymbol = 'AED ';
@@ -226,10 +230,14 @@ export async function onRequest(context) {
     currencyCode = 'GBP';
     currencySymbol = '£';
     currencyRate = 0.0095;
-  } else if (['SG', 'AU', 'NZ'].includes(country)) {
+  } else if (['SG'].includes(country)) {
     currencyCode = 'SGD';
     currencySymbol = 'S$';
     currencyRate = 0.016;
+  } else if (['AU', 'NZ'].includes(country)) {
+    currencyCode = 'AUD';
+    currencySymbol = 'A$ ';
+    currencyRate = 0.018;
   } else if (['DE', 'FR', 'IT', 'ES', 'NL', 'IE'].includes(country)) {
     currencyCode = 'EUR';
     currencySymbol = '€';
@@ -250,7 +258,7 @@ export async function onRequest(context) {
   const status = (pathname === '/404' || response.status === 404) ? 404 : response.status;
 
   // --------------------------------------------------------------------------
-  // 5. INJECT ENTERPRISE EDGE TELEMETRY & SECURITY HEADERS
+  // 5. INJECT ENTERPRISE EDGE TELEMETRY, CACHE-TAGS & SECURITY HEADERS
   // --------------------------------------------------------------------------
   newHeaders.set('X-Edge-Datacenter', colo);
   newHeaders.set('X-Edge-Geo-Country', country);
@@ -263,9 +271,11 @@ export async function onRequest(context) {
     newHeaders.set('X-Robots-Tag', 'noindex, nofollow');
   } else {
     newHeaders.set('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
-    // Edge RAM Micro-Caching for sub-15ms TTFB
-    newHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=604800, stale-while-revalidate=86400');
+    // Edge RAM Micro-Caching (<15ms TTFB globally) with Stale Failover
+    newHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=604800, stale-while-revalidate=86400, stale-if-error=604800');
     newHeaders.set('CDN-Cache-Control', 'max-age=604800');
+    newHeaders.set('Surrogate-Control', 'max-age=604800');
+    newHeaders.set('Cache-Tag', 'puraniks-core, inventory-2026, bavdhan-pune, maharera-verified, real-estate-pune');
   }
 
   newHeaders.set('Server-Timing', `edge;desc="Cloudflare Anycast ${colo}", proc;dur=${duration}, cdn;desc="HIT"`);
@@ -273,6 +283,10 @@ export async function onRequest(context) {
   newHeaders.set('X-Content-Type-Options', 'nosniff');
   newHeaders.set('X-Frame-Options', 'SAMEORIGIN');
   newHeaders.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  newHeaders.set('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
+  newHeaders.set('Cross-Origin-Resource-Policy', 'cross-origin');
+  newHeaders.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(self "https://www.google.com" "https://maps.google.com"), payment=(), usb=(), interest-cohort=()');
+  newHeaders.set('Content-Security-Policy', "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data: blob: https://images.unsplash.com https://abitantefiore.puranikbuilders.com https://maharera.mahaonline.gov.in https://img.youtube.com https://puraniksabitante.in; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: https://challenges.cloudflare.com https://static.cloudflareinsights.com; frame-src 'self' https: https://www.youtube.com https://youtube.com https://www.google.com https://maps.google.com https://challenges.cloudflare.com; connect-src 'self' https:; base-uri 'self'; form-action 'self' https:;");
 
   // --------------------------------------------------------------------------
   // 6. CLOUDFLARE HTMLREWRITER: REAL-TIME STREAMING MUTATION
@@ -281,7 +295,7 @@ export async function onRequest(context) {
 
   if (contentType.includes('text/html')) {
     // HTTP 103 Early Hints for HTML Pages
-    newHeaders.set('Link', '<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/image-sitemap.xml>; rel=sitemap');
+    newHeaders.set('Link', '<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/image-sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/favicon.svg>; rel=preload; as=image');
 
     if (typeof HTMLRewriter !== 'undefined') {
       // Dynamic Geo Message Computation

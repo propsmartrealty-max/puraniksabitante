@@ -20,7 +20,7 @@
   Timing-Allow-Origin: *
   
   # Early Hints (HTTP 103)
-  Link: <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect
+  Link: <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/image-sitemap.xml>; rel=sitemap
 
 # Astro Static Compiled Bundles - 1 Year Immutable Edge & Browser Caching
 /_astro/*
@@ -44,10 +44,30 @@
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
   CDN-Cache-Control: max-age=2592000
 
+/icon-*.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  CDN-Cache-Control: max-age=2592000
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  CDN-Cache-Control: max-age=2592000
+
+/favicon-*.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  CDN-Cache-Control: max-age=2592000
+
 # Sitemaps, Robots & LLM AI Knowledge Files
 /sitemap.xml
+  Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
   CDN-Cache-Control: max-age=86400
+  Access-Control-Allow-Origin: *
+
+/image-sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  CDN-Cache-Control: max-age=86400
+  Access-Control-Allow-Origin: *
 
 /robots.txt
   Cache-Control: public, max-age=86400
@@ -95,8 +115,12 @@
 # HTML Caching Policy (Sub-15ms Edge Cache with Instant Revalidation on Deploy)
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
-  CDN-Cache-Control: max-age=604800, stale-while-revalidate=86400
+  CDN-Cache-Control: max-age=604800, stale-while-revalidate=86400, stale-if-error=604800
+  Surrogate-Control: max-age=604800
+  Cache-Tag: puraniks-core, inventory-2026, bavdhan-pune, maharera-verified, real-estate-pune
 
 /
   Cache-Control: public, max-age=0, must-revalidate
-  CDN-Cache-Control: max-age=604800, stale-while-revalidate=86400
+  CDN-Cache-Control: max-age=604800, stale-while-revalidate=86400, stale-if-error=604800
+  Surrogate-Control: max-age=604800
+  Cache-Tag: puraniks-core, inventory-2026, bavdhan-pune, maharera-verified, real-estate-pune
