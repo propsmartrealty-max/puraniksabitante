@@ -209,6 +209,22 @@ export default function DedicatedLandingPage({
                   {h1 || title.split("|")[0].trim()}
                 </h1>
 
+                {/* Visual Google 4.9★ Review Badge (E-E-A-T Schema Alignment) */}
+                <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-700 bg-amber-50/90 border border-amber-200/80 px-3.5 py-1.5 rounded-xl w-fit shadow-2xs">
+                  <div className="flex text-amber-500">
+                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  </div>
+                  <span className="font-extrabold text-slate-900">4.9 / 5.0</span>
+                  <span className="text-slate-400">•</span>
+                  <span>384 Verified Reviews</span>
+                  <span className="text-slate-400">•</span>
+                  <span className="text-emerald-700 font-bold">MahaRERA Certified</span>
+                </div>
+
                 {/* Subtitle Description */}
                 <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
                   {description}

@@ -157,41 +157,87 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
         </div>
 
         {/* Master SEO Authority Directory & Internal Linking Silos */}
-        <div className="border-t border-slate-800 pt-8 pb-4 space-y-4">
+        {/* Master SEO Authority Directory & Internal Linking Silos */}
+        <div className="border-t border-slate-800 pt-8 pb-4 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-400">
-              PURANIKS ABITANTE FIORE • MASTER SEO SILO DIRECTORY
+              PURANIKS ABITANTE FIORE • PUNE REAL ESTATE DIRECTORY &amp; SILO MATRIX
             </span>
-            <span className="text-[10px] text-slate-500 font-mono">
-              24 CRAWLABLE AUTHORITY NODES
-            </span>
+            <div className="flex items-center gap-3 text-[10px] text-slate-400 font-mono">
+              <a href="/sitemap" class="text-amber-400 hover:underline">HTML SITEMAP (130+ NODES)</a>
+              <span>•</span>
+              <a href="/articles" class="text-amber-400 hover:underline">RESEARCH ARTICLES HUB</a>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-y-2.5 gap-x-4 text-[11px] text-slate-400">
-            <a href="/puraniks-abitante-fiore" className="hover:text-amber-300 transition">Puraniks Abitante Fiore Overview</a>
-            <a href="/puraniks-abitante-fiore-price" className="hover:text-amber-300 transition">Puraniks Abitante Fiore Price List</a>
-            <a href="/puraniks-abitante-fiore-1-bhk" className="hover:text-amber-300 transition">1 BHK Oxygen Flats (489 Sq.Ft)</a>
-            <a href="/puraniks-abitante-fiore-2-bhk" className="hover:text-amber-300 transition">2 BHK Smart Residences (596 Sq.Ft)</a>
-            <a href="/puraniks-abitante-fiore-2-5-bhk" className="hover:text-amber-300 transition">2.5 BHK Study Luxury Homes</a>
-            <a href="/puraniks-abitante-fiore-3-bhk" className="hover:text-amber-300 transition">3 BHK Imperial Hilltop Homes</a>
-            <a href="/puraniks-abitante-fiore-floor-plans" className="hover:text-amber-300 transition">2D AutoCAD & 3D Floor Plans</a>
-            <a href="/puraniks-abitante-fiore-master-plan" className="hover:text-amber-300 transition">45-Acre Master Township Plan</a>
-            <a href="/puraniks-abitante-fiore-rera" className="hover:text-amber-300 transition">MahaRERA Phase 2A 2B 2C 2C1</a>
-            <a href="/puraniks-abitante-fiore-possession" className="hover:text-amber-300 transition">Phase-Wise Possession Schedule</a>
-            <a href="/puraniks-abitante-fiore-construction-status" className="hover:text-amber-300 transition">Live Construction Milestones</a>
-            <a href="/puraniks-abitante-fiore-location" className="hover:text-amber-300 transition">Bavdhan Budruk Site Address</a>
-            <a href="/bavdhan-connectivity" className="hover:text-amber-300 transition">Chandani Chowk & IT Corridor Radar</a>
-            <a href="/puraniks-abitante-fiore-amenities" className="hover:text-amber-300 transition">Club Azzurro & Lagoon Pool</a>
-            <a href="/puraniks-abitante-fiore-brochure" className="hover:text-amber-300 transition">Download Official Brochure PDF</a>
-            <a href="/puraniks-abitante-fiore-reviews" className="hover:text-amber-300 transition">Resident Testimonials & Ratings</a>
-            <a href="/puraniks-abitante-fiore-investment" className="hover:text-amber-300 transition">Investment ROI & Rental Yields</a>
-            <a href="/bavdhan-real-estate" className="hover:text-amber-300 transition">Bavdhan Real Estate Market Guide</a>
-            <a href="/bavdhan-property-prices" className="hover:text-amber-300 transition">Bavdhan Property Prices 2026</a>
-            <a href="/bavdhan-1-bhk" className="hover:text-amber-300 transition">1 BHK Flats in Bavdhan Pune</a>
-            <a href="/bavdhan-2-bhk" className="hover:text-amber-300 transition">2 BHK Flats in Bavdhan Pune</a>
-            <a href="/bavdhan-3-bhk" className="hover:text-amber-300 transition">3 BHK Luxury Flats in Bavdhan</a>
-            <a href="/puranik-builders" className="hover:text-amber-300 transition">Puranik Builders 34+ Years Legacy</a>
-            <a href="#seo-knowledge-hub" className="hover:text-amber-300 transition text-amber-400 font-bold">Explore Full 5,000+ Keyword Hub →</a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-[11px] text-slate-400">
+            {/* Col 1: Typologies & Sky Homes */}
+            <div className="space-y-2">
+              <h5 className="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-1">
+                RESIDENCES &amp; SKY HOMES
+              </h5>
+              <ul className="space-y-1.5">
+                <li><a href="/puraniks-abitante-1-bhk" className="hover:text-amber-300 transition">1 BHK Oxygen Flats (489 Sq.Ft)</a></li>
+                <li><a href="/puraniks-abitante-2-bhk" className="hover:text-amber-300 transition">2 BHK Smart Residences (596-640)</a></li>
+                <li><a href="/puraniks-abitante-733-sq-ft-2-bhk" className="hover:text-amber-300 transition">2 BHK Venetian Luxury (735-770)</a></li>
+                <li><a href="/puraniks-abitante-2-5-bhk" className="hover:text-amber-300 transition">2.5 BHK Executive Suite with WFH</a></li>
+                <li><a href="/puraniks-abitante-3-bhk" className="hover:text-amber-300 transition">3 BHK Imperial Hillside Homes</a></li>
+                <li><a href="/puraniks-abitante-4-bhk" className="hover:text-amber-300 transition">4 BHK Sky Residences &amp; Penthouses</a></li>
+                <li><a href="/puraniks-abitante-duplex" className="hover:text-amber-300 transition">Italian Hillside Sky Duplex Flats</a></li>
+                <li><a href="/puraniks-abitante-5-bhk" className="hover:text-amber-300 transition">5 BHK Presidential Jodi Suites</a></li>
+              </ul>
+            </div>
+
+            {/* Col 2: Pune Micro-Market Hubs */}
+            <div className="space-y-2">
+              <h5 className="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-1">
+                WEST PUNE IT &amp; LUXURY CORRIDORS
+              </h5>
+              <ul className="space-y-1.5">
+                <li><a href="/flats-in-hinjewadi" className="hover:text-amber-300 transition">Flats in Hinjewadi Tech Park</a></li>
+                <li><a href="/2-bhk-flats-in-hinjewadi" className="hover:text-amber-300 transition">2 BHK Flats in Hinjewadi Corridor</a></li>
+                <li><a href="/flats-in-baner" className="hover:text-amber-300 transition">Luxury Flats in Baner High Street</a></li>
+                <li><a href="/3-bhk-flats-in-baner" className="hover:text-amber-300 transition">3 &amp; 4 BHK Luxury Flats in Baner</a></li>
+                <li><a href="/flats-in-mahalunge" className="hover:text-amber-300 transition">Flats in Mahalunge vs Bavdhan</a></li>
+                <li><a href="/flats-in-wakad" className="hover:text-amber-300 transition">Flats in Wakad &amp; Chandani Chowk</a></li>
+                <li><a href="/flats-in-balewadi" className="hover:text-amber-300 transition">Flats in Balewadi Sports Complex</a></li>
+                <li><a href="/flats-near-kothrud" className="hover:text-amber-300 transition">Flats near Kothrud &amp; Paud Road</a></li>
+              </ul>
+            </div>
+
+            {/* Col 3: Research Articles & Infrastructure */}
+            <div className="space-y-2">
+              <h5 className="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-1">
+                MARKET RESEARCH &amp; GUIDES
+              </h5>
+              <ul className="space-y-1.5">
+                <li><a href="/articles/pune-real-estate-investment-guide-2026" className="hover:text-amber-300 transition">Pune Real Estate Investment 2026</a></li>
+                <li><a href="/articles/bavdhan-vs-hinjewadi-vs-baner-homebuyers-guide" className="hover:text-amber-300 transition">Bavdhan vs Hinjewadi vs Baner Guide</a></li>
+                <li><a href="/articles/puraniks-abitante-fiore-maharera-legal-verification" className="hover:text-amber-300 transition">MahaRERA 4 Phases Verification</a></li>
+                <li><a href="/articles/chandani-chowk-metro-line-3-impact-bavdhan-real-estate" className="hover:text-amber-300 transition">Chandani Chowk &amp; Metro Line 3</a></li>
+                <li><a href="/articles/top-luxury-townships-in-west-pune-ranking" className="hover:text-amber-300 transition">Top Townships in West Pune Ranked</a></li>
+                <li><a href="/articles/nri-property-buying-guide-pune-taxation-roi" className="hover:text-amber-300 transition">NRI Buying Guide &amp; 5.8% ROI</a></li>
+                <li><a href="/bavdhan-vs-hinjewadi" className="hover:text-amber-300 transition">Bavdhan vs Hinjewadi Comparison</a></li>
+                <li><a href="/bavdhan-vs-mahalunge" className="hover:text-amber-300 transition">Bavdhan vs Mahalunge Comparison</a></li>
+              </ul>
+            </div>
+
+            {/* Col 4: MahaRERA Legal & Google Local */}
+            <div className="space-y-2">
+              <h5 className="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-1">
+                MAHARERA &amp; GOOGLE MAPS
+              </h5>
+              <ul className="space-y-1.5">
+                <li><a href="/p52100020202" className="hover:text-amber-300 transition font-mono">Phase 2A: P52100020202 (OC Ready)</a></li>
+                <li><a href="/p52100020238" className="hover:text-amber-300 transition font-mono">Phase 2B: P52100020238 (Finishing)</a></li>
+                <li><a href="/p52100048353" className="hover:text-amber-300 transition font-mono">Phase 2C: P52100048353 (Under-Const)</a></li>
+                <li><a href="/p52100049352" className="hover:text-amber-300 transition font-mono">Phase 2C1: P52100049352 (New Launch)</a></li>
+                <li><a href="https://maps.google.com/?q=18.5158,73.7707" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:underline flex items-center gap-1 font-bold">📍 Google Maps Direct Navigation →</a></li>
+                <li><a href="/puraniks-abitante-fiore-reviews" className="hover:text-amber-300 transition">Google 4.9★ Customer Reviews</a></li>
+                <li><a href="/merchant-feed.xml" target="_blank" className="hover:text-amber-300 transition">Google Merchant Product Catalog</a></li>
+                <li><a href="/api/knowledge-graph" target="_blank" className="hover:text-amber-300 transition">Edge Knowledge Graph API</a></li>
+              </ul>
+            </div>
           </div>
         </div>
 

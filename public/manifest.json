@@ -1,7 +1,7 @@
 {
   "name": "Puraniks Abitante Fiore Bavdhan",
   "short_name": "Abitante Fiore",
-  "description": "Official Portal for Puraniks Abitante Fiore, 45-acre hillside Italian residential township in Bavdhan Budruk, Pune.",
+  "description": "Official Master Portal for Puraniks Abitante Fiore, 45-acre hillside Italian residential township in Bavdhan Budruk, Pune.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0B1329",
@@ -12,6 +12,36 @@
       "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "2026 Price List & Cost Sheet",
+      "short_name": "Prices",
+      "description": "View official transparent cost sheet for 1, 2, 2.5 & 3 BHK homes",
+      "url": "/puraniks-abitante-fiore-price",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Master Floor Plans & Layouts",
+      "short_name": "Floor Plans",
+      "description": "Explore 2D and 3D architectural floor plans with room dimensions",
+      "url": "/puraniks-abitante-floor-plans",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Book VIP Site Visit Tour",
+      "short_name": "Book Tour",
+      "description": "Schedule free AC cab pickup and sample flat experience in Bavdhan",
+      "url": "/abitante-fiore-booking",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Verify MahaRERA Approvals",
+      "short_name": "MahaRERA",
+      "description": "Inspect all 4 official MahaRERA registered phases and OC certificates",
+      "url": "/puraniks-abitante-rera",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
     }
   ],
   "categories": ["real estate", "lifestyle", "business"],

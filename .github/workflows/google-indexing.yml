@@ -1,0 +1,48 @@
+name: Search Engine Real-Time Indexing & Health Telemetry
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Runs daily at 04:00 UTC (09:30 AM IST)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  index-and-verify:
+    name: Dispatch Search Indexing & Telemetry
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Trigger Cloudflare Edge IndexNow Engine
+        run: |
+          echo "Triggering Cloudflare Edge IndexNow notification..."
+          RESPONSE=$(curl -s -X POST https://puraniksabitante.in/api/indexnow)
+          echo "IndexNow Edge Response: $RESPONSE"
+
+      - name: Ping Search Engine Sitemaps
+        run: |
+          echo "Pinging Bing Sitemap Engine..."
+          curl -s -I "https://www.bing.com/ping?sitemap=https%3A%2F%2Fpuraniksabitante.in%2Fsitemap.xml" || true
+
+          echo "Pinging Yandex Webmaster..."
+          curl -s -I "https://webmaster.yandex.com/site/map.xml?host=https%3A%2F%2Fpuraniksabitante.in" || true
+
+      - name: Verify Live Endpoints Health
+        run: |
+          echo "Verifying Edge Knowledge Graph API..."
+          curl -s -f -o /dev/null https://puraniksabitante.in/api/knowledge-graph || exit 1
+
+          echo "Verifying Google Merchant Center XML Feed..."
+          curl -s -f -o /dev/null https://puraniksabitante.in/merchant-feed.xml || exit 1
+
+          echo "Verifying RSS News Feed..."
+          curl -s -f -o /dev/null https://puraniksabitante.in/rss.xml || exit 1
+
+          echo "Verifying PWA Service Worker..."
+          curl -s -f -o /dev/null https://puraniksabitante.in/sw.js || exit 1
+
+          echo "All Core Search Engine Domination Endpoints Healthy and Operational!"

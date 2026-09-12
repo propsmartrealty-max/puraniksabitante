@@ -1,0 +1,182 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { BookOpen, Sparkles, TrendingUp, ShieldCheck, MapPin, ArrowRight, Calendar, UserCheck } from 'lucide-react';
+
+const articles = [
+  {
+    slug: 'pune-real-estate-investment-guide-2026',
+    title: 'Pune Real Estate Investment Guide 2026: Capital Appreciation & Micro-Market Heatmap',
+    description: 'Comprehensive research into Pune real estate market dynamics: rental yields, capital growth, and why West Pune (Bavdhan, Baner, Hinjewadi) leads investor returns.',
+    date: 'September 2026',
+    readTime: '8 min read',
+    category: 'Market Intelligence'
+  },
+  {
+    slug: 'bavdhan-vs-hinjewadi-vs-baner-homebuyers-guide',
+    title: 'Bavdhan vs Hinjewadi vs Baner: The Ultimate 2026 Homebuyers Dilemma Resolved',
+    description: 'Direct side-by-side comparison of Bavdhan, Hinjewadi, and Baner: price per square foot, air quality index, commute times via Chandani Chowk, and livability.',
+    date: 'September 2026',
+    readTime: '10 min read',
+    category: 'Locality Comparison'
+  },
+  {
+    slug: 'puraniks-abitante-fiore-maharera-legal-verification',
+    title: 'Puraniks Abitante Fiore MahaRERA Legal Verification: 4 Phases, OC Status & Title Clearance',
+    description: 'Complete transparency report on the 4 registered MahaRERA phases of Puraniks Abitante Fiore (P52100020202, P52100020238, P52100048353, P52100049352).',
+    date: 'August 2026',
+    readTime: '6 min read',
+    category: 'Legal & RERA'
+  },
+  {
+    slug: 'chandani-chowk-metro-line-3-impact-bavdhan-real-estate',
+    title: 'How Chandani Chowk Flyover & Metro Line 3 Extension Transformed Bavdhan Property Value',
+    description: 'In-depth infrastructure catalyst breakdown detailing the 5-minute commute to Kothrud, Hinjewadi expressway corridor, and Pune Metro extension to Bavdhan.',
+    date: 'August 2026',
+    readTime: '7 min read',
+    category: 'Infrastructure'
+  },
+  {
+    slug: 'top-luxury-townships-in-west-pune-ranking',
+    title: 'Top Luxury Residential Townships in West Pune Ranked: Nature, Amenities & Value',
+    description: 'Evaluation of the best integrated townships in Pune: comparing Puraniks Abitante Fiore 45-acre hillside Italian master plan with Kolte Patil, Rohan, and Megapolis.',
+    date: 'July 2026',
+    readTime: '9 min read',
+    category: 'Township Living'
+  },
+  {
+    slug: 'nri-property-buying-guide-pune-taxation-roi',
+    title: 'NRI Property Buying Guide Pune: Dual Currency Booking, FEMA Norms & 5.8% Rental Yields',
+    description: 'Essential handbook for Non-Resident Indians (NRIs in US, UK, UAE, Singapore) investing in Pune luxury real estate: tax exemptions, PoA, and repatriation laws.',
+    date: 'July 2026',
+    readTime: '8 min read',
+    category: 'NRI Advisory'
+  }
+];
+
+const pageTitle = "Pune Real Estate Research & Editorial Hub | Puraniks Abitante Fiore Bavdhan";
+const pageDescription = "Authoritative Pune real estate market intelligence, MahaRERA legal verifications, Bavdhan vs Hinjewadi vs Baner comparisons, and NRI property guides.";
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  canonical="https://puraniksabitante.in/articles"
+>
+  <!-- Schema.org CollectionPage Metadata -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": pageTitle,
+    "description": pageDescription,
+    "url": "https://puraniksabitante.in/articles",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": articles.map((art, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "url": `https://puraniksabitante.in/articles/${art.slug}`,
+        "name": art.title
+      }))
+    }
+  })} />
+
+  <div class="min-h-screen bg-[#FAF9F6] text-[#0F172A]">
+    <!-- Editorial Header Banner -->
+    <header class="bg-[#0B1329] text-white py-16 sm:py-20 border-b border-slate-800 relative overflow-hidden">
+      <div class="absolute inset-0 bg-radial-at-top from-amber-500/10 via-transparent to-transparent pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 space-y-4 text-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold tracking-widest uppercase text-amber-300">
+          <BookOpen className="w-3.5 h-3.5" />
+          MARKET INTELLIGENCE &amp; RESEARCH REPOSITORY
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white max-w-4xl mx-auto">
+          Pune Real Estate <span class="text-amber-400">Knowledge Hub</span> &amp; Authority Guides
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          Deep-dive investigative articles, submarket price trend analysis, MahaRERA legal disclosures, and infrastructure insights for homebuyers and investors in Bavdhan, Hinjewadi, and Baner.
+        </p>
+      </div>
+    </header>
+
+    <!-- Articles Grid Section -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-8 py-16 space-y-12">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-black text-[#0F172A] uppercase tracking-tight">
+            Featured Research Papers &amp; Guides
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">Updated continuously by PropSmart Realty Research Desk</p>
+        </div>
+        <span class="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-lg">
+          {articles.length} In-Depth Guides
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {articles.map((article) => (
+          <article class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between text-[11px] font-bold">
+                <span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 border border-amber-200">
+                  {article.category}
+                </span>
+                <span class="text-slate-400 flex items-center gap-1">
+                  <Calendar className="w-3 h-3" /> {article.date}
+                </span>
+              </div>
+
+              <h3 class="text-lg sm:text-xl font-bold text-[#0F172A] group-hover:text-[#92400E] transition-colors leading-snug">
+                <a href={`/articles/${article.slug}`}>
+                  {article.title}
+                </a>
+              </h3>
+
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {article.description}
+              </p>
+            </div>
+
+            <div class="pt-6 border-t border-slate-100 mt-6 flex items-center justify-between">
+              <span class="text-[11px] text-slate-500 font-medium">{article.readTime}</span>
+              <a 
+                href={`/articles/${article.slug}`}
+                class="inline-flex items-center gap-1 text-xs font-bold text-[#0F172A] group-hover:text-[#92400E] transition-colors"
+              >
+                Read Full Guide <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Township CTA Section -->
+      <section class="bg-gradient-to-br from-[#0B1329] to-[#1E293B] text-white p-8 sm:p-12 rounded-3xl shadow-xl space-y-6">
+        <div class="max-w-3xl space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-[11px] font-bold">
+            <Sparkles className="w-3 h-3" /> DIRECT DEVELOPER ALLIANCE
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+            Ready to Explore Puraniks Abitante Fiore in Person?
+          </h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Experience the 45-acre Italian hillside township, walk inside ready sample flats, and inspect the delivered Phase 2A Occupancy Certificate. Complimentary AC cab pickup provided across Pune.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a 
+            href="/abitante-fiore-booking"
+            class="luxury-btn-gold px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider inline-flex items-center gap-2"
+          >
+            Book Free VIP Site Visit
+          </a>
+          <a 
+            href="/puraniks-abitante-fiore-price"
+            class="luxury-btn-outline px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white border-white/30 hover:bg-white/10"
+          >
+            Download 2026 Price List
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>

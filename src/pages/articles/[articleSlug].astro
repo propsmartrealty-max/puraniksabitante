@@ -1,0 +1,311 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { ShieldCheck, Calendar, Clock, UserCheck, ArrowRight, Share2, CheckCircle2, ChevronRight, MapPin, Building2, Download, Phone } from 'lucide-react';
+
+export function getStaticPaths() {
+  const articlesData = [
+    {
+      articleSlug: 'pune-real-estate-investment-guide-2026',
+      title: 'Pune Real Estate Investment Guide 2026: Capital Appreciation & Micro-Market Heatmap',
+      metaDescription: 'Detailed 2026 Pune real estate investment guide: West Pune capital growth analysis, 4.8% rental yields in Bavdhan, and ROI comparison across Hinjewadi and Baner.',
+      category: 'Market Intelligence',
+      date: 'September 10, 2026',
+      readTime: '8 min read',
+      author: 'PropSmart Real Estate Research Desk',
+      sections: [
+        {
+          heading: '1. Why West Pune Commands Highest Homebuyer Capital Allocation',
+          content: 'The West Pune residential corridor encompassing Bavdhan, Baner, Mahalunge, and Hinjewadi continues to record over 52% of total high-ticket residential transactions across Pune Metropolitan Region. Fuelled by continuous infrastructure expansion and steady hiring in Rajiv Gandhi Infotech Park, the demand for integrated townships offering pure air, open recreational spaces, and fast transit has reached historic peaks.'
+        },
+        {
+          heading: '2. The Bavdhan Advantage: Strategic Buffer Between Kothrud & IT Corridor',
+          content: 'Bavdhan Budruk occupies a uniquely privileged geographical position. Nestled between the established cultural and educational hub of Kothrud and the Hinjewadi tech corridor, Bavdhan offers home buyers lower property rates than Baner while providing superior natural hill vistas, unpolluted air quality, and 5-minute access to Chandani Chowk flyover.'
+        },
+        {
+          heading: '3. Rental Yield Breakdown: Tech Workforce Influx',
+          content: 'With over 400,000 IT professionals employed across Hinjewadi Phase 1, Phase 2, and Phase 3, 2 BHK and 3 BHK rental demand in Bavdhan yields 4.2% to 5.4% annual returns—significantly outperforming traditional municipal core areas of central Pune.'
+        },
+        {
+          heading: '4. Case Study: Puraniks Abitante Fiore 45-Acre Hillside Township',
+          content: 'Puraniks Abitante Fiore in Bavdhan Budruk stands out as the premier investment thesis in 2026. Featuring 4 MahaRERA registered phases with ready possession in Phase 2A (P52100020202), Italian Riviera architecture, Juliet balcony gardens, and prices starting from ₹51.99 Lakhs*, it provides 15-18% projected capital upside over a 3-year investment horizon.'
+        }
+      ]
+    },
+    {
+      articleSlug: 'bavdhan-vs-hinjewadi-vs-baner-homebuyers-guide',
+      title: 'Bavdhan vs Hinjewadi vs Baner: The Ultimate 2026 Homebuyers Dilemma Resolved',
+      metaDescription: 'Comparing Bavdhan, Hinjewadi, and Baner for buying a home in Pune: price per sq ft, pollution levels, traffic, schools, and overall quality of life.',
+      category: 'Locality Comparison',
+      date: 'September 08, 2026',
+      readTime: '10 min read',
+      author: 'Senior Property Analyst',
+      sections: [
+        {
+          heading: '1. Price Per Square Foot Comparison (2026 Baseline)',
+          content: 'In 2026, premium residential rates in Baner average ₹9,500 to ₹12,500 per sq.ft, while Hinjewadi stands at ₹6,800 to ₹8,200 per sq.ft. Bavdhan offers an exceptional sweet spot at ₹7,200 to ₹8,500 per sq.ft for gated hillside integrated townships like Puraniks Abitante Fiore, delivering nearly 25% larger usable carpet area for the same capital investment as Baner.'
+        },
+        {
+          heading: '2. Commute Times & The Chandani Chowk Flyover Effect',
+          content: 'Before the multi-level Chandani Chowk flyover restructuring, peak hour transit was a bottleneck. Today, seamless non-stop elevated corridors connect Bavdhan to Kothrud in 5 minutes, Baner High Street in 12 minutes, and Hinjewadi Phase 1 in just 15 minutes, neutralizing previous transit concerns.'
+        },
+        {
+          heading: '3. Livability, Air Quality & Green Cover',
+          content: 'While Hinjewadi suffers from acute construction dust and Baner experiences heavy commercial congestion, Bavdhan retains expansive natural hillside terrain with clean mountain breezes, abundant birdlife, and average AQI scores 30-40% cleaner than urban central Pune.'
+        },
+        {
+          heading: '4. Verdict: Which Micro-Market Wins in 2026?',
+          content: 'For young families and IT executives seeking long-term peace of mind without sacrificing city access, Bavdhan—and specifically integrated communities like Puraniks Abitante Fiore—delivers the highest composite livability score in West Pune.'
+        }
+      ]
+    },
+    {
+      articleSlug: 'puraniks-abitante-fiore-maharera-legal-verification',
+      title: 'Puraniks Abitante Fiore MahaRERA Legal Verification: 4 Phases, OC Status & Title Clearance',
+      metaDescription: 'Complete legal due diligence report for Puraniks Abitante Fiore Bavdhan: MahaRERA certificate numbers, OC status in Phase 2A, MoEF approvals, and title reports.',
+      category: 'Legal & RERA',
+      date: 'August 25, 2026',
+      readTime: '6 min read',
+      author: 'RERA Compliance Officer',
+      sections: [
+        {
+          heading: '1. Official MahaRERA Registrations Breakdown',
+          content: 'Puraniks Abitante Fiore is legally registered across 4 distinct phases under the Maharashtra Real Estate Regulatory Authority: Phase 2A (MahaRERA: P52100020202 - Ready Possession with Occupancy Certificate), Phase 2B (MahaRERA: P52100020238 - Finishing Stage), Phase 2C (MahaRERA: P52100048353 - Under Construction RCC Structure), and Phase 2C1 (MahaRERA: P52100049352 - New Launch Wings).'
+        },
+        {
+          heading: '2. Occupancy Certificate (OC) Verification for Phase 2A',
+          content: 'Phase 2A has obtained its complete legal Occupancy Certificate from local municipal planning bodies, confirming verified compliance with structural stability, fire safety guidelines, lift certifications, and sewage treatment plant operational standards.'
+        },
+        {
+          heading: '3. Environmental Clearance & Green Building Approvals',
+          content: 'The project holds full environmental clearance from the Ministry of Environment, Forest and Climate Change (MoEF & CC) and Maharashtra Pollution Control Board (MPCB), guaranteeing adherence to sustainable groundwater recharge and rainwater harvesting.'
+        },
+        {
+          heading: '4. Bank Approvals & Title Transparency',
+          content: 'All leading nationalized and private financial institutions (SBI, HDFC Bank, ICICI Bank, Axis Bank, Bank of Maharashtra) have cleared legal title diligence, offering pre-sanctioned home loans with streamlined milestone disbursements.'
+        }
+      ]
+    },
+    {
+      articleSlug: 'chandani-chowk-metro-line-3-impact-bavdhan-real-estate',
+      title: 'How Chandani Chowk Flyover & Metro Line 3 Extension Transformed Bavdhan Property Value',
+      metaDescription: 'Analysis of the major infrastructure catalysts in Bavdhan Pune: multi-tier Chandani Chowk elevated junction and the proposed Pune Metro Line 3 extension.',
+      category: 'Infrastructure',
+      date: 'August 18, 2026',
+      readTime: '7 min read',
+      author: 'Urban Infrastructure Desk',
+      sections: [
+        {
+          heading: '1. The Multi-Tier Chandani Chowk Flyover Engineering Milestone',
+          content: 'The ₹400-crore multi-level flyover complex at Chandani Chowk has permanently resolved one of West Pune historical congestion points. Homebuyers in Bavdhan Budruk can now merge directly onto NH-48 toward Mumbai or Bengaluru without facing local signal bottlenecks.'
+        },
+        {
+          heading: '2. Pune Metro Line 3 Connectivity to Hinjewadi & Shivajinagar',
+          content: 'The 23-km elevated Pune Metro Line 3 connecting Hinjewadi Megapolis to Shivajinagar Civil Court features key interchange stations at Balewadi and Baner, with proposed arterial connector feeder routes directly serving Bavdhan commuters.'
+        },
+        {
+          heading: '3. Impact on Real Estate Asset Appreciation',
+          content: 'Historical infrastructure indices show properties within 3 km of completed multi-tier express flyovers experience an immediate 12-16% capital appreciation bump, positioning early buyers in Puraniks Abitante Fiore for optimal returns.'
+        }
+      ]
+    },
+    {
+      articleSlug: 'top-luxury-townships-in-west-pune-ranking',
+      title: 'Top Luxury Residential Townships in West Pune Ranked: Nature, Amenities & Value',
+      metaDescription: 'Benchmark ranking of the best integrated luxury townships in West Pune: evaluating amenities, open spaces, architectural themes, and overall value.',
+      category: 'Township Living',
+      date: 'July 28, 2026',
+      readTime: '9 min read',
+      author: 'Luxury Architecture Desk',
+      sections: [
+        {
+          heading: '1. The Evolution of Integrated Townships in Pune',
+          content: 'Modern homebuyers no longer purchase isolated standalone apartment buildings. Discerning buyers demand comprehensive gated ecosystems featuring resident clubhouses, sports complexes, nature walking trails, and on-site retail conveniences.'
+        },
+        {
+          heading: '2. Architecture Showcase: Italian Riviera Concept at Abitante Fiore',
+          content: 'Puraniks Abitante Fiore sets an extraordinary benchmark with its authentic Italian Riviera architectural motif. From the Tuscan-styled Club Azzurro to the Venetian lagoon pool, botanical amphitheatre, and private Juliet Balcony Gardens, the township offers an unmatched lifestyle ambience.'
+        },
+        {
+          heading: '3. Comparative Benchmark: Space, Density & Price',
+          content: 'Unlike hyper-dense concrete developments in crowded corridors, Puraniks Abitante preserves 70% open landscaped spaces across its 45-acre hillside estate, delivering superior privacy and scenic panoramic vistas.'
+        }
+      ]
+    },
+    {
+      articleSlug: 'nri-property-buying-guide-pune-taxation-roi',
+      title: 'NRI Property Buying Guide Pune: Dual Currency Booking, FEMA Norms & 5.8% Rental Yields',
+      metaDescription: 'Essential guide for Non-Resident Indians (NRIs in UAE, US, UK, Singapore) purchasing luxury property in Pune: FEMA guidelines, repatriation, and tax incentives.',
+      category: 'NRI Advisory',
+      date: 'July 14, 2026',
+      readTime: '8 min read',
+      author: 'NRI Investment Concierge',
+      sections: [
+        {
+          heading: '1. Foreign Exchange Management Act (FEMA) Guidelines for NRIs',
+          content: 'Under Reserve Bank of India (RBI) and FEMA provisions, NRIs and OCIs can purchase unlimited residential and commercial properties in India without prior RBI permission, utilizing NRE, NRO, or FCNR bank accounts.'
+        },
+        {
+          heading: '2. Dual Currency Advisory & Virtual Video Walkthroughs',
+          content: 'Puraniks Abitante Fiore provides dedicated NRI advisory desks assisting buyers from Dubai, London, New York, and Singapore with real-time video walkthroughs, digital cost sheets in USD/AED/GBP/SGD, and authorized Power of Attorney (PoA) registration support.'
+        },
+        {
+          heading: '3. High Rental Demand & Easy Capital Repatriation',
+          content: 'Rental yields from Pune tech corridor properties hover between 4.5% and 5.8%, with rental proceeds easily remittable overseas via NRE accounts up to USD 1 Million per financial year under RBI Liberalized Remittance Scheme.'
+        }
+      ]
+    }
+  ];
+
+  return articlesData.map((art) => ({
+    params: { articleSlug: art.articleSlug },
+    props: art
+  }));
+}
+
+const { articleSlug, title, metaDescription, category, date, readTime, author, sections } = Astro.props;
+const canonical = `https://puraniksabitante.in/articles/${articleSlug}`;
+---
+
+<Layout 
+  title={`${title} | Official Property Research`}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <!-- Schema.org Article Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonical
+    },
+    "headline": title,
+    "description": metaDescription,
+    "image": "https://puraniksabitante.in/images/slider/pweb.webp",
+    "author": {
+      "@type": "Organization",
+      "name": author,
+      "url": "https://puraniksabitante.in/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PropSmart Realty",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://puraniksabitante.in/favicon.svg"
+      }
+    },
+    "datePublished": "2026-08-01T09:00:00+05:30",
+    "dateModified": "2026-09-12T18:00:00+05:30"
+  })} />
+
+  <article class="min-h-screen bg-[#FAF9F6] text-[#0F172A]">
+    <!-- Breadcrumb Bar -->
+    <div class="bg-slate-100 border-b border-slate-200 py-3 px-4 sm:px-8 text-xs text-slate-600">
+      <div class="max-w-4xl mx-auto flex items-center gap-2 overflow-x-auto whitespace-nowrap">
+        <a href="/" class="hover:text-amber-800 font-medium">Home</a>
+        <ChevronRight className="w-3 h-3 text-slate-400 shrink-0" />
+        <a href="/articles" class="hover:text-amber-800 font-medium">Research Hub</a>
+        <ChevronRight className="w-3 h-3 text-slate-400 shrink-0" />
+        <span class="text-slate-900 font-bold truncate">{category}</span>
+      </div>
+    </div>
+
+    <!-- Article Header -->
+    <header class="max-w-4xl mx-auto px-4 sm:px-8 pt-10 pb-8 space-y-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
+        <span>{category}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-black text-[#0F172A] tracking-tight leading-tight">
+        {title}
+      </h1>
+
+      <div class="flex flex-wrap items-center gap-4 text-xs text-slate-500 pb-4 border-b border-slate-200">
+        <span class="flex items-center gap-1.5 font-semibold text-slate-700">
+          <UserCheck className="w-3.5 h-3.5 text-amber-700" /> {author}
+        </span>
+        <span>•</span>
+        <span class="flex items-center gap-1.5">
+          <Calendar className="w-3.5 h-3.5" /> {date}
+        </span>
+        <span>•</span>
+        <span class="flex items-center gap-1.5">
+          <Clock className="w-3.5 h-3.5" /> {readTime}
+        </span>
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-8 pb-16 space-y-10">
+      {sections.map((sec, idx) => (
+        <section class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xs space-y-4">
+          <h2 class="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight">
+            {sec.heading}
+          </h2>
+          <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+            {sec.content}
+          </p>
+        </section>
+      ))}
+
+      <!-- Integrated Township Unit Showcase -->
+      <section class="bg-[#0B1329] text-white p-8 sm:p-10 rounded-3xl space-y-6 shadow-xl">
+        <div class="space-y-2">
+          <span class="text-amber-400 font-bold text-xs uppercase tracking-widest block">
+            PROJECT SHOWCASE • BAVDHAN BUDRUK
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+            Puraniks Abitante Fiore: Available Configurations
+          </h3>
+          <p class="text-slate-300 text-xs sm:text-sm">
+            45-Acre Hillside Italian Township with Balcony Gardens, Club Azzurro &amp; Venetian Lagoon. MahaRERA: P52100020202.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+            <span class="text-[10px] text-amber-300 font-bold uppercase block">1 BHK OXYGEN</span>
+            <strong class="text-lg text-white block mt-0.5">₹51.99 Lakhs*</strong>
+            <span class="text-[10px] text-slate-300">489 sq.ft carpet</span>
+          </div>
+          <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+            <span class="text-[10px] text-amber-300 font-bold uppercase block">2 BHK SMART/LUX</span>
+            <strong class="text-lg text-white block mt-0.5">₹63.99 Lakhs*</strong>
+            <span class="text-[10px] text-slate-300">596 - 770 sq.ft</span>
+          </div>
+          <div class="p-4 bg-white/10 rounded-2xl border border-white/15">
+            <span class="text-[10px] text-amber-300 font-bold uppercase block">3 BHK IMPERIAL</span>
+            <strong class="text-lg text-white block mt-0.5">₹97.50 Lakhs*</strong>
+            <span class="text-[10px] text-slate-300">867 - 1,113 sq.ft</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a 
+            href="/abitante-fiore-booking"
+            class="luxury-btn-gold px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2"
+          >
+            Schedule VIP Tour
+          </a>
+          <a 
+            href="/puraniks-abitante-fiore-price"
+            class="luxury-btn-outline px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-white border-white/30 hover:bg-white/10"
+          >
+            View Cost Sheet
+          </a>
+        </div>
+      </section>
+
+      <!-- Back to Articles Index -->
+      <div class="pt-6 border-t border-slate-200 flex justify-between items-center text-xs">
+        <a href="/articles" class="text-amber-900 font-bold hover:underline flex items-center gap-1">
+          ← Back to all Research Guides
+        </a>
+        <a href="/" class="text-slate-600 hover:text-slate-900 font-medium">
+          Home Portal
+        </a>
+      </div>
+    </main>
+  </article>
+</Layout>
