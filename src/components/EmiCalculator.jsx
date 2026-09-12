@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
-import { Calculator, Banknote } from 'lucide-react';
+import { Calculator, Banknote, FileSpreadsheet, ShieldCheck } from 'lucide-react';
 import { PROJECT_INFO } from '../data/projectData';
 
 export default function EmiCalculator({ onOpenBrochure, onOpenSiteVisit }) {
+  const [activeTab, setActiveTab] = useState('emi'); // 'emi' | 'cost'
   const [propertyPrice, setPropertyPrice] = useState(6399000);
   const [downPaymentPercent, setDownPaymentPercent] = useState(20);
   const [interestRate, setInterestRate] = useState(8.5);
   const [tenureYears, setTenureYears] = useState(20);
+
+  // Cost sheet calculations (Maharashtra Real Estate norms)
+  const stampDutyRate = 0.06; // 6% (inclusive of metro cess)
+  const stampDuty = Math.round(propertyPrice * stampDutyRate);
+  const registrationCharges = 30000;
+  const gstRate = 0.05; // 5% residential under-construction
+  const gst = Math.round(propertyPrice * gstRate);
+  const maintenanceSociety = 75000;
+  const allInclusiveTotal = propertyPrice + stampDuty + registrationCharges + gst + maintenanceSociety;
 
   const downPaymentAmount = (propertyPrice * downPaymentPercent) / 100;
   const principalLoan = propertyPrice - downPaymentAmount;
@@ -35,17 +45,41 @@ export default function EmiCalculator({ onOpenBrochure, onOpenSiteVisit }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-[11px] font-bold uppercase tracking-widest text-[#92400E] shadow-xs">
             <Calculator className="w-3.5 h-3.5" />
-            INVESTMENT CALCULATOR
+            INVESTMENT &amp; COST INTELLIGENCE
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight">
-            Calculate Your <span className="gold-gradient-text">Monthly Outflow</span>
+            Financial Planning &amp; <span className="gold-gradient-text">Cost Breakdown</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
-            Customize your down payment, calculate accurate monthly EMIs, and explore pre-approved banking partner offers.
+            Calculate accurate monthly EMIs or inspect the 100% transparent Maharashtra all-inclusive cost sheet with stamp duty and GST.
           </p>
+
+          {/* Mode Switcher Tabs */}
+          <div className="inline-flex p-1.5 bg-slate-200/80 rounded-2xl gap-1 mt-4">
+            <button
+              onClick={() => setActiveTab('emi')}
+              className={`px-5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                activeTab === 'emi'
+                  ? 'bg-white text-slate-900 shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              📊 Home Loan EMI Calculator
+            </button>
+            <button
+              onClick={() => setActiveTab('cost')}
+              className={`px-5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                activeTab === 'cost'
+                  ? 'bg-[#0B1329] text-amber-300 shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              📑 All-Inclusive Cost Sheet (Stamp Duty &amp; GST)
+            </button>
+          </div>
         </div>
 
         {/* Calculator Grid */}
@@ -156,67 +190,128 @@ export default function EmiCalculator({ onOpenBrochure, onOpenSiteVisit }) {
             {/* Right: Results (5 Cols) */}
             <div className="lg:col-span-5 bg-[#FAF9F6] p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
               
-              <div className="text-center pb-4 border-b border-slate-200">
-                <span className="text-[11px] uppercase tracking-widest text-slate-500 font-bold">
-                  ESTIMATED MONTHLY OUTFLOW
-                </span>
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#92400E] mt-1">
-                  {formatINR(Math.round(emi))}
-                  <span className="text-xs text-slate-500 font-normal"> / mo</span>
-                </div>
-              </div>
-
-              {/* Split Bar */}
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs font-bold uppercase tracking-wider">
-                  <span className="text-slate-900">PRINCIPAL ({principalRatio}%)</span>
-                  <span className="text-[#92400E]">INTEREST ({interestRatio}%)</span>
-                </div>
-                <div className="h-2.5 w-full bg-slate-200 rounded-full overflow-hidden flex">
-                  <div style={{ width: `${principalRatio}%` }} className="bg-[#0F172A] h-full" />
-                  <div style={{ width: `${interestRatio}%` }} className="bg-[#D97706] h-full" />
-                </div>
-              </div>
-
-              {/* Breakdown */}
-              <div className="space-y-2 text-xs text-slate-600 font-medium">
-                <div className="flex justify-between py-1 border-b border-slate-200/80">
-                  <span className="uppercase tracking-wider font-bold text-[11px]">PRINCIPAL LOAN AMOUNT:</span>
-                  <strong className="text-slate-900 font-mono">{formatINR(principalLoan)}</strong>
-                </div>
-                <div className="flex justify-between py-1 border-b border-slate-200/80">
-                  <span className="uppercase tracking-wider font-bold text-[11px]">TOTAL INTEREST:</span>
-                  <strong className="text-[#92400E] font-mono">{formatINR(Math.round(totalInterest))}</strong>
-                </div>
-                <div className="flex justify-between py-1 border-b border-slate-200/80">
-                  <span className="uppercase tracking-wider font-bold text-[11px]">TOTAL REPAYMENT:</span>
-                  <strong className="text-slate-900 font-mono">{formatINR(Math.round(totalPayment))}</strong>
-                </div>
-              </div>
-
-              {/* Banking Partners */}
-              <div>
-                <div className="text-[10px] text-slate-500 uppercase font-bold tracking-widest mb-2 text-center">
-                  PRE-APPROVED BANKING PARTNERS:
-                </div>
-                <div className="flex justify-center items-center gap-1.5 flex-wrap">
-                  {['SBI', 'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'Bank of Maharashtra'].map((b) => (
-                    <span key={b} className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[10px] text-slate-800 font-bold shadow-2xs">
-                      {b.toUpperCase()}
+              {activeTab === 'emi' ? (
+                <>
+                  <div className="text-center pb-4 border-b border-slate-200">
+                    <span className="text-[11px] uppercase tracking-widest text-slate-500 font-bold">
+                      ESTIMATED MONTHLY OUTFLOW
                     </span>
-                  ))}
-                </div>
-              </div>
+                    <div className="text-3xl sm:text-4xl font-extrabold text-[#92400E] mt-1">
+                      {formatINR(Math.round(emi))}
+                      <span className="text-xs text-slate-500 font-normal"> / mo</span>
+                    </div>
+                  </div>
 
-              <div className="pt-2">
-                <button
-                  onClick={onOpenBrochure}
-                  className="w-full luxury-btn-gold py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md"
-                >
-                  <Banknote className="w-4 h-4" />
-                  GET BANK LOAN ASSISTANCE
-                </button>
-              </div>
+                  {/* Split Bar */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs font-bold uppercase tracking-wider">
+                      <span className="text-slate-900">PRINCIPAL ({principalRatio}%)</span>
+                      <span className="text-[#92400E]">INTEREST ({interestRatio}%)</span>
+                    </div>
+                    <div className="h-2.5 w-full bg-slate-200 rounded-full overflow-hidden flex">
+                      <div style={{ width: `${principalRatio}%` }} className="bg-[#0F172A] h-full" />
+                      <div style={{ width: `${interestRatio}%` }} className="bg-[#D97706] h-full" />
+                    </div>
+                  </div>
+
+                  {/* Breakdown */}
+                  <div className="space-y-2 text-xs text-slate-600 font-medium">
+                    <div className="flex justify-between py-1 border-b border-slate-200/80">
+                      <span className="uppercase tracking-wider font-bold text-[11px]">PRINCIPAL LOAN AMOUNT:</span>
+                      <strong className="text-slate-900 font-mono">{formatINR(principalLoan)}</strong>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-slate-200/80">
+                      <span className="uppercase tracking-wider font-bold text-[11px]">TOTAL INTEREST:</span>
+                      <strong className="text-[#92400E] font-mono">{formatINR(Math.round(totalInterest))}</strong>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-slate-200/80">
+                      <span className="uppercase tracking-wider font-bold text-[11px]">TOTAL REPAYMENT:</span>
+                      <strong className="text-slate-900 font-mono">{formatINR(Math.round(totalPayment))}</strong>
+                    </div>
+                  </div>
+
+                  {/* Banking Partners */}
+                  <div>
+                    <div className="text-[10px] text-slate-500 uppercase font-bold tracking-widest mb-2 text-center">
+                      PRE-APPROVED BANKING PARTNERS:
+                    </div>
+                    <div className="flex justify-center items-center gap-1.5 flex-wrap">
+                      {['SBI', 'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'Bank of Maharashtra'].map((b) => (
+                        <span key={b} className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[10px] text-slate-800 font-bold shadow-2xs">
+                          {b.toUpperCase()}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      onClick={onOpenBrochure}
+                      className="w-full luxury-btn-gold py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                    >
+                      <Banknote className="w-4 h-4" />
+                      GET BANK LOAN ASSISTANCE
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="text-center pb-4 border-b border-slate-200">
+                    <span className="text-[11px] uppercase tracking-widest text-slate-500 font-bold">
+                      ALL-INCLUSIVE ON-ROAD ESTIMATE
+                    </span>
+                    <div className="text-3xl sm:text-4xl font-extrabold text-[#0B1329] mt-1">
+                      {formatINR(allInclusiveTotal)}
+                      <span className="text-xs text-emerald-700 font-bold ml-1">*All Inc.</span>
+                    </div>
+                    <div className="text-[11px] text-amber-700 font-bold mt-1">
+                      ✨ Zero Stamp Duty Festival Privilege Active
+                    </div>
+                  </div>
+
+                  {/* Comprehensive Legal Itemization */}
+                  <div className="space-y-2 text-xs text-slate-600 font-medium">
+                    <div className="flex justify-between py-1 border-b border-slate-200/80">
+                      <span className="uppercase tracking-wider font-bold text-[11px]">Agreement Value:</span>
+                      <strong className="text-slate-900 font-mono">{formatINR(propertyPrice)}</strong>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-slate-200/80">
+                      <span className="uppercase tracking-wider font-bold text-[11px]">MH Stamp Duty (6%):</span>
+                      <strong className="text-amber-800 font-mono">{formatINR(stampDuty)}</strong>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-slate-200/80">
+                      <span className="uppercase tracking-wider font-bold text-[11px]">Govt Registration:</span>
+                      <strong className="text-slate-900 font-mono">{formatINR(registrationCharges)}</strong>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-slate-200/80">
+                      <span className="uppercase tracking-wider font-bold text-[11px]">GST (5% Under-Const):</span>
+                      <strong className="text-slate-900 font-mono">{formatINR(gst)}</strong>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-slate-200/80">
+                      <span className="uppercase tracking-wider font-bold text-[11px]">Society / Legal Share:</span>
+                      <strong className="text-slate-900 font-mono">{formatINR(maintenanceSociety)}</strong>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 text-[11px] text-amber-900 space-y-1">
+                    <div className="font-bold flex items-center gap-1">
+                      <ShieldCheck className="w-3.5 h-3.5 text-amber-700" />
+                      100% MahaRERA Transparent Pricing
+                    </div>
+                    <div>Zero hidden escalation charges. Bank approved valuation cost sheets.</div>
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      onClick={onOpenBrochure}
+                      className="w-full bg-[#0B1329] hover:bg-slate-800 text-amber-300 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md transition-colors"
+                    >
+                      <FileSpreadsheet className="w-4 h-4" />
+                      DOWNLOAD COMPLETE COST SHEET PDF
+                    </button>
+                  </div>
+                </>
+              )}
 
             </div>
 

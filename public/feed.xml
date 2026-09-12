@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Puraniks Abitante Fiore Bavdhan Official Feed</title>
+  <subtitle>Official project timeline and updates for Puraniks Abitante Fiore, Bavdhan Budruk, Pune.</subtitle>
+  <link href="https://puraniksabitante.in/feed.xml" rel="self" />
+  <link href="https://puraniksabitante.in/" />
+  <id>https://puraniksabitante.in/</id>
+  <updated>2026-09-12T18:00:00+05:30</updated>
+
+  <entry>
+    <title>Puraniks Abitante Phase 2A Receives Occupancy Certificate (OC)</title>
+    <link href="https://puraniksabitante.in/puraniks-abitante-rera-phase-2a" />
+    <id>https://puraniksabitante.in/puraniks-abitante-rera-phase-2a</id>
+    <updated>2026-09-12T12:00:00+05:30</updated>
+    <summary>Phase 2A (MahaRERA: P52100020202) ready possession milestone with completed OC in Bavdhan Budruk, Pune.</summary>
+  </entry>
+
+  <entry>
+    <title>Official 2026 Cost Sheet &amp; Price List Released for Abitante Fiore</title>
+    <link href="https://puraniksabitante.in/puraniks-abitante-fiore-price" />
+    <id>https://puraniksabitante.in/puraniks-abitante-fiore-price</id>
+    <updated>2026-09-10T09:30:00+05:30</updated>
+    <summary>Transparent all-inclusive pricing: 1 BHK from ₹51.99 Lakhs*, 2 BHK from ₹63.99 Lakhs*, 3 BHK from ₹97.50 Lakhs*.</summary>
+  </entry>
+</feed>

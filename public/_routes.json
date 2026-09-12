@@ -9,6 +9,11 @@
     "/favicon.svg",
     "/robots.txt",
     "/manifest.json",
+    "/sw.js",
+    "/merchant-feed.xml",
+    "/rss.xml",
+    "/feed.xml",
+    "/sitemap.xml",
     "/c7489abf281e4832b3f1207604f5e712.txt"
   ]
 }

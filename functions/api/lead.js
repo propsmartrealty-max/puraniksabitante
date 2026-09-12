@@ -8,9 +8,50 @@ const NOTIFICATION_EMAIL = "propsmartrealty@gmail.com";
 const DEFAULT_FROM_EMAIL = "Puraniks Abitante Fiore <onboarding@resend.dev>";
 const EMBEDDED_RESEND_KEY = atob("cmVfSlN5UURYSzlfQzFlRnA1cmhzVWRycGF4YlJGbWZBMlRx");
 
+// In-Memory Cloudflare Edge IP Rate Limiter (Max 5 inquiries per 10 minutes per IP)
+const ipRateLimitMap = new Map();
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const MAX_REQUESTS_PER_WINDOW = 5;
+
+function isRateLimited(clientIp) {
+  if (!clientIp || clientIp === "anonymous") return false;
+  const now = Date.now();
+  const record = ipRateLimitMap.get(clientIp);
+  if (!record || (now - record.startTime > RATE_LIMIT_WINDOW_MS)) {
+    ipRateLimitMap.set(clientIp, { count: 1, startTime: now });
+    return false;
+  }
+  if (record.count >= MAX_REQUESTS_PER_WINDOW) {
+    return true;
+  }
+  record.count += 1;
+  return false;
+}
+
 export async function onRequestPost(context) {
   try {
     const { request, env, waitUntil } = context;
+
+    // 0. Edge Rate Limiting Shield
+    const clientIp = request.headers.get('cf-connecting-ip') || request.headers.get('x-forwarded-for') || 'anonymous';
+    if (isRateLimited(clientIp)) {
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          error: "Too many inquiries submitted from this connection. Please call our sales lounge directly at +91-80689-76983." 
+        }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Retry-After": "600",
+            "Cache-Control": "no-store"
+          }
+        }
+      );
+    }
+
     const body = await request.json();
 
     const { 

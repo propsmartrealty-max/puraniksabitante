@@ -50,5 +50,8 @@ Disallow: /*?*preview=true
 
 # Sitemaps & Knowledge Graph Endpoints
 Sitemap: https://puraniksabitante.in/sitemap.xml
+Feed: https://puraniksabitante.in/rss.xml
+Feed: https://puraniksabitante.in/feed.xml
+
 
 

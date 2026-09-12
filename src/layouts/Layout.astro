@@ -53,6 +53,11 @@ const {
     <link rel="alternate" hreflang="x-default" href={canonical} />
     
     <link rel="manifest" href="/manifest.json" />
+    <!-- RSS 2.0, Atom & Merchant Feeds for Google News, Discover & Shopping -->
+    <link rel="alternate" type="application/rss+xml" title="Puraniks Abitante Fiore Updates" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Puraniks Abitante Fiore Official Feed" href="/feed.xml" />
+    <link rel="alternate" type="application/xml" title="Google Merchant Center Inventory Feed" href="/merchant-feed.xml" />
+
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot-image" content="index, follow, max-image-preview:large" />
@@ -525,6 +530,11 @@ const {
     </script>
   </head>
   <body class="bg-[#FAF9F6] text-[#0F172A] font-sans antialiased selection:bg-[#92400E] selection:text-white">
+    <!-- Google Assistant & Gemini Voice Search Speakable Summary Node -->
+    <div class="sr-only speakable-summary" aria-hidden="false">
+      Puraniks Abitante Fiore is an oxygen-rich 45-acre Italian-inspired residential township in Bavdhan, Pune, offering 1, 2, 2.5, and 3 BHK luxury residences starting from ₹51.99 Lakhs. Registered under MahaRERA P52100020202, located 5 minutes from Chandani Chowk with Club Azzurro and Venetian lagoon amenities.
+    </div>
+
     <!-- Cloudflare Edge Hyperlocal & NRI Dynamic Geo Banner -->
     <aside id="edge-geo-banner" class="bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#0F172A] text-amber-300 text-xs font-medium py-2 px-4 text-center border-b border-amber-500/20 shadow-inner flex items-center justify-center gap-2">
       <span id="edge-geo-icon">📍</span>
@@ -536,5 +546,20 @@ const {
     </aside>
 
     <slot />
+
+    <!-- High-Performance PWA Service Worker Registration -->
+    <script is:inline>
+      if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .then((reg) => {
+              // Service Worker registered successfully
+            })
+            .catch((err) => {
+              // Fail-safe silent error handling
+            });
+        });
+      }
+    </script>
   </body>
 </html>

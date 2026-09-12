@@ -49,10 +49,40 @@
   <url><loc>https://puraniksabitante.in/abitante-fiore-offers</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
 
   <!-- 3. Configurations & Residence Sizes -->
-  <url><loc>https://puraniksabitante.in/puraniks-abitante-1-bhk</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
-  <url><loc>https://puraniksabitante.in/puraniks-abitante-2-bhk</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url>
+    <loc>https://puraniksabitante.in/puraniks-abitante-1-bhk</loc>
+    <lastmod>2026-09-06T00:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://puraniksabitante.in/images/slider/pweb.webp</image:loc>
+      <image:title>1 BHK Oxygen Flat Layout Puraniks Abitante Fiore Bavdhan</image:title>
+      <image:caption>489 sq.ft 1 BHK luxury layout with Juliet balcony garden in Bavdhan Pune</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://puraniksabitante.in/puraniks-abitante-2-bhk</loc>
+    <lastmod>2026-09-06T00:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://puraniksabitante.in/images/slider/pweb.webp</image:loc>
+      <image:title>2 BHK Smart Residence Floor Plan Puraniks Abitante Fiore Bavdhan</image:title>
+      <image:caption>596 to 640 sq.ft 2 BHK smart luxury layout with balcony garden</image:caption>
+    </image:image>
+  </url>
   <url><loc>https://puraniksabitante.in/puraniks-abitante-2-5-bhk</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://puraniksabitante.in/puraniks-abitante-3-bhk</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
+  <url>
+    <loc>https://puraniksabitante.in/puraniks-abitante-3-bhk</loc>
+    <lastmod>2026-09-06T00:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://puraniksabitante.in/images/slider/pweb.webp</image:loc>
+      <image:title>3 BHK Imperial Residence Layout Puraniks Abitante Fiore Bavdhan</image:title>
+      <image:caption>867 to 1113 sq.ft 3 BHK imperial residence with 270 degree hillside views</image:caption>
+    </image:image>
+  </url>
   <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-1-bhk</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
   <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-2-bhk</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
   <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-2-5-bhk</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
@@ -70,10 +100,50 @@
   <url><loc>https://puraniksabitante.in/puraniks-abitante-jodi-flats</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
 
   <!-- 5. Floor Plans & Master Blueprints -->
-  <url><loc>https://puraniksabitante.in/puraniks-abitante-floor-plan</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://puraniksabitante.in/puraniks-abitante-floor-plans</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
-  <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-floor-plans</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>daily</changefreq><priority>0.90</priority></url>
-  <url><loc>https://puraniksabitante.in/puraniks-abitante-master-plan</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url>
+    <loc>https://puraniksabitante.in/puraniks-abitante-floor-plan</loc>
+    <lastmod>2026-09-06T00:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://puraniksabitante.in/images/slider/pweb.webp</image:loc>
+      <image:title>Architectural Floor Plan Puraniks Abitante Bavdhan</image:title>
+      <image:caption>Official approved 1, 2, 2.5 and 3 BHK master floor plans</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://puraniksabitante.in/puraniks-abitante-floor-plans</loc>
+    <lastmod>2026-09-06T00:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://puraniksabitante.in/images/slider/pweb.webp</image:loc>
+      <image:title>All Unit Floor Plans Puraniks Abitante Fiore Bavdhan</image:title>
+      <image:caption>Comprehensive 2D and 3D floor plans with room dimensions</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://puraniksabitante.in/puraniks-abitante-fiore-floor-plans</loc>
+    <lastmod>2026-09-06T00:00:00+05:30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://puraniksabitante.in/images/slider/pweb.webp</image:loc>
+      <image:title>Puraniks Abitante Fiore Phase 2 Floor Plans</image:title>
+      <image:caption>Phase 2 Italian Riviera tower floor layouts and balcony gardens</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://puraniksabitante.in/puraniks-abitante-master-plan</loc>
+    <lastmod>2026-09-06T00:00:00+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://puraniksabitante.in/images/slider/pweb.webp</image:loc>
+      <image:title>45-Acre Master Township Layout Puraniks Abitante Bavdhan</image:title>
+      <image:caption>Master layout showcasing Club Azzurro, sports arenas, and landscaped gardens</image:caption>
+    </image:image>
+  </url>
   <url><loc>https://puraniksabitante.in/puraniks-abitante-fiore-master-plan</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://puraniksabitante.in/puraniks-abitante-carpet-area</loc><lastmod>2026-09-06T00:00:00+05:30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
 

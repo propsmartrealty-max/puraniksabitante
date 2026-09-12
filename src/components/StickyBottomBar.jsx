@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, MessageSquare, Calendar, Download } from 'lucide-react';
 import { PROJECT_INFO } from '../data/projectData';
 
 export default function StickyBottomBar({ onOpenBrochure, onOpenSiteVisit }) {
+  const [waMessage, setWaMessage] = useState("Hi, I am interested in Puraniks Abitante Fiore Bavdhan. Please send the pricing and floor plans.");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const path = window.location.pathname.toLowerCase();
+      if (path.includes('price') || path.includes('cost') || path.includes('rate')) {
+        setWaMessage("Hi, I would like to get the official 2026 Cost Sheet & All-Inclusive Price List for Puraniks Abitante Fiore Bavdhan.");
+      } else if (path.includes('1-bhk')) {
+        setWaMessage("Hi, I am interested in the 1 BHK Oxygen Flat (₹51.99 Lakhs*) at Puraniks Abitante Fiore Bavdhan. Please send floor plans and availability.");
+      } else if (path.includes('2-bhk') || path.includes('2.5-bhk')) {
+        setWaMessage("Hi, I am interested in the 2 & 2.5 BHK Residences (from ₹63.99 Lakhs*) at Puraniks Abitante Fiore Bavdhan. Please send details.");
+      } else if (path.includes('3-bhk')) {
+        setWaMessage("Hi, I am interested in the 3 BHK Imperial Residence (from ₹97.50 Lakhs*) at Puraniks Abitante Fiore Bavdhan. Please send master floor plan.");
+      } else if (path.includes('rera') || path.includes('p521000')) {
+        setWaMessage("Hi, I would like to verify the 4 official MahaRERA certificates (Phase 2A/2B/2C/2C1) for Puraniks Abitante Fiore Bavdhan.");
+      }
+    }
+  }, []);
+
   return (
     <aside
       aria-label="Mobile Quick Action Bar"
@@ -20,7 +39,7 @@ export default function StickyBottomBar({ onOpenBrochure, onOpenSiteVisit }) {
 
         {/* WhatsApp with Pulse Indicator */}
         <a
-          href={`https://wa.me/${PROJECT_INFO.whatsappNumber}?text=Hi%2C%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan.%20Please%20send%20the%20pricing%20and%20floor%20plans.`}
+          href={`https://wa.me/${PROJECT_INFO.whatsappNumber}?text=${encodeURIComponent(waMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="relative flex flex-col items-center justify-center py-2 px-1 rounded-2xl bg-emerald-50 active:bg-emerald-100 border border-emerald-200/90 text-emerald-800 text-center transition-transform active:scale-95 shadow-2xs"
