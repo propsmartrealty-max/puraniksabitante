@@ -294,8 +294,8 @@ export async function onRequest(context) {
   const contentType = response.headers.get('content-type') || '';
 
   if (contentType.includes('text/html')) {
-    // HTTP 103 Early Hints for HTML Pages
-    newHeaders.set('Link', '<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/image-sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/favicon.svg>; rel=preload; as=image');
+    // HTTP 103 Early Hints for HTML Pages (including LCP Hero Image)
+    newHeaders.set('Link', '<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/image-sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/favicon.svg>; rel=preload; as=image, <https://puraniksabitante.in/images/slider/pweb.webp>; rel=preload; as=image');
 
     if (typeof HTMLRewriter !== 'undefined') {
       // Dynamic Geo Message Computation

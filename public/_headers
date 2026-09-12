@@ -20,7 +20,7 @@
   Timing-Allow-Origin: *
   
   # Early Hints (HTTP 103)
-  Link: <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/image-sitemap.xml>; rel=sitemap
+  Link: <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/image-sitemap.xml>; rel=sitemap, <https://puraniksabitante.in/favicon.svg>; rel=preload; as=image, <https://puraniksabitante.in/images/slider/pweb.webp>; rel=preload; as=image
 
 # Astro Static Compiled Bundles - 1 Year Immutable Edge & Browser Caching
 /_astro/*
