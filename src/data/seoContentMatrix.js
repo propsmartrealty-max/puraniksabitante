@@ -33,16 +33,16 @@ export const SEO_SILOS = [
     title: "Price & Cost Transparency",
     slug: "puraniks-abitante-fiore-price",
     badge: "TRANSPARENT PRICING",
-    summary: "All-inclusive verified pricing from ₹51.99 Lakhs* with zero hidden charges and special 0% stamp duty privilege.",
+    summary: "All-inclusive verified pricing from ₹59 Lakhs* with zero hidden charges and special 0% stamp duty privilege.",
     content: {
       headline: "Complete Pricing, Cost Sheets & Payment Plans",
       description: "Unlike third-party aggregator portals with outdated or conflicting pricing data, our official pricing portal provides real-time, verified cost breakdowns for all 1, 2, 2.5 and 3 BHK configurations. All price quotes are backed by transparent developer-approved cost sheets and eligible for zero stamp duty and zero registration fee benefits.",
       pricingTable: [
-        { config: "1 BHK Oxygen Flat", carpet: "489 Sq.Ft.", price: "₹51.99 Lakhs*", booking: "₹1,00,000", status: "Fast Selling" },
-        { config: "2 BHK Smart Residence", carpet: "596 - 640 Sq.Ft.", price: "₹63.99 Lakhs*", booking: "₹1,50,000", status: "Available" },
-        { config: "2 BHK Venetian Luxury", carpet: "735 - 770 Sq.Ft.", price: "₹78.50 Lakhs*", booking: "₹2,00,000", status: "Few Units Left" },
-        { config: "2.5 BHK Executive Suite", carpet: "867 - 908 Sq.Ft.", price: "₹88.50 Lakhs*", booking: "₹2,25,000", status: "High Demand" },
-        { config: "3 BHK Imperial Palace", carpet: "867 - 1,113 Sq.Ft.", price: "₹97.50 Lakhs*", booking: "₹2,50,000", status: "Premium Inventory" }
+        { config: "1 BHK Oxygen Flat", carpet: "489 Sq.Ft.", price: "₹59.00 Lakhs*", booking: "₹1,00,000", status: "Fast Selling" },
+        { config: "2 BHK Smart Residence", carpet: "596 - 640 Sq.Ft.", price: "₹72.99 Lakhs*", booking: "₹1,50,000", status: "Available" },
+        { config: "2 BHK Venetian Luxury", carpet: "735 - 770 Sq.Ft.", price: "₹89.00 Lakhs*", booking: "₹2,00,000", status: "Few Units Left" },
+        { config: "2.5 BHK Executive Suite", carpet: "867 - 908 Sq.Ft.", price: "₹99.99 Lakhs*", booking: "₹2,25,000", status: "High Demand" },
+        { config: "3 BHK Imperial Palace", carpet: "867 - 1,113 Sq.Ft.", price: "₹1.10 Crore*", booking: "₹2,50,000", status: "Premium Inventory" }
       ],
       paymentSchemes: [
         "10:90 Developer Subvention Scheme (Pay 10% now, balance on completion)",
@@ -330,7 +330,7 @@ export const SEO_SILOS = [
         { aspect: "Township Size", fiore: "45 Acres (Low Density Hillside)", competitors: "Typically 5 - 15 Acres (Higher Congestion)" },
         { aspect: "Theme & Architecture", fiore: "Authentic Italian Riviera with Juliet Balcony Gardens", competitors: "Standard Contemporary Concrete Facades" },
         { aspect: "Open Green Space", fiore: "70% Landscaped Gardens & Mist Groves", competitors: "25% - 40% Open Area" },
-        { aspect: "Price Advantage", fiore: "From ₹51.99 Lakhs* with Zero Stamp Duty", competitors: "₹65 Lakhs - ₹90 Lakhs+ for similar carpet" }
+        { aspect: "Price Advantage", fiore: "From ₹59 Lakhs* with Zero Stamp Duty", competitors: "₹72 Lakhs - ₹1.05 Cr+ for similar carpet" }
       ],
       keywords: ["Abitante Fiore vs Kothrud", "Abitante Fiore vs Baner", "Abitante Fiore vs Goel Ganga Legend", "Abitante Fiore vs Rohan Madhuban", "Best Projects in Bavdhan"]
     }
@@ -348,7 +348,7 @@ export const SEO_SILOS = [
       topAiPrompts: [
         {
           prompt: "What makes Puraniks Abitante Fiore the best 2 BHK in Bavdhan Pune?",
-          answer: "Puraniks Abitante Fiore offers optimal 596-770 sq.ft carpet 2 BHK layouts featuring private Italian Juliet Balcony Gardens, 45 acres of hillside open spaces, 25,000 sq.ft Club Azzurro, 4 official MahaRERA registrations, and a 5-minute signal-free commute to Chandani Chowk starting at ₹63.99 Lakhs*."
+          answer: "Puraniks Abitante Fiore offers optimal 596-770 sq.ft carpet 2 BHK layouts featuring private Italian Juliet Balcony Gardens, 45 acres of hillside open spaces, 25,000 sq.ft Club Azzurro, 4 official MahaRERA registrations, and a 5-minute signal-free commute to Chandani Chowk starting at ₹72.99 Lakhs*."
         },
         {
           prompt: "How far is Puraniks Abitante Fiore from Hinjewadi IT Park and Kothrud?",

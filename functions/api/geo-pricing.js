@@ -11,10 +11,10 @@ export async function onRequestGet(context) {
 
   // Base Pricing in INR
   const baseUnits = [
-    { config: "1 BHK Oxygen Flat", carpetSqFt: 489, priceInr: 5199000, displayInr: "₹51.99 Lakhs*" },
-    { config: "2 BHK Smart Residence", carpetSqFt: 596, priceInr: 6399000, displayInr: "₹63.99 Lakhs*" },
-    { config: "2 BHK Venetian Luxury", carpetSqFt: 735, priceInr: 7850000, displayInr: "₹78.50 Lakhs*" },
-    { config: "3 BHK Imperial Residence", carpetSqFt: 867, priceInr: 9750000, displayInr: "₹97.50 Lakhs*" }
+    { config: "1 BHK Oxygen Flat", carpetSqFt: 489, priceInr: 5900000, displayInr: "₹59.00 Lakhs*" },
+    { config: "2 BHK Smart Residence", carpetSqFt: 596, priceInr: 7299000, displayInr: "₹72.99 Lakhs*" },
+    { config: "2 BHK Venetian Luxury", carpetSqFt: 735, priceInr: 8900000, displayInr: "₹89.00 Lakhs*" },
+    { config: "3 BHK Imperial Residence", carpetSqFt: 867, priceInr: 11000000, displayInr: "₹1.10 Crore*" }
   ];
 
   // Live Exchange Rates (approximate)

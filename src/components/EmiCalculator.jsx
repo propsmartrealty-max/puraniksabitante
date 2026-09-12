@@ -4,7 +4,7 @@ import { PROJECT_INFO } from '../data/projectData';
 
 export default function EmiCalculator({ onOpenBrochure, onOpenSiteVisit }) {
   const [activeTab, setActiveTab] = useState('emi'); // 'emi' | 'cost'
-  const [propertyPrice, setPropertyPrice] = useState(6399000);
+  const [propertyPrice, setPropertyPrice] = useState(7299000);
   const [downPaymentPercent, setDownPaymentPercent] = useState(20);
   const [interestRate, setInterestRate] = useState(8.5);
   const [tenureYears, setTenureYears] = useState(20);
@@ -108,7 +108,7 @@ export default function EmiCalculator({ onOpenBrochure, onOpenSiteVisit }) {
                 />
                 <div className="flex justify-between text-[10px] text-slate-500 font-mono font-bold">
                   <span>₹40 L</span>
-                  <span>₹63.99 L (2 BHK)</span>
+                  <span>₹72.99 L (2 BHK)</span>
                   <span>₹1.5 CR</span>
                 </div>
               </div>

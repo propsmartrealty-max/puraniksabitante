@@ -18,25 +18,25 @@ const ROUTES = [
   {
     path: 'puraniks-abitante-fiore',
     title: 'Puraniks Abitante Fiore Bavdhan Pune | Official 1, 2 & 3 BHK Italian Township',
-    description: 'Official master portal for Puraniks Abitante Fiore in Bavdhan Budruk, Pune. 45-acre hillside Italian township featuring 1, 2 & 3 BHK residences with Balcony Gardens and Club Azzurro. Starting ₹51.99 Lakhs*.',
+    description: 'Official master portal for Puraniks Abitante Fiore in Bavdhan Budruk, Pune. 45-acre hillside Italian township featuring 1, 2 & 3 BHK residences with Balcony Gardens and Club Azzurro. Starting ₹59 Lakhs*.',
     canonical: 'https://puraniksabitante.in/puraniks-abitante-fiore'
   },
   {
     path: 'puraniks-abitante-fiore-price',
     title: 'Puraniks Abitante Fiore Price List 2026 | Cost Sheet & All-Inclusive Rates Bavdhan',
-    description: 'Verified official price list for Puraniks Abitante Fiore Bavdhan. 1 BHK from ₹51.99 L*, 2 BHK Smart (596 sq.ft) from ₹63.99 L*, 3 BHK from ₹97.50 L*. Zero Stamp Duty privilege.',
+    description: 'Verified official price list for Puraniks Abitante Fiore Bavdhan. 1 BHK from ₹59 L*, 2 BHK Smart (596 sq.ft) from ₹72.99 L*, 3 BHK from ₹1.10 Cr*. Zero Stamp Duty privilege.',
     canonical: 'https://puraniksabitante.in/puraniks-abitante-fiore-price'
   },
   {
     path: 'puraniks-abitante-fiore-1-bhk',
     title: '1 BHK Flats in Puraniks Abitante Fiore Bavdhan Pune | 489 Sq.Ft Oxygen Homes',
-    description: 'Explore 489 sq.ft carpet 1 BHK oxygen-rich apartments at Puraniks Abitante Fiore Bavdhan. Private Juliet Balcony Gardens, Vastu compliant layout, starting ₹51.99 Lakhs*.',
+    description: 'Explore 489 sq.ft carpet 1 BHK oxygen-rich apartments at Puraniks Abitante Fiore Bavdhan. Private Juliet Balcony Gardens, Vastu compliant layout, starting ₹59 Lakhs*.',
     canonical: 'https://puraniksabitante.in/puraniks-abitante-fiore-1-bhk'
   },
   {
     path: 'puraniks-abitante-fiore-2-bhk',
     title: '2 BHK Smart Flats in Puraniks Abitante Fiore Bavdhan | 596 - 770 Sq.Ft Residences',
-    description: 'Buy luxury 2 BHK Smart & Venetian 2 BHK apartments in Puraniks Abitante Fiore Bavdhan Pune. 596 to 770 sq.ft carpet area, dual balconies, starting ₹63.99 Lakhs*.',
+    description: 'Buy luxury 2 BHK Smart & Venetian 2 BHK apartments in Puraniks Abitante Fiore Bavdhan Pune. 596 to 770 sq.ft carpet area, dual balconies, starting ₹72.99 Lakhs*.',
     canonical: 'https://puraniksabitante.in/puraniks-abitante-fiore-2-bhk'
   },
   {
@@ -48,7 +48,7 @@ const ROUTES = [
   {
     path: 'puraniks-abitante-fiore-3-bhk',
     title: '3 BHK Luxury Apartments in Puraniks Abitante Fiore Bavdhan | 867 - 908 Sq.Ft',
-    description: 'Grand 3 BHK Imperial residences in Puraniks Abitante Fiore Bavdhan. Triple balconies, 270° hillside views, master bedroom suites, starting ₹97.50 Lakhs*.',
+    description: 'Grand 3 BHK Imperial residences in Puraniks Abitante Fiore Bavdhan. Triple balconies, 270° hillside views, master bedroom suites, starting ₹1.10 Crore*.',
     canonical: 'https://puraniksabitante.in/puraniks-abitante-fiore-3-bhk'
   },
   {
@@ -138,7 +138,7 @@ const ROUTES = [
   {
     path: 'bavdhan-1-bhk',
     title: '1 BHK Flats for Sale in Bavdhan Pune | Verified Listings & Projects',
-    description: 'Find premium and affordable 1 BHK flats in Bavdhan Budruk, Pune. Starting from ₹51.99 Lakhs* at Puraniks Abitante Fiore.',
+    description: 'Find premium and affordable 1 BHK flats in Bavdhan Budruk, Pune. Starting from ₹59 Lakhs* at Puraniks Abitante Fiore.',
     canonical: 'https://puraniksabitante.in/bavdhan-1-bhk'
   },
   {

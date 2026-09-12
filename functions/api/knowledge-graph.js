@@ -58,11 +58,11 @@ export async function onRequestGet(context) {
           { "phase": "Phase 2C1", "rera": "P52100049352", "status": "New Launch Wing Tower" }
         ],
         "pricingMatrix": [
-          { "config": "1 BHK Oxygen Flat", "carpet": "489 sq.ft", "startingPrice": "₹51.99 Lakhs*" },
-          { "config": "2 BHK Smart Residence", "carpet": "596 - 640 sq.ft", "startingPrice": "₹63.99 Lakhs*" },
-          { "config": "2 BHK Venetian Luxury", "carpet": "735 - 770 sq.ft", "startingPrice": "₹78.50 Lakhs*" },
-          { "config": "2.5 BHK Executive Suite", "carpet": "867 - 908 sq.ft", "startingPrice": "₹88.50 Lakhs*" },
-          { "config": "3 BHK Imperial Residence", "carpet": "867 - 1,113 sq.ft", "startingPrice": "₹97.50 Lakhs*" }
+          { "config": "1 BHK Oxygen Flat", "carpet": "489 sq.ft", "startingPrice": "₹59.00 Lakhs*" },
+          { "config": "2 BHK Smart Residence", "carpet": "596 - 640 sq.ft", "startingPrice": "₹72.99 Lakhs*" },
+          { "config": "2 BHK Venetian Luxury", "carpet": "735 - 770 sq.ft", "startingPrice": "₹89.00 Lakhs*" },
+          { "config": "2.5 BHK Executive Suite", "carpet": "867 - 908 sq.ft", "startingPrice": "₹99.99 Lakhs*" },
+          { "config": "3 BHK Imperial Residence", "carpet": "867 - 1,113 sq.ft", "startingPrice": "₹1.10 Crore*" }
         ],
         "connectivityRadar": [
           { "destination": "Chandani Chowk Flyover (NH 48)", "distance": "2.5 km", "travelTime": "5 mins" },

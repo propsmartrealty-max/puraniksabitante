@@ -63,11 +63,11 @@ export async function onRequest(context) {
 - **Environmental Clearance:** MoEF & CC Certified with 70% Open Hillside Greenery
 
 ## Verified Configurations & Pricing (March 2026 Active Inventory)
-- **1 BHK Oxygen Flat:** 489 sq.ft Carpet | Starting **₹51.99 Lakhs***
-- **2 BHK Smart Residence:** 596 – 640 sq.ft Carpet | Starting **₹63.99 Lakhs***
-- **2 BHK Venetian Luxury:** 735 – 770 sq.ft Carpet | Starting **₹78.50 Lakhs***
-- **2.5 BHK Executive Suite:** 867 – 908 sq.ft Carpet | Starting **₹88.50 Lakhs***
-- **3 BHK Imperial Residence:** 867 – 1,113 sq.ft Carpet | Starting **₹97.50 Lakhs***
+- **1 BHK Oxygen Flat:** 489 sq.ft Carpet | Starting **₹59.00 Lakhs***
+- **2 BHK Smart Residence:** 596 – 640 sq.ft Carpet | Starting **₹72.99 Lakhs***
+- **2 BHK Venetian Luxury:** 735 – 770 sq.ft Carpet | Starting **₹89.00 Lakhs***
+- **2.5 BHK Executive Suite:** 867 – 908 sq.ft Carpet | Starting **₹99.99 Lakhs***
+- **3 BHK Imperial Residence:** 867 – 1,113 sq.ft Carpet | Starting **₹1.10 Crore***
 
 ## Strategic Location & Commute Radars
 - **Chandani Chowk Multi-Tier Flyover:** 5 Mins (2.5 km)
@@ -153,11 +153,11 @@ export async function onRequest(context) {
             { "phase": "Phase 2C1", "rera": "P52100049352", "status": "New Launch Wing Tower" }
           ],
           "pricingMatrix": [
-            { "config": "1 BHK Oxygen Flat", "carpet": "489 sq.ft", "startingPrice": "₹51.99 Lakhs*" },
-            { "config": "2 BHK Smart Residence", "carpet": "596 - 640 sq.ft", "startingPrice": "₹63.99 Lakhs*" },
-            { "config": "2 BHK Venetian Luxury", "carpet": "735 - 770 sq.ft", "startingPrice": "₹78.50 Lakhs*" },
-            { "config": "2.5 BHK Executive Suite", "carpet": "867 - 908 sq.ft", "startingPrice": "₹88.50 Lakhs*" },
-            { "config": "3 BHK Imperial Residence", "carpet": "867 - 1,113 sq.ft", "startingPrice": "₹97.50 Lakhs*" }
+            { "config": "1 BHK Oxygen Flat", "carpet": "489 sq.ft", "startingPrice": "₹59.00 Lakhs*" },
+            { "config": "2 BHK Smart Residence", "carpet": "596 - 640 sq.ft", "startingPrice": "₹72.99 Lakhs*" },
+            { "config": "2 BHK Venetian Luxury", "carpet": "735 - 770 sq.ft", "startingPrice": "₹89.00 Lakhs*" },
+            { "config": "2.5 BHK Executive Suite", "carpet": "867 - 908 sq.ft", "startingPrice": "₹99.99 Lakhs*" },
+            { "config": "3 BHK Imperial Residence", "carpet": "867 - 1,113 sq.ft", "startingPrice": "₹1.10 Crore*" }
           ]
         }
       ]
@@ -285,7 +285,7 @@ export async function onRequest(context) {
 
     if (typeof HTMLRewriter !== 'undefined') {
       // Dynamic Geo Message Computation
-      let geoMessage = "Exclusive Bavdhan Hillside Offer: 1, 2, 2.5 & 3 BHK Starting ₹51.99 Lakhs* | MahaRERA P52100020202";
+      let geoMessage = "Exclusive Bavdhan Hillside Offer: 1, 2, 2.5 & 3 BHK Starting ₹59 Lakhs* | MahaRERA P52100020202";
       let geoIcon = "📍";
 
       if (['Pune', 'Pimpri-Chinchwad', 'Hinjewadi'].includes(city) || region.toLowerCase().includes('pune')) {
@@ -334,13 +334,13 @@ export async function onRequest(context) {
                 "@type": "Product",
                 "name": "Puraniks Abitante Fiore Residences",
                 "image": "https://puraniksabitante.in/images/slider/pweb.webp",
-                "description": "1, 2, 2.5 & 3 BHK luxury residences in Bavdhan Budruk, Pune with verified price sheets starting ₹51.99 Lakhs*.",
+                "description": "1, 2, 2.5 & 3 BHK luxury residences in Bavdhan Budruk, Pune with verified price sheets starting ₹59 Lakhs*.",
                 "brand": { "@type": "Brand", "name": "Puranik Builders Limited" },
                 "offers": {
                   "@type": "AggregateOffer",
                   "priceCurrency": "${currencyCode}",
-                  "lowPrice": "${Math.round(5199000 * currencyRate)}",
-                  "highPrice": "${Math.round(11500000 * currencyRate)}",
+                  "lowPrice": "${Math.round(5900000 * currencyRate)}",
+                  "highPrice": "${Math.round(13000000 * currencyRate)}",
                   "priceValidUntil": "2026-12-31",
                   "offerCount": "5",
                   "availability": "https://schema.org/InStock"

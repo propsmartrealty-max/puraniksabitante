@@ -43,7 +43,7 @@ Use this exact, uniform master data when claiming, creating, or updating busines
 > Luxury 1, 2, 2.5 & 3 BHK Italian-inspired residences in Bavdhan, Pune by Puranik Builders.
 
 ### Medium Description (Under 250 Characters)
-> Puraniks Abitante Fiore is an oxygen-rich 45-acre hillside residential township in Bavdhan Budruk, Pune featuring Juliet Balcony Gardens, Venetian lagoon pools, and Club Azzurro. Starting ₹51.99 Lakhs*. MahaRERA Certified.
+> Puraniks Abitante Fiore is an oxygen-rich 45-acre hillside residential township in Bavdhan Budruk, Pune featuring Juliet Balcony Gardens, Venetian lagoon pools, and Club Azzurro. Starting ₹59 Lakhs*. MahaRERA Certified.
 
 ### Long / Full Description (For Google Business Profile, Justdial, Sulekha, IndiaMART)
 > Experience Italian Riviera living at Puraniks Abitante Fiore in Bavdhan Budruk, Pune, developed by Puranik Builders Ltd. (34+ years legacy, 46+ delivered projects). Nestled in high-altitude hillside surroundings just 5 minutes from the Chandani Chowk multi-level flyover and 15 minutes from Hinjewadi IT Park via the Mumbai-Bangalore Highway (NH 48).
@@ -51,12 +51,12 @@ Use this exact, uniform master data when claiming, creating, or updating busines
 > Residences feature private Juliet Balcony Gardens with oxygen-emitting botanical planters, multi-tiered Venetian infinity pools, Club Azzurro (25,000+ sq.ft. clubhouse), Roman amphitheater, and 30+ curated amenities.
 >
 > Configurations & Pricing:
-> • 1 BHK Oxygen Flats: 489 sq.ft from ₹51.99 Lakhs*
-> • 2 BHK Smart Residences: 596 – 640 sq.ft from ₹63.99 Lakhs*
-> • 2 BHK Venetian Luxury: 735 – 770 sq.ft from ₹78.50 Lakhs*
-> • 2.5 BHK Executive Suites: 867 – 908 sq.ft from ₹88.50 Lakhs*
-> • 3 BHK Imperial Residences: 867 – 1,113 sq.ft from ₹97.50 Lakhs*
-> • 4 BHK Sky Duplexes & Penthouses: Custom luxury configurations from ₹1.45 Cr*
+> • 1 BHK Oxygen Flats: 489 sq.ft from ₹59.00 Lakhs*
+> • 2 BHK Smart Residences: 596 – 640 sq.ft from ₹72.99 Lakhs*
+> • 2 BHK Venetian Luxury: 735 – 770 sq.ft from ₹89.00 Lakhs*
+> • 2.5 BHK Executive Suites: 867 – 908 sq.ft from ₹99.99 Lakhs*
+> • 3 BHK Imperial Residences: 867 – 1,113 sq.ft from ₹1.10 Crore*
+> • 4 BHK Sky Duplexes & Penthouses: Custom luxury configurations from ₹1.65 Cr*
 >
 > MahaRERA Registrations:
 > • Phase 2A: P52100020202 (Ready Possession with OC)

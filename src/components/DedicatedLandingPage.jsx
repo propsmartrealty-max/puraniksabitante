@@ -241,7 +241,7 @@ export default function DedicatedLandingPage({
                 <div className="grid grid-cols-3 gap-3 pt-2">
                   <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
                     <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">PRICE RANGE</span>
-                    <div className="text-lg sm:text-xl font-extrabold text-[#0F172A] mt-0.5">₹51.99 L*</div>
+                    <div className="text-lg sm:text-xl font-extrabold text-[#0F172A] mt-0.5">₹59 L*</div>
                     <span className="text-[10px] text-slate-400 block">All-Inclusive*</span>
                   </div>
                   <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">

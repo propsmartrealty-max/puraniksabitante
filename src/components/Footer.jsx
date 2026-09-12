@@ -91,19 +91,19 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
             <ul className="space-y-2 text-xs">
               <li className="flex justify-between pb-1.5 border-b border-slate-800">
                 <span>1 BHK OXY FLAT (489 SQ.FT)</span>
-                <strong className="text-white">₹51.99 L*</strong>
+                <strong className="text-white">₹59.00 L*</strong>
               </li>
               <li className="flex justify-between pb-1.5 border-b border-slate-800">
                 <span>2 BHK SMART (596 SQ.FT)</span>
-                <strong className="text-white">₹63.99 L*</strong>
+                <strong className="text-white">₹72.99 L*</strong>
               </li>
               <li className="flex justify-between pb-1.5 border-b border-slate-800">
                 <span>2 BHK LUXURY (735 SQ.FT)</span>
-                <strong className="text-white">₹78.50 L*</strong>
+                <strong className="text-white">₹89.00 L*</strong>
               </li>
               <li className="flex justify-between pb-1.5 border-b border-slate-800">
                 <span>3 BHK IMPERIAL (867 SQ.FT)</span>
-                <strong className="text-white">₹97.50 L*</strong>
+                <strong className="text-white">₹1.10 Cr*</strong>
               </li>
             </ul>
 
