@@ -1,14 +1,20 @@
 // Puraniks Abitante Fiore Bavdhan - High-Performance PWA Service Worker
-const CACHE_NAME = 'puraniks-abitante-v2026';
+const CACHE_NAME = 'puraniks-abitante-v2026.1';
 const PRECACHE_URLS = [
   '/',
   '/favicon.svg',
+  '/icon-192.png',
+  '/icon-512.png',
+  '/apple-touch-icon.png',
   '/manifest.json',
   '/puraniks-abitante-fiore',
   '/puraniks-abitante-fiore-price',
   '/puraniks-abitante-floor-plans',
-  '/puraniks-abitante-fiore-rera',
-  '/bavdhan-connectivity'
+  '/puraniks-abitante-rera',
+  '/bavdhan-connectivity',
+  '/puraniks-abitante-amenities',
+  '/articles',
+  '/abitante-fiore-booking'
 ];
 
 // 1. Install Event - Cache Core App Shell
