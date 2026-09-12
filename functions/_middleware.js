@@ -138,8 +138,13 @@ export async function onRequest(context) {
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 18.5158,
-            "longitude": 73.7707
+            "latitude": 18.521799,
+            "longitude": 73.7602584
+          },
+          "googleMaps": {
+            "placeUrl": "https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw",
+            "cidUrl": "https://maps.google.com/?cid=9014467554746810342",
+            "kgmid": "/g/11b8v58dmw"
           },
           "mahareraRegistrations": [
             { "phase": "Phase 2A", "rera": "P52100020202", "status": "Ready Possession with OC" },

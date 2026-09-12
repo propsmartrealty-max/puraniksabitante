@@ -76,7 +76,15 @@ export const PROJECT_INFO = {
   walkthroughVideoId: "WOPqlTKXMd8",
   walkthroughEmbedUrl: "https://www.youtube.com/embed/WOPqlTKXMd8",
   specialOffer: "Zero Stamp Duty & Registration",
-  siteAddress: "Puraniks Abitante Fiore, Near Crystal Honda Service Station, Off Mumbai-Bangalore Highway, Bavdhan Budruk, Pune - 411021"
+  siteAddress: "Puraniks Abitante Fiore, Near Crystal Honda Service Station, Off Mumbai-Bangalore Highway, Bavdhan Budruk, Pune - 411021",
+  googleMapsUrl: "https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw",
+  googleMapsCidUrl: "https://maps.google.com/?cid=9014467554746810342",
+  googleKnowledgeGraphId: "/g/11b8v58dmw",
+  coordinates: {
+    lat: 18.521799,
+    lng: 73.7602584,
+    formatted: "18.5218° N, 73.7603° E"
+  }
 };
 
 export const QUICK_STATS = [

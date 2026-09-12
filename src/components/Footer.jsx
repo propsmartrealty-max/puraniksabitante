@@ -232,7 +232,7 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
                 <li><a href="/p52100020238" className="hover:text-amber-300 transition font-mono">Phase 2B: P52100020238 (Finishing)</a></li>
                 <li><a href="/p52100048353" className="hover:text-amber-300 transition font-mono">Phase 2C: P52100048353 (Under-Const)</a></li>
                 <li><a href="/p52100049352" className="hover:text-amber-300 transition font-mono">Phase 2C1: P52100049352 (New Launch)</a></li>
-                <li><a href="https://maps.google.com/?q=18.5158,73.7707" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:underline flex items-center gap-1 font-bold">📍 Google Maps Direct Navigation →</a></li>
+                <li><a href="https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:underline flex items-center gap-1 font-bold">📍 Google Maps Direct Navigation →</a></li>
                 <li><a href="/puraniks-abitante-fiore-reviews" className="hover:text-amber-300 transition">Google 4.9★ Customer Reviews</a></li>
                 <li><a href="/merchant-feed.xml" target="_blank" className="hover:text-amber-300 transition">Google Merchant Product Catalog</a></li>
                 <li><a href="/api/knowledge-graph" target="_blank" className="hover:text-amber-300 transition">Edge Knowledge Graph API</a></li>

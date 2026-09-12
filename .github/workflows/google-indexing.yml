@@ -31,6 +31,14 @@ jobs:
           echo "Pinging Yandex Webmaster..."
           curl -s -I "https://webmaster.yandex.com/site/map.xml?host=https%3A%2F%2Fpuraniksabitante.in" || true
 
+      - name: Execute Google Indexing API
+        if: env.GOOGLE_SERVICE_ACCOUNT_JSON != ''
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          echo "Running Google Indexing API direct ping..."
+          node scripts/google-indexing-api.js
+
       - name: Verify Live Endpoints Health
         run: |
           echo "Verifying Edge Knowledge Graph API..."
