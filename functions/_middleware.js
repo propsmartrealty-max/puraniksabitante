@@ -84,7 +84,7 @@ export async function onRequest(context) {
 - **Microclimate Cooling:** Aromatic mist gardens, reflexology trails, and 1,000+ native trees
 
 ## Official Inquiries & Site Bookings
-- **Direct Sales Office:** +91-80689-76983
+- **Direct Sales Office:** +91-77440-09295
 - **Official Email:** sales@puranikbuilders.com / propsmartrealty@gmail.com
 - **Verified Web Portal:** https://puraniksabitante.in${pathname}
 `;
@@ -125,7 +125,7 @@ export async function onRequest(context) {
             "name": "Puranik Builders Limited",
             "url": "https://puraniksabitante.in/",
             "foundingDate": "1990",
-            "telephone": "+91-80689-76983",
+            "telephone": "+91-77440-09295",
             "email": "sales@puranikbuilders.com"
           },
           "location": {

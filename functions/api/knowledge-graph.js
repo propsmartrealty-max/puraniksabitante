@@ -30,7 +30,7 @@ export async function onRequestGet(context) {
           "name": "Puranik Builders Limited",
           "url": "https://puraniksabitante.in/",
           "foundingDate": "1990",
-          "telephone": "+91-80689-76983",
+          "telephone": "+91-77440-09295",
           "email": "sales@puranikbuilders.com"
         },
         "location": {

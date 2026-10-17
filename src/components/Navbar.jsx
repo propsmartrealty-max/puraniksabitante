@@ -63,7 +63,7 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
           
           {/* Logo */}
-          <a href="#" className="flex items-center shrink-0">
+          <a href="/" className="flex items-center shrink-0">
             {!logoError ? (
               <img
                 src={PROJECT_INFO.officialLogoUrl}
@@ -72,15 +72,11 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
                 className="h-9 sm:h-11 w-auto object-contain"
               />
             ) : (
-              <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-xl bg-[#0F172A] flex items-center justify-center text-white font-bold text-lg">
-                  P
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-sm text-[#0F172A] tracking-wider uppercase">PURANIKS</div>
-                  <div className="text-[10px] text-[#92400E] font-semibold tracking-widest uppercase">ABITANTE FIORE</div>
-                </div>
-              </div>
+              <img
+                src="/favicon.svg"
+                alt="Puraniks Abitante Fiore"
+                className="h-9 sm:h-11 w-auto object-contain"
+              />
             )}
           </a>
 
@@ -152,15 +148,18 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
             <div>
               {/* Drawer Top Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-200">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-xl bg-[#0F172A] flex items-center justify-center text-white font-extrabold text-sm shadow-xs">
-                    P
-                  </div>
+                <a href="/" className="flex items-center gap-2.5">
+                  <img
+                    src="/images/logo.webp"
+                    alt="Puraniks Abitante Fiore"
+                    onError={(e) => { e.currentTarget.src = "/favicon.svg"; }}
+                    className="h-8 w-auto object-contain"
+                  />
                   <div>
                     <div className="font-extrabold text-xs text-[#0F172A] tracking-wider uppercase">PURANIKS</div>
                     <div className="text-[9px] text-[#92400E] font-bold tracking-widest uppercase">ABITANTE FIORE</div>
                   </div>
-                </div>
+                </a>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition cursor-pointer"

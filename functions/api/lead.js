@@ -38,7 +38,7 @@ export async function onRequestPost(context) {
       return new Response(
         JSON.stringify({ 
           success: false, 
-          error: "Too many inquiries submitted from this connection. Please call our sales lounge directly at +91-80689-76983." 
+          error: "Too many inquiries submitted from this connection. Please call our sales lounge directly at +91-77440-09295." 
         }),
         {
           status: 429,

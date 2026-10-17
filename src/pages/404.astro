@@ -11,21 +11,36 @@ const canonical = "https://puraniksabitante.in/404";
   <div class="min-h-screen bg-[#FAF9F6] text-[#0F172A] flex flex-col justify-between">
     
     <!-- Top Header -->
-    <header class="bg-white border-b border-slate-200 py-4 px-4 sm:px-8">
+    <header class="bg-white border-b border-slate-200 py-3.5 px-4 sm:px-8">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F172A] to-[#1E293B] flex items-center justify-center text-white font-extrabold text-lg shadow-xs">
-            AF
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="h-10 sm:h-12 flex items-center justify-center p-1 rounded-xl bg-white border border-slate-200 shadow-2xs group-hover:scale-105 transition-transform">
+            <img 
+              src="/images/logo.webp" 
+              alt="Puraniks Abitante Fiore" 
+              class="h-8 sm:h-10 w-auto object-contain"
+              onerror="this.src='/favicon.svg'"
+            />
           </div>
           <div>
-            <div class="text-base sm:text-lg font-black tracking-tight text-[#0F172A]">PURANIKS ABITANTE FIORE</div>
+            <div class="text-base sm:text-lg font-black tracking-tight text-[#0F172A] leading-tight">PURANIKS ABITANTE FIORE</div>
             <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">BAVDHAN BUDRUK, PUNE</div>
           </div>
         </a>
-        <a href="tel:+918068976983" class="px-4 py-2 rounded-xl bg-[#0F172A] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:bg-slate-800 transition">
-          <Phone className="w-3.5 h-3.5 text-amber-400" />
-          <span>Call Sales Desk</span>
-        </a>
+        <div class="flex items-center gap-3">
+          <a 
+            href="https://wa.me/917744009295?text=Hi,%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition"
+          >
+            💬 WhatsApp
+          </a>
+          <a href="tel:+917744009295" class="px-4 py-2 rounded-xl bg-[#0F172A] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:bg-slate-800 transition">
+            <Phone className="w-3.5 h-3.5 text-amber-400" />
+            <span>Call +91 7744009295</span>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -90,7 +105,7 @@ const canonical = "https://puraniksabitante.in/404";
             <Phone className="w-4 h-4" />
           </div>
           <div class="font-bold text-slate-900 group-hover:text-[#92400E] text-sm">Official Sales Desk</div>
-          <div class="text-xs text-slate-500">Direct assistance at +91 80689 76983.</div>
+          <div class="text-xs text-slate-500">Direct assistance at +91 7744009295.</div>
         </a>
       </div>
 
@@ -102,8 +117,19 @@ const canonical = "https://puraniksabitante.in/404";
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#0F172A] text-white py-8 px-4 text-center text-xs text-slate-400 border-t border-slate-800">
-      <div class="max-w-7xl mx-auto space-y-2">
+    <footer class="bg-[#0F172A] text-white py-10 px-4 text-center text-xs text-slate-400 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto space-y-4">
+        <div class="flex items-center justify-center gap-3">
+          <div class="h-10 w-auto bg-white p-1 rounded-xl flex items-center justify-center">
+            <img 
+              src="/images/logo.webp" 
+              alt="Puraniks Abitante Fiore" 
+              class="h-8 w-auto object-contain"
+              onerror="this.src='/favicon.svg'"
+            />
+          </div>
+          <span class="font-bold text-white text-sm">PURANIKS ABITANTE FIORE</span>
+        </div>
         <p>Puraniks Abitante Fiore • Bavdhan Budruk, Pune - 411021</p>
         <p class="text-[11px] text-slate-500">MahaRERA: Phase 2A (P52100020202) • Phase 2B (P52100020238) • Phase 2C (P52100048353) • Phase 2C1 (P52100049352)</p>
       </div>

@@ -80,9 +80,75 @@ const pageDescription = "Authoritative Pune real estate market intelligence, Mah
     }
   })} />
 
-  <div class="min-h-screen bg-[#FAF9F6] text-[#0F172A]">
+  <div class="min-h-screen bg-[#FAF9F6] text-[#0F172A] flex flex-col justify-between">
+    <!-- Unified Top Notification Bar -->
+    <div class="bg-[#0B1329] text-slate-300 text-[11px] font-medium tracking-wider uppercase py-2 px-4 border-b border-slate-800">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>SPECIAL PRIVILEGE: <strong class="text-amber-400 font-semibold">0% STAMP DUTY &amp; REGISTRATION</strong></span>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-mono">
+          <a href="tel:+917744009295" class="hover:text-amber-400 font-bold flex items-center gap-1.5">
+            📞 +91 7744009295
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unified Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="h-10 sm:h-12 flex items-center justify-center p-1 rounded-xl bg-white border border-slate-200 shadow-2xs group-hover:scale-105 transition-transform">
+            <img 
+              src="/images/logo.webp" 
+              alt="Puraniks Abitante Fiore" 
+              class="h-8 sm:h-10 w-auto object-contain"
+              onerror="this.src='/favicon.svg'"
+            />
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-black tracking-tight text-[#0F172A] leading-tight group-hover:text-[#92400E] transition-colors">
+              PURANIKS ABITANTE FIORE
+            </div>
+            <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+              BAVDHAN BUDRUK, PUNE
+            </div>
+          </div>
+        </a>
+
+        <nav class="hidden xl:flex items-center space-x-6 text-xs font-bold tracking-wider text-slate-700">
+          <a href="/#overview" class="hover:text-[#92400E] transition-colors">OVERVIEW</a>
+          <a href="/puraniks-abitante-fiore-price" class="hover:text-[#92400E] transition-colors">PRICING</a>
+          <a href="/puraniks-abitante-floor-plans" class="hover:text-[#92400E] transition-colors">FLOOR PLANS</a>
+          <a href="/puraniks-abitante-amenities" class="hover:text-[#92400E] transition-colors">AMENITIES</a>
+          <a href="/bavdhan-connectivity" class="hover:text-[#92400E] transition-colors">LOCATION</a>
+          <a href="/articles" class="text-[#92400E] font-extrabold transition-colors">ARTICLES</a>
+          <a href="/puraniks-abitante-rera" class="hover:text-[#92400E] transition-colors">MAHARERA</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a 
+            href="https://wa.me/917744009295?text=Hi,%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan.%20Please%20send%20brochure%20and%20pricing." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition"
+          >
+            💬 WhatsApp Desk
+          </a>
+          <a 
+            href="tel:+917744009295" 
+            class="luxury-btn-gold px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 cursor-pointer shadow-2xs"
+          >
+            <span>CALL SALES</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
     <!-- Editorial Header Banner -->
-    <header class="bg-[#0B1329] text-white py-16 sm:py-20 border-b border-slate-800 relative overflow-hidden">
+    <div class="bg-[#0B1329] text-white py-16 sm:py-20 border-b border-slate-800 relative overflow-hidden">
       <div class="absolute inset-0 bg-radial-at-top from-amber-500/10 via-transparent to-transparent pointer-events-none"></div>
       <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 space-y-4 text-center">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] font-bold tracking-widest uppercase text-amber-300">
@@ -96,7 +162,7 @@ const pageDescription = "Authoritative Pune real estate market intelligence, Mah
           Deep-dive investigative articles, submarket price trend analysis, MahaRERA legal disclosures, and infrastructure insights for homebuyers and investors in Bavdhan, Hinjewadi, and Baner.
         </p>
       </div>
-    </header>
+    </div>
 
     <!-- Articles Grid Section -->
     <main class="max-w-7xl mx-auto px-4 sm:px-8 py-16 space-y-12">
@@ -178,5 +244,61 @@ const pageDescription = "Authoritative Pune real estate market intelligence, Mah
         </div>
       </section>
     </main>
+
+    <!-- Unified Synchronized Footer -->
+    <footer class="bg-[#0F172A] text-white py-12 px-4 sm:px-8 border-t border-slate-800 mt-16">
+      <div class="max-w-7xl mx-auto space-y-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-800">
+          <div class="flex items-center gap-4">
+            <div class="h-12 w-auto bg-white p-1 rounded-xl flex items-center justify-center shrink-0">
+              <img 
+                src="/images/logo.webp" 
+                alt="Puraniks Abitante Fiore" 
+                class="h-10 w-auto object-contain"
+                onerror="this.src='/favicon.svg'"
+              />
+            </div>
+            <div>
+              <div class="text-xl font-black text-white">PURANIKS ABITANTE FIORE</div>
+              <div class="text-xs text-slate-400 mt-1">
+                Survey No. 31/1, 32/1, Bavdhan Budruk, Off Mumbai-Bangalore Highway, Pune - 411021
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 text-xs">
+            <a 
+              href="https://wa.me/917744009295?text=Hi,%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition flex items-center gap-1.5"
+            >
+              💬 WhatsApp
+            </a>
+            <a href="tel:+917744009295" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold transition flex items-center gap-1.5">
+              📞 +91 7744009295
+            </a>
+          </div>
+        </div>
+
+        <div class="text-[10px] text-slate-400 leading-relaxed space-y-2">
+          <p>
+            <strong>MahaRERA Disclosures:</strong> Phase 2A (P52100020202), Phase 2B (P52100020238), Phase 2C (P52100048353), Phase 2C1 (P52100049352). Verified details available at maharera.mahaonline.gov.in.
+          </p>
+          <p>
+            Disclaimer: The imagery, renderings, floor plans, and amenities depicted are artistic impressions for conceptual representation. All specifications are governed by the registered agreement for sale.
+          </p>
+          <p class="text-slate-500 pt-2 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span>© 2026 Puraniks Abitante Fiore Bavdhan. Developed by Puranik Builders Limited. All Rights Reserved.</span>
+            <span class="flex items-center gap-3">
+              <a href="/sitemap" class="text-amber-400 hover:underline">HTML Sitemap</a>
+              <span>•</span>
+              <a href="/puraniks-abitante-fiore-price" class="text-amber-400 hover:underline">Price List</a>
+              <span>•</span>
+              <a href="/puraniks-abitante-rera" class="text-amber-400 hover:underline">MahaRERA</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
 </Layout>

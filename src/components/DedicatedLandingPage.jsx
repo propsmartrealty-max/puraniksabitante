@@ -122,8 +122,8 @@ export default function DedicatedLandingPage({
             ⚡ 0% Stamp Duty Benefit Active
           </span>
           <div className="flex items-center gap-4 text-xs">
-            <a href="tel:+918068976983" className="hover:text-amber-400 font-mono font-bold flex items-center gap-1">
-              <Phone className="w-3 h-3 text-amber-400" /> +91 80689 76983
+            <a href="tel:+917744009295" className="hover:text-amber-400 font-mono font-bold flex items-center gap-1">
+              <Phone className="w-3 h-3 text-amber-400" /> +91 7744009295
             </a>
           </div>
         </div>
@@ -133,8 +133,13 @@ export default function DedicatedLandingPage({
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-2xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F172A] to-[#1E293B] flex items-center justify-center text-white font-extrabold text-lg shadow-xs group-hover:scale-105 transition-transform">
-              AF
+            <div className="h-10 sm:h-12 flex items-center justify-center p-1 rounded-xl bg-white border border-slate-200 shadow-2xs group-hover:scale-105 transition-transform">
+              <img 
+                src="/images/logo.webp" 
+                alt="Puraniks Abitante Fiore" 
+                className="h-8 sm:h-10 w-auto object-contain"
+                onError={(e) => { e.currentTarget.src = "/favicon.svg"; }}
+              />
             </div>
             <div>
               <div className="text-base sm:text-lg font-black tracking-tight text-[#0F172A] leading-tight group-hover:text-[#92400E] transition-colors">
@@ -160,7 +165,7 @@ export default function DedicatedLandingPage({
           {/* Nav Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
             <a 
-              href="https://wa.me/918068976983?text=Hi,%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan.%20Please%20send%20brochure%20and%20pricing." 
+              href="https://wa.me/917744009295?text=Hi,%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan.%20Please%20send%20brochure%20and%20pricing." 
               target="_blank" 
               rel="noopener noreferrer"
               className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition"
@@ -285,7 +290,7 @@ export default function DedicatedLandingPage({
                     DOWNLOAD OFFICIAL PDF
                   </button>
                   <a
-                    href="tel:+918068976983"
+                    href="tel:+917744009295"
                     className="px-4 py-3 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-300 transition"
                   >
                     <Phone className="w-3.5 h-3.5 text-slate-600" />
@@ -326,7 +331,7 @@ export default function DedicatedLandingPage({
                         Our official sales advisor will connect with you in under 15 minutes with the verified PDF.
                       </p>
                       <a
-                        href="https://wa.me/918068976983?text=Hi,%20I%20just%20submitted%20the%20form%20for%20Puraniks%20Abitante%20Fiore."
+                        href="https://wa.me/917744009295?text=Hi,%20I%20just%20submitted%20the%20form%20for%20Puraniks%20Abitante%20Fiore."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider mt-2"
@@ -757,15 +762,33 @@ export default function DedicatedLandingPage({
       <footer className="bg-[#0F172A] text-white py-12 px-4 sm:px-8 border-t border-slate-800">
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-800">
-            <div>
-              <div className="text-xl font-black text-white">PURANIKS ABITANTE FIORE</div>
-              <div className="text-xs text-slate-400 mt-1">
-                Survey No. 31/1, 32/1, Bavdhan Budruk, Off Mumbai-Bangalore Highway, Pune - 411021
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-auto bg-white p-1 rounded-xl flex items-center justify-center shrink-0">
+                <img 
+                  src="/images/logo.webp" 
+                  alt="Puraniks Abitante Fiore" 
+                  className="h-10 w-auto object-contain"
+                  onError={(e) => { e.currentTarget.src = "/favicon.svg"; }}
+                />
+              </div>
+              <div>
+                <div className="text-xl font-black text-white">PURANIKS ABITANTE FIORE</div>
+                <div className="text-xs text-slate-400 mt-1">
+                  Survey No. 31/1, 32/1, Bavdhan Budruk, Off Mumbai-Bangalore Highway, Pune - 411021
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-4 text-xs">
-              <a href="tel:+918068976983" className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold transition flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-amber-400" /> +91 80689 76983
+            <div className="flex items-center gap-3 text-xs">
+              <a 
+                href="https://wa.me/917744009295?text=Hi,%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition flex items-center gap-1.5"
+              >
+                💬 WhatsApp
+              </a>
+              <a href="tel:+917744009295" className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold transition flex items-center gap-1.5">
+                <Phone className="w-3.5 h-3.5 text-amber-400" /> +91 7744009295
               </a>
             </div>
           </div>

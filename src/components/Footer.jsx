@@ -13,12 +13,14 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
           {/* Brand (4 Cols) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <img
-                src={PROJECT_INFO.officialLogoUrl}
-                alt="Puraniks Abitante Fiore Logo"
-                className="h-10 w-auto object-contain brightness-0 invert"
-                onError={(e) => { e.target.style.display = 'none'; }}
-              />
+              <a href="/" className="h-11 w-auto bg-white p-1 rounded-xl flex items-center justify-center shrink-0">
+                <img
+                  src={PROJECT_INFO.officialLogoUrl}
+                  alt="Puraniks Abitante Fiore Logo"
+                  className="h-9 w-auto object-contain"
+                  onError={(e) => { e.currentTarget.src = '/favicon.svg'; }}
+                />
+              </a>
               <div>
                 <span className="font-extrabold text-lg text-white tracking-wider uppercase block leading-none">
                   PURANIKS ABITANTE FIORE
@@ -144,10 +146,18 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2 space-y-2">
+              <a
+                href={`https://wa.me/${PROJECT_INFO.whatsappNumber}?text=Hi,%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition flex items-center justify-center gap-1.5 uppercase tracking-wider text-xs shadow-xs"
+              >
+                💬 WhatsApp Sales Desk
+              </a>
               <button
                 onClick={onOpenSiteVisit}
-                className="w-full luxury-btn-gold py-3 rounded-xl text-xs font-bold transition uppercase tracking-wider shadow-md"
+                className="w-full luxury-btn-gold py-2.5 rounded-xl text-xs font-bold transition uppercase tracking-wider shadow-md cursor-pointer"
               >
                 BOOK SITE VISIT
               </button>
