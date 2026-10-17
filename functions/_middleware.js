@@ -325,8 +325,12 @@ export async function onRequest(context) {
   const contentType = response.headers.get('content-type') || '';
 
   if (contentType.includes('text/html')) {
-    // HTTP 103 Early Hints for HTML Pages (essential font origins & LCP Hero Image)
-    newHeaders.set('Link', '<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://puraniksabitante.in/images/slider/pweb.webp>; rel=preload; as=image');
+    // HTTP 103 Early Hints for HTML Pages (responsive mobile/desktop hero image)
+    const isMobileClient = request.headers.get('sec-ch-ua-mobile') === '?1' || /mobile|android|iphone|ipad/i.test(userAgent);
+    const heroImageToPreload = isMobileClient 
+      ? 'https://puraniksabitante.in/images/slider/pmob.webp' 
+      : 'https://puraniksabitante.in/images/slider/pweb.webp';
+    newHeaders.set('Link', `<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <${heroImageToPreload}>; rel=preload; as=image`);
 
     if (typeof HTMLRewriter !== 'undefined') {
       // Dynamic Geo Message Computation
@@ -367,9 +371,6 @@ export async function onRequest(context) {
               el.append(`    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />\n`, { html: true });
               el.append(`    <meta name="ai-search-indexable" content="true" />\n`, { html: true });
             }
-
-            // High Priority Hero Image Preload for 100/100 LCP Core Web Vitals
-            el.append(`    <link rel="preload" as="image" href="https://puraniksabitante.in/images/slider/pweb.webp" type="image/webp" fetchpriority="high" />\n`, { html: true });
 
             // Dynamic Edge Schema Injection for Pricing Silos
             if (pathname.includes('price') || pathname.includes('cost')) {
@@ -480,6 +481,16 @@ export async function onRequest(context) {
               el.setAttribute('data-seo-section', id);
               if (id === 'overview') el.setAttribute('itemprop', 'description');
               if (id === 'amenities') el.setAttribute('itemprop', 'amenityFeature');
+            }
+          }
+        })
+
+        // G. ELIMINATE BLOCKING THIRD-PARTY NETWORK CHAINS (Cloudflare RUM beacon & email-decode)
+        .on('script', {
+          element(el) {
+            const src = el.getAttribute('src') || '';
+            if (src.includes('cloudflareinsights') || src.includes('beacon.min.js') || src.includes('email-decode')) {
+              el.remove();
             }
           }
         });

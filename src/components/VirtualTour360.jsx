@@ -19,6 +19,19 @@ export default function VirtualTour360({ onOpenSiteVisit, onOpenBrochure }) {
   const [activeHotspot, setActiveHotspot] = useState(null);
 
   const containerRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    if (!containerRef.current || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -43,15 +56,15 @@ export default function VirtualTour360({ onOpenSiteVisit, onOpenBrochure }) {
   };
 
   useEffect(() => {
-    if (isDragging) return;
+    if (!isInView || isDragging) return;
     const interval = setInterval(() => {
       setPanOffset((prev) => (prev + 0.05) % 100);
-    }, 50);
+    }, 80);
     return () => clearInterval(interval);
-  }, [isDragging]);
+  }, [isInView, isDragging]);
 
   return (
-    <section id="virtual-tour" className="py-20 sm:py-24 bg-white border-t border-slate-200">
+    <section id="virtual-tour" ref={containerRef} className="py-20 sm:py-24 bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Header */}

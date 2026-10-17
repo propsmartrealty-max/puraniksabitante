@@ -16,8 +16,9 @@ import FaqSection from './components/FaqSection';
 import SeoContentHub from './components/SeoContentHub';
 import Footer from './components/Footer';
 import StickyBottomBar from './components/StickyBottomBar';
-import BrochureModal from './components/Modals/BrochureModal';
-import SiteVisitModal from './components/Modals/SiteVisitModal';
+
+const BrochureModal = React.lazy(() => import('./components/Modals/BrochureModal'));
+const SiteVisitModal = React.lazy(() => import('./components/Modals/SiteVisitModal'));
 
 export default function App() {
   const [brochureModalOpen, setBrochureModalOpen] = useState(false);
@@ -136,17 +137,25 @@ export default function App() {
         onOpenSiteVisit={handleOpenSiteVisit}
       />
 
-      {/* Modals */}
-      <BrochureModal
-        isOpen={brochureModalOpen}
-        onClose={() => setBrochureModalOpen(false)}
-        preselectedConfig={selectedConfigForModal}
-      />
+      {/* Modals - Defer-loaded on demand */}
+      {brochureModalOpen && (
+        <React.Suspense fallback={null}>
+          <BrochureModal
+            isOpen={brochureModalOpen}
+            onClose={() => setBrochureModalOpen(false)}
+            preselectedConfig={selectedConfigForModal}
+          />
+        </React.Suspense>
+      )}
 
-      <SiteVisitModal
-        isOpen={siteVisitModalOpen}
-        onClose={() => setSiteVisitModalOpen(false)}
-      />
+      {siteVisitModalOpen && (
+        <React.Suspense fallback={null}>
+          <SiteVisitModal
+            isOpen={siteVisitModalOpen}
+            onClose={() => setSiteVisitModalOpen(false)}
+          />
+        </React.Suspense>
+      )}
     </div>
   );
 }
