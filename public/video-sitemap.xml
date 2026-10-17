@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://puraniksabitante.in/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://puraniksabitante.in/images/slider/pweb.webp</video:thumbnail_loc>
+      <video:title>Puraniks Abitante Fiore Bavdhan Pune - Official Township Walkthrough &amp; Virtual Tour</video:title>
+      <video:description>Official video walkthrough tour of Puraniks Abitante Fiore in Bavdhan Budruk, Pune. Explore 45-acre Italian Riviera township with Club Azzurro, infinity swimming pool, and Juliet Balcony Gardens.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=WOPqlTKXMd8</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/WOPqlTKXMd8</video:player_loc>
+      <video:duration>185</video:duration>
+      <video:publication_date>2026-10-17T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://puraniksabitante.in/puraniks-abitante-fiore</loc>
+    <video:video>
+      <video:thumbnail_loc>https://puraniksabitante.in/images/slider/pweb.webp</video:thumbnail_loc>
+      <video:title>Puraniks Abitante Fiore Phase 2 Luxury Residences Tour</video:title>
+      <video:description>Architectural walkthrough and sample flat video tour of 1, 2 &amp; 3 BHK apartments at Puraniks Abitante Fiore Bavdhan.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=WOPqlTKXMd8</video:content_loc>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/WOPqlTKXMd8</video:player_loc>
+      <video:duration>185</video:duration>
+      <video:publication_date>2026-10-17T00:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+</urlset>

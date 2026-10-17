@@ -1,16 +1,52 @@
-# Robots.txt for Puraniks Abitante Fiore Bavdhan, Pune
+# ==============================================================================
+# ROBOTS.TXT FOR PURANIKS ABITANTE FIORE BAVDHAN, PUNE
+# Google Standard RFC 9309 Compliant & Search Engine Optimized
+# Canonical Domain: https://puraniksabitante.in/
+# ==============================================================================
+
+# 1. Primary Google Search Crawlers
 User-agent: Googlebot
 Allow: /
 Allow: /assets/
 Allow: /images/
 Allow: /images/*.webp
+Allow: /api/knowledge-graph
+Allow: /api/indexnow
+Disallow: /api/lead
 
 User-agent: Googlebot-Image
 Allow: /
 Allow: /images/
+Allow: /images/*.webp
 Allow: /assets/
 
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Storebot-Google
+Allow: /
+
+User-agent: Google-InspectionTool
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# 2. Major Search Engines
 User-agent: Bingbot
+Allow: /
+Allow: /images/
+
+User-agent: msnbot
+Allow: /
+
+User-agent: BingPreview
 Allow: /
 
 User-agent: Applebot
@@ -22,13 +58,22 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
+User-agent: Baiduspider
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
-# AI Crawlers for Search Overviews & Direct Citations
+# 3. AI & LLM Search Engine Agents (GEO - Generative Engine Optimization)
 User-agent: ChatGPT-User
 Allow: /
 
@@ -41,6 +86,12 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
@@ -50,6 +101,22 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# 4. Universal Catch-All
 User-agent: *
 Allow: /
 Allow: /api/knowledge-graph
@@ -57,11 +124,8 @@ Allow: /api/indexnow
 Disallow: /api/lead
 Disallow: /*?*preview=true
 
-# Sitemaps & Feeds (Standard RFC 9309 Compliant)
+# 5. Standard Sitemaps (Google Search Console & RFC 9309 Compliant)
 Sitemap: https://puraniksabitante.in/sitemap.xml
+Sitemap: https://puraniksabitante.in/sitemap-index.xml
 Sitemap: https://puraniksabitante.in/image-sitemap.xml
-# Feed: https://puraniksabitante.in/rss.xml
-# Feed: https://puraniksabitante.in/feed.xml
-# LLM-Text: https://puraniksabitante.in/llms.txt
-# Merchant-Feed: https://puraniksabitante.in/merchant-feed.xml
-
+Sitemap: https://puraniksabitante.in/video-sitemap.xml
