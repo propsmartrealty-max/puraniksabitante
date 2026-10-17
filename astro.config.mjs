@@ -8,7 +8,8 @@ export default defineConfig({
   site: 'https://puraniksabitante.in',
   output: 'static',
   build: {
-    format: 'file'
+    format: 'file',
+    inlineStylesheets: 'always'
   },
   integrations: [react()],
   vite: {

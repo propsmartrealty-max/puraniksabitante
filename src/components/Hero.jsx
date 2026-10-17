@@ -195,18 +195,22 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
               
               {/* Visual Banner Header */}
               <div className="relative h-44 sm:h-48 overflow-hidden group">
-                <img
-                  src={ORIGINAL_IMAGES.heroDesktopBanner}
-                  alt="Puraniks Abitante Fiore Township Vista"
-                  width="600"
-                  height="350"
-                  fetchpriority="high"
-                  decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
-                  onError={(e) => {
-                    e.target.src = "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80";
-                  }}
-                />
+                <picture className="w-full h-full">
+                  <source media="(max-width: 768px)" srcSet={ORIGINAL_IMAGES.heroMobileBanner} type="image/webp" />
+                  <source media="(min-width: 769px)" srcSet={ORIGINAL_IMAGES.heroDesktopBanner} type="image/webp" />
+                  <img
+                    src={ORIGINAL_IMAGES.heroDesktopBanner}
+                    alt="Puraniks Abitante Fiore Township Vista"
+                    width="600"
+                    height="350"
+                    fetchpriority="high"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                    onError={(e) => {
+                      e.target.src = "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80";
+                    }}
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/30 to-transparent" />
                 
                 <div className="absolute top-3 right-3">

@@ -7,6 +7,7 @@ interface Props {
   canonical?: string;
   keywords?: string;
   ogImage?: string;
+  faqs?: Array<{ q: string; a: string }>;
 }
 
 const {
@@ -14,7 +15,8 @@ const {
   description = "Official Portal for Puraniks Abitante Fiore, Bavdhan Budruk, Pune. 45-acre hillside Italian township featuring 1, 2 & 3 BHK Oxygen-Rich homes with Balcony Gardens, Club Azzurro & Venetian Lagoon. MahaRERA: P52100020202. Starting ₹59 Lakhs*.",
   canonical = "https://puraniksabitante.in/",
   keywords = "Puraniks Abitante Bavdhan, Puraniks Abitante Fiore, Puraniks Abitante Pune, Puranik Builders Bavdhan, Puraniks Abitante floor plan, Puraniks Abitante price, Puraniks Abitante brochure, Puraniks Abitante contact number, Puraniks Abitante MahaRERA, 1 BHK flat in Bavdhan Pune, 2 BHK flat in Bavdhan Pune, 3 BHK luxury apartment Bavdhan, Flats near Chandani Chowk, Flats near Hinjewadi IT Park, Oxygen rich homes Bavdhan Pune, Italian themed township Pune",
-  ogImage = "https://puraniksabitante.in/images/slider/pweb.webp"
+  ogImage = "https://puraniksabitante.in/images/slider/pweb.webp",
+  faqs = []
 } = Astro.props;
 
 const breadcrumbItems = canonical === "https://puraniksabitante.in/" ? [
@@ -304,16 +306,25 @@ const schemaGraph = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://puraniksabitante.in/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the price range and configurations at Puraniks Abitante Fiore Bavdhan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Puraniks Abitante Fiore offers 1 BHK Oxygen Flats (489 sq.ft from ₹59 Lakhs*), 2 BHK Smart Homes (596-640 sq.ft from ₹72.99 Lakhs*), 2 BHK Venetian Luxury (735-770 sq.ft from ₹89 Lakhs*), 2.5 BHK Executive Suites (867-908 sq.ft from ₹99.99 Lakhs*), and 3 BHK Imperial Residences (867-1,113 sq.ft from ₹1.10 Crore*)."
-          }
-        },
+      "@id": `${canonical}#faq`,
+      "mainEntity": (faqs && faqs.length > 0)
+        ? faqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": f.a
+            }
+          }))
+        : [
+            {
+              "@type": "Question",
+              "name": "What is the price range and configurations at Puraniks Abitante Fiore Bavdhan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Puraniks Abitante Fiore offers 1 BHK Oxygen Flats (489 sq.ft from ₹59 Lakhs*), 2 BHK Smart Homes (596-640 sq.ft from ₹72.99 Lakhs*), 2 BHK Venetian Luxury (735-770 sq.ft from ₹89 Lakhs*), 2.5 BHK Executive Suites (867-908 sq.ft from ₹99.99 Lakhs*), and 3 BHK Imperial Residences (867-1,113 sq.ft from ₹1.10 Crore*)."
+              }
+            },
         {
           "@type": "Question",
           "name": "What are the 4 official MahaRERA registration numbers for Puraniks Abitante Fiore?",

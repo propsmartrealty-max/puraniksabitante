@@ -30,6 +30,7 @@ import {
 import confetti from "canvas-confetti";
 import { PROJECT_INFO, CONFIGURATIONS } from "../data/projectData";
 import { SEO_SILOS } from "../data/seoContentMatrix";
+import { resolveSiloData } from "../data/siloResolver";
 import BrochureModal from "./Modals/BrochureModal";
 import SiteVisitModal from "./Modals/SiteVisitModal";
 
@@ -39,10 +40,14 @@ export default function DedicatedLandingPage({
   description, 
   category = "general",
   h1, 
-  badge = "VERIFIED MASTER PORTAL",
+  badge,
   highlights = [],
   faqs = []
 }) {
+  const silo = resolveSiloData(slug, title, description);
+  const activeBadge = badge || silo.badge;
+  const activeHighlights = (highlights && highlights.length > 0) ? highlights : silo.highlights;
+  const activeFaqs = (faqs && faqs.length > 0) ? faqs : silo.faqs;
   const [brochureModalOpen, setBrochureModalOpen] = useState(false);
   const [siteVisitModalOpen, setSiteVisitModalOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -358,7 +363,7 @@ export default function DedicatedLandingPage({
                 {/* Topic Pill Badge */}
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-[11px] font-bold tracking-wider uppercase text-[#92400E] shadow-2xs">
                   <Sparkles className="w-3.5 h-3.5 text-[#92400E]" />
-                  <span>{badge}</span>
+                  <span>{activeBadge}</span>
                 </div>
 
                 {/* Exact Target H1 */}
@@ -585,6 +590,53 @@ export default function DedicatedLandingPage({
               </div>
 
             </div>
+          </div>
+        </section>
+
+        {/* 1.5 DEDICATED TOPICAL SPOTLIGHT & DEEP DIVE (EEAT QUALITY ANCHOR) */}
+        <section id="silo-spotlight" className="max-w-7xl mx-auto px-4 sm:px-8">
+          <div className="bg-white rounded-3xl border border-slate-200/90 shadow-md p-6 sm:p-10 space-y-8">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-[#92400E] text-[11px] font-bold tracking-wider uppercase">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>{activeBadge}</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+                {silo.headline}
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-4xl">
+                {silo.summary}
+              </p>
+            </div>
+
+            {/* Verified Specifications Grid */}
+            {silo.specs && silo.specs.length > 0 && (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2">
+                {silo.specs.map((spec, idx) => (
+                  <div key={idx} className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">{spec.label}</span>
+                    <div className="text-xs sm:text-sm font-extrabold text-[#0F172A] mt-1">{spec.value}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Verified Technical Highlights */}
+            {activeHighlights && activeHighlights.length > 0 && (
+              <div className="space-y-3 pt-4 border-t border-slate-200">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" /> Key Architectural & Project Highlights
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {activeHighlights.map((hl, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50/70 border border-slate-100 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>{hl}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -845,7 +897,7 @@ export default function DedicatedLandingPage({
         </section>
 
         {/* 6. TOPICAL FREQUENTLY ASKED QUESTIONS (FAQPage SCHEMA) */}
-        {faqs && faqs.length > 0 && (
+        {activeFaqs && activeFaqs.length > 0 && (
           <section id="faq" className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
             <div className="text-center space-y-2">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[10px] font-bold uppercase tracking-wider">
@@ -857,7 +909,7 @@ export default function DedicatedLandingPage({
             </div>
 
             <div className="space-y-3">
-              {faqs.map((faq, idx) => {
+              {activeFaqs.map((faq, idx) => {
                 const isOpen = openFaqIndex === idx;
                 return (
                   <div

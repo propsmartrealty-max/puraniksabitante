@@ -223,24 +223,27 @@ ROUTES.forEach(route => {
     fs.mkdirSync(routeDir, { recursive: true });
   }
 
-  let html = baseHtml;
-  // Replace Title
-  html = html.replace(/<title>.*?<\/title>/, `<title>${route.title}</title>`);
-  html = html.replace(/<meta name="title" content=".*?" \/>/, `<meta name="title" content="${route.title}" />`);
-  // Replace Description
-  html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${route.description}" />`);
-  // Replace Canonical
-  html = html.replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${route.canonical}" />`);
-  // Replace OG tags
-  html = html.replace(/<meta property="og:title" content=".*?" \/>/, `<meta property="og:title" content="${route.title}" />`);
-  html = html.replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${route.description}" />`);
-  html = html.replace(/<meta property="og:url" content=".*?" \/>/, `<meta property="og:url" content="${route.canonical}" />`);
-  // Replace Twitter tags
-  html = html.replace(/<meta name="twitter:title" content=".*?" \/>/, `<meta name="twitter:title" content="${route.title}" />`);
-  html = html.replace(/<meta name="twitter:description" content=".*?" \/>/, `<meta name="twitter:description" content="${route.description}" />`);
+  const routeHtmlFile = path.join(distDir, `${route.path}.html`);
+  let html = fs.existsSync(routeHtmlFile) ? fs.readFileSync(routeHtmlFile, 'utf8') : baseHtml;
+
+  // Replace Title if not already set
+  if (!html.includes(`<title>${route.title}</title>`)) {
+    html = html.replace(/<title>.*?<\/title>/, `<title>${route.title}</title>`);
+  }
+  if (!html.includes(`content="${route.title}"`)) {
+    html = html.replace(/<meta name="title" content=".*?" \/>/, `<meta name="title" content="${route.title}" />`);
+  }
+  // Replace Description if not already set
+  if (!html.includes(`content="${route.description}"`)) {
+    html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${route.description}" />`);
+  }
+  // Replace Canonical if not already set
+  if (!html.includes(`href="${route.canonical}"`)) {
+    html = html.replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${route.canonical}" />`);
+  }
 
   fs.writeFileSync(path.join(routeDir, 'index.html'), html, 'utf8');
-  console.log(`✓ Generated: dist/${route.path}/index.html`);
+  console.log(`✓ Synchronized rich HTML: dist/${route.path}/index.html`);
 });
 
 console.log(`🎉 All ${ROUTES.length} static HTML routes successfully generated for Googlebot and search engines!`);

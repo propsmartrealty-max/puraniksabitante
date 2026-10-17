@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import DedicatedLandingPage from '../components/DedicatedLandingPage.jsx';
+import { resolveSiloData } from '../data/siloResolver.js';
 
 export function getStaticPaths() {
   const routes = [
@@ -842,15 +843,19 @@ export function getStaticPaths() {
 }
 
 const { slug, title, description, h1, canonical } = Astro.props;
+const silo = resolveSiloData(slug, title, description);
 ---
 
-<Layout title={title} description={description} canonical={canonical}>
+<Layout title={title} description={description} canonical={canonical} faqs={silo.faqs}>
   <DedicatedLandingPage 
     client:idle 
     slug={slug}
     title={title}
     description={description}
     h1={h1}
+    badge={silo.badge}
+    highlights={silo.highlights}
+    faqs={silo.faqs}
   />
 </Layout>
 
