@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "prerender": "node scripts/prerender.js",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
-    "index:google": "node scripts/google-indexing-api.js"
+    "index:google": "node scripts/google-indexing-api.js",
+    "harden:cloudflare": "node scripts/cloudflare-ecosystem-harden.js",
+    "verify:ecosystem": "node scripts/verify-ecosystem.js"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.2.6",
