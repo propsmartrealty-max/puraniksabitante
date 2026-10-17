@@ -149,7 +149,7 @@ export default function AmenitiesShowcase({ onOpenBrochure, onOpenSiteVisit }) {
 
       {/* Lightbox */}
       {selectedAmenity && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+        <div role="dialog" aria-modal="true" aria-labelledby="amenity-modal-title" className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
           <div className="relative max-w-lg w-full bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-2xl">
             <div className="relative h-64">
               <img
@@ -174,7 +174,7 @@ export default function AmenitiesShowcase({ onOpenBrochure, onOpenSiteVisit }) {
               <span className="text-[10px] font-bold text-[#92400E] uppercase tracking-widest">
                 {selectedAmenity.category} COLLECTION
               </span>
-              <h3 className="text-2xl font-extrabold text-[#0F172A]">{selectedAmenity.name}</h3>
+              <h3 id="amenity-modal-title" className="text-2xl font-extrabold text-[#0F172A]">{selectedAmenity.name}</h3>
               <p className="text-xs text-slate-600 font-normal leading-relaxed">
                 {selectedAmenity.desc} Available to all residents of Puraniks Abitante & Abitante Fiore.
               </p>

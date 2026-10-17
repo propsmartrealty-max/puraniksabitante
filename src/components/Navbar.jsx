@@ -85,7 +85,7 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-7 text-xs font-bold tracking-wider text-slate-700">
+          <nav aria-label="Desktop primary navigation" className="hidden lg:flex items-center space-x-7 text-xs font-bold tracking-wider text-slate-700">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -140,7 +140,7 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
 
       {/* Advanced Luxury Mobile Slide-In Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden animate-fadeIn">
+        <div role="dialog" aria-modal="true" aria-label="Mobile navigation menu" className="fixed inset-0 z-50 lg:hidden animate-fadeIn">
           {/* Backdrop */}
           <div 
             className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity"
@@ -206,7 +206,7 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
               </div>
 
               {/* Navigation Links */}
-              <nav className="flex flex-col space-y-1 mt-4">
+              <nav aria-label="Mobile navigation" className="flex flex-col space-y-1 mt-4">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
@@ -251,7 +251,7 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
                 BOOK FREE SITE TOUR
               </button>
 
-              <div className="text-[10px] text-slate-400 text-center uppercase tracking-wider pt-1">
+              <div className="text-[10px] text-slate-600 font-medium text-center uppercase tracking-wider pt-1">
                 MAHARERA: {PROJECT_INFO.reraNumber.split(' ')[0]}
               </div>
             </div>

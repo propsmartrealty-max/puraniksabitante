@@ -90,6 +90,7 @@ export default function FloorPlanExplorer({ onOpenBrochure, onOpenSiteVisit, onS
 
                 <button
                   onClick={() => setIsZoomOpen(true)}
+                  aria-label="Expand blueprint fullscreen"
                   className="p-2 rounded-xl text-slate-500 hover:text-[#0F172A] hover:bg-white transition"
                   title="Expand Fullscreen"
                 >
@@ -224,15 +225,16 @@ export default function FloorPlanExplorer({ onOpenBrochure, onOpenSiteVisit, onS
 
       {/* Lightbox */}
       {isZoomOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+        <div role="dialog" aria-modal="true" aria-labelledby="blueprint-modal-title" className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
           <div className="relative max-w-5xl w-full bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-2xl">
             <div className="flex items-center justify-between pb-4 border-b border-slate-200 mb-4">
               <div>
-                <h3 className="text-lg font-bold text-[#0F172A] uppercase tracking-wide">{selectedConfig.type} LAYOUT</h3>
+                <h3 id="blueprint-modal-title" className="text-lg font-bold text-[#0F172A] uppercase tracking-wide">{selectedConfig.type} LAYOUT</h3>
                 <p className="text-xs text-slate-500 font-medium">Carpet Area: {selectedConfig.carpetArea} | {selectedConfig.startingPrice}</p>
               </div>
               <button
                 onClick={() => setIsZoomOpen(false)}
+                aria-label="Close blueprint zoom"
                 className="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-900 hover:bg-slate-200 text-xs font-bold uppercase tracking-wider"
               >
                 CLOSE ✕

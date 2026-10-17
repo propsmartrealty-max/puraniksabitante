@@ -28,6 +28,7 @@ export default function WalkthroughVideo({ onOpenBrochure, onOpenSiteVisit }) {
               src={`${PROJECT_INFO.walkthroughEmbedUrl}?rel=0&modestbranding=1`}
               title="Puraniks Abitante Fiore Official Location & Township Walkthrough"
               className="w-full h-full border-0"
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />

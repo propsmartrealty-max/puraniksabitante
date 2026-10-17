@@ -124,18 +124,21 @@ export default function VirtualTour360({ onOpenSiteVisit, onOpenBrochure }) {
             <div className="flex items-center gap-2 pointer-events-auto">
               <button
                 onClick={() => setPanOffset((prev) => (prev - 10 + 100) % 100)}
+                aria-label="Rotate panoramic view left"
                 className="p-2.5 rounded-xl bg-white/95 backdrop-blur-md text-slate-900 hover:bg-[#0F172A] hover:text-white transition shadow border border-slate-200"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setPanOffset((prev) => (prev + 10) % 100)}
+                aria-label="Rotate panoramic view right"
                 className="p-2.5 rounded-xl bg-white/95 backdrop-blur-md text-slate-900 hover:bg-[#0F172A] hover:text-white transition shadow border border-slate-200"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setIsFullscreen(!isFullscreen)}
+                aria-label="Toggle fullscreen panoramic view"
                 className="p-2.5 rounded-xl bg-white/95 backdrop-blur-md text-slate-900 hover:bg-[#0F172A] hover:text-white transition shadow border border-slate-200"
               >
                 <Maximize2 className="w-4 h-4" />
@@ -155,6 +158,7 @@ export default function VirtualTour360({ onOpenSiteVisit, onOpenBrochure }) {
                   e.stopPropagation();
                   setActiveHotspot(activeHotspot === hs.label ? null : hs.label);
                 }}
+                aria-label={`View ${hs.label} feature details`}
                 className="w-7 h-7 rounded-full bg-[#92400E] text-white flex items-center justify-center font-bold text-xs shadow-xl border-2 border-white hover:scale-125 transition cursor-pointer"
               >
                 <Info className="w-4 h-4" />

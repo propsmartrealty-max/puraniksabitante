@@ -66,7 +66,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 max-sm:p-0 max-sm:items-end animate-fadeIn">
+    <div role="dialog" aria-modal="true" aria-labelledby="brochure-modal-title" className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 max-sm:p-0 max-sm:items-end animate-fadeIn">
       <div className="relative max-w-md w-full bg-white rounded-3xl max-sm:rounded-b-none max-sm:rounded-t-[2rem] overflow-hidden border border-slate-200 shadow-2xl animate-slideUp max-h-[90vh] overflow-y-auto">
         
         {/* Mobile Drag Indicator Pill */}
@@ -79,7 +79,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
           <button
             onClick={onClose}
             className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xs transition uppercase cursor-pointer"
-            aria-label="Close"
+            aria-label="Close brochure modal"
           >
             <X className="w-4 h-4" />
           </button>
@@ -87,7 +87,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400">OFFICIAL PROJECT DOCUMENTATION</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
+          <h2 id="brochure-modal-title" className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
             DOWNLOAD PROJECT BROCHURE
           </h2>
           <p className="text-xs text-slate-300 font-normal mt-1">
@@ -208,6 +208,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
               <button
                 type="submit"
                 disabled={isSubmitting}
+                aria-label="Download instant brochure PDF on WhatsApp"
                 className="w-full luxury-btn-gold py-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2"
               >
                 {isSubmitting ? (

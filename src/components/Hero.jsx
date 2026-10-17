@@ -320,6 +320,7 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
                     <button
                       type="submit"
                       disabled={isSubmitting}
+                      aria-label="Unlock official price list and inventory"
                       className="w-full luxury-btn-gold py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2"
                     >
                       {isSubmitting ? (

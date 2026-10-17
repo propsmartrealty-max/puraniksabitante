@@ -423,6 +423,7 @@ export default function DedicatedLandingPage({
                       <button
                         type="submit"
                         disabled={isSubmitting}
+                        aria-label="Get instant cost sheet on WhatsApp"
                         className="w-full luxury-btn-gold py-3 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md disabled:opacity-50"
                       >
                         {isSubmitting ? (
@@ -435,7 +436,7 @@ export default function DedicatedLandingPage({
                         )}
                       </button>
 
-                      <div className="text-[10px] text-slate-400 text-center flex items-center justify-center gap-1">
+                      <div className="text-[10px] text-slate-600 text-center flex items-center justify-center gap-1 font-medium">
                         <ShieldCheck className="w-3 h-3 text-emerald-600" />
                         Zero Spam Guarantee • RERA Escrow Protection Protected
                       </div>

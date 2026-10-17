@@ -70,7 +70,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 max-sm:p-0 max-sm:items-end animate-fadeIn">
+    <div role="dialog" aria-modal="true" aria-labelledby="sitevisit-modal-title" className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 max-sm:p-0 max-sm:items-end animate-fadeIn">
       <div className="relative max-w-lg w-full bg-white rounded-3xl max-sm:rounded-b-none max-sm:rounded-t-[2rem] overflow-hidden border border-slate-200 shadow-2xl animate-slideUp max-h-[92vh] overflow-y-auto">
         
         {/* Mobile Drag Indicator Pill */}
@@ -83,7 +83,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
           <button
             onClick={onClose}
             className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xs transition uppercase cursor-pointer"
-            aria-label="Close"
+            aria-label="Close site visit modal"
           >
             <X className="w-4 h-4" />
           </button>
@@ -91,7 +91,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400">VIP EXPERIENCE CENTER TOUR</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
+          <h2 id="sitevisit-modal-title" className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
             SCHEDULE SITE VISIT & MODEL FLAT TOUR
           </h2>
           <p className="text-xs text-slate-300 font-normal mt-1">
@@ -241,6 +241,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
               <button
                 type="submit"
                 disabled={isSubmitting}
+                aria-label="Confirm free cab pickup and site visit booking"
                 className="w-full luxury-btn-gold py-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md mt-2"
               >
                 {isSubmitting ? (
