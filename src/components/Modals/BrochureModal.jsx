@@ -87,9 +87,9 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400">OFFICIAL PROJECT DOCUMENTATION</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
             DOWNLOAD PROJECT BROCHURE
-          </h3>
+          </h2>
           <p className="text-xs text-slate-300 font-normal mt-1">
             High-resolution floor plans, master layout, and current price breakdown.
           </p>
@@ -102,7 +102,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
               <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-extrabold text-[#0F172A] uppercase">BROCHURE DISPATCHED!</h4>
+              <h3 className="text-xl font-extrabold text-[#0F172A] uppercase">BROCHURE DISPATCHED!</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 We have generated your secure brochure link and sent it to <strong className="text-slate-900">+91 {formData.phone}</strong> on WhatsApp.
               </p>
@@ -134,12 +134,15 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                <label htmlFor="brochure-name" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
                   YOUR FULL NAME *
                 </label>
                 <input
+                  id="brochure-name"
+                  name="name"
                   type="text"
                   required
+                  aria-label="Your Full Name"
                   placeholder="e.g. Anand Kulkarni"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -148,7 +151,7 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                <label htmlFor="brochure-phone" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
                   WHATSAPP CONTACT NUMBER *
                 </label>
                 <div className="flex">
@@ -156,9 +159,12 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
                     +91
                   </span>
                   <input
+                    id="brochure-phone"
+                    name="phone"
                     type="tel"
                     required
                     pattern="[0-9]{10}"
+                    aria-label="WhatsApp Contact Number"
                     placeholder="9876543210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -168,10 +174,13 @@ export default function BrochureModal({ isOpen, onClose, preselectedConfig }) {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                <label htmlFor="brochure-config" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
                   INTERESTED CONFIGURATION
                 </label>
                 <select
+                  id="brochure-config"
+                  name="config"
+                  aria-label="Interested Configuration"
                   value={formData.config}
                   onChange={(e) => setFormData({ ...formData, config: e.target.value })}
                   className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-bold"

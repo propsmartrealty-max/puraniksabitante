@@ -92,12 +92,14 @@ export default function EmiCalculator({ onOpenBrochure, onOpenSiteVisit }) {
               {/* Slider 1: Property Cost */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-bold">
-                  <span className="text-slate-700 uppercase tracking-wider">PROPERTY VALUE</span>
+                  <label htmlFor="slider-property-price" className="text-slate-700 uppercase tracking-wider">PROPERTY VALUE</label>
                   <span className="text-sm font-bold text-[#0F172A] bg-slate-100 px-3 py-1 rounded-xl border border-slate-200">
                     {formatINR(propertyPrice)}
                   </span>
                 </div>
                 <input
+                  id="slider-property-price"
+                  aria-label="Property Value in INR"
                   type="range"
                   min="4000000"
                   max="15000000"
@@ -116,12 +118,14 @@ export default function EmiCalculator({ onOpenBrochure, onOpenSiteVisit }) {
               {/* Slider 2: Down Payment */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-bold">
-                  <span className="text-slate-700 uppercase tracking-wider">DOWN PAYMENT ({downPaymentPercent}%)</span>
+                  <label htmlFor="slider-down-payment" className="text-slate-700 uppercase tracking-wider">DOWN PAYMENT ({downPaymentPercent}%)</label>
                   <span className="text-sm font-bold text-[#0F172A] bg-slate-100 px-3 py-1 rounded-xl border border-slate-200">
                     {formatINR(downPaymentAmount)}
                   </span>
                 </div>
                 <input
+                  id="slider-down-payment"
+                  aria-label="Down Payment Percentage"
                   type="range"
                   min="10"
                   max="50"
@@ -140,12 +144,14 @@ export default function EmiCalculator({ onOpenBrochure, onOpenSiteVisit }) {
               {/* Slider 3: Interest Rate */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-bold">
-                  <span className="text-slate-700 uppercase tracking-wider">INTEREST RATE (% P.A.)</span>
+                  <label htmlFor="slider-interest-rate" className="text-slate-700 uppercase tracking-wider">INTEREST RATE (% P.A.)</label>
                   <span className="text-sm font-bold text-[#92400E] bg-amber-50 px-3 py-1 rounded-xl border border-amber-200">
                     {interestRate.toFixed(2)}%
                   </span>
                 </div>
                 <input
+                  id="slider-interest-rate"
+                  aria-label="Interest Rate per annum"
                   type="range"
                   min="7.0"
                   max="11.5"
@@ -164,12 +170,14 @@ export default function EmiCalculator({ onOpenBrochure, onOpenSiteVisit }) {
               {/* Slider 4: Tenure */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-bold">
-                  <span className="text-slate-700 uppercase tracking-wider">LOAN TENURE</span>
+                  <label htmlFor="slider-tenure" className="text-slate-700 uppercase tracking-wider">LOAN TENURE</label>
                   <span className="text-sm font-bold text-[#0F172A] bg-slate-100 px-3 py-1 rounded-xl border border-slate-200">
                     {tenureYears} YEARS ({totalMonths} MONTHS)
                   </span>
                 </div>
                 <input
+                  id="slider-tenure"
+                  aria-label="Loan Tenure in Years"
                   type="range"
                   min="5"
                   max="30"

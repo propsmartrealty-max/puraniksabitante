@@ -17,6 +17,8 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
                 <img
                   src={PROJECT_INFO.officialLogoUrl}
                   alt="Puraniks Abitante Fiore Logo"
+                  width="140"
+                  height="36"
                   className="h-9 w-auto object-contain"
                   onError={(e) => { e.currentTarget.src = '/favicon.svg'; }}
                 />
@@ -50,6 +52,10 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
                     key={idx}
                     src={bc}
                     alt={`MahaRERA QR ${idx + 1}`}
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                    decoding="async"
                     className="h-12 w-12 object-contain bg-white p-1 rounded-lg"
                     onError={(e) => { e.target.style.display = 'none'; }}
                   />
@@ -174,9 +180,9 @@ export default function Footer({ onOpenBrochure, onOpenSiteVisit }) {
               PURANIKS ABITANTE FIORE • PUNE REAL ESTATE DIRECTORY &amp; SILO MATRIX
             </span>
             <div className="flex items-center gap-3 text-[10px] text-slate-400 font-mono">
-              <a href="/sitemap" class="text-amber-400 hover:underline">HTML SITEMAP (130+ NODES)</a>
+              <a href="/sitemap" className="text-amber-400 hover:underline">HTML SITEMAP (130+ NODES)</a>
               <span>•</span>
-              <a href="/articles" class="text-amber-400 hover:underline">RESEARCH ARTICLES HUB</a>
+              <a href="/articles" className="text-amber-400 hover:underline">RESEARCH ARTICLES HUB</a>
             </div>
           </div>
 

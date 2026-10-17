@@ -31,7 +31,8 @@ export default function StickyBottomBar({ onOpenBrochure, onOpenSiteVisit }) {
         {/* Direct Call */}
         <a
           href={`tel:${PROJECT_INFO.contactPhone}`}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-2xl bg-slate-50 active:bg-slate-100 border border-slate-200/80 text-slate-800 text-center transition-transform active:scale-95 shadow-2xs"
+          aria-label="Call Direct Sales Desk +91 7744009295"
+          className="min-h-[48px] flex flex-col items-center justify-center py-2 px-1 rounded-2xl bg-slate-50 active:bg-slate-100 border border-slate-200/80 text-slate-800 text-center transition-transform active:scale-95 shadow-2xs"
         >
           <Phone className="w-4 h-4 text-[#92400E] mb-0.5" />
           <span className="text-[10px] font-extrabold uppercase tracking-wider">CALL</span>
@@ -42,7 +43,8 @@ export default function StickyBottomBar({ onOpenBrochure, onOpenSiteVisit }) {
           href={`https://wa.me/${PROJECT_INFO.whatsappNumber}?text=${encodeURIComponent(waMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative flex flex-col items-center justify-center py-2 px-1 rounded-2xl bg-emerald-50 active:bg-emerald-100 border border-emerald-200/90 text-emerald-800 text-center transition-transform active:scale-95 shadow-2xs"
+          aria-label="Chat with Official Sales Advisor on WhatsApp"
+          className="min-h-[48px] relative flex flex-col items-center justify-center py-2 px-1 rounded-2xl bg-emerald-50 active:bg-emerald-100 border border-emerald-200/90 text-emerald-800 text-center transition-transform active:scale-95 shadow-2xs"
         >
           <span className="absolute top-1.5 right-2 w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
           <MessageSquare className="w-4 h-4 mb-0.5 text-emerald-600" />
@@ -52,7 +54,8 @@ export default function StickyBottomBar({ onOpenBrochure, onOpenSiteVisit }) {
         {/* Brochure Download */}
         <button
           onClick={onOpenBrochure}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-2xl bg-slate-50 active:bg-slate-100 border border-slate-200/80 text-slate-800 text-center transition-transform active:scale-95 shadow-2xs cursor-pointer"
+          aria-label="Download Official Puraniks Abitante Fiore Brochure"
+          className="min-h-[48px] flex flex-col items-center justify-center py-2 px-1 rounded-2xl bg-slate-50 active:bg-slate-100 border border-slate-200/80 text-slate-800 text-center transition-transform active:scale-95 shadow-2xs cursor-pointer"
         >
           <Download className="w-4 h-4 text-[#92400E] mb-0.5" />
           <span className="text-[10px] font-extrabold uppercase tracking-wider">BROCHURE</span>
@@ -61,7 +64,8 @@ export default function StickyBottomBar({ onOpenBrochure, onOpenSiteVisit }) {
         {/* Site Tour - High Conversion Gold Pill */}
         <button
           onClick={onOpenSiteVisit}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-2xl luxury-btn-gold text-white text-center transition-transform active:scale-95 shadow-md cursor-pointer relative overflow-hidden"
+          aria-label="Schedule Free VIP Site Visit and AC Cab Pickup"
+          className="min-h-[48px] flex flex-col items-center justify-center py-2 px-1 rounded-2xl luxury-btn-gold text-white text-center transition-transform active:scale-95 shadow-md cursor-pointer relative overflow-hidden"
         >
           <Calendar className="w-4 h-4 mb-0.5" />
           <span className="text-[10px] font-extrabold uppercase tracking-wider">VISIT</span>

@@ -137,6 +137,8 @@ export default function DedicatedLandingPage({
               <img 
                 src="/images/logo.webp" 
                 alt="Puraniks Abitante Fiore" 
+                width="40"
+                height="40"
                 className="h-8 sm:h-10 w-auto object-contain"
                 onError={(e) => { e.currentTarget.src = "/favicon.svg"; }}
               />
@@ -204,7 +206,7 @@ export default function DedicatedLandingPage({
         </div>
       </div>
 
-      <main className="space-y-16 sm:space-y-24 pb-20">
+      <div className="space-y-16 sm:space-y-24 pb-20">
 
         {/* 1. DEDICATED HERO SECTION WITH CONTEXTUAL H1 & LEAD FORM */}
         <section className="relative pt-10 pb-16 bg-gradient-to-b from-white to-[#FAF9F6] border-b border-slate-200">
@@ -258,17 +260,17 @@ export default function DedicatedLandingPage({
                   <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
                     <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">PRICE RANGE</span>
                     <div className="text-lg sm:text-xl font-extrabold text-[#0F172A] mt-0.5">₹59 L*</div>
-                    <span className="text-[10px] text-slate-400 block">All-Inclusive*</span>
+                    <span className="text-[10px] text-slate-600 block">All-Inclusive*</span>
                   </div>
                   <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">CONFIGURATIONS</span>
+                    <span className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block">CONFIGURATIONS</span>
                     <div className="text-lg sm:text-xl font-extrabold text-[#0F172A] mt-0.5">1, 2 & 3 BHK</div>
-                    <span className="text-[10px] text-emerald-600 font-bold block">Balcony Gardens</span>
+                    <span className="text-[10px] text-emerald-700 font-bold block">Balcony Gardens</span>
                   </div>
                   <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">MAHARERA</span>
+                    <span className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block">MAHARERA</span>
                     <div className="text-lg sm:text-xl font-extrabold text-[#92400E] mt-0.5">4 Phases</div>
-                    <span className="text-[10px] text-slate-400 block">P52100020202</span>
+                    <span className="text-[10px] text-slate-600 block">P52100020202</span>
                   </div>
                 </div>
 
@@ -315,9 +317,9 @@ export default function DedicatedLandingPage({
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-amber-100/70 text-[#92400E] text-[10px] font-bold uppercase tracking-wider">
                       DIRECT DEVELOPER DESK
                     </div>
-                    <h3 className="text-xl font-extrabold text-[#0F172A]">
+                    <h2 className="text-xl font-extrabold text-[#0F172A]">
                       Get Verified Cost Sheet & Tour
-                    </h3>
+                    </h2>
                     <p className="text-xs text-slate-500 leading-relaxed">
                       Receive complete pricing breakdown, floor plans & 0% stamp duty eligibility on WhatsApp.
                     </p>
@@ -326,7 +328,7 @@ export default function DedicatedLandingPage({
                   {formSubmitted ? (
                     <div className="p-6 bg-emerald-50 rounded-2xl border border-emerald-200 text-center space-y-3 animate-fadeIn">
                       <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
-                      <h4 className="font-extrabold text-[#0F172A] text-sm">Request Submitted Successfully!</h4>
+                      <h3 className="font-extrabold text-[#0F172A] text-sm">Request Submitted Successfully!</h3>
                       <p className="text-xs text-slate-600">
                         Our official sales advisor will connect with you in under 15 minutes with the verified PDF.
                       </p>
@@ -342,12 +344,15 @@ export default function DedicatedLandingPage({
                   ) : (
                     <form onSubmit={handleLeadSubmit} className="space-y-3.5 relative z-10">
                       <div>
-                        <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                        <label htmlFor="landing-name" className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">
                           Full Name *
                         </label>
                         <input
+                          id="landing-name"
+                          name="name"
                           type="text"
                           required
+                          aria-label="Full Name"
                           placeholder="e.g. Rahul Sharma"
                           value={leadForm.name}
                           onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
@@ -356,7 +361,7 @@ export default function DedicatedLandingPage({
                       </div>
 
                       <div>
-                        <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                        <label htmlFor="landing-phone" className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">
                           Phone Number (with WhatsApp) *
                         </label>
                         <div className="flex gap-2">
@@ -364,8 +369,12 @@ export default function DedicatedLandingPage({
                             +91
                           </span>
                           <input
+                            id="landing-phone"
+                            name="phone"
                             type="tel"
                             required
+                            pattern="[0-9]{10}"
+                            aria-label="Phone Number with WhatsApp"
                             placeholder="10-digit mobile number"
                             value={leadForm.phone}
                             onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
@@ -376,10 +385,13 @@ export default function DedicatedLandingPage({
 
                       <div className="grid grid-cols-2 gap-3">
                         <div>
-                          <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                          <label htmlFor="landing-config" className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">
                             Configuration
                           </label>
                           <select
+                            id="landing-config"
+                            name="config"
+                            aria-label="Preferred Configuration"
                             value={leadForm.config}
                             onChange={(e) => setLeadForm({ ...leadForm, config: e.target.value })}
                             className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 font-bold focus:outline-none focus:border-[#92400E]"
@@ -392,11 +404,14 @@ export default function DedicatedLandingPage({
                           </select>
                         </div>
                         <div>
-                          <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 mb-1">
+                          <label htmlFor="landing-email" className="block text-[10px] font-bold uppercase tracking-wider text-slate-700 mb-1">
                             Email (Optional)
                           </label>
                           <input
+                            id="landing-email"
+                            name="email"
                             type="email"
+                            aria-label="Email Address"
                             placeholder="name@email.com"
                             value={leadForm.email}
                             onChange={(e) => setLeadForm({ ...leadForm, email: e.target.value })}
@@ -633,10 +648,12 @@ export default function DedicatedLandingPage({
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative z-10 pt-4 border-t border-white/10">
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-slate-300">Loan Amount</span>
+                  <label htmlFor="landing-loan-amount" className="text-slate-300">Loan Amount</label>
                   <span className="text-amber-400 font-mono">₹{loanAmount} Lakhs</span>
                 </div>
                 <input
+                  id="landing-loan-amount"
+                  aria-label="Loan Amount in Lakhs"
                   type="range"
                   min="25"
                   max="150"
@@ -649,10 +666,12 @@ export default function DedicatedLandingPage({
 
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-slate-300">Interest Rate</span>
+                  <label htmlFor="landing-interest-rate" className="text-slate-300">Interest Rate</label>
                   <span className="text-amber-400 font-mono">{interestRate}% p.a.</span>
                 </div>
                 <input
+                  id="landing-interest-rate"
+                  aria-label="Interest Rate per annum"
                   type="range"
                   min="7.5"
                   max="11.5"
@@ -665,10 +684,12 @@ export default function DedicatedLandingPage({
 
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-slate-300">Loan Tenure</span>
+                  <label htmlFor="landing-tenure" className="text-slate-300">Loan Tenure</label>
                   <span className="text-amber-400 font-mono">{tenureYears} Years</span>
                 </div>
                 <input
+                  id="landing-tenure"
+                  aria-label="Loan Tenure in Years"
                   type="range"
                   min="5"
                   max="30"
@@ -755,8 +776,7 @@ export default function DedicatedLandingPage({
             ))}
           </div>
         </section>
-
-      </main>
+      </div>
 
       {/* Official Footer */}
       <footer className="bg-[#0F172A] text-white py-12 px-4 sm:px-8 border-t border-slate-800">
@@ -767,6 +787,8 @@ export default function DedicatedLandingPage({
                 <img 
                   src="/images/logo.webp" 
                   alt="Puraniks Abitante Fiore" 
+                  width="48"
+                  height="48"
                   className="h-10 w-auto object-contain"
                   onError={(e) => { e.currentTarget.src = "/favicon.svg"; }}
                 />

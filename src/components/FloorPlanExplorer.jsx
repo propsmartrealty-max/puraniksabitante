@@ -105,6 +105,10 @@ export default function FloorPlanExplorer({ onOpenBrochure, onOpenSiteVisit, onS
                 <img
                   src={viewMode === '2d' ? selectedConfig.floorPlan2D : selectedConfig.floorPlan3D}
                   alt={`${selectedConfig.type} floor plan`}
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain object-center rounded-xl group-hover:scale-105 transition-transform duration-500"
                 />
 
@@ -224,7 +228,7 @@ export default function FloorPlanExplorer({ onOpenBrochure, onOpenSiteVisit, onS
           <div className="relative max-w-5xl w-full bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-2xl">
             <div className="flex items-center justify-between pb-4 border-b border-slate-200 mb-4">
               <div>
-                <h4 className="text-lg font-bold text-[#0F172A] uppercase tracking-wide">{selectedConfig.type} LAYOUT</h4>
+                <h3 className="text-lg font-bold text-[#0F172A] uppercase tracking-wide">{selectedConfig.type} LAYOUT</h3>
                 <p className="text-xs text-slate-500 font-medium">Carpet Area: {selectedConfig.carpetArea} | {selectedConfig.startingPrice}</p>
               </div>
               <button
@@ -239,6 +243,10 @@ export default function FloorPlanExplorer({ onOpenBrochure, onOpenSiteVisit, onS
               <img
                 src={viewMode === '2d' ? selectedConfig.floorPlan2D : selectedConfig.floorPlan3D}
                 alt="Zoomed Blueprint"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
                 className="max-h-[60vh] w-auto object-contain rounded-xl"
               />
             </div>

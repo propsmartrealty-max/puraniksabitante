@@ -68,6 +68,8 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
               <img
                 src={PROJECT_INFO.officialLogoUrl}
                 alt="Puraniks Abitante Fiore"
+                width="160"
+                height="44"
                 onError={() => setLogoError(true)}
                 className="h-9 sm:h-11 w-auto object-contain"
               />
@@ -75,6 +77,8 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
               <img
                 src="/favicon.svg"
                 alt="Puraniks Abitante Fiore"
+                width="44"
+                height="44"
                 className="h-9 sm:h-11 w-auto object-contain"
               />
             )}
@@ -152,6 +156,8 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
                   <img
                     src="/images/logo.webp"
                     alt="Puraniks Abitante Fiore"
+                    width="32"
+                    height="32"
                     onError={(e) => { e.currentTarget.src = "/favicon.svg"; }}
                     className="h-8 w-auto object-contain"
                   />

@@ -514,6 +514,8 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
             <div className="relative">
               <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
+                id="seo-query-search"
+                aria-label="Search SEO Query Database"
                 type="text"
                 placeholder="Search queries (e.g. 2 bhk price, rera, bavdhan)..."
                 value={keywordSearch}
@@ -523,6 +525,8 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
             </div>
 
             <select
+              id="seo-filter-layer"
+              aria-label="Filter by Authority Layer"
               value={selectedLayer}
               onChange={(e) => setSelectedLayer(e.target.value)}
               className="px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 font-bold focus:outline-none focus:border-[#92400E]"
@@ -534,6 +538,8 @@ export default function SeoContentHub({ onOpenBrochure, onOpenSiteVisit }) {
             </select>
 
             <select
+              id="seo-filter-priority"
+              aria-label="Filter by Priority Tier"
               value={selectedPriority}
               onChange={(e) => setSelectedPriority(e.target.value)}
               className="px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-800 font-bold focus:outline-none focus:border-[#92400E]"

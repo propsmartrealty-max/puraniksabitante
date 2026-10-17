@@ -129,33 +129,33 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
             {/* Clean Key Highlights Cards */}
             <div className="grid grid-cols-3 gap-3 pt-1">
               <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
-                <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">
+                <span className="text-[10px] uppercase font-bold text-slate-600 tracking-wider block">
                   STARTING PRICE
                 </span>
                 <div className="text-xl sm:text-2xl font-bold text-[#0F172A] mt-0.5">
                   {PROJECT_INFO.startingPrice}
                 </div>
-                <span className="text-[10px] text-slate-400 font-medium block">All Inclusive*</span>
+                <span className="text-[10px] text-slate-600 font-medium block">All Inclusive*</span>
               </div>
 
               <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
-                <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">
+                <span className="text-[10px] uppercase font-bold text-slate-600 tracking-wider block">
                   CONFIGURATIONS
                 </span>
                 <div className="text-lg sm:text-xl font-bold text-[#0F172A] mt-0.5">
                   1, 2 & 3 BHK
                 </div>
-                <span className="text-[10px] text-emerald-600 font-bold block">Balcony Gardens</span>
+                <span className="text-[10px] text-emerald-700 font-bold block">Balcony Gardens</span>
               </div>
 
               <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 shadow-xs">
-                <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">
+                <span className="text-[10px] uppercase font-bold text-slate-600 tracking-wider block">
                   SPECIAL OFFER
                 </span>
                 <div className="text-lg sm:text-xl font-bold text-[#92400E] mt-0.5">
                   0% STAMP DUTY
                 </div>
-                <span className="text-[10px] text-slate-400 font-medium block">Limited Period</span>
+                <span className="text-[10px] text-slate-600 font-medium block">Limited Period</span>
               </div>
             </div>
 
@@ -198,6 +198,10 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
                 <img
                   src={ORIGINAL_IMAGES.heroDesktopBanner}
                   alt="Puraniks Abitante Fiore Township Vista"
+                  width="600"
+                  height="350"
+                  fetchpriority="high"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
                   onError={(e) => {
                     e.target.src = "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80";
@@ -223,9 +227,9 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
               <div className="p-6 sm:p-7">
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
                   <div>
-                    <h3 className="text-lg font-bold text-[#0F172A] uppercase tracking-wide">
+                    <h2 className="text-lg font-bold text-[#0F172A] uppercase tracking-wide">
                       GET INSTANT PRICE SHEET
-                    </h3>
+                    </h2>
                     <p className="text-xs text-slate-500 mt-0.5">Floor plans & cost breakdown on WhatsApp</p>
                   </div>
                   <span className="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold uppercase tracking-wider">
@@ -238,7 +242,7 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
                     <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
-                    <h4 className="text-base font-bold text-[#0F172A] uppercase tracking-wide">Request Received!</h4>
+                    <h3 className="text-base font-bold text-[#0F172A] uppercase tracking-wide">Request Received!</h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
                       We have dispatched the latest brochure and pricing structure to <strong className="text-[#0F172A]">+91 {leadForm.phone}</strong> via WhatsApp.
                     </p>
@@ -252,12 +256,15 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
                 ) : (
                   <form onSubmit={handleHeroSubmit} className="space-y-3.5">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                      <label htmlFor="hero-name" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
                         YOUR FULL NAME *
                       </label>
                       <input
+                        id="hero-name"
+                        name="name"
                         type="text"
                         required
+                        aria-label="Your Full Name"
                         placeholder="e.g. Anand Kulkarni"
                         value={leadForm.name}
                         onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
@@ -266,7 +273,7 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                      <label htmlFor="hero-phone" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
                         WHATSAPP NUMBER *
                       </label>
                       <div className="flex">
@@ -274,9 +281,12 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
                           +91
                         </span>
                         <input
+                          id="hero-phone"
+                          name="phone"
                           type="tel"
                           required
                           pattern="[0-9]{10}"
+                          aria-label="WhatsApp Number"
                           placeholder="9876543210"
                           value={leadForm.phone}
                           onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
@@ -321,7 +331,7 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
                       )}
                     </button>
 
-                    <p className="text-[10px] text-slate-400 text-center uppercase tracking-wider">
+                    <p className="text-[10px] text-slate-600 text-center uppercase tracking-wider">
                       🔒 100% Privacy Protected • Direct Puranik Sales Desk
                     </p>
                   </form>
@@ -342,6 +352,10 @@ export default function Hero({ onOpenBrochure, onOpenSiteVisit }) {
                   <img
                     src={stat.icon}
                     alt={stat.label}
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                    decoding="async"
                     className="h-6 w-auto object-contain mb-1.5 opacity-80"
                     onError={(e) => { e.target.style.display = 'none'; }}
                   />

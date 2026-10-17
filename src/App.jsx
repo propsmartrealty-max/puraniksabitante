@@ -41,8 +41,8 @@ export default function App() {
         onOpenSiteVisit={handleOpenSiteVisit}
       />
 
-      {/* Main Content */}
-      <main>
+      {/* Main Content Flow */}
+      <div id="content-flow">
         {/* Hero Section */}
         <Hero
           onOpenBrochure={() => handleOpenBrochure()}
@@ -122,7 +122,7 @@ export default function App() {
           onOpenBrochure={() => handleOpenBrochure()}
           onOpenSiteVisit={handleOpenSiteVisit}
         />
-      </main>
+      </div>
 
       {/* Footer */}
       <Footer

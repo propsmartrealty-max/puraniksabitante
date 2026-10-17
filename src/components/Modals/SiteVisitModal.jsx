@@ -91,9 +91,9 @@ export default function SiteVisitModal({ isOpen, onClose }) {
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400">VIP EXPERIENCE CENTER TOUR</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight">
             SCHEDULE SITE VISIT & MODEL FLAT TOUR
-          </h3>
+          </h2>
           <p className="text-xs text-slate-300 font-normal mt-1">
             Enjoy a complimentary chauffeur-driven AC cab pickup anywhere in Pune.
           </p>
@@ -106,7 +106,7 @@ export default function SiteVisitModal({ isOpen, onClose }) {
               <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-extrabold text-[#0F172A] uppercase">APPOINTMENT CONFIRMED!</h4>
+              <h3 className="text-xl font-extrabold text-[#0F172A] uppercase">APPOINTMENT CONFIRMED!</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Thank you <strong className="text-slate-900">{visitData.name}</strong>. Your private tour is confirmed for <strong className="text-[#92400E]">{visitData.date} ({visitData.timeSlot})</strong>.
               </p>
@@ -133,12 +133,15 @@ export default function SiteVisitModal({ isOpen, onClose }) {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                  <label htmlFor="visit-name" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
                     YOUR FULL NAME *
                   </label>
                   <input
+                    id="visit-name"
+                    name="name"
                     type="text"
                     required
+                    aria-label="Your Full Name"
                     placeholder="e.g. Sumeet Patil"
                     value={visitData.name}
                     onChange={(e) => setVisitData({ ...visitData, name: e.target.value })}
@@ -147,13 +150,16 @@ export default function SiteVisitModal({ isOpen, onClose }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                  <label htmlFor="visit-phone" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
                     CONTACT NUMBER *
                   </label>
                   <input
+                    id="visit-phone"
+                    name="phone"
                     type="tel"
                     required
                     pattern="[0-9]{10}"
+                    aria-label="Contact Mobile Number"
                     placeholder="10-digit mobile"
                     value={visitData.phone}
                     onChange={(e) => setVisitData({ ...visitData, phone: e.target.value })}
@@ -164,12 +170,15 @@ export default function SiteVisitModal({ isOpen, onClose }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                  <label htmlFor="visit-date" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
                     SELECT DATE *
                   </label>
                   <input
+                    id="visit-date"
+                    name="date"
                     type="date"
                     required
+                    aria-label="Select Date for Site Visit"
                     value={visitData.date}
                     onChange={(e) => setVisitData({ ...visitData, date: e.target.value })}
                     className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-medium"
@@ -177,10 +186,13 @@ export default function SiteVisitModal({ isOpen, onClose }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
+                  <label htmlFor="visit-timeslot" className="block text-xs font-bold text-slate-700 mb-1 uppercase tracking-wider">
                     TIME SLOT *
                   </label>
                   <select
+                    id="visit-timeslot"
+                    name="timeSlot"
+                    aria-label="Preferred Time Slot"
                     value={visitData.timeSlot}
                     onChange={(e) => setVisitData({ ...visitData, timeSlot: e.target.value })}
                     className="w-full px-4 py-3 bg-[#FAF9F6] border border-slate-200 rounded-xl text-slate-900 text-sm focus:outline-none focus:border-[#92400E] font-bold"
@@ -195,11 +207,14 @@ export default function SiteVisitModal({ isOpen, onClose }) {
 
               <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-900 flex items-center gap-1.5 uppercase tracking-wider">
+                  <label htmlFor="visit-cab" className="text-xs font-bold text-slate-900 flex items-center gap-1.5 uppercase tracking-wider cursor-pointer">
                     <Car className="w-3.5 h-3.5 text-[#92400E]" /> COMPLIMENTARY AC CAB PICK & DROP
-                  </span>
+                  </label>
                   <input
+                    id="visit-cab"
+                    name="cabPickup"
                     type="checkbox"
+                    aria-label="Complimentary AC Cab Pick and Drop"
                     checked={visitData.cabPickup}
                     onChange={(e) => setVisitData({ ...visitData, cabPickup: e.target.checked })}
                     className="w-4 h-4 accent-[#92400E] rounded cursor-pointer"
@@ -208,8 +223,12 @@ export default function SiteVisitModal({ isOpen, onClose }) {
 
                 {visitData.cabPickup && (
                   <div>
+                    <label htmlFor="visit-pickup" className="sr-only">Cab Pickup Location</label>
                     <input
+                      id="visit-pickup"
+                      name="pickupLocation"
                       type="text"
+                      aria-label="Cab Pickup Location in Pune"
                       placeholder="Enter Pickup Location in Pune (e.g. Aundh, Kothrud, Baner)"
                       value={visitData.pickupLocation}
                       onChange={(e) => setVisitData({ ...visitData, pickupLocation: e.target.value })}

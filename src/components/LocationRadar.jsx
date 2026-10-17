@@ -105,9 +105,9 @@ export default function LocationRadar({ onOpenSiteVisit }) {
                   className="bg-[#FAF9F6] p-4 rounded-2xl border border-slate-200 flex items-center justify-between gap-4 group shadow-2xs"
                 >
                   <div className="space-y-0.5">
-                    <h4 className="font-bold text-slate-900 text-sm group-hover:text-[#92400E] transition-colors">
+                    <h3 className="font-bold text-slate-900 text-sm group-hover:text-[#92400E] transition-colors">
                       {place.name}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-slate-500 font-normal">
                       {place.desc}
                     </p>
@@ -194,6 +194,10 @@ export default function LocationRadar({ onOpenSiteVisit }) {
                   <img
                     src={ORIGINAL_IMAGES.locationMap}
                     alt="Official Bavdhan Location Map from Puranik Builders"
+                    width="600"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-contain p-2 bg-white"
                     onError={(e) => {
                       e.target.src = "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80";

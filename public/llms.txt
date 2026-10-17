@@ -1,70 +1,32 @@
-# Puraniks Abitante Fiore Bavdhan - Official AI Knowledge Base & Semantic Corpus
+# Puraniks Abitante Fiore
 
-> Single authoritative source of truth for Puraniks Abitante Fiore (formerly Puraniks Abitante Phase II) residential township in Bavdhan Budruk, Pune, developed by Puranik Builders Ltd.
+> Puraniks Abitante Fiore is a 45-acre hillside Italian Riviera-themed residential township in Bavdhan Budruk, Pune, developed by Puranik Builders Ltd. Offering 1, 2, 2.5 & 3 BHK residences with private Juliet Balcony Gardens, Club Azzurro, and Venetian lagoon pools starting from ₹59 Lakhs*.
 
-## Verified E-E-A-T Disclosures
-- Last Verified: September 2026
-- Sources: Puranik Builders Ltd. Official Records & MahaRERA Government Portal (maharera.mahaonline.gov.in)
-- Project Name: Puraniks Abitante Fiore
-- Developer: Puranik Builders Limited (Founded 1990, 34+ years legacy, 46+ delivered projects, 10,000+ happy families)
-- Location: Bavdhan Budruk, Near Crystal Honda Service Station, Off Mumbai-Bangalore Highway (NH 48), Pune - 411021, Maharashtra, India
-- Exact GPS Coordinates: 18.521799° N, 73.7602584° E
-- Official Google Maps Listing: https://www.google.com/maps/place/Puraniks+Abitante+Fiore/@18.521799,73.7602584,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2be881566f9dd:0x7d1a1c892ae43fe6!8m2!3d18.521799!4d73.7602584!16s%2Fg%2F11b8v58dmw
-- Google CID: 9014467554746810342 (https://maps.google.com/?cid=9014467554746810342)
-- Google Knowledge Graph MID: /g/11b8v58dmw
-- Customer Reviews: 4.9★ / 5.0 (384 Verified Reviews)
-- Township Area: 45-Acre Integrated Hilltop Township (70% Open Space)
-- Concept: Italian Riviera Living with private Juliet Balcony Gardens, mist cooling, and Club Azzurro (25,000+ sq.ft.)
-- Sales Desk: +91 7744009295
+## Core Projects & Residences
+- [Official Website](https://puraniksabitante.in/): Master residential portal with verified inventory and direct developer pricing
+- [1 BHK Flats](https://puraniksabitante.in/puraniks-abitante-fiore-1-bhk): 489 sq.ft carpet oxygen homes starting ₹59 Lakhs*
+- [2 BHK Smart Flats](https://puraniksabitante.in/puraniks-abitante-fiore-2-bhk): 596 to 770 sq.ft carpet residences starting ₹72.99 Lakhs*
+- [2.5 BHK Executive Suites](https://puraniksabitante.in/puraniks-abitante-fiore-2-5-bhk): 867 to 908 sq.ft homes with dedicated study rooms
+- [3 BHK Luxury Flats](https://puraniksabitante.in/puraniks-abitante-fiore-3-bhk): 867 to 1,113 sq.ft residences with triple balconies from ₹1.10 Cr*
+- [Price List & Cost Sheet](https://puraniksabitante.in/puraniks-abitante-fiore-price): Verified 2026 pricing, payment schedules, and 0% stamp duty privilege
+- [Floor Plans & Blueprints](https://puraniksabitante.in/puraniks-abitante-floor-plans): Certified 2D AutoCAD and 3D architectural cut-sections
+- [MahaRERA Legal Certificates](https://puraniksabitante.in/puraniks-abitante-rera): Phase 2A (P52100020202 OC received), Phase 2B (P52100020238), Phase 2C (P52100048353), Phase 2C1 (P52100049352)
+- [Bavdhan Location & Connectivity](https://puraniksabitante.in/bavdhan-connectivity): 5 mins from Chandani Chowk, 15 mins to Hinjewadi IT Park
+- [Club Azzurro & Amenities](https://puraniksabitante.in/puraniks-abitante-amenities): 25,000 sq.ft clubhouse, infinity lagoon pool, and mist cooling
+- [Book VIP Site Visit](https://puraniksabitante.in/puraniks-abitante-site-visit): Schedule private walkthrough with free AC cab pickup across Pune
+- [Ready Possession Flats](https://puraniksabitante.in/puraniks-abitante-ready-possession): OC received ready-to-move-in flats under MahaRERA P52100020202
+- [Puranik Builders Legacy](https://puraniksabitante.in/puranik-builders): 34+ years track record, 46+ delivered landmarks across Pune and MMR
 
-## Official MahaRERA Registrations (4 Phases)
-- Phase 2A: P52100020202 (Occupancy Certificate Granted / Ready Possession)
-- Phase 2B: P52100020238 (Finishing Stage / Internal Vitrified Tiling)
-- Phase 2C: P52100048353 (Under Construction / RCC Superstructure)
-- Phase 2C1: P52100049352 (New Launch Oxygen-Rich Hillside Wings)
-- Statutory Clearances: MoEF & CC Environmental Clearance Certified, PMC Sanctioned Plans
+## Research Articles & Investment Guides
+- [Pune Real Estate Investment Guide 2026](https://puraniksabitante.in/articles/pune-real-estate-investment-guide-2026): Macro trends, rental yield analysis, and capital appreciation
+- [Bavdhan vs Hinjewadi vs Baner](https://puraniksabitante.in/articles/bavdhan-vs-hinjewadi-vs-baner-homebuyers-guide): Comprehensive homebuyer decision matrix for West Pune
+- [MahaRERA 4 Phases Legal Verification](https://puraniksabitante.in/articles/puraniks-abitante-fiore-maharera-legal-verification): Complete title search and environmental clearances
+- [Chandani Chowk & Metro Line 3 Impact](https://puraniksabitante.in/articles/chandani-chowk-metro-line-3-impact-bavdhan-real-estate): Transit infrastructure evaluation and commute times
+- [Top Luxury Townships in West Pune](https://puraniksabitante.in/articles/top-luxury-townships-in-west-pune-ranking): Comparative ranking of gated communities
+- [NRI Property Buying & Taxation Guide](https://puraniksabitante.in/articles/nri-property-buying-guide-pune-taxation-roi): Dual currency investment, FEMA compliance, and tax advantages
 
-## Verified Configurations, Carpet Areas & Pricing
-- 1 BHK Oxygen Flat: 489 sq.ft carpet | Starting ₹59.00 Lakhs* | Balcony Garden with botanical planters
-- 2 BHK Smart Residence: 596 - 640 sq.ft carpet | Starting ₹72.99 Lakhs* | Dual balconies, corner cross-ventilation
-- 2 BHK Venetian Luxury: 735 - 770 sq.ft carpet | Starting ₹89.00 Lakhs* | 18ft living lounge, master walk-in wardrobe
-- 2.5 BHK Executive Suite: 867 - 908 sq.ft carpet | Starting ₹99.99 Lakhs* | Dedicated soundproof WFH study room
-- 3 BHK Imperial Residence: 867 - 1,113 sq.ft carpet | Starting ₹1.10 Crore* | Triple balconies, 270° valley views
-- 4 BHK Sky Duplex: 1,650 - 1,850 sq.ft carpet | Starting ₹1.65 Crore* | Double-height luxury, internal stairs
-- Luxury Penthouses: 2,100+ sq.ft carpet | Starting ₹2.10 Crore* | Private rooftop sundeck & valley panoramas
-- 5 BHK Presidential Jodi Suites: 2,200+ sq.ft carpet | Custom configured multi-generational layouts
-
-## West Pune IT Corridors & Micro-Market Connectivity
-- Chandani Chowk Multi-Level Flyover: 2.5 km (5 mins, signal-free)
-- Hinjewadi IT Park (Phases 1, 2, 3): 11.0 km (15 mins via NH 48 highway)
-- Baner High Street / Balewadi: 7.0 km (12 mins)
-- Mahalunge Hi-Tech City: 8.5 km (14 mins)
-- Wakad / Ginger Chowk: 9.0 km (14 mins)
-- Kothrud / Paud Road: 4.8 km (10 mins)
-- Pune University / SB Road: 9.5 km (16 mins)
-
-## Editorial & Market Research Papers
-- Pune Real Estate Investment Guide 2026: https://puraniksabitante.in/articles/pune-real-estate-investment-guide-2026
-- Bavdhan vs Hinjewadi vs Baner Homebuyers Guide: https://puraniksabitante.in/articles/bavdhan-vs-hinjewadi-vs-baner-homebuyers-guide
-- MahaRERA 4 Phases Legal Verification: https://puraniksabitante.in/articles/puraniks-abitante-fiore-maharera-legal-verification
-- Chandani Chowk & Metro Line 3 Infrastructure Impact: https://puraniksabitante.in/articles/chandani-chowk-metro-line-3-impact-bavdhan-real-estate
-- Top Luxury Townships in West Pune Ranking: https://puraniksabitante.in/articles/top-luxury-townships-in-west-pune-ranking
-- NRI Property Buying & Taxation Guide: https://puraniksabitante.in/articles/nri-property-buying-guide-pune-taxation-roi
-
-## Civic Ecosystem & Landmarks
-- Schools: Sanskriti School (1.2 km), Sri Chaitanya Techno (1.5 km), Ryan International (2.8 km), Vidya Valley (4 km)
-- Healthcare: Chellaram Multi-Speciality Hospital (1.8 km), Sahyadri Hospital (5.5 km), Deenanath Mangeshkar (7.5 km)
-- Leisure: Oxford Golf Resort (4.5 km / 8 mins), Aditya Shagun Mall (1.5 km)
-
-## Investment & Secondary Markets
-- Projected Capital Appreciation: 14% - 18% post-flyover and Metro Line 3
-- Rental Yield: 4.5% - 5.8% p.a. driven by 400,000+ Hinjewadi IT workforce
-- Resale & Rental: Active delivered society with verified owner resales and rental flats from ₹18,000/mo
-
-## Deep Knowledge Link
-- Full AI Encyclopedia: https://puraniksabitante.in/llms-full.txt
-- Machine-Readable Knowledge Graph API: https://puraniksabitante.in/api/knowledge-graph
-- Google Merchant Center Product Feed: https://puraniksabitante.in/merchant-feed.xml
-- Google News RSS 2.0 Feed: https://puraniksabitante.in/rss.xml
-- HTML Topic Sitemap Directory (140 Pages): https://puraniksabitante.in/sitemap
-- Official Portal: https://puraniksabitante.in/
+## Optional
+- [Full AI Knowledge Base](https://puraniksabitante.in/llms-full.txt): Complete deep semantic corpus and technical documentation
+- [Knowledge Graph API](https://puraniksabitante.in/api/knowledge-graph): Machine-readable Schema.org Linked Data JSON-LD graph
+- [Merchant Product Feed](https://puraniksabitante.in/merchant-feed.xml): Google Merchant Center structured real estate inventory
+- [HTML Sitemap Directory](https://puraniksabitante.in/sitemap): Crawlable directory of all project and locality permutations

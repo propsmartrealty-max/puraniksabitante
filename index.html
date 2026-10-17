@@ -73,16 +73,18 @@
     <!-- Core Web Vitals LCP Hero Image Preload -->
     <link rel="preload" as="image" href="https://puraniksabitante.in/images/slider/pweb.webp" fetchpriority="high" />
 
-    <!-- Google High-Speed DNS Prefetch & Font CDN Preconnects -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="dns-prefetch" href="//images.unsplash.com" />
-    <link rel="dns-prefetch" href="//www.youtube.com" />
-    <link rel="dns-prefetch" href="//img.youtube.com" />
+    <!-- Google High-Speed Font CDN Preconnects (Limited to 2 to eliminate Lighthouse warning) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    <link rel="dns-prefetch" href="//www.youtube.com" />
+    
+    <!-- Non-Render-Blocking Google Fonts with &display=swap -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    </noscript>
 
     <!-- Search Spider Hardening & Mobile Metadata -->
     <meta name="revisit-after" content="1 days" />

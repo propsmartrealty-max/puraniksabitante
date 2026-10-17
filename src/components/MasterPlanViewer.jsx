@@ -34,6 +34,10 @@ export default function MasterPlanViewer({ onOpenBrochure, onOpenSiteVisit }) {
                 <img
                   src={ORIGINAL_IMAGES.masterPlan}
                   alt="Puraniks Abitante Official Master Plan Layout"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain bg-white"
                   onError={(e) => {
                     e.target.src = "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80";
@@ -58,6 +62,7 @@ export default function MasterPlanViewer({ onOpenBrochure, onOpenSiteVisit }) {
                         isSelected ? 'scale-125 z-30' : 'hover:scale-115'
                       }`}
                       title={spot.title}
+                      aria-label={`Hotspot ${spot.id}: ${spot.title}`}
                     >
                       <div className="relative flex items-center justify-center">
                         <span
@@ -135,6 +140,10 @@ export default function MasterPlanViewer({ onOpenBrochure, onOpenSiteVisit }) {
                 <img
                   src={activeHotspot.image}
                   alt={activeHotspot.title}
+                  width="400"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-transparent to-transparent" />
@@ -144,7 +153,7 @@ export default function MasterPlanViewer({ onOpenBrochure, onOpenSiteVisit }) {
               </div>
 
               <div>
-                <h4 className="text-lg font-bold text-[#0F172A]">{activeHotspot.title}</h4>
+                <h3 className="text-lg font-bold text-[#0F172A]">{activeHotspot.title}</h3>
                 <p className="text-xs text-slate-600 font-normal mt-1.5 leading-relaxed">
                   {activeHotspot.desc}
                 </p>

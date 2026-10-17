@@ -89,6 +89,10 @@ export default function AmenitiesShowcase({ onOpenBrochure, onOpenSiteVisit }) {
                   <img
                     src={amenity.image}
                     alt={amenity.name}
+                    width="400"
+                    height="200"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent" />
@@ -103,9 +107,9 @@ export default function AmenitiesShowcase({ onOpenBrochure, onOpenSiteVisit }) {
                 </div>
 
                 <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
-                  <h4 className="font-bold text-slate-900 text-base group-hover:text-[#92400E] transition-colors">
+                  <h3 className="font-bold text-slate-900 text-base group-hover:text-[#92400E] transition-colors">
                     {amenity.name}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-slate-500 font-normal leading-relaxed">
                     {amenity.desc}
                   </p>
@@ -151,11 +155,16 @@ export default function AmenitiesShowcase({ onOpenBrochure, onOpenSiteVisit }) {
               <img
                 src={selectedAmenity.image}
                 alt={selectedAmenity.name}
+                width="600"
+                height="300"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent" />
               <button
                 onClick={() => setSelectedAmenity(null)}
+                aria-label="Close amenity details"
                 className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white text-slate-900 hover:bg-slate-100 flex items-center justify-center font-bold text-xs shadow-md uppercase"
               >
                 ✕

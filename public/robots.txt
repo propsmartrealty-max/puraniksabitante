@@ -57,12 +57,11 @@ Allow: /api/indexnow
 Disallow: /api/lead
 Disallow: /*?*preview=true
 
-# Sitemaps & Knowledge Graph Endpoints
+# Sitemaps & Feeds (Standard RFC 9309 Compliant)
 Sitemap: https://puraniksabitante.in/sitemap.xml
 Sitemap: https://puraniksabitante.in/image-sitemap.xml
-Feed: https://puraniksabitante.in/rss.xml
-Feed: https://puraniksabitante.in/feed.xml
-
-# LLM & Google Merchant Feeds
+# Feed: https://puraniksabitante.in/rss.xml
+# Feed: https://puraniksabitante.in/feed.xml
 # LLM-Text: https://puraniksabitante.in/llms.txt
-# Google Merchant Product Feed: https://puraniksabitante.in/merchant-feed.xml
+# Merchant-Feed: https://puraniksabitante.in/merchant-feed.xml
+

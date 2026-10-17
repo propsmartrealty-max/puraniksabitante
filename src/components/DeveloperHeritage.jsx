@@ -60,6 +60,10 @@ export default function DeveloperHeritage() {
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80"
                 alt="Puranik Builders Corporate Headquarters"
+                width="1000"
+                height="320"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-80 object-cover rounded-2xl"
               />
               <div className="p-4 text-center space-y-1">
@@ -101,6 +105,10 @@ export default function DeveloperHeritage() {
                   <img
                     src={t.avatar}
                     alt={t.name}
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                    decoding="async"
                     className="w-10 h-10 rounded-full object-cover border-2 border-[#92400E]"
                   />
                   <div>

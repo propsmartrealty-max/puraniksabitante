@@ -35,9 +35,9 @@ export default function WalkthroughVideo({ onOpenBrochure, onOpenSiteVisit }) {
 
           <div className="p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="space-y-1 text-center sm:text-left">
-              <h4 className="font-extrabold text-[#0F172A] text-lg uppercase tracking-wide">
+              <h3 className="font-extrabold text-[#0F172A] text-lg uppercase tracking-wide">
                 PURANIKS ABITANTE FIORE • BAVDHAN BUDRUK, PUNE
-              </h4>
+              </h3>
               <p className="text-xs text-slate-500 font-normal">
                 1, 2 & 3 BHK Oxygen-Rich Apartments with Balcony Gardens & Juliet Terraces.
               </p>

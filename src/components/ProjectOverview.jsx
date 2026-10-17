@@ -53,6 +53,10 @@ export default function ProjectOverview({ onOpenBrochure, onOpenSiteVisit }) {
                   <img
                     src={pillar.image}
                     alt={pillar.title}
+                    width="600"
+                    height="400"
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-transparent to-transparent" />

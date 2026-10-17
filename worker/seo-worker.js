@@ -470,7 +470,7 @@ Sitemap: https://${CANONICAL_HOST}/sitemap.xml
     const contentType = originResponse.headers.get("content-type") || "";
 
     if (contentType.includes("text/html")) {
-      responseHeaders.set("Link", "<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://images.unsplash.com>; rel=preconnect, <https://puraniksabitante.in/sitemap.xml>; rel=sitemap");
+      responseHeaders.set("Link", "<https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://puraniksabitante.in/images/slider/pweb.webp>; rel=preload; as=image");
 
       if (typeof HTMLRewriter !== "undefined") {
         const canonicalUrl = `https://${CANONICAL_HOST}${url.pathname === "/" ? "/" : url.pathname.replace(/\/+$/, "")}`;

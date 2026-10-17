@@ -61,7 +61,7 @@ export default function FaqSection({ onOpenBrochure, onOpenSiteVisit }) {
         {/* Support Strip */}
         <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-sm">
           <div>
-            <h4 className="text-lg font-extrabold text-[#0F172A]">Have a specific configuration or pricing question?</h4>
+            <h3 className="text-lg font-extrabold text-[#0F172A]">Have a specific configuration or pricing question?</h3>
             <p className="text-xs text-slate-500 mt-0.5">Speak directly with our official Puraniks sales relationship desk.</p>
           </div>
           <a
