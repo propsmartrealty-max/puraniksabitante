@@ -158,6 +158,60 @@ const ROUTES = [
     title: 'Puranik Builders Limited | 34+ Years Developer Legacy & Pune Projects',
     description: 'Official background and track record of Puranik Builders Ltd. Founded in 1990, 46+ delivered landmarks, 10,000+ delivered families across Pune & MMR.',
     canonical: 'https://puraniksabitante.in/puranik-builders'
+  },
+  {
+    path: 'puraniks-pune',
+    title: 'Puraniks Pune | Official Projects, Townships & Residences in Pune',
+    description: 'Explore all residential township projects by Puranik Builders in Pune. Featuring Puraniks Abitante Fiore in Bavdhan, Aldea Espanola in Baner, and Sayama.',
+    canonical: 'https://puraniksabitante.in/puraniks-pune'
+  },
+  {
+    path: 'puranik-pune-projects',
+    title: 'Puranik Pune Projects | Luxury 1, 2 & 3 BHK Homes by Puranik Builders',
+    description: 'Discover all Puranik projects in Pune: 45-acre Italian township Puraniks Abitante Fiore Bavdhan, Club Azzurro, Juliet Balcony Gardens, starting ₹59 Lakhs*.',
+    canonical: 'https://puraniksabitante.in/puranik-pune-projects'
+  },
+  {
+    path: 'puranik-projects-in-pune',
+    title: 'Puranik Projects in Pune | Integrated Townships & Hillside Living',
+    description: 'Complete directory of Puranik Builders projects across Pune. Verified MahaRERA disclosures, pricing, floor plans, and free site visit cab services.',
+    canonical: 'https://puraniksabitante.in/puranik-projects-in-pune'
+  },
+  {
+    path: 'puranik-builders-pune-projects',
+    title: 'Puranik Builders Pune Projects | Ongoing & Ready Possession Residences',
+    description: 'Verified portfolio of Puranik Builders in Pune. Inspect ready possession Phase 2A OC flats and ongoing luxury wings at Abitante Fiore Bavdhan.',
+    canonical: 'https://puraniksabitante.in/puranik-builders-pune-projects'
+  },
+  {
+    path: 'puraniks-abitante-flats',
+    title: 'Puraniks Abitante Flats | 1, 2 & 3 BHK Balcony Garden Homes Bavdhan',
+    description: 'Buy 1, 2 & 3 BHK flats at Puraniks Abitante Bavdhan Budruk, Pune. Oxygen-rich hillside residences with 70% open spaces, 5 mins from Chandani Chowk.',
+    canonical: 'https://puraniksabitante.in/puraniks-abitante-flats'
+  },
+  {
+    path: 'puraniks-abitante-township',
+    title: 'Puraniks Abitante Township | Oxygen-Rich Italian Living in Bavdhan Pune',
+    description: 'Experience 45 acres of hillside township living at Puraniks Abitante Bavdhan. 1,000+ native trees, microclimate mist gardens, and 25,000 sq.ft Club Azzurro.',
+    canonical: 'https://puraniksabitante.in/puraniks-abitante-township'
+  },
+  {
+    path: 'abitante-bavdhan',
+    title: 'Abitante Bavdhan Pune | Official 1, 2 & 3 BHK Residences by Puraniks',
+    description: 'Official Bavdhan portal for Abitante & Abitante Fiore. 1, 2 & 3 BHK hillside apartments with Juliet Balcony Gardens and zero stamp duty benefit.',
+    canonical: 'https://puraniksabitante.in/abitante-bavdhan'
+  },
+  {
+    path: 'puraniks-abitante-ready-possession',
+    title: 'Puraniks Abitante Ready Possession Flats | OC Received Phase 2A Bavdhan',
+    description: 'Ready to move 1 & 2 BHK flats in Puraniks Abitante Bavdhan. Full Occupancy Certificate (OC) granted for Phase 2A under MahaRERA P52100020202.',
+    canonical: 'https://puraniksabitante.in/puraniks-abitante-ready-possession'
+  },
+  {
+    path: 'puraniks-abitante-site-visit',
+    title: 'Puraniks Abitante Site Visit | Book Free VIP Tour & Cab Pickup Bavdhan',
+    description: 'Schedule a free private site visit to Puraniks Abitante Fiore Bavdhan. Walk inside actual sample flats with complimentary AC cab transit across Pune.',
+    canonical: 'https://puraniksabitante.in/puraniks-abitante-site-visit'
   }
 ];
 

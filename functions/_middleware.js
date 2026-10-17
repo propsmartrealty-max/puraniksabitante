@@ -253,6 +253,37 @@ export async function onRequest(context) {
     return response;
   }
 
+  // --------------------------------------------------------------------------
+  // 4.1 EDGE SMART INTENT FALLBACK RESOLVER FOR 404s
+  // Eliminates 404s for any permutations of Puranik / Abitante / Pune queries
+  // Preserves 100% link equity & redirects Googlebot to the exact canonical topic hub
+  // --------------------------------------------------------------------------
+  if (response.status === 404 && !pathname.includes('.')) {
+    const p = pathname.toLowerCase();
+    if (p.includes('puranik') || p.includes('abitante') || p.includes('fiore') || p.includes('bavdhan')) {
+      if (p.includes('price') || p.includes('cost') || p.includes('rate') || p.includes('payment') || p.includes('offer')) {
+        return Response.redirect('https://puraniksabitante.in/puraniks-abitante-fiore-price', 301);
+      }
+      if (p.includes('plan') || p.includes('layout') || p.includes('carpet') || p.includes('master')) {
+        return Response.redirect('https://puraniksabitante.in/puraniks-abitante-floor-plans', 301);
+      }
+      if (p.includes('rera') || p.includes('legal') || p.includes('registration') || p.startsWith('/p521')) {
+        return Response.redirect('https://puraniksabitante.in/puraniks-abitante-rera', 301);
+      }
+      if (p.includes('ready') || p.includes('possession') || p.includes('oc')) {
+        return Response.redirect('https://puraniksabitante.in/puraniks-abitante-ready-possession', 301);
+      }
+      if (p.includes('pune') && (p.includes('project') || p.includes('puranik') || p.includes('township'))) {
+        return Response.redirect('https://puraniksabitante.in/puraniks-pune', 301);
+      }
+      if (p.includes('visit') || p.includes('sample') || p.includes('tour') || p.includes('office') || p.includes('address') || p.includes('location')) {
+        return Response.redirect('https://puraniksabitante.in/puraniks-abitante-site-visit', 301);
+      }
+      // Universal brand fallback
+      return Response.redirect('https://puraniksabitante.in/puraniks-abitante', 301);
+    }
+  }
+
   const duration = Date.now() - startTime;
   const newHeaders = new Headers(response.headers);
   const status = (pathname === '/404' || response.status === 404) ? 404 : response.status;
