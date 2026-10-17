@@ -13,8 +13,13 @@
     color: #0F172A;
     background-color: #FAF9F6;
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 
   h1, h2, h3, h4, h5, h6, .font-serif, .font-roman {

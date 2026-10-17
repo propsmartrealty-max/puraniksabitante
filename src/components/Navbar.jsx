@@ -15,49 +15,47 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is active
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
-    { name: 'OVERVIEW', href: '/#overview' },
-    { name: 'PRICING', href: '/puraniks-abitante-fiore-price' },
-    { name: 'FLOOR PLANS', href: '/puraniks-abitante-floor-plans' },
-    { name: 'AMENITIES', href: '/#amenities' },
-    { name: 'LOCATION', href: '/#location' },
+    { name: 'OVERVIEW', href: '/#overview', sectionId: 'overview' },
+    { name: 'PRICING', href: '/puraniks-abitante-fiore-price', sectionId: 'residences' },
+    { name: 'FLOOR PLANS', href: '/#residences', sectionId: 'residences' },
+    { name: 'AMENITIES', href: '/#amenities', sectionId: 'amenities' },
+    { name: 'LOCATION', href: '/#location', sectionId: 'location' },
     { name: 'ARTICLES', href: '/articles' },
     { name: 'MAHARERA', href: '/puraniks-abitante-rera' },
   ];
 
+  const handleNavClick = (e, link) => {
+    if (link.sectionId) {
+      const el = document.getElementById(link.sectionId);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setMobileMenuOpen(false);
+      }
+    }
+  };
+
   return (
     <>
-      {/* Top Notification Strip */}
-      <div className="bg-[#0B1329] text-slate-300 text-[11px] font-medium tracking-wider uppercase py-2 px-4 border-b border-slate-800/80">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-slate-300">
-              SPECIAL PRIVILEGE: <strong className="text-amber-400 font-semibold">{PROJECT_INFO.specialOffer.toUpperCase()}</strong>
-            </span>
-          </div>
-          <div className="hidden sm:flex items-center gap-5 text-slate-300">
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              MAHARERA: <strong className="text-white font-mono">{PROJECT_INFO.reraNumber.split(' ')[0]}</strong>
-            </span>
-            <span className="text-slate-700">|</span>
-            <a 
-              href={`tel:${PROJECT_INFO.contactPhone}`} 
-              className="text-slate-200 hover:text-white flex items-center gap-1.5 font-semibold transition"
-            >
-              <Phone className="w-3 h-3 text-amber-400" /> CALL: {PROJECT_INFO.contactPhone}
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Clean & Neat Header */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 bg-white/95 backdrop-blur-md border-b ${
           isScrolled
-            ? 'py-3 shadow-sm border-slate-200'
-            : 'py-4 border-slate-200/80'
+            ? 'py-2.5 shadow-sm border-slate-200'
+            : 'py-3.5 border-slate-200/80'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
@@ -90,6 +88,7 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link)}
                 className="hover:text-[#92400E] transition-colors py-1 relative group"
               >
                 {link.name}
@@ -183,21 +182,33 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
                 <div className="grid grid-cols-3 gap-1.5 text-center">
                   <a
                     href="#residences"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      const el = document.getElementById('residences');
+                      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                      setMobileMenuOpen(false);
+                    }}
                     className="py-1.5 px-2 rounded-xl bg-white border border-slate-200 text-[11px] font-extrabold text-slate-800 shadow-2xs hover:border-[#92400E]"
                   >
                     1 BHK
                   </a>
                   <a
                     href="#residences"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      const el = document.getElementById('residences');
+                      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                      setMobileMenuOpen(false);
+                    }}
                     className="py-1.5 px-2 rounded-xl bg-white border border-slate-200 text-[11px] font-extrabold text-[#92400E] shadow-2xs hover:border-[#92400E]"
                   >
                     2 BHK
                   </a>
                   <a
                     href="#residences"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      const el = document.getElementById('residences');
+                      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                      setMobileMenuOpen(false);
+                    }}
                     className="py-1.5 px-2 rounded-xl bg-white border border-slate-200 text-[11px] font-extrabold text-slate-800 shadow-2xs hover:border-[#92400E]"
                   >
                     3 BHK
@@ -211,7 +222,7 @@ export default function Navbar({ onOpenBrochure, onOpenSiteVisit }) {
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, link)}
                     className="text-xs font-bold tracking-wider text-slate-800 hover:text-[#92400E] py-3 px-3 rounded-xl hover:bg-slate-50 transition uppercase flex items-center justify-between"
                   >
                     <span>{link.name}</span>

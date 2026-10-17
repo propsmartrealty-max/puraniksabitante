@@ -23,7 +23,9 @@ import {
   FileText,
   Star,
   Clock,
-  IndianRupee
+  IndianRupee,
+  Menu,
+  X
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { PROJECT_INFO, CONFIGURATIONS } from "../data/projectData";
@@ -43,10 +45,23 @@ export default function DedicatedLandingPage({
 }) {
   const [brochureModalOpen, setBrochureModalOpen] = useState(false);
   const [siteVisitModalOpen, setSiteVisitModalOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [leadForm, setLeadForm] = useState({ name: "", phone: "", config: "2 BHK", email: "" });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+
+  // Lock body scroll when mobile menu is open
+  React.useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   // EMI Calculator State
   const [loanAmount, setLoanAmount] = useState(65); // In Lakhs
@@ -112,71 +127,92 @@ export default function DedicatedLandingPage({
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-[#0F172A] selection:bg-[#92400E] selection:text-white flex flex-col justify-between font-sans">
       
-      {/* Top Floating Announcement Bar */}
-      <div className="bg-[#0F172A] text-white py-2 px-4 text-center text-xs font-medium border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <span className="hidden sm:inline text-amber-400 font-bold">
-            ✨ Special Festival Privilege: 0% Stamp Duty & Zero Registration Fee Available
-          </span>
-          <span className="sm:hidden text-amber-400 font-bold text-[11px]">
-            ⚡ 0% Stamp Duty Benefit Active
-          </span>
-          <div className="flex items-center gap-4 text-xs">
-            <a href="tel:+917744009295" className="hover:text-amber-400 font-mono font-bold flex items-center gap-1">
-              <Phone className="w-3 h-3 text-amber-400" /> +91 7744009295
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation Header */}
+      {/* Main Navigation Header - Clean Official Brand Bar */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-2xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3 group">
-            <div className="h-10 sm:h-12 flex items-center justify-center p-1 rounded-xl bg-white border border-slate-200 shadow-2xs group-hover:scale-105 transition-transform">
-              <img 
-                src="/images/logo.webp" 
-                alt="Puraniks Abitante Fiore" 
-                width="40"
-                height="40"
-                className="h-8 sm:h-10 w-auto object-contain"
-                onError={(e) => { e.currentTarget.src = "/favicon.svg"; }}
-              />
-            </div>
-            <div>
-              <div className="text-base sm:text-lg font-black tracking-tight text-[#0F172A] leading-tight group-hover:text-[#92400E] transition-colors">
-                PURANIKS ABITANTE FIORE
-              </div>
-              <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                BAVDHAN BUDRUK, PUNE
-              </div>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between">
+          
+          {/* Authentic Brand Logo without redundant adjacent text */}
+          <a href="/" className="flex items-center shrink-0">
+            <img 
+              src="/images/logo.webp" 
+              alt="Puraniks Abitante Fiore Bavdhan Pune" 
+              width="160"
+              height="44"
+              className="h-9 sm:h-11 w-auto object-contain"
+              onError={(e) => { e.currentTarget.src = "/favicon.svg"; }}
+            />
           </a>
 
-          {/* Desktop Central Links */}
-          <nav className="hidden xl:flex items-center space-x-6 text-xs font-bold tracking-wider text-slate-700">
-            <a href="/#overview" className="hover:text-[#92400E] transition-colors">OVERVIEW</a>
-            <a href="/puraniks-abitante-fiore-price" className="hover:text-[#92400E] transition-colors">PRICING</a>
-            <a href="/puraniks-abitante-floor-plans" className="hover:text-[#92400E] transition-colors">FLOOR PLANS</a>
-            <a href="/puraniks-abitante-amenities" className="hover:text-[#92400E] transition-colors">AMENITIES</a>
-            <a href="/bavdhan-connectivity" className="hover:text-[#92400E] transition-colors">LOCATION</a>
-            <a href="/articles" className="hover:text-[#92400E] transition-colors">ARTICLES</a>
-            <a href="/puraniks-abitante-rera" className="hover:text-[#92400E] transition-colors">MAHARERA</a>
+          {/* Desktop Central Navigation with Intelligent Section Scroll */}
+          <nav aria-label="Landing page primary navigation" className="hidden lg:flex items-center space-x-6 text-xs font-bold tracking-wider text-slate-700">
+            <a 
+              href="/#overview" 
+              onClick={(e) => {
+                const el = document.getElementById("overview");
+                if (el) { e.preventDefault(); el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+              }}
+              className="hover:text-[#92400E] transition-colors py-1"
+            >
+              OVERVIEW
+            </a>
+            <a 
+              href="/puraniks-abitante-fiore-price" 
+              onClick={(e) => {
+                const el = document.getElementById("pricing");
+                if (el) { e.preventDefault(); el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+              }}
+              className="hover:text-[#92400E] transition-colors py-1"
+            >
+              PRICING
+            </a>
+            <a 
+              href="/puraniks-abitante-floor-plans" 
+              onClick={(e) => {
+                const el = document.getElementById("floor-plans") || document.getElementById("pricing");
+                if (el) { e.preventDefault(); el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+              }}
+              className="hover:text-[#92400E] transition-colors py-1"
+            >
+              FLOOR PLANS
+            </a>
+            <a 
+              href="/bavdhan-connectivity" 
+              onClick={(e) => {
+                const el = document.getElementById("location");
+                if (el) { e.preventDefault(); el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+              }}
+              className="hover:text-[#92400E] transition-colors py-1"
+            >
+              LOCATION
+            </a>
+            <a 
+              href="/puraniks-abitante-rera" 
+              onClick={(e) => {
+                const el = document.getElementById("maharera");
+                if (el) { e.preventDefault(); el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+              }}
+              className="hover:text-[#92400E] transition-colors py-1"
+            >
+              MAHARERA
+            </a>
+            <a href="/articles" className="hover:text-[#92400E] transition-colors py-1">
+              ARTICLES
+            </a>
           </nav>
 
-          {/* Nav Actions */}
+          {/* Desktop & Mobile Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
             <a 
               href="https://wa.me/917744009295?text=Hi,%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan.%20Please%20send%20brochure%20and%20pricing." 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition"
+              className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition"
             >
               💬 WhatsApp Desk
             </a>
             <button
               onClick={() => setBrochureModalOpen(true)}
-              className="luxury-btn-outline px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 cursor-pointer shadow-2xs"
+              className="luxury-btn-outline px-3 sm:px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 cursor-pointer shadow-2xs"
             >
               <Download className="w-3.5 h-3.5 text-slate-700" />
               <span className="hidden sm:inline">BROCHURE</span>
@@ -184,14 +220,117 @@ export default function DedicatedLandingPage({
             </button>
             <button
               onClick={() => setSiteVisitModalOpen(true)}
-              className="luxury-btn-gold px-4 sm:px-5 py-2 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 cursor-pointer shadow-sm"
+              className="luxury-btn-gold px-3.5 sm:px-5 py-2 rounded-xl text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 cursor-pointer shadow-sm"
             >
               <Calendar className="w-3.5 h-3.5" />
               <span>BOOK TOUR</span>
             </button>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition cursor-pointer"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
       </header>
+
+      {/* Mobile Slide-In Navigation Drawer */}
+      {mobileMenuOpen && (
+        <div role="dialog" aria-modal="true" aria-label="Mobile navigation drawer" className="fixed inset-0 z-50 lg:hidden animate-fadeIn">
+          <div 
+            className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl flex flex-col justify-between p-6 z-10 animate-slideUp overflow-y-auto">
+            <div>
+              <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+                <a href="/" className="flex items-center shrink-0">
+                  <img
+                    src="/images/logo.webp"
+                    alt="Puraniks Abitante Fiore"
+                    width="140"
+                    height="36"
+                    className="h-8 w-auto object-contain"
+                    onError={(e) => { e.currentTarget.src = "/favicon.svg"; }}
+                  />
+                </a>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition cursor-pointer"
+                  aria-label="Close menu"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Navigation Links with Smooth In-Page Scrolling */}
+              <nav aria-label="Mobile drawer navigation" className="flex flex-col space-y-1 mt-4">
+                {[
+                  { name: "OVERVIEW", sectionId: "overview", fallback: "/#overview" },
+                  { name: "PRICING", sectionId: "pricing", fallback: "/puraniks-abitante-fiore-price" },
+                  { name: "FLOOR PLANS", sectionId: "floor-plans", fallback: "/puraniks-abitante-floor-plans" },
+                  { name: "LOCATION", sectionId: "location", fallback: "/bavdhan-connectivity" },
+                  { name: "MAHARERA", sectionId: "maharera", fallback: "/puraniks-abitante-rera" },
+                  { name: "EMI CALCULATOR", sectionId: "calculator", fallback: "/#calculator" },
+                  { name: "ARTICLES", fallback: "/articles" }
+                ].map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.fallback}
+                    onClick={(e) => {
+                      if (item.sectionId) {
+                        const target = document.getElementById(item.sectionId);
+                        if (target) {
+                          e.preventDefault();
+                          target.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
+                      }
+                      setMobileMenuOpen(false);
+                    }}
+                    className="text-xs font-bold tracking-wider text-slate-800 hover:text-[#92400E] py-3 px-3 rounded-xl hover:bg-slate-50 transition uppercase flex items-center justify-between"
+                  >
+                    <span>{item.name}</span>
+                    <span className="text-slate-300 text-xs">→</span>
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            {/* Bottom Actions inside Mobile Drawer */}
+            <div className="space-y-2.5 pt-4 border-t border-slate-200">
+              <a
+                href="tel:+917744009295"
+                className="w-full py-3 rounded-xl border border-slate-200 text-slate-800 flex items-center justify-center gap-2 font-extrabold text-xs tracking-wider uppercase shadow-2xs"
+              >
+                <Phone className="w-4 h-4 text-[#92400E]" />
+                CALL +91 7744009295
+              </a>
+              <a
+                href="https://wa.me/917744009295?text=Hi,%20I%20am%20interested%20in%20Puraniks%20Abitante%20Fiore%20Bavdhan."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center justify-center gap-2 font-extrabold text-xs tracking-wider uppercase shadow-2xs"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                CHAT ON WHATSAPP
+              </a>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setSiteVisitModalOpen(true);
+                }}
+                className="w-full luxury-btn-gold py-3.5 rounded-xl font-extrabold text-xs tracking-wider uppercase text-center shadow-md cursor-pointer"
+              >
+                BOOK FREE SITE TOUR
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Breadcrumb Bar */}
       <div className="bg-slate-100/80 border-b border-slate-200 py-2.5 px-4 sm:px-8 text-xs text-slate-600">
@@ -209,7 +348,7 @@ export default function DedicatedLandingPage({
       <div className="space-y-16 sm:space-y-24 pb-20">
 
         {/* 1. DEDICATED HERO SECTION WITH CONTEXTUAL H1 & LEAD FORM */}
-        <section className="relative pt-10 pb-16 bg-gradient-to-b from-white to-[#FAF9F6] border-b border-slate-200">
+        <section id="overview" className="relative pt-10 pb-16 bg-gradient-to-b from-white to-[#FAF9F6] border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
               
@@ -450,7 +589,8 @@ export default function DedicatedLandingPage({
         </section>
 
         {/* 2. OFFICIAL CONFIGURATION & PRICING TABLE (CORE MONEY SECTION) */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+        <section id="pricing" className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+          <div id="floor-plans" className="scroll-mt-20" />
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-[#92400E] border border-amber-200 text-[10px] font-bold uppercase tracking-wider">
               <IndianRupee className="w-3.5 h-3.5" /> TRANSPARENT COST BREAKDOWN
@@ -506,7 +646,7 @@ export default function DedicatedLandingPage({
         </section>
 
         {/* 3. MAHARERA 4-PHASE REGISTRATION MATRIX */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+        <section id="maharera" className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
               <div>
@@ -576,7 +716,7 @@ export default function DedicatedLandingPage({
         </section>
 
         {/* 4. SIGNAL-FREE TRANSIT & CONNECTIVITY RADAR */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+        <section id="location" className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="p-6 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-xl space-y-6">
             <div className="flex items-center gap-2 text-[10px] font-mono font-bold tracking-widest text-[#92400E] uppercase">
               <Car className="w-4 h-4 text-[#92400E]" />
@@ -615,7 +755,7 @@ export default function DedicatedLandingPage({
         </section>
 
         {/* 5. INTERACTIVE EMI & LOAN CALCULATOR */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <section id="calculator" className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="bg-[#0F172A] text-white rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8 relative overflow-hidden">
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div className="space-y-2 max-w-xl">
@@ -706,7 +846,7 @@ export default function DedicatedLandingPage({
 
         {/* 6. TOPICAL FREQUENTLY ASKED QUESTIONS (FAQPage SCHEMA) */}
         {faqs && faqs.length > 0 && (
-          <section className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
+          <section id="faq" className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
             <div className="text-center space-y-2">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[10px] font-bold uppercase tracking-wider">
                 <HelpCircle className="w-3.5 h-3.5 text-[#92400E]" /> VERIFIED FAQS
