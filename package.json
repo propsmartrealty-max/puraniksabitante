@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "dev": "node scripts/astro-cli.js dev",
+    "build": "node scripts/astro-cli.js build",
     "prerender": "node scripts/prerender.js",
-    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "preview": "node scripts/astro-cli.js preview",
     "index:google": "node scripts/google-indexing-api.js",
     "harden:cloudflare": "node scripts/cloudflare-ecosystem-harden.js",
     "verify:ecosystem": "node scripts/verify-ecosystem.js"
